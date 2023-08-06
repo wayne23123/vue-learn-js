@@ -15,12 +15,21 @@
           <router-link to="/about"><div class="liPad">關於</div></router-link>
         </li>
         <li>
-          <router-link to="/Http"><div class="liPad">Web</div></router-link>
+          <router-link to="/http"><div class="liPad">Web</div></router-link>
+        </li>
+        <li>
+          <router-link to="/html"><div class="liPad">Html</div></router-link>
+        </li>
+        <li>
+          <router-link to="/about"><div class="liPad">CSS</div></router-link>
         </li>
         <li>
           <router-link to="/about"
-            ><div class="liPad">leetcode</div></router-link
+            ><div class="liPad">JavaScript</div></router-link
           >
+        </li>
+        <li>
+          <router-link to="/about"><div class="liPad">Vue</div></router-link>
         </li>
       </ul>
     </nav>
@@ -54,7 +63,8 @@ ul {
 }
 
 .liPad {
-  padding: 0 25px;
+  /* padding: 0 25px; */
+  padding: 0 5px;
 }
 
 .borR {
@@ -97,12 +107,12 @@ a.router-link-exact-active {
   margin: 5px 0;
   background-color: #c4c4c4;
 }
-@media only screen and (max-width: 900px) {
+/* @media only screen and (max-width: 900px) {
   header {
     padding: 0 30px;
   }
-}
-@media only screen and (max-width: 700px) {
+} */
+@media only screen and (max-width: 890px) {
   .hamburger {
     display: block;
   }
@@ -115,6 +125,9 @@ a.router-link-exact-active {
     background-color: #565656;
     padding: 30px;
     transition: 0.3s;
+
+    display: flex;
+    justify-content: center;
   }
   #nav_check:checked ~ nav {
     left: 0;
