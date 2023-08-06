@@ -149,6 +149,11 @@ function locate(idPound) {
           <h1 id="web002" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器輸入網址後按下 enter 會發生什麼 ?
           </h1>
+          <p>首先進行DNS域名解析, 再來與服務器三次握手建立TCP連結,</p>
+          <p>然後發送http請求, 然後服務器處理請求</p>
+          <p>服務器返回響應結果, 然後四次揮手關閉TCP連結</p>
+          <p>然後瀏覽器解析HTML, 最後瀏覽器布局渲染頁面</p>
+          <br />
           <p>1.瀏覽器接受 URL 開啟網路請求線程 (線程&進程)</p>
           <p>
             2.瀏覽器通過 DNS 服務器得到域名的 IP位置, 向 IP 地址
@@ -212,47 +217,217 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36"># http & https</h3>
-          <p>https ，是在原本的 http 傳輸方式上多加一層加密程序</p>
-          <p>這個s，代表是加密協定 SSL。</p>
-          <p>優點: 加強資訊安全，保障傳輸機密資料。</p>
-          <p>缺點: 1.額外的加密導致網路傳輸時間與傳輸量的增加</p>
-          <p>2.使用SSL加密必須購買SSL憑證，造成開發端增加額外的開發成本。</p>
-          <p>3.對於部分網路攻擊無效，如常見的DDoS。</p>
+
+          <h3 class="articleCardTitle cor36">### ip地址怎麼找?</h3>
+          <p>ip地址從DNS域名服務器裡存儲的地址本找出來的</p>
+          <p>之前訪問過該網站的話從本機緩存數據裡找</p>
+          <p>如果找不到就從路由器設置的電信服務商提供的DNS服務器中找</p>
+          <p>再找不到就從網站域名提供的服務商提供的DNS服務器找</p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36"># 解析 ip 過程</h3>
+          <h3 class="articleCardTitle cor36">### http?</h3>
+          <p>超文字傳輸協定</p>
+          <p>他是基於TCP默認80端口的一個應用層協議</p>
+          <p>用於從全球資訊網傳輸資源到本地瀏覽器的傳輸協議</p>
+          <p>他主要是用來規定客戶端和服務器端的數據傳輸格式</p>
+          <p>所以HTTP是一個標準和規範</p>
+          <p>每一個HTTP連接包括請求消息和響應消息2個部分</p>
+          <p>請求報文包括4個, 請求行, 請求頭, 空行, 請求體</p>
+          <p>響應報文包括4個, 響應行, 響應頭, 空行, 請求體,</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36">
+            ### http協議包括請求和響應,你能說一個請求完整內容嗎?
+          </h3>
+          <p>第一部分:第一行第一個字是get, 然後是url, http協議版本</p>
+          <p>第二部分:content-type:</p>
+          <p>第三部分:enter, 第四部份:body a=1&a=2</p>
+          <p>第四部份:body a=1&a=2</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36">### http和https差別?(443端口)</h3>
+          <p>http協議傳輸的數據都是未加密的, 因此用http傳輸隱私的訊息不安全</p>
+          <p>為了保證這些隱私數據能加密傳輸, 就誕生HTTPS 所以比http協議安全</p>
           <p>
-            1.首先，瀏覽器會檢查瀏覽器的DNS緩存，如果有相應的記錄，就直接使用緩存的結果。
+            https由tls加http協議構建的, 可以進行加密傳輸, 身分認證的網路協議
           </p>
-          <p>2.如果沒有，會查詢計算機本地的DNS緩存（localhost）。</p>
-          <p>3.如果沒有，詢問遞歸式DNS伺服器（網路提供商）發出查詢請求。</p>
+          <p>所以比http協議安全</p>
+          <p>https有兩個作用</p>
+          <p>1.可以建立一個訊息安全通道, 用來保證數據傳輸的安全性</p>
+          <p>2.確認網站的真實性</p>
+          <p>http和https差別</p>
+          <p>1.http不用證書,https需要申請ca證書</p>
           <p>
-            4.如果沒有，向根域名伺服器發出查詢請求。根域名伺服器負責管理頂級域名（TLD）的DNS伺服器的地址。
+            2.http下的訊息明文傳輸,
+            而https由tls加http協議構建的可進行加密傳輸身分認證的網路協議,
+            可以防止傳輸內容被竊取竄改
           </p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36"># 瀏覽器緩存機制</h3>
-          <p>當瀏覽器請求一個網站時，會載入各種資源。</p>
           <p>
-            對於一些不經常變動的資源，瀏覽器會將它們儲存於本地記憶體中，下次訪問時直接載入這些資源，以提高訪問速度。
+            3.http和https使用不同的連接方式, 所以端口不一樣http(80), https(443)
           </p>
           <br />
-          <p>資源size值， from disk cache， from memory cache</p>
           <br />
-          <p>當瀏覽器訪問一個已經訪問過的資源時，它的步驟如下：</p>
-          <p>1.先檢查是否命中了強制緩存，如果命中了，則直接使用緩存的資源。</p>
+          <h1 id="web004" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ http 有那些請求方法 和 用途 ?
+          </h1>
+          <p>GET方法： 用途：發送一個請求來獲取伺服器上的某一資源。</p>
+          <div class="pTwo">1.GET方法的特點是甚麼?</div>
+          <div class="pFou">
+            1.獲取資源： GET方法用於從伺服器獲取指定URL上的資源。
+          </div>
           <br />
-          <p>2.沒有，則向服務器發送請求，檢查是否命中了協商緩存。</p>
+          <div class="pFou">
+            2.幂等性：
+            GET方法是幂等的，即對同一URL進行多次連續GET請求，不會產生不同的效果。
+          </div>
+          <br />
+          <div class="pTwo">2.GET 請求和 POST 請求的區別是甚麼?</div>
+          <div class="pFou">
+            1.GET 請求將參數附加在 URL 的查詢字串中, 而 POST
+            請求將參數放在請求體中。
+          </div>
+          <br />
+          <div class="pFou">
+            2.GET 請求的數據會顯示在 URL 中, 而 POST 請求的數據不會顯示在 URL
+            中。
+          </div>
+          <br />
+          <div class="pFou">3.GET 請求用於獲取數據, 而 POST 用於提交數據</div>
+          <br />
+          <div class="pTwo">3.GET請求可以有請求體嗎?</div>
+          <div class="pFou">
+            根據HTTP協議規範，GET請求的特性是不包含請求體,
+            參數應通過URL的查詢字串進行傳遞
+          </div>
+          <br />
+          <div class="pTwo">4.GET請求的參數如何傳遞?</div>
+          <div class="pFou">
+            GET請求可以通過URL的查詢字串傳遞參數。參數位於URL的問號後面，並以鍵值對的形式表示。例如：https://example.com/search?keyword=apple。
+          </div>
+          <br />
+          <div class="pTwo">5.GET請求的安全性和幂等性如何保證?</div>
+          <div class="pFou">
+            1.GET請求被認為是安全的，因為它不會修改伺服器上的資源。
+          </div>
+          <br />
+          <div class="pFou">
+            2.GET請求是幂等的，多次發送相同的 GET 請求不會影響伺服器
+          </div>
+          <br />
+          <p>POST 方法： 用途：向 URL 指定的資源提交數據或附加新的數據</p>
+          <div class="pTwo">1.POST 方法的特點是甚麼?</div>
+          <div class="pFou">1.POST 方法用於向伺服器提交數據</div>
+          <br />
+          <div class="pFou">
+            2.POST 不是幂等的, 多次發送相等的 POST 請求可能會產生不同結果
+          </div>
+          <br />
+          <div class="pTwo">2.POST 請求和 GET 請求的區別是甚麼?</div>
+          <div class="pFou">
+            1.POST 請求將參數放在請求體中, 而 GET 請求將參數附加在 URL
+            的查詢字串中。
+          </div>
+          <br />
+          <div class="pFou">
+            2.POST 請求的數據不會顯示在 URL 中, 而 GET 請求的數據會顯示在 URL
+            中。
+          </div>
+          <br />
+          <div class="pFou">3.POST 用於提交數據, 而 GET 請求用於獲取數據</div>
+          <br />
+          <div class="pTwo">3.POST 請求的請求體如何傳遞數據?</div>
+          <div class="pFou">
+            POST 請求的數據可以通過請求體以表單形式傳遞,或以 JSON 格式傳遞
+          </div>
+          <br />
+          <div class="pTwo">4.POST 請求的安全性和幂等性如何保證?</div>
+          <div class="pFou">
+            1.POST 請求可能對伺服器端的資源產生副作用, 因此被視為不安全的
+          </div>
+          <br />
+          <div class="pFou">
+            2.POST 請求不是幂等的, 多次發送相等的 POST
+            請求可能會對伺服器端產生影響
+          </div>
           <br />
           <p>
-            3.如果命中了協商緩存，服務器會返回狀態碼304，告訴瀏覽器可以使用本地緩存的資源。
+            PUT 方法: 用途: 將數據發送給伺服器, 並將其儲存在指定的 URL 位置。與
+            POST 方法不同的是, PUT 方法指定了資源在伺服器上的位置。
+          </p>
+          <div class="pTwo">1.PUT 方法的特點是甚麼?</div>
+          <div class="pFou">
+            1.PUT 方法用於將數據發送給伺服器並儲存在指定的 URL 位置
+          </div>
+          <br />
+          <div class="pFou">
+            2.PUT 請求是幂等的, 多次發送相同的 PUT 請求會對伺服器端產生相同結果
+          </div>
+          <br />
+          <div class="pTwo">2.PUT 請求和 POST 請求有甚麼區別?</div>
+          <div class="pFou">
+            1.PUT 請求用於指定資源在伺服器上的位置, 而 POST 請求沒有指定位置
+          </div>
+          <br />
+          <div class="pFou">
+            2.PUT 請求用於更新or替換資源, 而 POST 請求用於 新增資源或提交數據
+          </div>
+          <br />
+          <div class="pTwo">3.PUT請求的幂等性如何保證?</div>
+          <div class="pFou">1.PUT 請求的幂等性保證由伺服器端實現的。</div>
+          <br />
+          <div class="pFou">
+            2.伺服器端應根據請求中的資源位置來處理請求, 多次發送相同的 PUT
+            請求會對該位置上的資源進行相同的更新或替換操作。
+          </div>
+          <br />
+          <p>HEAD 方法: 用途: 只請求頁面的首部</p>
+          <p>DELETE 方法: 用途: 刪除伺服器上某資源</p>
+          <p>
+            OPTIONS 方法: 用途: 獲取當前 URL 所支援的方法。如果請求成功,
+            會有一個 Allow 的頭包含類似 "GET,POST" 訊息
           </p>
           <br />
-          <p>4.沒有，則服務器會返回新的資源給瀏覽器。</p>
+          <br />
+          <h3 class="articleCardTitle cor36"># HTTP狀態碼和其含義</h3>
+          <p>1xx（資訊性狀態碼）：表示請求已被接收，正在處理。</p>
+          <div class="pTwo">
+            100 Continue：繼續，在發送 POST 請求時，已發送了 http header
+            之後伺服器將返回此訊息，表示確認，之後發送具體參數訊息
+          </div>
+          <p>2xx（成功狀態碼）：表示請求已成功被伺服器接收、理解和處理。</p>
+          <div class="pTwo">200 OK：請求已成功，伺服器正常返回請求的內容。</div>
+          <div class="pTwo">
+            201 Created：請求已成功並在伺服器上創建了新的資源。
+          </div>
+          <div class="pTwo">202 Accepted：伺服器已接受請求，但尚未處理。</div>
+          <p>
+            3xx（重新導向狀態碼）：表示客戶端需要採取進一步操作才能完成請求。
+          </p>
+          <div class="pTwo">
+            301 Moved Permanently：請求的資源已永久移動到新位置。
+          </div>
+          <div class="pTwo">302 Found：請求的資源已臨時移動到新位置。</div>
+          <div class="pTwo">
+            304 Not Modified：客戶端的快取資源是最新的，可以直接使用。
+          </div>
+          <p>4xx（客戶端錯誤狀態碼）：表示客戶端發起的請求有錯誤或無法完成。</p>
+          <div class="pTwo">
+            400 Bad Request：請求語法錯誤，伺服器無法理解。
+          </div>
+          <div class="pTwo">401 Unauthorized：請求需要用戶驗證。</div>
+          <div class="pTwo">403 Forbidden：禁止訪問。</div>
+          <div class="pTwo">404 Not Found：請求的資源不存在。</div>
+          <p>5xx（伺服器錯誤狀態碼）：表示伺服器在處理請求時發生了錯誤。</p>
+          <div class="pTwo">
+            500 Internal Server Error：伺服器遇到了一個未知的錯誤。
+          </div>
+          <div class="pTwo">
+            503 Service
+            Unavailable：伺服器暫時無法處理請求，可能是由於過載或維護。
+          </div>
           <br />
           <br />
-          <br />
+
           <h3 class="articleCardTitle cor36">
             # 三次握手 -> 與 WEB 服務器建立連接 -> 確認雙方都能接收,發送正常
           </h3>
@@ -306,6 +481,263 @@ function locate(idPound) {
             己方是否現在關閉發送數據通道, 需要上層應用來決定, 因此己方 ACK 和
             FIN 分開發送
           </p>
+          <br />
+          <br />
+          <h1 id="web010" class="articleCardTitle">
+            [ Web筆記 ] ≫ 腳本攻擊XSS,請求偽造CSRF
+          </h1>
+          <h3 class="articleCardTitle">
+            跨站腳本攻擊（XSS）Cross-site request forgery
+          </h3>
+          <p>
+            攻擊者在網頁中注入惡意腳本，並將該腳本傳送給其他使用者的瀏覽器執行。
+          </p>
+          <br />
+          <br />
+          <p>防止XSS攻擊:</p>
+          <p>開發者應該適當地驗證和過濾使用者的輸入。</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle">
+            跨站請求偽造（CSRF）Cross-site request forgery
+          </h3>
+          <p>
+            攻擊者誘導使用者到第三方網站, 在第三方網站中,
+            向被攻擊網站發送跨站請求。
+          </p>
+          <br />
+          <p>利用受害者在被攻擊網站已獲取的註冊憑證, 繞過後台用戶驗證,</p>
+          <br />
+          <p>冒充用戶對被攻擊網站執行操作。</p>
+          <br />
+          <br />
+          <p>防止CSRF攻擊:</p>
+          <p>
+            檢查和驗證請求的來源、實施隨機生成的驗證碼（CSRF令牌）和同源政策等。
+          </p>
+          <br />
+          <br />
+
+          <h3 class="articleCardTitle cor36"># 瀏覽器緩存機制</h3>
+          <p>當瀏覽器請求一個網站時，會載入各種資源。</p>
+          <p>
+            對於一些不經常變動的資源，瀏覽器會將它們儲存於本地記憶體中，下次訪問時直接載入這些資源，以提高訪問速度。
+          </p>
+          <br />
+          <p>資源size值， from disk cache， from memory cache</p>
+          <br />
+          <p>當瀏覽器訪問一個已經訪問過的資源時，它的步驟如下：</p>
+          <p>1.先檢查是否命中了強制緩存，如果命中了，則直接使用緩存的資源。</p>
+          <br />
+          <p>2.沒有，則向服務器發送請求，檢查是否命中了協商緩存。</p>
+          <br />
+          <p>
+            3.如果命中了協商緩存，服務器會返回狀態碼304，告訴瀏覽器可以使用本地緩存的資源。
+          </p>
+          <br />
+          <p>4.沒有，則服務器會返回新的資源給瀏覽器。</p>
+          <br />
+          <br />
+          <br />
+
+          <h1 id="web011" class="articleCardTitle">
+            [ Web筆記 ] ≫ 描述Cookies、sessionStorage和localStorage的區別
+          </h1>
+          <p>
+            cookie是網站為了標識使用者身份而儲存在使用者本地終端（Client
+            Side）上的數據（通常經過加密）。
+          </p>
+          <p>
+            cookie數據始終在同源的HTTP請求中攜帶（即使不需要），在瀏覽器和伺服器之間來回傳遞。
+          </p>
+          <p>
+            sessionStorage和localStorage不會自動將數據發送給伺服器，僅在本地保存。
+          </p>
+          <br />
+          <h3>儲存容量：</h3>
+          <p>cookie數據大小不能超過4KB。</p>
+          <p>
+            sessionStorage和localStorage雖然也有儲存大小的限制，但比cookie大得多，可以達到5MB或更大。
+          </p>
+          <br />
+          <h3>生命週期： (有效時間)</h3>
+          <p>cookie 需要設置有效時間，過期後 cookie 銷毀。</p>
+          <p>localStorage 除非主動刪除數據，否則永久存在。</p>
+          <p>sessionStorage 頁面關閉後刪除。</p>
+          <br />
+          <h3>儲存形式:</h3>
+          <p>三者都是字串類型</p>
+          <p>複雜對象 可用 json 的 stringify 和 parse</p>
+          <br />
+          <p>JSON.stringify() 將字串轉成 JSON</p>
+          <p>JSON.parse() 將 JSON 轉成字串</p>
+          <br />
+          <h3>安全性:</h3>
+          <p>cookie 請求時一般會攜帶在 header 中</p>
+          <p>localStorage、sessionStorage 請求時不會攜帶</p>
+          <br />
+          <br />
+          <h1 id="web005" class="articleCardTitle">
+            [ Web筆記 ] ≫ 什麼是瀏覽器同源?跨域?
+          </h1>
+          <h3>同源指的是協議、域名和端口均要相同。</h3>
+          <p>同源策略是瀏覽器的一種自我保護行為。</p>
+          <br />
+          <p>瀏覽器大部分内容受到同源策略的限制，以下例外</p>
+          <p>＜img src="..."></p>
+          <p>＜link href="..."></p>
+          <p>＜script src="...">＜/script></p>
+          <br />
+          <br />
+          <h3>跨域指瀏覽器不能執行其他域名下的腳本。</h3>
+          <p>跨域請求能發送到服務器，服務器接受返回結果，結果被服務器攔截</p>
+          <br />
+          <br />
+          <h3>解決跨域問題:</h3>
+          <h3>JSONP</h3>
+          <p>
+            利用 script 標籤不受瀏覽器協議同源策略影響，
+            可以拿到從其他源傳輸過來的數據，需要服務端支持。
+          </p>
+          <br />
+          <p>優: 兼容性較好</p>
+          <p>缺: 僅能 get 請求, 有侷限性, 不安全, 可能被 XSS 攻擊</p>
+          <br />
+          <br />
+          <h3>跨域資源共享 (CORS)</h3>
+          <p>
+            是透過自訂的HTTP標頭，讓瀏覽器與伺服器進行溝通，從而判斷請求或回應應該是成功還是失敗的。
+          </p>
+          <p>實現 CORS 關鍵是後端，</p>
+          <p>服務端設置 Access-Control-Allow-Origin 頭部字段開啟 CORS</p>
+          <br />
+          <br />
+          <h3>Nginx 反向代理</h3>
+          <p>所有客戶端請求經 Nginx 處理， Nginx 再向服務器請求轉發給後段</p>
+          <br />
+          <br />
+          <h1 id="web006" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ 如何進行網站性能優化 ?
+          </h1>
+          <p>加載方面:</p>
+          <div class="pTwo">1. 減少 http 請求 ( Spriter精靈圖 , 文件合併 )</div>
+          <div class="pTwo">
+            2. 減小文件大小 ( 資源壓縮 , 圖片壓縮 , 代碼壓縮 )
+          </div>
+          <div class="pTwo">3. CDN ( 第三方庫 , 大文件 , 大圖 )</div>
+          <div class="pTwo">4. SSR 服務端渲染 , 預渲染</div>
+          <div class="pTwo">5. 懶加載</div>
+          <div class="pTwo">6. 分包</div>
+          <br />
+          <p>性能方面:</p>
+          <div class="pTwo">
+            減少 DOM 操作 , 有操作量很大的 DOM 可以用 文檔碎片
+          </div>
+          <br />
+          <p>CSS 方面:</p>
+          <div class="pTwo">1. 將樣式表放在頁面頂部</div>
+          <div class="pTwo">2. 不使用 CSS 表達式</div>
+          <div class="pTwo">3. 使用 ＜link> 不使用 @import</div>
+          <br />
+          <p>JS 方面:</p>
+          <div class="pTwo">1. 將 JS 腳本放在頁面底部</div>
+          <div class="pTwo">2. 將 JS 和 CSS 從外部引入</div>
+          <div class="pTwo">3. 壓縮 JS 和 CSS</div>
+          <div class="pTwo">4. 刪除不需要的腳本</div>
+          <div class="pTwo">5. 減少 DOM 訪問</div>
+          <br />
+          <p>圖片方面:</p>
+          <div class="pTwo">1. 壓縮圖片 tinyJPG</div>
+          <div class="pTwo">2. Spriter精靈圖</div>
+          <div class="pTwo">3. 不要在 HTML 中拉伸圖片</div>
+          <br />
+          <br />
+          <h1 class="articleCardTitle">有用過那些前端性能優化的方法 ?</h1>
+          <p>
+            1. 減少 http 請求次數 => Spriter精靈圖 , JS & CSS 代碼壓縮 ,
+            圖片壓縮工具來減小圖片大小 , 網頁
+            <a href="https://zh.wikipedia.org/wiki/Gzip" class="cor36"
+              >GZIP @WIKI</a
+            >
+            , 引用 CDN 庫
+          </p>
+          <p>2. 用 innerHTML 代替 DOM 操作 , 減少 DOM 操作次數 , 來優化 JS</p>
+          <p>3. 當需要設置的樣式很多時用 className 而不是直接操作 style</p>
+          <p>4. 圖片預加載 , 將樣式表放在頂部 , 將 script 放在底部</p>
+          <p>
+            5. 避免在主佈局中用 table 標籤 , 因為 table
+            要等其中內容完全下載之後才會顯示出來 ( 比 div + css 慢 )
+          </p>
+          <br />
+          <br />
+          <h1 class="articleCardTitle">前端性能優化最佳實踐 ?</h1>
+          <p>
+            PageSpeed：PageSpeed是由Google開發的工具，用於評估網頁的性能。它通過分析網頁的載入速度、渲染性能、資源優化等指標，給出性能優化建議和分數評級。PageSpeed的評分基於一系列規則和最佳實踐，根據網頁的優化程度給出具體的優化建議，幫助開發人員改進網頁的性能。
+          </p>
+          <br />
+          <p>
+            YSlow：YSlow是由Yahoo開發的網頁性能評估工具，它也用於評估網頁的性能和優化建議。YSlow根據一系列的規則和性能指標，對網頁的載入速度、緩存設置、JavaScript和CSS優化等進行分析和評估。它提供了類似於PageSpeed的性能分數和建議，幫助開發人員了解和改善網頁的性能表現。
+          </p>
+          <br />
+          <br />
+          <h1 class="articleCardTitle">最後甚麼是性能優化</h1>
+          <p>1. 頁面加載性能 -> 加載時間 , 用戶體驗</p>
+          <p>2. 動畫與操作性能 -> 是否流暢不卡頓</p>
+          <div class="pTwo">用 translate 和 定位 比較不會卡頓</div>
+          <div class="pTwo">
+            translate 是脫離正常文檔流 , 所以移動不會影響上方&下方元素
+          </div>
+          <div class="pTwo">所以不用重新渲染 DOM</div>
+          <p>3. 內存佔用 -> 內存佔用過大導致瀏覽器崩潰</p>
+          <div class="pTwo">直播內存超出瀏覽器上限 , 導致卡頓</div>
+          <p>4. 電量消耗 -> 遊戲方面</p>
+          <br />
+          <p>那些不是性能優化 ?</p>
+          <p>1. while 循環快 還是 for 循環快 ?</p>
+          <p>2. |0 比 Math.floor 快</p>
+          <p>3. 三元運算符 比 if else 快</p>
+          <p>這些是執行效率</p>
+          <br />
+          <br />
+          <h1 id="web007" class="articleCardTitle">
+            [ Web筆記 ] ≫ 如何進行渲染優化 ?
+          </h1>
+          <p>1.不使用 iframe</p>
+          <p class="pTwo">iframe 會阻塞主頁面的 onload 事件</p>
+          <p class="pTwo">
+            iframe
+            和主頁面共享連接池，瀏覽器對相同域的連接有限制，因而影響頁面的併行加載。
+          </p>
+          <br />
+          <p>
+            2.不使用 gif 來實現 loading 效果 ( 降低 CPU 消耗 而提升渲染性能)
+          </p>
+          <br />
+          <p>3.用 CSS 代替 JS 動畫 ( 避免重新繪排 )</p>
+          <br />
+          <p>
+            4.小圖用 base64 位編碼，以減少網路請求。 (不建議大圖 => 較消耗CPU)
+          </p>
+          <br />
+          <p>
+            5.不把 style 和 script
+            都放在頭部，才不會阻塞頁面。(Renderer進程中JS線程和渲染線程互斥)
+          </p>
+          <br />
+          <p>6.避免在 href 和 src 中用空值。(link . script . img)</p>
+          <p class="pTwo">
+            瀏覽器會嘗試解析這些標籤並發起對應的網路請求，即使他為空值也會發起。
+          </p>
+          <br />
+          <p>7.用 className 而不是直接操作 style</p>
+          <br />
+          <p>8.用 innerHTML 代替 DOM 操作次數 來優化 JS。</p>
+          <br />
+          <p>
+            9.前端用變數保存 AJAX 請求結果，並操作客戶端變數來減少請求次數。
+          </p>
+          <br />
+          <p>10.圖片預加載 , 網頁 Gzip , CDN 庫 , data 緩存 , 圖片服務器</p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36">五層網絡協議</h3>
@@ -481,329 +913,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web004" class="articleCardTitle cor36">
-            [ Web筆記 ] ≫ http 有那些請求方法 和 用途 ?
-          </h1>
-          <p>GET方法： 用途：發送一個請求來獲取伺服器上的某一資源。</p>
-          <div class="pTwo">1.GET方法的特點是甚麼?</div>
-          <div class="pFou">
-            1.獲取資源： GET方法用於從伺服器獲取指定URL上的資源。
-          </div>
-          <br />
-          <div class="pFou">
-            2.幂等性：
-            GET方法是幂等的，即對同一URL進行多次連續GET請求，不會產生不同的效果。
-          </div>
-          <br />
-          <div class="pTwo">2.GET 請求和 POST 請求的區別是甚麼?</div>
-          <div class="pFou">
-            1.GET 請求將參數附加在 URL 的查詢字串中, 而 POST
-            請求將參數放在請求體中。
-          </div>
-          <br />
-          <div class="pFou">
-            2.GET 請求的數據會顯示在 URL 中, 而 POST 請求的數據不會顯示在 URL
-            中。
-          </div>
-          <br />
-          <div class="pFou">3.GET 請求用於獲取數據, 而 POST 用於提交數據</div>
-          <br />
-          <div class="pTwo">3.GET請求可以有請求體嗎?</div>
-          <div class="pFou">
-            根據HTTP協議規範，GET請求的特性是不包含請求體,
-            參數應通過URL的查詢字串進行傳遞
-          </div>
-          <br />
-          <div class="pTwo">4.GET請求的參數如何傳遞?</div>
-          <div class="pFou">
-            GET請求可以通過URL的查詢字串傳遞參數。參數位於URL的問號後面，並以鍵值對的形式表示。例如：https://example.com/search?keyword=apple。
-          </div>
-          <br />
-          <div class="pTwo">5.GET請求的安全性和幂等性如何保證?</div>
-          <div class="pFou">
-            1.GET請求被認為是安全的，因為它不會修改伺服器上的資源。
-          </div>
-          <br />
-          <div class="pFou">
-            2.GET請求是幂等的，多次發送相同的 GET 請求不會影響伺服器
-          </div>
-          <br />
-          <p>POST 方法： 用途：向 URL 指定的資源提交數據或附加新的數據</p>
-          <div class="pTwo">1.POST 方法的特點是甚麼?</div>
-          <div class="pFou">1.POST 方法用於向伺服器提交數據</div>
-          <br />
-          <div class="pFou">
-            2.POST 不是幂等的, 多次發送相等的 POST 請求可能會產生不同結果
-          </div>
-          <br />
-          <div class="pTwo">2.POST 請求和 GET 請求的區別是甚麼?</div>
-          <div class="pFou">
-            1.POST 請求將參數放在請求體中, 而 GET 請求將參數附加在 URL
-            的查詢字串中。
-          </div>
-          <br />
-          <div class="pFou">
-            2.POST 請求的數據不會顯示在 URL 中, 而 GET 請求的數據會顯示在 URL
-            中。
-          </div>
-          <br />
-          <div class="pFou">3.POST 用於提交數據, 而 GET 請求用於獲取數據</div>
-          <br />
-          <div class="pTwo">3.POST 請求的請求體如何傳遞數據?</div>
-          <div class="pFou">
-            POST 請求的數據可以通過請求體以表單形式傳遞,或以 JSON 格式傳遞
-          </div>
-          <br />
-          <div class="pTwo">4.POST 請求的安全性和幂等性如何保證?</div>
-          <div class="pFou">
-            1.POST 請求可能對伺服器端的資源產生副作用, 因此被視為不安全的
-          </div>
-          <br />
-          <div class="pFou">
-            2.POST 請求不是幂等的, 多次發送相等的 POST
-            請求可能會對伺服器端產生影響
-          </div>
-          <br />
-          <p>
-            PUT 方法: 用途: 將數據發送給伺服器, 並將其儲存在指定的 URL 位置。與
-            POST 方法不同的是, PUT 方法指定了資源在伺服器上的位置。
-          </p>
-          <div class="pTwo">1.PUT 方法的特點是甚麼?</div>
-          <div class="pFou">
-            1.PUT 方法用於將數據發送給伺服器並儲存在指定的 URL 位置
-          </div>
-          <br />
-          <div class="pFou">
-            2.PUT 請求是幂等的, 多次發送相同的 PUT 請求會對伺服器端產生相同結果
-          </div>
-          <br />
-          <div class="pTwo">2.PUT 請求和 POST 請求有甚麼區別?</div>
-          <div class="pFou">
-            1.PUT 請求用於指定資源在伺服器上的位置, 而 POST 請求沒有指定位置
-          </div>
-          <br />
-          <div class="pFou">
-            2.PUT 請求用於更新or替換資源, 而 POST 請求用於 新增資源或提交數據
-          </div>
-          <br />
-          <div class="pTwo">3.PUT請求的幂等性如何保證?</div>
-          <div class="pFou">1.PUT 請求的幂等性保證由伺服器端實現的。</div>
-          <br />
-          <div class="pFou">
-            2.伺服器端應根據請求中的資源位置來處理請求, 多次發送相同的 PUT
-            請求會對該位置上的資源進行相同的更新或替換操作。
-          </div>
-          <br />
-          <p>HEAD 方法: 用途: 只請求頁面的首部</p>
-          <p>DELETE 方法: 用途: 刪除伺服器上某資源</p>
-          <p>
-            OPTIONS 方法: 用途: 獲取當前 URL 所支援的方法。如果請求成功,
-            會有一個 Allow 的頭包含類似 "GET,POST" 訊息
-          </p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36"># HTTP狀態碼和其含義</h3>
-          <p>1xx（資訊性狀態碼）：表示請求已被接收，正在處理。</p>
-          <div class="pTwo">
-            100 Continue：繼續，在發送 POST 請求時，已發送了 http header
-            之後伺服器將返回此訊息，表示確認，之後發送具體參數訊息
-          </div>
-          <p>2xx（成功狀態碼）：表示請求已成功被伺服器接收、理解和處理。</p>
-          <div class="pTwo">200 OK：請求已成功，伺服器正常返回請求的內容。</div>
-          <div class="pTwo">
-            201 Created：請求已成功並在伺服器上創建了新的資源。
-          </div>
-          <div class="pTwo">202 Accepted：伺服器已接受請求，但尚未處理。</div>
-          <p>
-            3xx（重新導向狀態碼）：表示客戶端需要採取進一步操作才能完成請求。
-          </p>
-          <div class="pTwo">
-            301 Moved Permanently：請求的資源已永久移動到新位置。
-          </div>
-          <div class="pTwo">302 Found：請求的資源已臨時移動到新位置。</div>
-          <div class="pTwo">
-            304 Not Modified：客戶端的快取資源是最新的，可以直接使用。
-          </div>
-          <p>4xx（客戶端錯誤狀態碼）：表示客戶端發起的請求有錯誤或無法完成。</p>
-          <div class="pTwo">
-            400 Bad Request：請求語法錯誤，伺服器無法理解。
-          </div>
-          <div class="pTwo">401 Unauthorized：請求需要用戶驗證。</div>
-          <div class="pTwo">403 Forbidden：禁止訪問。</div>
-          <div class="pTwo">404 Not Found：請求的資源不存在。</div>
-          <p>5xx（伺服器錯誤狀態碼）：表示伺服器在處理請求時發生了錯誤。</p>
-          <div class="pTwo">
-            500 Internal Server Error：伺服器遇到了一個未知的錯誤。
-          </div>
-          <div class="pTwo">
-            503 Service
-            Unavailable：伺服器暫時無法處理請求，可能是由於過載或維護。
-          </div>
-          <br />
-          <br />
-          <h1 id="web005" class="articleCardTitle">
-            [ Web筆記 ] ≫ 什麼是瀏覽器同源?跨域?
-          </h1>
-          <h3>同源指的是協議、域名和端口均要相同。</h3>
-          <p>同源策略是瀏覽器的一種自我保護行為。</p>
-          <br />
-          <p>瀏覽器大部分内容受到同源策略的限制，以下例外</p>
-          <p>＜img src="..."></p>
-          <p>＜link href="..."></p>
-          <p>＜script src="...">＜/script></p>
-          <br />
-          <br />
-          <h3>跨域指瀏覽器不能執行其他域名下的腳本。</h3>
-          <p>跨域請求能發送到服務器，服務器接受返回結果，結果被服務器攔截</p>
-          <br />
-          <br />
-          <h3>解決跨域問題:</h3>
-          <h3>JSONP</h3>
-          <p>
-            利用 script 標籤不受瀏覽器協議同源策略影響，
-            可以拿到從其他源傳輸過來的數據，需要服務端支持。
-          </p>
-          <br />
-          <p>優: 兼容性較好</p>
-          <p>缺: 僅能 get 請求, 有侷限性, 不安全, 可能被 XSS 攻擊</p>
-          <br />
-          <br />
-          <h3>跨域資源共享 (CORS)</h3>
-          <p>
-            是透過自訂的HTTP標頭，讓瀏覽器與伺服器進行溝通，從而判斷請求或回應應該是成功還是失敗的。
-          </p>
-          <p>實現 CORS 關鍵是後端，</p>
-          <p>服務端設置 Access-Control-Allow-Origin 頭部字段開啟 CORS</p>
-          <br />
-          <br />
-          <h3>Nginx 反向代理</h3>
-          <p>所有客戶端請求經 Nginx 處理， Nginx 再向服務器請求轉發給後段</p>
-          <br />
-          <br />
-          <h1 id="web006" class="articleCardTitle cor36">
-            [ Web筆記 ] ≫ 如何進行網站性能優化 ?
-          </h1>
-          <p>加載方面:</p>
-          <div class="pTwo">1. 減少 http 請求 ( Spriter精靈圖 , 文件合併 )</div>
-          <div class="pTwo">
-            2. 減小文件大小 ( 資源壓縮 , 圖片壓縮 , 代碼壓縮 )
-          </div>
-          <div class="pTwo">3. CDN ( 第三方庫 , 大文件 , 大圖 )</div>
-          <div class="pTwo">4. SSR 服務端渲染 , 預渲染</div>
-          <div class="pTwo">5. 懶加載</div>
-          <div class="pTwo">6. 分包</div>
-          <br />
-          <p>性能方面:</p>
-          <div class="pTwo">
-            減少 DOM 操作 , 有操作量很大的 DOM 可以用 文檔碎片
-          </div>
-          <br />
-          <p>CSS 方面:</p>
-          <div class="pTwo">1. 將樣式表放在頁面頂部</div>
-          <div class="pTwo">2. 不使用 CSS 表達式</div>
-          <div class="pTwo">3. 使用 ＜link> 不使用 @import</div>
-          <br />
-          <p>JS 方面:</p>
-          <div class="pTwo">1. 將 JS 腳本放在頁面底部</div>
-          <div class="pTwo">2. 將 JS 和 CSS 從外部引入</div>
-          <div class="pTwo">3. 壓縮 JS 和 CSS</div>
-          <div class="pTwo">4. 刪除不需要的腳本</div>
-          <div class="pTwo">5. 減少 DOM 訪問</div>
-          <br />
-          <p>圖片方面:</p>
-          <div class="pTwo">1. 壓縮圖片 tinyJPG</div>
-          <div class="pTwo">2. Spriter精靈圖</div>
-          <div class="pTwo">3. 不要在 HTML 中拉伸圖片</div>
-          <br />
-          <br />
-          <h1 class="articleCardTitle">有用過那些前端性能優化的方法 ?</h1>
-          <p>
-            1. 減少 http 請求次數 => Spriter精靈圖 , JS & CSS 代碼壓縮 ,
-            圖片壓縮工具來減小圖片大小 , 網頁
-            <a href="https://zh.wikipedia.org/wiki/Gzip" class="cor36"
-              >GZIP @WIKI</a
-            >
-            , 引用 CDN 庫
-          </p>
-          <p>2. 用 innerHTML 代替 DOM 操作 , 減少 DOM 操作次數 , 來優化 JS</p>
-          <p>3. 當需要設置的樣式很多時用 className 而不是直接操作 style</p>
-          <p>4. 圖片預加載 , 將樣式表放在頂部 , 將 script 放在底部</p>
-          <p>
-            5. 避免在主佈局中用 table 標籤 , 因為 table
-            要等其中內容完全下載之後才會顯示出來 ( 比 div + css 慢 )
-          </p>
-          <br />
-          <br />
-          <h1 class="articleCardTitle">前端性能優化最佳實踐 ?</h1>
-          <p>
-            PageSpeed：PageSpeed是由Google開發的工具，用於評估網頁的性能。它通過分析網頁的載入速度、渲染性能、資源優化等指標，給出性能優化建議和分數評級。PageSpeed的評分基於一系列規則和最佳實踐，根據網頁的優化程度給出具體的優化建議，幫助開發人員改進網頁的性能。
-          </p>
-          <br />
-          <p>
-            YSlow：YSlow是由Yahoo開發的網頁性能評估工具，它也用於評估網頁的性能和優化建議。YSlow根據一系列的規則和性能指標，對網頁的載入速度、緩存設置、JavaScript和CSS優化等進行分析和評估。它提供了類似於PageSpeed的性能分數和建議，幫助開發人員了解和改善網頁的性能表現。
-          </p>
-          <br />
-          <br />
-          <h1 class="articleCardTitle">最後甚麼是性能優化</h1>
-          <p>1. 頁面加載性能 -> 加載時間 , 用戶體驗</p>
-          <p>2. 動畫與操作性能 -> 是否流暢不卡頓</p>
-          <div class="pTwo">用 translate 和 定位 比較不會卡頓</div>
-          <div class="pTwo">
-            translate 是脫離正常文檔流 , 所以移動不會影響上方&下方元素
-          </div>
-          <div class="pTwo">所以不用重新渲染 DOM</div>
-          <p>3. 內存佔用 -> 內存佔用過大導致瀏覽器崩潰</p>
-          <div class="pTwo">直播內存超出瀏覽器上限 , 導致卡頓</div>
-          <p>4. 電量消耗 -> 遊戲方面</p>
-          <br />
-          <p>那些不是性能優化 ?</p>
-          <p>1. while 循環快 還是 for 循環快 ?</p>
-          <p>2. |0 比 Math.floor 快</p>
-          <p>3. 三元運算符 比 if else 快</p>
-          <p>這些是執行效率</p>
-          <br />
-          <br />
-          <h1 id="web007" class="articleCardTitle">
-            [ Web筆記 ] ≫ 如何進行渲染優化 ?
-          </h1>
-          <p>1.不使用 iframe</p>
-          <p class="pTwo">iframe 會阻塞主頁面的 onload 事件</p>
-          <p class="pTwo">
-            iframe
-            和主頁面共享連接池，瀏覽器對相同域的連接有限制，因而影響頁面的併行加載。
-          </p>
-          <br />
-          <p>
-            2.不使用 gif 來實現 loading 效果 ( 降低 CPU 消耗 而提升渲染性能)
-          </p>
-          <br />
-          <p>3.用 CSS 代替 JS 動畫 ( 避免重新繪排 )</p>
-          <br />
-          <p>
-            4.小圖用 base64 位編碼，以減少網路請求。 (不建議大圖 => 較消耗CPU)
-          </p>
-          <br />
-          <p>
-            5.不把 style 和 script
-            都放在頭部，才不會阻塞頁面。(Renderer進程中JS線程和渲染線程互斥)
-          </p>
-          <br />
-          <p>6.避免在 href 和 src 中用空值。(link . script . img)</p>
-          <p class="pTwo">
-            瀏覽器會嘗試解析這些標籤並發起對應的網路請求，即使他為空值也會發起。
-          </p>
-          <br />
-          <p>7.用 className 而不是直接操作 style</p>
-          <br />
-          <p>8.用 innerHTML 代替 DOM 操作次數 來優化 JS。</p>
-          <br />
-          <p>
-            9.前端用變數保存 AJAX 請求結果，並操作客戶端變數來減少請求次數。
-          </p>
-          <br />
-          <p>10.圖片預加載 , 網頁 Gzip , CDN 庫 , data 緩存 , 圖片服務器</p>
-          <br />
-          <br />
+
           <h1 id="web008" class="articleCardTitle">
             [ Web筆記 ] ≫ 瀏覽器垃圾回收機制
           </h1>
@@ -932,77 +1042,7 @@ function locate(idPound) {
           <div class="pTwo">使用快取機制</div>
           <br />
           <br />
-          <h1 id="web010" class="articleCardTitle">
-            [ Web筆記 ] ≫ 腳本攻擊XSS,請求偽造CSRF
-          </h1>
-          <h3 class="articleCardTitle">
-            跨站腳本攻擊（XSS）Cross-site request forgery
-          </h3>
-          <p>
-            攻擊者在網頁中注入惡意腳本，並將該腳本傳送給其他使用者的瀏覽器執行。
-          </p>
-          <br />
-          <br />
-          <p>防止XSS攻擊:</p>
-          <p>開發者應該適當地驗證和過濾使用者的輸入。</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle">
-            跨站請求偽造（CSRF）Cross-site request forgery
-          </h3>
-          <p>
-            攻擊者誘導使用者到第三方網站, 在第三方網站中,
-            向被攻擊網站發送跨站請求。
-          </p>
-          <br />
-          <p>利用受害者在被攻擊網站已獲取的註冊憑證, 繞過後台用戶驗證,</p>
-          <br />
-          <p>冒充用戶對被攻擊網站執行操作。</p>
-          <br />
-          <br />
-          <p>防止CSRF攻擊:</p>
-          <p>
-            檢查和驗證請求的來源、實施隨機生成的驗證碼（CSRF令牌）和同源政策等。
-          </p>
-          <br />
-          <br />
-          <h1 id="web011" class="articleCardTitle">
-            [ Web筆記 ] ≫ 描述Cookies、sessionStorage和localStorage的區別
-          </h1>
-          <p>
-            cookie是網站為了標識使用者身份而儲存在使用者本地終端（Client
-            Side）上的數據（通常經過加密）。
-          </p>
-          <p>
-            cookie數據始終在同源的HTTP請求中攜帶（即使不需要），在瀏覽器和伺服器之間來回傳遞。
-          </p>
-          <p>
-            sessionStorage和localStorage不會自動將數據發送給伺服器，僅在本地保存。
-          </p>
-          <br />
-          <h3>儲存容量：</h3>
-          <p>cookie數據大小不能超過4KB。</p>
-          <p>
-            sessionStorage和localStorage雖然也有儲存大小的限制，但比cookie大得多，可以達到5MB或更大。
-          </p>
-          <br />
-          <h3>生命週期： (有效時間)</h3>
-          <p>cookie 需要設置有效時間，過期後 cookie 銷毀。</p>
-          <p>localStorage 除非主動刪除數據，否則永久存在。</p>
-          <p>sessionStorage 頁面關閉後刪除。</p>
-          <br />
-          <h3>儲存形式:</h3>
-          <p>三者都是字串類型</p>
-          <p>複雜對象 可用 json 的 stringify 和 parse</p>
-          <br />
-          <p>JSON.stringify() 將字串轉成 JSON</p>
-          <p>JSON.parse() 將 JSON 轉成字串</p>
-          <br />
-          <h3>安全性:</h3>
-          <p>cookie 請求時一般會攜帶在 header 中</p>
-          <p>localStorage、sessionStorage 請求時不會攜帶</p>
-          <br />
-          <br />
+
           <h1 id="web012" class="articleCardTitle">
             [ Web筆記 ] ≫ WEB標準 & W3C標準
           </h1>
@@ -1242,6 +1282,7 @@ section {
 }
 
 .leftNav {
+  font-size: 12px;
   position: fixed;
   width: 19vw;
   height: 100%;
