@@ -44,33 +44,42 @@ function locate(idPound) {
   </div>
   <!-- maintopMAINTOP -->
   <!-- 右邊文章內容 -->
+  <!-- thetopTHETOPmaintopMAINTOP -->
   <div class="Main">
     <div class="mainContainer">
       <h1 id="html001" class="articleCardTitle cor36">
         [ Html ] ≫ 塊級元素和行內元素的差別?src和href差別?
       </h1>
-      <h3>概念:</h3>
-      <h3>塊元素: 默認獨佔一行, 頁面中垂直排列, 寬高和 內外邊距可控</h3>
+      <h3>塊元素有哪些?</h3>
+      <p>
+        ＜div> . ＜p> . ＜h1> . ＜ul> . ＜table> 獨佔一行, 頁面中垂直排列,
+        可以設置寬高 和 內外邊距可控
+      </p>
       <br />
-      <h3>行內元素: 默認同行排列, 寬高由內容決定</h3>
+      <h3>行內元素有哪些?</h3>
+      <p>
+        ＜span> . ＜a> . ＜img> . ＜input> 默認同行排列, 寬高由內容決定,
+        不能設置寬高
+      </p>
       <br />
-      <br />
-      <h3>有哪些:</h3>
-      <p>塊元素: ＜div> . ＜p> . ＜ul> . ＜table></p>
-      <br />
-      <p>行內元素: ＜span> . ＜a> . ＜img> . ＜input></p>
+      <h3>行內塊元素特點?</h3>
+      <p>display:inline-block 不獨佔一行, 可以設置寬高</p>
       <br />
       <p>空元素: 指沒有內容或結束標籤的HTML元素。</p>
       <p>＜br> . ＜hr> . ＜img> . ＜input> . ＜link> . ＜meta></p>
       <br />
       <br />
-      <p>塊元素 和 行內元素 相互轉換:</p>
-      <p>display: inline; 將塊元素轉化為行內元素</p>
+      <p>行內元素如何轉塊元素?</p>
+      <p>css display inline block</p>
       <br />
-      <p>display: block; 將行內元素轉化為塊元素</p>
       <br />
-      <p>display: inline-block; 行內塊元素</p>
-      <h3>有 block 寬度高度特性, 又有 inline 同行特性。</h3>
+      <h2 class="articleCardTitle cor36">
+        [ Html ] ≫ 頁面導入樣式,使用@import和link差異?
+      </h2>
+      <p>
+        link支持早於import, 兼容性link比import好, 先加載的是link標籤,
+        後加載@import
+      </p>
       <br />
       <br />
       <h2 class="articleCardTitle">src 和 href 差別?</h2>
@@ -90,25 +99,21 @@ function locate(idPound) {
       </h3>
       <br />
       <br />
-      <h1 id="html002" class="articleCardTitle cor36">
-        [ Html ] ≫ 語義化的理解?
+      <h1 id="" class="articleCardTitle cor36">
+        [ Html ] ≫ ＜img> 元素的 title 屬性和 alt 屬性有甚麼不同?
       </h1>
-      <p>1. 用正確的標籤做正確的事</p>
-      <p>2. html 語義化讓頁面的內容結構化，便於瀏覽器和搜索引擎來解析。</p>
       <p>
-        3. 在沒有 CSS 樣式的情況下，也以一種文檔格式顯示，並且是容易閱讀的。
+        alt 屬性是必需的，它提供了對於圖像的描述。當圖像無法加載時， alt
+        屬性的值會顯示在圖像的位置，也可供螢幕閱讀器讀取圖像內容。
       </p>
+      <br />
       <p>
-        4.
-        搜索引擎的爬蟲分析標記來確定上下文和關鍵字權重，從而提高網頁在搜索結果中的排名。
+        title 屬性提供了對圖像的附加說明。當滑鼠懸停在圖像上時，會顯示 title
+        屬性的值作為工具提示。
       </p>
-      <p>5. 使閱讀源代碼的人更容易理解網站的結構，便於閱讀維護理解。</p>
       <br />
       <br />
-      <h1 id="html003" class="articleCardTitle cor36">
-        [ Html ] ≫ html5有哪些新特性、語義化理解
-      </h1>
-      <h2 class="articleCardTitle">1. HTML5 的新特性</h2>
+      <h1 id="" class="articleCardTitle cor36">[ Html ] ≫ html5有哪些新特性</h1>
       <p>1. 語意化標籤: header footer nav aside article section</p>
       <p>2. 影片 和 音源 支持: audio video 標籤</p>
       <p>
@@ -123,21 +128,80 @@ function locate(idPound) {
       <p>6. web worker</p>
       <br />
       <br />
-      <h2 class="articleCardTitle">2. 移除的元素</h2>
-      <p>1. 純表現的元素:</p>
-      <p class="pTwo">
-        ＜applet>：用於嵌入Java小程式，現在已被更先進的技術所取代。
-      </p>
-      <p class="pTwo">
-        ＜acronym>：建議使用＜abbr>元素來表示縮寫和首字母縮略詞。
-      </p>
-      <p class="pTwo">＜basefont>：建議使用CSS來設定基準字型大小。</p>
-      <p class="pTwo">＜center>：建議使用CSS的版面配置技術來置中元素。</p>
+      <h1 id="" class="articleCardTitle cor36">[ Html ] ≫ 語義化的理解?</h1>
+      <p>1. HTML語意化就是的 編寫方式, 包括header nav footer標籤</p>
+      <p>2.讓頁面結構更加清晰, 更容易去維護開發</p>
+      <p>3.更容易SEO搜尋引擎優化</p>
+      <br />
+      <br />
+      <h1 id="" class="articleCardTitle cor36">
+        [ Html ] ≫ 那些操作可以提升SEO?
+      </h1>
+      <p>可以在header裡面的meta這一章節加上description網頁的描述</p>
+      <p>再來可以加上keyword網頁關鍵字</p>
+      <p>h1標籤要寫好</p>
       <p>
-        2.＜frame>和＜frameset>：HTML5中不再支援框架集，推薦用其他技術分割頁面和布局。
+        每個頁面的標籤要寫的符合聯結的東西, 比如你跳轉到一個頁面叫A,
+        你跳轉的鏈結的文字必須符合那個頁面的內容,
       </p>
       <br />
       <br />
+      <h2 class="articleCardTitle cor36">canvas能幹嘛?</h2>
+      <p>畫圖的 畫2D為主</p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">canvas它畫的是偽圖還是失量圖?</h2>
+      <p>位圖(有像素操作), SVG才是失量圖</p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">canvas支持鼠標事件嗎?</h2>
+      <p>不支持</p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">canvas和svg區別?</h2>
+      <p>1.一個是位圖一個是失量圖</p>
+      <p>2.一個是用畫筆一個用標籤,畫筆直接畫,標籤進行累加</p>
+      <p>3.SVG可以進行類似CSS樣式,canvas只能全靠自己畫不能用css</p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">canvas 要用的話怎麼獲取API?</h2>
+      <p>1.獲取canvas dom元素</p>
+      <p>2.用dom方法,一開始可以用getContext設2D或3D,</p>
+      <p>3.設好後可以用繪畫API, fillStyle之類的</p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">失量圖是什麼?</h2>
+      <p>
+        失量圖是不管放大多少倍, 都沒有鋸齒的一種圖形, 因為它保存的不是色彩值,
+        而是曲線的座標
+      </p>
+      <br />
+      <br />
+      <h2 class="articleCardTitle cor36">位圖是什麼?</h2>
+      <p>每個像素用RGB來表示</p>
+      <br />
+      <br />
+
+      <h2 class="articleCardTitle cor36">svg標籤可以任意嵌套嗎?</h2>
+      <p>不可以, 一個svg裡面有單獨的p,g,路徑之類的</p>
+      <p>g可以分組式嵌套</p>
+      <br />
+      <br />
+
+      <h2 class="articleCardTitle cor36">svg標籤和DOM標籤的區別?</h2>
+      <p>svg不可以嵌套,除了g, DOM大部分可以任意嵌套</p>
+      <br />
+      <br />
+
+      <h2 class="articleCardTitle cor36">
+        如果繪畫的量很大,一般用svg還是canvas?
+      </h2>
+      <p>
+        canvas, svg相當於是一種DOM元素, 操作有性能問題, 小量圖再用svg更方便一點
+      </p>
+      <br />
+      <br />
+
       <h2 class="articleCardTitle">3. canvas 的常用 api 有哪些</h2>
       <div>
         <a
@@ -155,96 +219,18 @@ function locate(idPound) {
       <p>closePath: 結束繪製</p>
       <br />
       <br />
-      <h2 class="articleCardTitle">4. web worker 有甚麼作用?應用場景?</h2>
-      <div>
-        <a
-          class="comment svgs"
-          href="https://developer.mozilla.org/zh-TW/docs/Web/API/Web_Workers_API/Using_web_workers"
-          >web worker @MDN</a
-        >
-      </div>
-      <p>新開一個子線程, 且子線程的操作不受線程影響</p>
-      <p>用於大數據處理 或 耗費時間長的操作</p>
-      <br />
-      <br />
-      <h1 id="html005" class="articleCardTitle cor36">
-        [ Html ] ≫ html5 的離線儲存
-      </h1>
+
+      <h2 class="articleCardTitle cor36">HTML5 和 H5的區別?</h2>
+      <p>H5是手機端顯示的頁面</p>
       <p>
-        當使用者沒有與網際網路連接時，可以正常訪問網站或應用程式；當使用者與網際網路連接時，則會更新使用者機器上的快取檔案。
-      </p>
-      <br />
-      <p>
-        工作原理：HTML5的離線儲存是建立在一個名為「.appcache」的快取機制上（並非儲存技術）。透過這個檔案中的解析清單，網站的資源可以被離線儲存。當網路處於離線狀態時，瀏覽器會使用這些已儲存的資源來顯示網頁。
-      </p>
-      <br />
-      <p>使用方法：</p>
-      <p class="pTwo">
-        1.在網頁的標頭中加入「manifest」屬性，例如：＜html
-        manifest="cache.manifest">＜/html>
-      </p>
-      <p class="pTwo">
-        2.創建一個「cache.manifest」檔案，並在其中編寫離線儲存的資源清單。
-      </p>
-      <p class="pTwo">
-        3.在需要實現離線儲存的地方，可以使用「window.applicationCache」對離線儲存進行操作。例如，可以通過檢查「applicationCache.status」來確定快取的狀態，並根據需要更新或讀取快取的資源。
+        HTML5是前端標準化技術的平台, 它提供很多強大功能,
+        比如再頁面上顯示視屏video標籤, 音屏audio標籤, 網頁中存儲數據 local
+        sessionStorage, 畫2D.3D圖形canvas, 音屏解析, 操作文件,
+        所有新推出的網頁API都屬於HTML5範圍, 甚至CSS3都屬於HTML5的一部分
       </p>
       <br />
       <br />
-      <h1 id="html006" class="articleCardTitle">
-        [ Html ] ≫ iframe（內嵌框架）有哪些缺點?
-      </h1>
-      <p>1.iframe的載入確實會阻塞主頁面的onload事件。</p>
-      <p class="pTwo">
-        當頁面中包含一個或多個iframe元素時，當iframe開始載入和渲染內容時，主頁面的onload事件將被延遲到所有的iframe載入完成後才觸發。
-      </p>
-      <br />
-      <p>2.搜索引擎無法解讀這種頁面，不利 SEO。</p>
-      <br />
-      <p>
-        3.iframe
-        和主頁面共享連接池，而瀏覽器對相同域的連接有限制，所以會影響頁面的併行加載
-      </p>
-      <br />
-      <br />
-      <p>
-        使用 JS 動態給 iframe 添加 src 屬性值可以避免 阻塞主頁面的onload事件 和
-        和主頁面共享連接池
-      </p>
-      <br />
-      <p>1.在主頁面的 onload 事件觸發後再用 JS 給 iframe 添加 src 屬性</p>
-      <p>
-        2.在主頁面加載完成後 用 JS 給 iframe 添加 src 屬性
-        可以減少對連接池的佔用，提高頁面並行加載能力。
-      </p>
-      <br />
-      <br />
-      <h1 id="html007" class="articleCardTitle">
-        [ Html ] ≫ XHTML（可擴展超文本標記語言）和HTML（超文本標記語言）區別?
-      </h1>
-      <p>1.XHTML 元素必須正確嵌套</p>
-      <p>2.XHTML 標籤必須閉合</p>
-      <p>3.XHTML 元素必須</p>
-      <p>4.XHTML 標籤名小寫</p>
-      <p>5.XHTML 必須有根元素 -> ＜html></p>
-      <br />
-      <p>語法要求：</p>
-      <p class="pTwo">
-        HTML語法相對寬鬆，不強制要求標籤閉合，標籤名可以使用大寫或小寫。
-      </p>
-      <p class="pTwo">
-        XHTML採用XML語法，要求所有標籤必須閉合，並且標籤名必須使用小寫。
-      </p>
-      <br />
-      <p>兼容性：</p>
-      <p class="pTwo">
-        HTML對於各大瀏覽器的兼容性相對較差，特別是對於IE瀏覽器而言。網頁開發者需要具備較高的HTML編寫技巧，否則容易出現兼容性問題。
-      </p>
-      <p class="pTwo">
-        XHTML則能夠有效處理各大瀏覽器的兼容性問題，因為XHTML的語法要求較為嚴謹。如果習慣於鬆散的HTML編寫方式，轉向XHTML可能需要一些適應的時間。XHTML結合了部分XML的強大功能和大部分HTML的簡單特性。
-      </p>
-      <br />
-      <br />
+
       <h1 id="html008" class="articleCardTitle cor36">
         [ Html ] ≫ Doctype作用?嚴格模式和混雜模式如何區分?他們有何意義?
       </h1>
@@ -272,20 +258,7 @@ function locate(idPound) {
       </p>
       <br />
       <br />
-      <h1 id="" class="articleCardTitle cor36">
-        [ Html ] ≫ ＜img> 元素的 title 屬性和 alt 屬性有甚麼不同?
-      </h1>
-      <p>
-        alt 屬性是必需的，它提供了對於圖像的描述。當圖像無法加載時， alt
-        屬性的值會顯示在圖像的位置，也可供螢幕閱讀器讀取圖像內容。
-      </p>
-      <br />
-      <p>
-        title 屬性提供了對圖像的附加說明。當滑鼠懸停在圖像上時，會顯示 title
-        屬性的值作為工具提示。
-      </p>
-      <br />
-      <br />
+
       <h1 id="" class="articleCardTitle cor36">
         [ Html ] ≫ HTML全局属性(global attribute)有哪些?
       </h1>
@@ -300,24 +273,8 @@ function locate(idPound) {
       <p>8.hidden：指定元素是否隱藏。</p>
       <br />
       <br />
-      <h1 id="" class="articleCardTitle cor36">
-        [ Html ] ≫ Canvas和SVG有什麼差別?
-      </h1>
-      <p>
-        SVG繪製出來的每個圖形元素都是獨立的DOM節點，可以輕鬆綁定事件或進行修改。
-      </p>
-      <p>Canvas輸出的是一整幅畫布，就像一張圖片一樣。</p>
-      <br />
-      <p>
-        SVG輸出的圖形是矢量圖形，可以隨意修改參數進行放大縮小，不會產生失真或鋸齒效果。
-      </p>
-      <p>
-        而Canvas輸出的是栅格畫布(canvas grid)，放大時可能會產生失真或鋸齒現象。
-      </p>
-      <br />
-      <br />
       <h1 class="articleCardTitle">
-        [ Html ] ≫ 12.如何在頁面上實現一個圓形的可點擊區域
+        [ Html ] ≫ 如何在頁面上實現一個圓形的可點擊區域
       </h1>
       <div>
         <a
@@ -328,6 +285,96 @@ function locate(idPound) {
       </div>
       <br />
       <br />
+
+      <h1 class="articleCardTitle">怎樣處理 移動端 1px 被渲染成 2px?</h1>
+
+      <p>
+        2倍屏 => 移動設備螢幕尺寸沒有變化，但螢幕分辨率卻提高一倍 (
+        同大小螢幕像素多一倍 )
+      </p>
+      <br />
+      <p>局部處理:</p>
+      <p>meta 標籤中的 viewport 屬性， initial-scale 設為 1</p>
+      <p>rem 照設計稿走 ， 利用 transform: scale(0.5) 縮小</p>
+      <br />
+      <p>全局處理:</p>
+      <p>meta 標籤中的 viewport 屬性， initial-scale 設為 0.5</p>
+      <p>rem 照設計稿走</p>
+      <br />
+      <br />
+      <h1 id="" class="articleCardTitle cor36">
+        [ Html ] ≫ div+css 布局 比 table 布局有甚麼優點?
+      </h1>
+      <p>div+css:</p>
+      <p>
+        頁面加載速度更快，結構化清晰。(他一邊加載一邊呈現，至少基本網頁結構可以很快呈現)
+      </p>
+      <p>div 布局符合 W3C 標準 => 做到了 結構 表現 行為 分離</p>
+      <p>有利 SEO</p>
+      <br />
+      <p>table:</p>
+      <p>
+        如果 table 嵌套層數太多，可能導致頁面一直出不來。(table 布局要等到全部
+        table 加載完，再呈現頁面)
+      </p>
+      <br />
+      <br />
+
+      <h1 id="" class="articleCardTitle">
+        [ Html ] ≫ iframe（內嵌框架）有哪些缺點?
+      </h1>
+      <p>1.iframe的載入確實會阻塞主頁面的onload事件。</p>
+      <p class="pTwo">
+        當頁面中包含一個或多個iframe元素時，當iframe開始載入和渲染內容時，主頁面的onload事件將被延遲到所有的iframe載入完成後才觸發。
+      </p>
+      <br />
+      <p>2.搜索引擎無法解讀這種頁面，不利 SEO。</p>
+      <br />
+      <p>
+        3.iframe
+        和主頁面共享連接池，而瀏覽器對相同域的連接有限制，所以會影響頁面的併行加載
+      </p>
+      <br />
+      <br />
+      <p>
+        使用 JS 動態給 iframe 添加 src 屬性值可以避免 阻塞主頁面的onload事件 和
+        和主頁面共享連接池
+      </p>
+      <br />
+      <p>1.在主頁面的 onload 事件觸發後再用 JS 給 iframe 添加 src 屬性</p>
+      <p>
+        2.在主頁面加載完成後 用 JS 給 iframe 添加 src 屬性
+        可以減少對連接池的佔用，提高頁面並行加載能力。
+      </p>
+      <br />
+      <br />
+      <h1 id="" class="articleCardTitle">
+        [ Html ] ≫ XHTML（可擴展超文本標記語言）和HTML（超文本標記語言）區別?
+      </h1>
+      <p>1.XHTML 元素必須正確嵌套</p>
+      <p>2.XHTML 標籤必須閉合</p>
+      <p>3.XHTML 元素必須</p>
+      <p>4.XHTML 標籤名小寫</p>
+      <p>5.XHTML 必須有根元素 -> ＜html></p>
+      <br />
+      <p>語法要求：</p>
+      <p class="pTwo">
+        HTML語法相對寬鬆，不強制要求標籤閉合，標籤名可以使用大寫或小寫。
+      </p>
+      <p class="pTwo">
+        XHTML採用XML語法，要求所有標籤必須閉合，並且標籤名必須使用小寫。
+      </p>
+      <br />
+      <p>兼容性：</p>
+      <p class="pTwo">
+        HTML對於各大瀏覽器的兼容性相對較差，特別是對於IE瀏覽器而言。網頁開發者需要具備較高的HTML編寫技巧，否則容易出現兼容性問題。
+      </p>
+      <p class="pTwo">
+        XHTML則能夠有效處理各大瀏覽器的兼容性問題，因為XHTML的語法要求較為嚴謹。如果習慣於鬆散的HTML編寫方式，轉向XHTML可能需要一些適應的時間。XHTML結合了部分XML的強大功能和大部分HTML的簡單特性。
+      </p>
+      <br />
+      <br />
+
       <h1 id="" class="articleCardTitle cor36">
         [ Html ] ≫ ＜meta name="viewport">
       </h1>
@@ -375,39 +422,43 @@ function locate(idPound) {
       </div>
       <br />
       <br />
-      <h1 class="articleCardTitle">怎樣處理 移動端 1px 被渲染成 2px?</h1>
 
+      <h2 class="articleCardTitle">4. web worker 有甚麼作用?應用場景?</h2>
+      <div>
+        <a
+          class="comment svgs"
+          href="https://developer.mozilla.org/zh-TW/docs/Web/API/Web_Workers_API/Using_web_workers"
+          >web worker @MDN</a
+        >
+      </div>
+      <p>新開一個子線程, 且子線程的操作不受線程影響</p>
+      <p>用於大數據處理 或 耗費時間長的操作</p>
+      <br />
+      <br />
+      <h1 id="" class="articleCardTitle cor36">[ Html ] ≫ html5 的離線儲存</h1>
       <p>
-        2倍屏 => 移動設備螢幕尺寸沒有變化，但螢幕分辨率卻提高一倍 (
-        同大小螢幕像素多一倍 )
+        當使用者沒有與網際網路連接時，可以正常訪問網站或應用程式；當使用者與網際網路連接時，則會更新使用者機器上的快取檔案。
       </p>
       <br />
-      <p>局部處理:</p>
-      <p>meta 標籤中的 viewport 屬性， initial-scale 設為 1</p>
-      <p>rem 照設計稿走 ， 利用 transform: scale(0.5) 縮小</p>
-      <br />
-      <p>全局處理:</p>
-      <p>meta 標籤中的 viewport 屬性， initial-scale 設為 0.5</p>
-      <p>rem 照設計稿走</p>
-      <br />
-      <br />
-      <h1 id="" class="articleCardTitle cor36">
-        [ Html ] ≫ div+css 布局 比 table 布局有甚麼優點?
-      </h1>
-      <p>div+css:</p>
       <p>
-        頁面加載速度更快，結構化清晰。(他一邊加載一邊呈現，至少基本網頁結構可以很快呈現)
+        工作原理：HTML5的離線儲存是建立在一個名為「.appcache」的快取機制上（並非儲存技術）。透過這個檔案中的解析清單，網站的資源可以被離線儲存。當網路處於離線狀態時，瀏覽器會使用這些已儲存的資源來顯示網頁。
       </p>
-      <p>div 布局符合 W3C 標準 => 做到了 結構 表現 行為 分離</p>
-      <p>有利 SEO</p>
       <br />
-      <p>table:</p>
-      <p>
-        如果 table 嵌套層數太多，可能導致頁面一直出不來。(table 布局要等到全部
-        table 加載完，再呈現頁面)
+      <p>使用方法：</p>
+      <p class="pTwo">
+        1.在網頁的標頭中加入「manifest」屬性，例如：＜html
+        manifest="cache.manifest">＜/html>
+      </p>
+      <p class="pTwo">
+        2.創建一個「cache.manifest」檔案，並在其中編寫離線儲存的資源清單。
+      </p>
+      <p class="pTwo">
+        3.在需要實現離線儲存的地方，可以使用「window.applicationCache」對離線儲存進行操作。例如，可以通過檢查「applicationCache.status」來確定快取的狀態，並根據需要更新或讀取快取的資源。
       </p>
       <br />
       <br />
+
+      <!-- thebottomTHEBOTTOMTABBOTTOMtabbottom -->
     </div>
   </div>
   <div>
