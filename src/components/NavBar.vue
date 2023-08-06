@@ -15,7 +15,7 @@
           <router-link to="/about"><div class="liPad">關於</div></router-link>
         </li>
         <li>
-          <router-link to="/about"><div class="liPad">演算法</div></router-link>
+          <router-link to="/Http"><div class="liPad">Web</div></router-link>
         </li>
         <li>
           <router-link to="/about"
@@ -35,13 +35,14 @@
 <style scoped>
 header {
   position: fixed;
-  background: #171717;
+  background: #000;
   height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  z-index: 100;
 }
 
 nav {
