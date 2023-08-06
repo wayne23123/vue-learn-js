@@ -36,32 +36,66 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div>瀏覽器內核,主要組成部分</div>
-          <div>瀏覽器主要組成部分</div>
-          <div>瀏覽器輸入網址後按下enter</div>
-          <div>http有那些請求方法和用途</div>
-          <div>什麼是瀏覽器同源跨域</div>
-          <div>如何進行網站性能優化</div>
-          <div>如何進行渲染優化</div>
-          <div>瀏覽器垃圾回收&內存洩漏</div>
-          <div>前端需要注意哪些SEO</div>
-          <div>腳本攻擊XSS,請求偽造CSRF</div>
-          <div>Cookies.localStorage</div>
-          <div>WEB標準&W3C標準</div>
-          <div>漸進增強和優雅降級</div>
-          <div>網頁用的圖片格式</div>
-          <div>大型網站有大量圖片</div>
-          <div>會話跟蹤的方法</div>
-          <div>CDN多域名存取網站資源</div>
+          <div class="leftNavText" @click="locate('web001')">
+            瀏覽器內核,主要組成部分
+          </div>
+          <div class="leftNavText" @click="locate('web002')">
+            瀏覽器主要組成部分
+          </div>
+          <div class="leftNavText" @click="locate('web003')">
+            瀏覽器輸入網址後按下enter
+          </div>
+          <div class="leftNavText" @click="locate('web004')">
+            http有那些請求方法和用途
+          </div>
+          <div class="leftNavText" @click="locate('web005')">
+            什麼是瀏覽器同源跨域
+          </div>
+          <div class="leftNavText" @click="locate('web006')">
+            如何進行網站性能優化
+          </div>
+          <div class="leftNavText" @click="locate('web007')">
+            如何進行渲染優化
+          </div>
+          <div class="leftNavText" @click="locate('web008')">
+            瀏覽器垃圾回收&內存洩漏
+          </div>
+          <div class="leftNavText" @click="locate('web009')">
+            前端需要注意哪些SEO
+          </div>
+          <div class="leftNavText" @click="locate('web010')">
+            腳本攻擊XSS,請求偽造CSRF
+          </div>
+          <div class="leftNavText" @click="locate('web011')">
+            Cookies.localStorage
+          </div>
+          <div class="leftNavText" @click="locate('web012')">
+            WEB標準&W3C標準
+          </div>
+          <div class="leftNavText" @click="locate('web013')">
+            漸進增強和優雅降級
+          </div>
+          <div class="leftNavText" @click="locate('web014')">
+            網頁用的圖片格式
+          </div>
+          <div class="leftNavText" @click="locate('web015')">
+            大型網站有大量圖片
+          </div>
+          <div class="leftNavText" @click="locate('web016')">
+            會話跟蹤的方法
+          </div>
+          <div class="leftNavText" @click="locate('web017')">
+            CDN多域名存取網站資源
+          </div>
         </div>
       </div>
     </div>
-    <!-- maintopMAINTOP -->
+    <!-- maintopMAINTOPthetopTHETOP -->
     <!-- 右邊文章內容 -->
     <div class="Main">
       <div class="mainContainer">
         <div class="mainLayout">
-          <div class="articleCardTitle cor36">
+          <div id="web001" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器內核,主要組成部分
           </div>
           <p>主要分成 2 部分:</p>
@@ -112,7 +146,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle cor36">
+          <h1 id="web002" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器輸入網址後按下 enter 會發生什麼 ?
           </h1>
           <p>1.瀏覽器接受 URL 開啟網路請求線程 (線程&進程)</p>
@@ -377,7 +411,7 @@ function locate(idPound) {
           <p>unload 是在網頁被卸載「之後」觸發</p>
           <br />
           <br />
-          <div class="articleCardTitle cor36">
+          <div id="web003" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 什麼是重排(回流)和重繪?如何避免
           </div>
           <h2>重繪不一定重排，重排一定重繪</h2>
@@ -447,7 +481,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle cor36">
+          <h1 id="web004" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ http 有那些請求方法 和 用途 ?
           </h1>
           <p>GET方法： 用途：發送一個請求來獲取伺服器上的某一資源。</p>
@@ -607,7 +641,9 @@ function locate(idPound) {
           </div>
           <br />
           <br />
-          <h1 class="articleCardTitle">[ Web筆記 ] ≫ 什麼是瀏覽器同源?跨域?</h1>
+          <h1 id="web005" class="articleCardTitle">
+            [ Web筆記 ] ≫ 什麼是瀏覽器同源?跨域?
+          </h1>
           <h3>同源指的是協議、域名和端口均要相同。</h3>
           <p>同源策略是瀏覽器的一種自我保護行為。</p>
           <br />
@@ -644,7 +680,7 @@ function locate(idPound) {
           <p>所有客戶端請求經 Nginx 處理， Nginx 再向服務器請求轉發給後段</p>
           <br />
           <br />
-          <h1 class="articleCardTitle cor36">
+          <h1 id="web006" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 如何進行網站性能優化 ?
           </h1>
           <p>加載方面:</p>
@@ -727,7 +763,9 @@ function locate(idPound) {
           <p>這些是執行效率</p>
           <br />
           <br />
-          <h1 class="articleCardTitle">[ Web筆記 ] ≫ 如何進行渲染優化 ?</h1>
+          <h1 id="web007" class="articleCardTitle">
+            [ Web筆記 ] ≫ 如何進行渲染優化 ?
+          </h1>
           <p>1.不使用 iframe</p>
           <p class="pTwo">iframe 會阻塞主頁面的 onload 事件</p>
           <p class="pTwo">
@@ -766,7 +804,9 @@ function locate(idPound) {
           <p>10.圖片預加載 , 網頁 Gzip , CDN 庫 , data 緩存 , 圖片服務器</p>
           <br />
           <br />
-          <h1 class="articleCardTitle">[ Web筆記 ] ≫ 瀏覽器垃圾回收機制</h1>
+          <h1 id="web008" class="articleCardTitle">
+            [ Web筆記 ] ≫ 瀏覽器垃圾回收機制
+          </h1>
           <p>垃圾回收是一種自動的記憶體管理機制。</p>
           <p>當電腦上的動態記憶體不再需要時，就應該予以釋放。</p>
           <br />
@@ -855,7 +895,9 @@ function locate(idPound) {
           <p>使用內存管理工具和效能分析工具：借助工具進行內存泄漏</p>
           <br />
           <br />
-          <h1 class="articleCardTitle">[ Web筆記 ] ≫ 前端需要注意哪些SEO</h1>
+          <h1 id="web009" class="articleCardTitle">
+            [ Web筆記 ] ≫ 前端需要注意哪些SEO
+          </h1>
           <p>1.合理的title、description、keywords標籤</p>
           <div class="pTwo">＜title >網頁標題＜/title ></div>
           <div class="pTwo">
@@ -890,7 +932,7 @@ function locate(idPound) {
           <div class="pTwo">使用快取機制</div>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web010" class="articleCardTitle">
             [ Web筆記 ] ≫ 腳本攻擊XSS,請求偽造CSRF
           </h1>
           <h3 class="articleCardTitle">
@@ -924,7 +966,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web011" class="articleCardTitle">
             [ Web筆記 ] ≫ 描述Cookies、sessionStorage和localStorage的區別
           </h1>
           <p>
@@ -961,7 +1003,9 @@ function locate(idPound) {
           <p>localStorage、sessionStorage 請求時不會攜帶</p>
           <br />
           <br />
-          <h1 class="articleCardTitle">[ Web筆記 ] ≫ WEB標準 & W3C標準</h1>
+          <h1 id="web012" class="articleCardTitle">
+            [ Web筆記 ] ≫ WEB標準 & W3C標準
+          </h1>
           <p>WEB 標準不是某一個標準，是一系列的集合</p>
           <p>WEB 標準: 結構 . 表現 . 行為</p>
           <p>結構(Structure):</p>
@@ -990,7 +1034,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web013" class="articleCardTitle">
             [ Web筆記 ] ≫ 描述漸進增強和優雅降級之間的不同?
           </h1>
           <p>漸進增強（Progressive Enhancement）:</p>
@@ -1007,7 +1051,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web014" class="articleCardTitle">
             [ Web筆記 ] ≫ 製作網頁用的圖片格式有哪些?
           </h1>
           <p>Webp . jpeg . gif . svg . Apng</p>
@@ -1022,7 +1066,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web015" class="articleCardTitle">
             [ Web筆記 ] ≫
             大型網站有大量圖片，加載很慢，有哪些方法能優化這些圖片加載，提升用戶體驗?
           </h1>
@@ -1050,7 +1094,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web016" class="articleCardTitle">
             [ Web筆記 ] ≫ Web 開發中會話跟蹤的方法有哪些?
           </h1>
           <p>1.會話</p>
@@ -1109,7 +1153,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 class="articleCardTitle">
+          <h1 id="web017" class="articleCardTitle">
             [ Web筆記 ] ≫ CDN為什麼利用多個域名來存取網站資源更有效?
           </h1>
           <p>內容傳遞網路（英語：Content Delivery Network，縮寫：CDN）</p>
@@ -1206,10 +1250,17 @@ section {
   color: #a1b6cb;
   display: flex;
   justify-content: center;
+  overflow: auto;
 }
 
 .leftNavContainer {
   padding: 25px 5px 0 5px;
+}
+
+.leftNavText:hover {
+  color: #36c1cb;
+  background-color: #1c1c1c;
+  cursor: pointer;
 }
 
 .Main {
