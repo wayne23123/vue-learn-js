@@ -21,7 +21,7 @@
           <router-link to="/html"><div class="liPad">Html</div></router-link>
         </li>
         <li>
-          <router-link to="/about"><div class="liPad">CSS</div></router-link>
+          <router-link to="/css"><div class="liPad">CSS</div></router-link>
         </li>
         <li>
           <router-link to="/about"

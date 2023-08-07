@@ -74,6 +74,10 @@ function locate(idPound) {
             >費曼學習法：快速掌握新知識 @youtube 好葉</a
           >
           <br />
+          <a href="https://www.youtube.com/watch?v=iFSVMuBDMws"
+            >大腦喜歡這樣學 @youtube 超級歪</a
+          >
+          <br />
           <hr />
           <br />
           <h3 class="cor36"># 工作中如何使用 Git</h3>
@@ -81,6 +85,36 @@ function locate(idPound) {
           <a href="https://juejin.cn/post/7165654391511318559">
             工作中如何使用 Git @掘金 沐华
           </a>
+          <br />
+          <hr />
+          <br />
+          <h3 class="cor36"># 連續跑步一年變化</h3>
+          <a
+            href="https://www.bilibili.com/video/BV1Gk4y1V7oy/?spm_id_from=333.999.0.0"
+          >
+            連續跑步一年變化 @bilibili 李白尼的猜想
+          </a>
+          <br />
+          <a href="https://www.youtube.com/watch?v=Po91wXp_hYE&t=763s"
+            >空腹才是最强的良藥 @youtube Fox面</a
+          >
+          <br />
+          <a href="https://www.youtube.com/watch?v=s73WwmWVqBg"
+            >為什麼要睡覺 @youtube 文森說書
+          </a>
+          <br />
+          <a href="https://www.youtube.com/watch?v=wcBHHyK9ig8"
+            >一流的人如何保持巔峰 @youtube 文森說書</a
+          >
+          <br />
+          <a href="https://www.youtube.com/watch?v=XS_D1n3fD54"
+            >總有一天你會懂 @youtube 文森說書</a
+          >
+          <br />
+          <a href="https://www.youtube.com/watch?v=qrj2DcdGCPs&t=39s"
+            >真正的快樂處方 @youtube 文森說書</a
+          >
+          <br />
         </div>
       </div>
     </div>
