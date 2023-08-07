@@ -40,52 +40,51 @@ function locate(idPound) {
             瀏覽器內核,主要組成部分
           </div>
           <div class="leftNavText" @click="locate('web002')">
-            瀏覽器主要組成部分
-          </div>
-          <div class="leftNavText" @click="locate('web003')">
             瀏覽器輸入網址後按下enter
           </div>
+          <div class="leftNavText" @click="locate('web003')">http協議</div>
           <div class="leftNavText" @click="locate('web004')">
-            http有那些請求方法和用途
-          </div>
-          <div class="leftNavText" @click="locate('web005')">
-            什麼是瀏覽器同源跨域
-          </div>
-          <div class="leftNavText" @click="locate('web006')">
-            如何進行網站性能優化
-          </div>
-          <div class="leftNavText" @click="locate('web007')">
-            如何進行渲染優化
-          </div>
-          <div class="leftNavText" @click="locate('web008')">
-            瀏覽器垃圾回收&內存洩漏
-          </div>
-          <div class="leftNavText" @click="locate('web009')">
-            前端需要注意哪些SEO
-          </div>
-          <div class="leftNavText" @click="locate('web010')">
-            腳本攻擊XSS,請求偽造CSRF
-          </div>
-          <div class="leftNavText" @click="locate('web011')">
             Cookies.localStorage
           </div>
+          <div class="leftNavText" @click="locate('web005')">
+            什麼是同源策略,不同源會怎樣
+          </div>
+          <div class="leftNavText" @click="locate('web006')">
+            腳本攻擊XSS,請求偽造CSRF
+          </div>
+          <div class="leftNavText" @click="locate('web007')">
+            如何進行網站性能優化
+          </div>
+          <div class="leftNavText" @click="locate('web008')">
+            如何進行渲染優化
+          </div>
+          <div class="leftNavText" @click="locate('web009')">OSI七層模型</div>
+          <div class="leftNavText" @click="locate('web010')">
+            DOMContentLoaded和load
+          </div>
+          <div class="leftNavText" @click="locate('web011')">
+            瀏覽器垃圾回收機制
+          </div>
           <div class="leftNavText" @click="locate('web012')">
-            WEB標準&W3C標準
+            前端需要注意哪些SEO
           </div>
           <div class="leftNavText" @click="locate('web013')">
-            漸進增強和優雅降級
+            WEB標準&W3C標準
           </div>
           <div class="leftNavText" @click="locate('web014')">
-            網頁用的圖片格式
+            漸進增強和優雅降級
           </div>
           <div class="leftNavText" @click="locate('web015')">
-            大型網站有大量圖片
+            製作網頁用的圖片格式
           </div>
           <div class="leftNavText" @click="locate('web016')">
-            會話跟蹤的方法
+            大型網站有大量圖片
           </div>
           <div class="leftNavText" @click="locate('web017')">
-            CDN多域名存取網站資源
+            Web開發中會話跟蹤
+          </div>
+          <div class="leftNavText" @click="locate('web018')">
+            CDN多個域名存網站資源
           </div>
         </div>
       </div>
@@ -95,6 +94,78 @@ function locate(idPound) {
     <div class="Main">
       <div class="mainContainer">
         <div class="mainLayout">
+          <!-- © by Wayne Lu 2023 -->
+          <!-- <div id="web003" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ 什麼是重排(回流)和重繪?如何避免
+          </div>
+          <h2>重繪不一定重排，重排一定重繪</h2>
+          <br />
+          <h3 class="cor36"># 重排(回流)（reflow）是什麼:</h3>
+          <p>當瀏覽器偵測到頁面的佈局發生變化時，就需要進行回退並重新渲染。</p>
+          <br />
+          <p class="cor36"># 觸發重排(回流)條件：</p>
+          <p>1.頁面第一次渲染（初始化）</p>
+          <p>2.DOM樹節點的增刪或移動</p>
+          <p>3.DOM元素的幾何屬性變化</p>
+          <p class="pFou">寬度（width）</p>
+          <p class="pFou">高度（height）</p>
+          <p class="pFou">內邊距（padding）</p>
+          <p class="pFou">邊框（border）等</p>
+          <p class="pFou">外邊距（margin）</p>
+          <p class="pFou">左偏移（left）</p>
+          <p class="pFou">上偏移（top）</p>
+          <br />
+          <p>4.瀏覽器窗口大小改變（resize）</p>
+          <p>獲取元素的某些屬性，如offset系列、scroll系列和client系列屬性。</p>
+          <br />
+          <p class="cor36"># 重排(回流)過程</p>
+          <p>
+            劉覽器會從根節點＜html>元素
+            開始進行遞歸，逐個計算所有節點的幾何尺寸和位置，以確定是渲染樹的一部分發生變化還是整個渲染樹需要重新渲染。
+          </p>
+          <br />
+          <br />
+          <h3 class="cor36"># 重繪（repaint）是什麼:</h3>
+          <p>
+            當我們改變某個元素的背景色、文字顏色、邊框顏色等屬性時，屏幕的一部分需要重繪，但是元素的幾何尺寸和位置沒有發生改變。重繪過程不涉及布局的計算，只是重新繪製已有的元素。
+          </p>
+          <br />
+          <p class="cor36"># 觸發重繪條件:</p>
+          <p>
+            1.重排(回流)必會引起重繪，因為回流的過程中可能會改變元素的樣式屬性，需要重新繪製已有的元素。
+          </p>
+          <p>2.背景色、文字顏色、字體等的改變會觸發重繪。</p>
+          <p class="pTwo">
+            注意 字體大小發生變化時，將觸發回流而非僅重繪。(會影響元素的佈局)
+          </p>
+          <br />
+          <p class="cor36"># 重繪過程</p>
+          <p>
+            沒有導致 DOM
+            元素的幾何屬性（寬度、高度、位置）發生變化，因此元素的位置信息不需要更新，從而省去了佈局（layout）的過程。
+          </p>
+          <br />
+          <br />
+          <h2 class="cor36"># 如何避免重排(回流).重繪?</h2>
+          <p>1.集中改變樣式: ex 用 class 集中改變</p>
+          <br />
+          <p>2.用 transform 做變形和位移，可以減少重排(回流)的次數。</p>
+          <br />
+          <p>
+            3.將需要多次修改的 DOM 元素設置為 display:none，操作完成後再顯示。
+          </p>
+          <br />
+          <p>4.避免多次讀取某些屬性</p>
+          <br />
+          <p>5.絕對定位將複雜的節點脫離文檔流中，形成新的 Render Layer。</p>
+          <br />
+          <p>
+            6.使用 DocumentFragment 將需要多次修改的 DOM
+            元素緩存起來，最後一次性添加到真實的 DOM 中進行渲染。
+          </p>
+          <br />
+          <br /> -->
+
           <div id="web001" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器內核,主要組成部分
           </div>
@@ -157,17 +228,17 @@ function locate(idPound) {
           <p>1.瀏覽器接受 URL 開啟網路請求線程 (線程&進程)</p>
           <p>
             2.瀏覽器通過 DNS 服務器得到域名的 IP位置, 向 IP 地址
-            建立連接(TCP3次握手) 後請求得到 HTML 文本
+            建立連接(TCP3次握手) 後發送http請求
           </p>
-          <p>3.瀏覽器渲染進程解析 HTML 文本， 構建 DOM 樹</p>
+          <p>3.服務器返回響應結果, 然後四次揮手關閉TCP連結</p>
+          <p>4.瀏覽器渲染進程解析 HTML 文本， 構建 DOM 樹</p>
           <p>
-            4.解析 HTML 時, 如果遇到 內連樣式 或 CSS 文本, 則下載並構建樣式規則,
+            5.解析 HTML 時, 如果遇到 內連樣式 或 CSS 文本, 則下載並構建樣式規則,
             如果遇到 JS 腳本, 則下載執行腳本
           </p>
-          <p>5.DOM 樹和 CSSOM 構建完成之後, 渲染線程將 2 者合併成渲染樹</p>
-          <p>6.渲染進程開始對渲染樹進行布局, 生成布局樹 (layout tree)</p>
-          <p>7.渲染樹對布局樹進行繪製, 生成繪製紀錄</p>
-          <p>8.釋放 TCP 連結 ( 4 次揮手 )</p>
+          <p>6.DOM 樹和 CSSOM 構建完成之後, 渲染線程將 2 者合併成渲染樹</p>
+          <p>7.渲染進程開始對渲染樹進行布局, 生成布局樹 (layout tree)</p>
+          <p>8.渲染樹對布局樹進行繪製, 生成繪製紀錄</p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># CSS 會阻塞 DOM 嗎?</h3>
@@ -189,7 +260,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36">JS 會阻塞頁面嗎?</h3>
+          <h3 class="articleCardTitle cor36"># JS 會阻塞頁面嗎?</h3>
           <p>JS 會阻塞 DOM 解析，建議將 JS 文件放在 HTML 最下面</p>
           <p>
             瀏覽器在解析 HTML 時，如果遇到 ＜script>，會先下載、解析完這些
@@ -201,233 +272,68 @@ function locate(idPound) {
           <p>defer 等到瀏覽器解析完 HTML 後執行。</p>
           <br />
           <br />
-          <div class="articleCardTitle cor36"># URL组成部分</div>
-          <p>1.協議（protocol）：協議標頭，例如http、https、ftp等</p>
-          <p>2.主機（host）：主機域名或IP地址</p>
-          <p>3.端口（port）：端口號</p>
-          <p>4.路徑（path）：目錄路徑</p>
-          <p>5.查詢（query）：查詢參數</p>
-          <p>6.哈希（hash）：#後面的哈希值，用於定位特定位置</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36"># 發送 HTTP 請求</h3>
+
+          <h3 class="articleCardTitle cor36"># 解析 HTML</h3>
           <p>
-            取得 IP 地址後，就可以發送 HTTP 請求了。HTTP 請求的本質是基於 TCP/IP
-            的請求構建。建立連線時需要進行三次握手進行驗證，斷開連結也同樣需要四次揮手進行驗證，以確保傳輸的可靠性。
+            HTML是逐行解析的，瀏覽器的渲染引擎會將HTML文檔解析並轉換為DOM節點。
+          </p>
+          <p>將標記 （Tokens） 解析成物件</p>
+          <p>將物件組合成一個DOM樹</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36"># 解析 CSS</h3>
+          <p>瀏覽器會從右到左解析CSS選擇器</p>
+          <p>∕span -> ∕div -> html</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36"># JavaScript 解析的流程</h3>
+          <p>
+            1.瀏覽器創建 Document 物件並開始解析 HTML
+            文件。解析器將解析到的元素和文本節點添加到文件中，此時
+            document.readyState 屬性為 "loading"。
+          </p>
+          <br />
+          <p>
+            2.HTML 解析器遇到沒有 async 和 defer 屬性的 script
+            標籤時，將它們添加到文件中並開始執行內部或外部腳本。這些腳本將同步執行，解析器在腳本下載和執行期間會暫停解析。因此，可以使用
+            document.write()
+            方法將文本插入到輸入流中。同步腳本通常用於定義函數和註冊事件處理程序，它們可以遍歷和操作腳本之前的文件內容。
+          </p>
+          <br />
+          <p>
+            3.當解析器遇到設置了 async 屬性的 script
+            標籤時，它會開始下載該腳本並繼續解析文件。這些腳本將在下載完成後盡快執行，但解析器不會等待它們的下載。異步腳本禁止使用
+            document.write()，它們可以訪問其所在的 script
+            標籤以及之前的文件元素。
+          </p>
+          <br />
+          <p>
+            4.所有設置了 defer
+            屬性的腳本將按照它們在文件中出現的順序執行。延遲腳本能夠訪問完整的文件樹，但禁止使用
+            document.write()。
+          </p>
+          <br />
+          <p>
+            5.當文件上的所有延遲腳本執行完成時，瀏覽器將在 Document 物件上觸發
+            DOMContentLoaded 事件。這表示文件的 DOM
+            結構已完全構建，可以進行操作。
+          </p>
+          <br />
+          <p>
+            6.等待其他內容加載完成並且所有異步腳本執行完成後，document.readyState
+            屬性變為 "complete"，此時 window 物件觸發 load
+            事件。這表示整個文件和相關資源已經加載完成。
           </p>
           <br />
           <br />
 
-          <h3 class="articleCardTitle cor36">### ip地址怎麼找?</h3>
+          <h3 class="articleCardTitle cor36"># ip地址怎麼找?</h3>
           <p>ip地址從DNS域名服務器裡存儲的地址本找出來的</p>
           <p>之前訪問過該網站的話從本機緩存數據裡找</p>
           <p>如果找不到就從路由器設置的電信服務商提供的DNS服務器中找</p>
           <p>再找不到就從網站域名提供的服務商提供的DNS服務器找</p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36">### http?</h3>
-          <p>超文字傳輸協定</p>
-          <p>他是基於TCP默認80端口的一個應用層協議</p>
-          <p>用於從全球資訊網傳輸資源到本地瀏覽器的傳輸協議</p>
-          <p>他主要是用來規定客戶端和服務器端的數據傳輸格式</p>
-          <p>所以HTTP是一個標準和規範</p>
-          <p>每一個HTTP連接包括請求消息和響應消息2個部分</p>
-          <p>請求報文包括4個, 請求行, 請求頭, 空行, 請求體</p>
-          <p>響應報文包括4個, 響應行, 響應頭, 空行, 請求體,</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">
-            ### http協議包括請求和響應,你能說一個請求完整內容嗎?
-          </h3>
-          <p>第一部分:第一行第一個字是get, 然後是url, http協議版本</p>
-          <p>第二部分:content-type:</p>
-          <p>第三部分:enter, 第四部份:body a=1&a=2</p>
-          <p>第四部份:body a=1&a=2</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">### http和https差別?(443端口)</h3>
-          <p>http協議傳輸的數據都是未加密的, 因此用http傳輸隱私的訊息不安全</p>
-          <p>為了保證這些隱私數據能加密傳輸, 就誕生HTTPS 所以比http協議安全</p>
-          <p>
-            https由tls加http協議構建的, 可以進行加密傳輸, 身分認證的網路協議
-          </p>
-          <p>所以比http協議安全</p>
-          <p>https有兩個作用</p>
-          <p>1.可以建立一個訊息安全通道, 用來保證數據傳輸的安全性</p>
-          <p>2.確認網站的真實性</p>
-          <p>http和https差別</p>
-          <p>1.http不用證書,https需要申請ca證書</p>
-          <p>
-            2.http下的訊息明文傳輸,
-            而https由tls加http協議構建的可進行加密傳輸身分認證的網路協議,
-            可以防止傳輸內容被竊取竄改
-          </p>
-          <p>
-            3.http和https使用不同的連接方式, 所以端口不一樣http(80), https(443)
-          </p>
-          <br />
-          <br />
-          <h1 id="web004" class="articleCardTitle cor36">
-            [ Web筆記 ] ≫ http 有那些請求方法 和 用途 ?
-          </h1>
-          <p>GET方法： 用途：發送一個請求來獲取伺服器上的某一資源。</p>
-          <div class="pTwo">1.GET方法的特點是甚麼?</div>
-          <div class="pFou">
-            1.獲取資源： GET方法用於從伺服器獲取指定URL上的資源。
-          </div>
-          <br />
-          <div class="pFou">
-            2.幂等性：
-            GET方法是幂等的，即對同一URL進行多次連續GET請求，不會產生不同的效果。
-          </div>
-          <br />
-          <div class="pTwo">2.GET 請求和 POST 請求的區別是甚麼?</div>
-          <div class="pFou">
-            1.GET 請求將參數附加在 URL 的查詢字串中, 而 POST
-            請求將參數放在請求體中。
-          </div>
-          <br />
-          <div class="pFou">
-            2.GET 請求的數據會顯示在 URL 中, 而 POST 請求的數據不會顯示在 URL
-            中。
-          </div>
-          <br />
-          <div class="pFou">3.GET 請求用於獲取數據, 而 POST 用於提交數據</div>
-          <br />
-          <div class="pTwo">3.GET請求可以有請求體嗎?</div>
-          <div class="pFou">
-            根據HTTP協議規範，GET請求的特性是不包含請求體,
-            參數應通過URL的查詢字串進行傳遞
-          </div>
-          <br />
-          <div class="pTwo">4.GET請求的參數如何傳遞?</div>
-          <div class="pFou">
-            GET請求可以通過URL的查詢字串傳遞參數。參數位於URL的問號後面，並以鍵值對的形式表示。例如：https://example.com/search?keyword=apple。
-          </div>
-          <br />
-          <div class="pTwo">5.GET請求的安全性和幂等性如何保證?</div>
-          <div class="pFou">
-            1.GET請求被認為是安全的，因為它不會修改伺服器上的資源。
-          </div>
-          <br />
-          <div class="pFou">
-            2.GET請求是幂等的，多次發送相同的 GET 請求不會影響伺服器
-          </div>
-          <br />
-          <p>POST 方法： 用途：向 URL 指定的資源提交數據或附加新的數據</p>
-          <div class="pTwo">1.POST 方法的特點是甚麼?</div>
-          <div class="pFou">1.POST 方法用於向伺服器提交數據</div>
-          <br />
-          <div class="pFou">
-            2.POST 不是幂等的, 多次發送相等的 POST 請求可能會產生不同結果
-          </div>
-          <br />
-          <div class="pTwo">2.POST 請求和 GET 請求的區別是甚麼?</div>
-          <div class="pFou">
-            1.POST 請求將參數放在請求體中, 而 GET 請求將參數附加在 URL
-            的查詢字串中。
-          </div>
-          <br />
-          <div class="pFou">
-            2.POST 請求的數據不會顯示在 URL 中, 而 GET 請求的數據會顯示在 URL
-            中。
-          </div>
-          <br />
-          <div class="pFou">3.POST 用於提交數據, 而 GET 請求用於獲取數據</div>
-          <br />
-          <div class="pTwo">3.POST 請求的請求體如何傳遞數據?</div>
-          <div class="pFou">
-            POST 請求的數據可以通過請求體以表單形式傳遞,或以 JSON 格式傳遞
-          </div>
-          <br />
-          <div class="pTwo">4.POST 請求的安全性和幂等性如何保證?</div>
-          <div class="pFou">
-            1.POST 請求可能對伺服器端的資源產生副作用, 因此被視為不安全的
-          </div>
-          <br />
-          <div class="pFou">
-            2.POST 請求不是幂等的, 多次發送相等的 POST
-            請求可能會對伺服器端產生影響
-          </div>
-          <br />
-          <p>
-            PUT 方法: 用途: 將數據發送給伺服器, 並將其儲存在指定的 URL 位置。與
-            POST 方法不同的是, PUT 方法指定了資源在伺服器上的位置。
-          </p>
-          <div class="pTwo">1.PUT 方法的特點是甚麼?</div>
-          <div class="pFou">
-            1.PUT 方法用於將數據發送給伺服器並儲存在指定的 URL 位置
-          </div>
-          <br />
-          <div class="pFou">
-            2.PUT 請求是幂等的, 多次發送相同的 PUT 請求會對伺服器端產生相同結果
-          </div>
-          <br />
-          <div class="pTwo">2.PUT 請求和 POST 請求有甚麼區別?</div>
-          <div class="pFou">
-            1.PUT 請求用於指定資源在伺服器上的位置, 而 POST 請求沒有指定位置
-          </div>
-          <br />
-          <div class="pFou">
-            2.PUT 請求用於更新or替換資源, 而 POST 請求用於 新增資源或提交數據
-          </div>
-          <br />
-          <div class="pTwo">3.PUT請求的幂等性如何保證?</div>
-          <div class="pFou">1.PUT 請求的幂等性保證由伺服器端實現的。</div>
-          <br />
-          <div class="pFou">
-            2.伺服器端應根據請求中的資源位置來處理請求, 多次發送相同的 PUT
-            請求會對該位置上的資源進行相同的更新或替換操作。
-          </div>
-          <br />
-          <p>HEAD 方法: 用途: 只請求頁面的首部</p>
-          <p>DELETE 方法: 用途: 刪除伺服器上某資源</p>
-          <p>
-            OPTIONS 方法: 用途: 獲取當前 URL 所支援的方法。如果請求成功,
-            會有一個 Allow 的頭包含類似 "GET,POST" 訊息
-          </p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36"># HTTP狀態碼和其含義</h3>
-          <p>1xx（資訊性狀態碼）：表示請求已被接收，正在處理。</p>
-          <div class="pTwo">
-            100 Continue：繼續，在發送 POST 請求時，已發送了 http header
-            之後伺服器將返回此訊息，表示確認，之後發送具體參數訊息
-          </div>
-          <p>2xx（成功狀態碼）：表示請求已成功被伺服器接收、理解和處理。</p>
-          <div class="pTwo">200 OK：請求已成功，伺服器正常返回請求的內容。</div>
-          <div class="pTwo">
-            201 Created：請求已成功並在伺服器上創建了新的資源。
-          </div>
-          <div class="pTwo">202 Accepted：伺服器已接受請求，但尚未處理。</div>
-          <p>
-            3xx（重新導向狀態碼）：表示客戶端需要採取進一步操作才能完成請求。
-          </p>
-          <div class="pTwo">
-            301 Moved Permanently：請求的資源已永久移動到新位置。
-          </div>
-          <div class="pTwo">302 Found：請求的資源已臨時移動到新位置。</div>
-          <div class="pTwo">
-            304 Not Modified：客戶端的快取資源是最新的，可以直接使用。
-          </div>
-          <p>4xx（客戶端錯誤狀態碼）：表示客戶端發起的請求有錯誤或無法完成。</p>
-          <div class="pTwo">
-            400 Bad Request：請求語法錯誤，伺服器無法理解。
-          </div>
-          <div class="pTwo">401 Unauthorized：請求需要用戶驗證。</div>
-          <div class="pTwo">403 Forbidden：禁止訪問。</div>
-          <div class="pTwo">404 Not Found：請求的資源不存在。</div>
-          <p>5xx（伺服器錯誤狀態碼）：表示伺服器在處理請求時發生了錯誤。</p>
-          <div class="pTwo">
-            500 Internal Server Error：伺服器遇到了一個未知的錯誤。
-          </div>
-          <div class="pTwo">
-            503 Service
-            Unavailable：伺服器暫時無法處理請求，可能是由於過載或維護。
-          </div>
-          <br />
-          <br />
-
           <h3 class="articleCardTitle cor36">
             # 三次握手 -> 與 WEB 服務器建立連接 -> 確認雙方都能接收,發送正常
           </h3>
@@ -458,7 +364,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <p class="articleCardTitle cor36">4次揮手</p>
+          <p class="articleCardTitle cor36"># 4次揮手</p>
           <p>
             客戶端發送一個FIN Seq =
             M（FIN置位，序號為M）封包，用來關閉客戶端到伺服器端的資料傳送。
@@ -483,66 +389,220 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web010" class="articleCardTitle">
-            [ Web筆記 ] ≫ 腳本攻擊XSS,請求偽造CSRF
-          </h1>
-          <h3 class="articleCardTitle">
-            跨站腳本攻擊（XSS）Cross-site request forgery
-          </h3>
+
+          <h3 class="articleCardTitle cor36"># 什麼是SYN Flood攻擊?</h3>
+          <p>SYNflood利用TCP協議缺陷, 發送大量偽造TCP請求,</p>
+          <p>請求連接的第一個握手包(SYN), 服務器回應第二個握手包(SYN+ACK),</p>
+          <p>因為偽造IP 對方不會收到包且不會回應第三個握手包,</p>
           <p>
-            攻擊者在網頁中注入惡意腳本，並將該腳本傳送給其他使用者的瀏覽器執行。
+            導致服務器保持大量SYN_RECE為半連結, 且會默認5次回應第二個握手包,
           </p>
+          <p>大量惡意SYN佔滿未完成連接列隊,導致正常業務連不進來</p>
           <br />
           <br />
-          <p>防止XSS攻擊:</p>
-          <p>開發者應該適當地驗證和過濾使用者的輸入。</p>
+
+          <h3 class="articleCardTitle cor36"># SYNflood怎麼檢測?</h3>
+          <p>在服務器上看到大量半連接狀態時, 特別是源ip位置是隨機的</p>
           <br />
           <br />
-          <h3 class="articleCardTitle">
-            跨站請求偽造（CSRF）Cross-site request forgery
-          </h3>
+
+          <h3 class="articleCardTitle cor36"># SYNflood攻擊怎麼解決?</h3>
+          <p>1.縮短超時SYN Timeout</p>
+          <p>2.增加最大半連接數</p>
           <p>
-            攻擊者誘導使用者到第三方網站, 在第三方網站中,
-            向被攻擊網站發送跨站請求。
-          </p>
-          <br />
-          <p>利用受害者在被攻擊網站已獲取的註冊憑證, 繞過後台用戶驗證,</p>
-          <br />
-          <p>冒充用戶對被攻擊網站執行操作。</p>
-          <br />
-          <br />
-          <p>防止CSRF攻擊:</p>
-          <p>
-            檢查和驗證請求的來源、實施隨機生成的驗證碼（CSRF令牌）和同源政策等。
+            3.SYN cookie技術(收到SYN報文不直接TCP分配資源,先打開半套的套接字)
           </p>
           <br />
           <br />
 
-          <h3 class="articleCardTitle cor36"># 瀏覽器緩存機制</h3>
-          <p>當瀏覽器請求一個網站時，會載入各種資源。</p>
+          <h3 id="web003" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ http協議?
+          </h3>
+          <p>超文字傳輸協定</p>
+          <p>他是基於TCP默認80端口的一個應用層協議</p>
+          <p>用於從全球資訊網傳輸資源到本地瀏覽器的傳輸協議</p>
+          <p>他主要是用來規定客戶端和服務器端的數據傳輸格式</p>
+          <p>所以HTTP是一個標準和規範</p>
+          <p>每一個HTTP連接包括請求消息和響應消息2個部分</p>
+          <p>請求報文包括4個, 請求行, 請求頭, 空行, 請求體</p>
+          <p>響應報文包括4個, 響應行, 響應頭, 空行, 請求體,</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36">
+            # http協議包括請求和響應,你能說一個請求完整內容嗎?
+          </h3>
+          <p>第一部分:第一行第一個字是get, 然後是url, http協議版本</p>
+          <p>第二部分:content-type:</p>
+          <p>第三部分:enter, 第四部份:body a=1&a=2</p>
+          <p>第四部份:body a=1&a=2</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36"># content-type內容怎麼寫?</h3>
+          <p>JSON的話是application斜槓json</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36"># http和https差別?(443端口)</h3>
+          <p>http協議傳輸的數據都是未加密的, 因此用http傳輸隱私的訊息不安全</p>
+          <p>為了保證這些隱私數據能加密傳輸, 就誕生HTTPS 所以比http協議安全</p>
           <p>
-            對於一些不經常變動的資源，瀏覽器會將它們儲存於本地記憶體中，下次訪問時直接載入這些資源，以提高訪問速度。
+            https由tls加http協議構建的, 可以進行加密傳輸, 身分認證的網路協議
           </p>
-          <br />
-          <p>資源size值， from disk cache， from memory cache</p>
-          <br />
-          <p>當瀏覽器訪問一個已經訪問過的資源時，它的步驟如下：</p>
-          <p>1.先檢查是否命中了強制緩存，如果命中了，則直接使用緩存的資源。</p>
-          <br />
-          <p>2.沒有，則向服務器發送請求，檢查是否命中了協商緩存。</p>
-          <br />
+          <p>所以比http協議安全</p>
+          <p>https有兩個作用</p>
+          <p>1.可以建立一個訊息安全通道, 用來保證數據傳輸的安全性</p>
+          <p>2.確認網站的真實性</p>
+          <p>http和https差別</p>
+          <p>1.http不用證書,https需要申請ca證書</p>
           <p>
-            3.如果命中了協商緩存，服務器會返回狀態碼304，告訴瀏覽器可以使用本地緩存的資源。
+            2.http下的訊息明文傳輸,
+            而https由tls加http協議構建的可進行加密傳輸身分認證的網路協議,
+            可以防止傳輸內容被竊取竄改
           </p>
-          <br />
-          <p>4.沒有，則服務器會返回新的資源給瀏覽器。</p>
-          <br />
+          <p>
+            3.http和https使用不同的連接方式, 所以端口不一樣http(80), https(443)
+          </p>
           <br />
           <br />
 
-          <h1 id="web011" class="articleCardTitle">
+          <h1 class="articleCardTitle cor36"># SSL怎麼做?</h1>
+          <p>客戶端發送請求連接的請求給伺服器，請求中包含一個 SSL</p>
+          <p>
+            版本號以及所支持的加密算法。伺服器收到客戶端的請求後，將自己的 SSL
+            證書發送給客戶端。
+          </p>
+          <p>證書中包含伺服器的公鑰、伺服器的名稱以及證書的頒發機構等信息。</p>
+          <p>
+            客戶端收到伺服器的 SSL
+            證書後，會對證書進行驗證，包括證書的頒發機構是否可信、證書中的伺服器名稱是否和請求的伺服器名稱匹配等。
+          </p>
+          <p>
+            客戶端驗證通過後，生成一個隨機數，使用伺服器的公鑰進行加密，並將加密後的隨機數發送給伺服器。
+          </p>
+          <p>
+            伺服器收到客戶端發送的加密隨機數後，使用自己的私鑰進行解密，得到客戶端的隨機數。
+          </p>
+          <p>
+            伺服器和客戶端分別使用這兩個隨機數來生成對稱加密算法所需的密鑰。
+          </p>
+          <p>這個密鑰只有伺服器和客戶端才知道，可以保證數據傳輸的安全性。</p>
+          <p>
+            客戶端和伺服器之間的數據傳輸會使用對稱加密算法來加密和解密，以保證傳輸的安全性。
+          </p>
+
+          <h1 class="articleCardTitle cor36"># GET和POST的區別?</h1>
+          <p>1.get請求的參數是放在url裡面的, 而post請求參數放在請求體裡面的</p>
+          <p>2.get請求可以被瀏覽器緩存 ,post請求不能被緩存</p>
+          <p>
+            3.get請求因為放在url裡面, 而url長度是受限的, 最大2048字符,
+            posy長度沒有限制
+          </p>
+          <p>
+            4.get放在url裡面, 安全性比較差, post請求參數放在body裡面安全性比較好
+          </p>
+          <p>
+            5.get請求可以通過瀏覽器直接訪問, 支持刷新後退,
+            post請求不能直接被瀏覽器訪問, 刷新後數據需要重新傳送
+          </p>
+          <br />
+          <br />
+
+          <h3 class="articleCardTitle cor36"># 強緩存和弱緩存?</h3>
+          <p>
+            瀏覽器緩存是瀏覽器在本地磁碟對使用者最近請求過的文件進行存儲，當訪問者再次訪問同一頁面時，瀏覽器就可以直接從本地磁碟載入文件。
+          </p>
+          <p>分 強緩存（也稱本地緩存） & 協商緩存（也稱弱緩存）</p>
+          <br />
+          <br />
+          <p class="cor36">強緩存</p>
+          <p>首先在http1.1時,他會在它的上面會有一個 catch crtl 頭</p>
+          <p>裡面可能加上 max age 假設他是 3600, 也就是在這一個小時內,</p>
+          <p>再去訪問這個東西的時候, 它不會再去發請求, 它會從硬碟上去讀取,</p>
+          <p>因為他已經緩存下來了, 同時它會再給他配置一個 etag,</p>
+          <p>這個 etag 是它的特徵值, 可能它特徵值是 AAA,</p>
+          <p>等到期3600過了之後也就到期了,</p>
+          <br />
+          <p class="cor36">這裡涉及到協商緩存,</p>
+          <p>就是它會去跟他協商, 然後發請求去協商,</p>
+          <p>這時候可能會發一個 if 開頭的響應頭,</p>
+          <p>
+            把那個特徵值帶上也就是剛剛說道的 AAA,
+            然後去看他是否需要繼續給它存著,
+          </p>
+          <p>還是要改變這個文件, 它可能會返回 200 或 304, 如果返回 200,</p>
+          <p>不僅返回 200 還會附帶 body,就是會把新的內容給它, 如果返回 304,</p>
+          <p>304 這個狀態碼代表未修改繼續用, 那就不需要新的返回,</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle cor36"># HTTP狀態碼和其含義</h3>
+          <p>1xx（資訊性狀態碼）：表示請求已被接收，正在處理。</p>
+          <br />
+          <div class="pTwo">
+            100 Continue： 繼續，在發送 POST 請求時，已發送了 http header
+            之後伺服器將返回此訊息，表示確認，之後發送具體參數訊息
+          </div>
+          <br />
+          <p>2xx（成功狀態碼）：表示請求已成功被伺服器接收、理解和處理。</p>
+          <br />
+          <div class="pTwo">200 OK：請求已成功，伺服器正常返回請求的內容。</div>
+          <div class="pTwo">
+            201 Created：請求已成功並在伺服器上創建了新的資源。
+          </div>
+          <div class="pTwo">202 Accepted：伺服器已接受請求，但尚未處理。</div>
+          <br />
+          <p>
+            3xx（重新導向狀態碼）：表示客戶端需要採取進一步操作才能完成請求。
+          </p>
+          <br />
+          <div class="pTwo">
+            301 Moved Permanently：請求的資源已永久移動到新位置。
+          </div>
+          <div class="pTwo">302 Found：請求的資源已臨時移動到新位置。</div>
+          <div class="pTwo">
+            304 Not Modified：客戶端的快取資源是最新的，可以直接使用。
+          </div>
+          <br />
+          <p>4xx（客戶端錯誤狀態碼）：表示客戶端發起的請求有錯誤或無法完成。</p>
+          <br />
+          <div class="pTwo">
+            400 Bad Request：請求語法錯誤，伺服器無法理解。
+          </div>
+          <div class="pTwo">401 Unauthorized：請求需要用戶驗證。</div>
+          <div class="pTwo">403 Forbidden：禁止訪問。</div>
+          <div class="pTwo">404 Not Found：請求的資源不存在。</div>
+          <br />
+          <p>5xx（伺服器錯誤狀態碼）：表示伺服器在處理請求時發生了錯誤。</p>
+          <div class="pTwo">
+            500 Internal Server Error：伺服器遇到了一個未知的錯誤。
+          </div>
+          <div class="pTwo">
+            503 Service
+            Unavailable：伺服器暫時無法處理請求，可能是由於過載或維護。
+          </div>
+          <br />
+          <br />
+          <h1 id="web004" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 描述Cookies、sessionStorage和localStorage的區別
           </h1>
+          <p>
+            localStorage是本地存儲 cookie是服務器下發給瀏覽器的一串字串,
+            用來驗證的
+          </p>
+          <br />
+          <p class="cor36">用的時候有什麼不一樣?</p>
+          <p>
+            cookie用來存sectionID
+            local裡面儲存形式是字串,紀錄用戶本地操作或記錄數據
+          </p>
+          <br />
+          <p class="cor36">localStorage sessionStorage區別?</p>
+          <p>
+            session是會話,當頁面關閉會清空 localStorage不會過期, 沒有過期時間,
+            除非用戶手動清除緩存
+          </p>
+          <br />
+          <br />
+          <br />
+          <br />
           <p>
             cookie是網站為了標識使用者身份而儲存在使用者本地終端（Client
             Side）上的數據（通常經過加密）。
@@ -577,46 +637,209 @@ function locate(idPound) {
           <p>localStorage、sessionStorage 請求時不會攜帶</p>
           <br />
           <br />
-          <h1 id="web005" class="articleCardTitle">
-            [ Web筆記 ] ≫ 什麼是瀏覽器同源?跨域?
+
+          <h1 id="web005" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ 什麼是同源策略,不同源會怎樣?
           </h1>
-          <h3>同源指的是協議、域名和端口均要相同。</h3>
-          <p>同源策略是瀏覽器的一種自我保護行為。</p>
-          <br />
-          <p>瀏覽器大部分内容受到同源策略的限制，以下例外</p>
-          <p>＜img src="..."></p>
-          <p>＜link href="..."></p>
-          <p>＜script src="...">＜/script></p>
-          <br />
-          <br />
-          <h3>跨域指瀏覽器不能執行其他域名下的腳本。</h3>
-          <p>跨域請求能發送到服務器，服務器接受返回結果，結果被服務器攔截</p>
-          <br />
-          <br />
-          <h3>解決跨域問題:</h3>
-          <h3>JSONP</h3>
           <p>
-            利用 script 標籤不受瀏覽器協議同源策略影響，
-            可以拿到從其他源傳輸過來的數據，需要服務端支持。
+            瀏覽器給出的一個規定,規定說2個URL他的域名,端口,協議都相同, 就是同源,
           </p>
           <br />
-          <p>優: 兼容性較好</p>
-          <p>缺: 僅能 get 請求, 有侷限性, 不安全, 可能被 XSS 攻擊</p>
-          <br />
-          <br />
-          <h3>跨域資源共享 (CORS)</h3>
+          <p>不同源的話, 比如運行在一個URL上的腳本, 如果它發出的請求,</p>
           <p>
-            是透過自訂的HTTP標頭，讓瀏覽器與伺服器進行溝通，從而判斷請求或回應應該是成功還是失敗的。
+            請求的目標和它所運行的環境不同源, 就會受到同源策略不准你發這個請求
           </p>
-          <p>實現 CORS 關鍵是後端，</p>
-          <p>服務端設置 Access-Control-Allow-Origin 頭部字段開啟 CORS</p>
+          <p>
+            請求的目標和它所運行的環境不同源, 就會受到同源策略不准你發這個請求
+          </p>
           <br />
           <br />
-          <h3>Nginx 反向代理</h3>
-          <p>所有客戶端請求經 Nginx 處理， Nginx 再向服務器請求轉發給後段</p>
+          <h1 class="articleCardTitle"># 跨域是什麼?</h1>
+          <p>就是域名,端口, 協議如果不一樣,</p>
+          <p>
+            瀏覽器會進行跨域報錯, 使用別人的服務時可能遇到, 遇到的話要做跨域
+          </p>
           <br />
           <br />
+          <div>|......不跨域會怎樣? 不跨域的話訪問不到,沒有權限</div>
+          <div>|.........用什麼方式訪問會提示沒有權限? AJAX會訪問不到</div>
+          <div>|............我現在從A域名向B域名發get請求會發出去嗎? 會</div>
+          <div>|...............B服務器會得到我的請求嗎? 會</div>
+          <div>|..................得到之後會給我返回一個響應嗎? 會</div>
+          <div>
+            |.....................我唯獨什麼拿不到? JS拿不到他的 response
+          </div>
+          <div>
+            |........................誰弄得為什麼拿不到? 瀏覽器, 為了安全起見
+          </div>
+          <div>
+            |...........................要跨越這個限制怎麼做? 兼容IE用JSONP,
+            不用就用CROS
+          </div>
+          <br />
+          <br />
+          <h1 id="" class="articleCardTitle"># 解決跨域問題:</h1>
+          <h3 class="cor36">JSONP</h3>
+          <p>利用script標籤不受同源策略的影響, 前端先動態創立一個script標籤,</p>
+          <p>然後給script設置src, 然後src裡面的目標是請求的目標,</p>
+          <p>
+            通常和後端約定說一個回調函數的名字, 通常可以設callback
+            function來告訴後端說我前端回調函數寫這個,
+          </p>
+          <p>
+            然後後端給你返回一個script, script裡面相當於調用你前端寫的callback
+            function
+          </p>
+          <p>
+            然後callback function後端會給你傳一個數據, 你就可以從callback
+            function裡提取這個數據出來
+          </p>
+          <br />
+          <br />
+          <div>|...JSONP放在請求裡的參數怎麼寫? callback</div>
+          <div>|......callback等於什麼? _ 等於參數名</div>
+          <div>
+            |.........參數名怎麼構造? _
+            通過固定字串加上一個隨機數來確保那個函數名是唯一的
+          </div>
+          <div>
+            |............那我可以監聽它的成功失敗或獲取狀態碼嗎? 不算完全可以,
+            可以監聽script.onload 可能只會在200時觸發, 其他狀態碼不一定觸發
+            ,失敗有一個onerrpr 但具體是什麼錯誤是不確定的
+          </div>
+          <br />
+          <br />
+          <p class="cor36">如果發POST可能嗎?</p>
+          <p>不可能,因為它只能 GET 文件</p>
+          <br />
+          <br />
+          <p class="cor36">如果我想要獲取狀態碼可能嗎?</p>
+          <p>
+            不可能,如果 404 的話你的回掉函數根本進不來, 前端就沒有感知到 404
+          </p>
+          <br />
+          <br />
+          <p>優: 兼容性較好, 兼容 IE 用 JSONP, 不用就用 CROS</p>
+          <br />
+          <br />
+          <p class="cor36">JSONP 的缺點:</p>
+          <p class="pTwo">1. 他只能用 get 請求</p>
+          <br />
+          <p class="pTwo">
+            2-1. 這個 get 無論如何一定會帶上 cookie,這樣的話你就沒辦法限制誰能用
+            JSONP, 不像 CORS 指定域名使用數據?
+          </p>
+          <p class="pSix">會導致數據被你不希望的源請求到</p>
+          <p class="pEig">解決? _ 做refer較驗</p>
+          <br />
+          <p class="pTwo">2-2. A和B可以JSONP,別的網站C也可以JSONP怎麼辦?</p>
+          <p class="pSix">
+            通過請求頭request字段裡的 refer 來判斷他是C網站來屏蔽
+          </p>
+          <br />
+          <p class="pTwo">2-3. 我能防止別有用心的人調用這個JSONP嗎?</p>
+          <p class="pSix">可以,加一些較驗參數在JS的後面的參數裡面</p>
+          <p class="pSix">1.refer檢查,請求頭 request header 裡面 refer</p>
+          <p class="pSix">
+            2.把當前域名的cookieID做一個哈希, 哈希後的值放到 JSONP
+            的後面就可以防止其他網站有效請求
+          </p>
+          <p class="pEig">(其他網站偽造不了,因為它拿不到cookie)</p>
+          <p class="pEig">
+            (只有你要請求的域名是子域名行,如果完全不相同你自己也拿不到cookie)
+          </p>
+          <br />
+          <br />
+          <h3 class="cor36">CORS . . . Cross-Origin Resource Sharing</h3>
+          <p>2 種請求:</p>
+          <p class="cor36">CORS簡單請求?</p>
+          <p>在後端設置響應頭 Access-Control-Allow-Origin 建立一個白名單</p>
+          <br />
+          <br />
+          <p class="cor36">CORS複雜請求兩次請求都在做什麼?</p>
+          <p>第一次它會去 find options請求, 問服務器準不準我發POST請求,</p>
+          <p>
+            如果你返回的 methods裡面有 POST 那就是準, 返回沒有POST就是不准,
+            (需要後端做配合)
+          </p>
+          <p>也就是瀏覽器不一定會允許你發 POST 請求,</p>
+          <p>你發POST被服務器阻止就發不出去了,</p>
+          <p class="comment">
+            但簡單請求是一定可以發出去的(它不會問服務器允不允許簡單請求)
+            <!-- Copyright © 2023 Wayne Lu -->
+          </p>
+          <br />
+          <br />
+          <p class="cor36">為什麼 CORS 要分簡單請求和複雜請求?</p>
+          <p>POST 比較危險</p>
+          <br />
+          <br />
+          <div>代理怎麼做跨域? 後端配一台 NGINX 服務器</div>
+          <br />
+          <br />
+          <div>|...如果想提取url中的參數,然後把參數變成物件怎麼做?</div>
+          <div>
+            |......路徑是/xxx?a=1&b=2,要得到{a:1 , b:2}怎麼做? _ 正則做一個匹配
+          </div>
+          <div>|......url裡面遇到錨點#怎麼處理?</div>
+          <div>|.........#號算不算查詢字串的一部分? _ 不算</div>
+          <div>
+            |...unicode和utf8區別?(分清子符集和編碼) _ unicode是一個字符集,
+            它世界所有文字做編碼, utf8是對unicode的計算機編碼
+          </div>
+          <div>|...英文文檔? react beta</div>
+          <div>|...如果JS API不知道用法你去哪看? MDN</div>
+          <div>|...JS規範文檔英文? ecmascript</div>
+          <div>|...規範文檔的英文? specification</div>
+          <div>|...grapQL? 前端自己寫自己要的字段,然後後端一次性發過來</div>
+          <br />
+          <br />
+
+          <h1 class="articleCardTitle"># 網站開發流程?</h1>
+          <p>
+            首先產品經理提出想做的網站是什麼, 前後端討論定一下對應API格式,
+            訂好規則後前端根據UI給的設計圖把頁面做出來,
+            測試再根據我們的代碼進行測試, 測試完打包上線
+          </p>
+          <br />
+          <br />
+
           <h1 id="web006" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ 腳本攻擊XSS,請求偽造CSRF
+          </h1>
+          <h3 class="articleCardTitle">
+            跨站腳本攻擊（XSS）Cross-site request forgery
+          </h3>
+          <p>
+            攻擊者在網頁中注入惡意腳本，並將該腳本傳送給其他使用者的瀏覽器執行。
+          </p>
+          <br />
+          <br />
+          <p>防止XSS攻擊:</p>
+          <p>開發者應該適當地驗證和過濾使用者的輸入。</p>
+          <br />
+          <br />
+          <h3 class="articleCardTitle">
+            跨站請求偽造（CSRF）Cross-site request forgery
+          </h3>
+          <p>
+            攻擊者誘導使用者到第三方網站, 在第三方網站中,
+            向被攻擊網站發送跨站請求。
+          </p>
+          <br />
+          <p>利用受害者在被攻擊網站已獲取的註冊憑證, 繞過後台用戶驗證,</p>
+          <br />
+          <p>冒充用戶對被攻擊網站執行操作。</p>
+          <br />
+          <br />
+          <p>防止CSRF攻擊:</p>
+          <p>
+            檢查和驗證請求的來源、實施隨機生成的驗證碼（CSRF令牌）和同源政策等。
+          </p>
+          <br />
+          <br />
+
+          <h1 id="web007" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 如何進行網站性能優化 ?
           </h1>
           <p>加載方面:</p>
@@ -699,7 +922,7 @@ function locate(idPound) {
           <p>這些是執行效率</p>
           <br />
           <br />
-          <h1 id="web007" class="articleCardTitle">
+          <h1 id="web008" class="articleCardTitle">
             [ Web筆記 ] ≫ 如何進行渲染優化 ?
           </h1>
           <p>1.不使用 iframe</p>
@@ -740,70 +963,10 @@ function locate(idPound) {
           <p>10.圖片預加載 , 網頁 Gzip , CDN 庫 , data 緩存 , 圖片服務器</p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36">五層網絡協議</h3>
-          <p>1.應用層（DNS，HTTP）：域名解析為IP並發送HTTP請求</p>
-          <p>2.傳輸層（TCP，UDP）：建立TCP連接（三次握手）</p>
-          <p>3.網路層（IP，ARP）：IP尋址</p>
-          <p>4.數據鏈路層（PPP）：封裝成幀</p>
-          <p>
-            5.物理層（利用物理介質傳輸比特流）：物理傳輸（通過雙絞線、電磁波等各種介質）
-          </p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">解析 HTML</h3>
-          <p>
-            HTML是逐行解析的，瀏覽器的渲染引擎會將HTML文檔解析並轉換為DOM節點。
-          </p>
-          <p>將標記 （Tokens） 解析成物件</p>
-          <p>將物件組合成一個DOM樹</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">解析 CSS</h3>
-          <p>瀏覽器會從右到左解析CSS選擇器</p>
-          <p>∕span -> ∕div -> html</p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">JavaScript 解析的流程</h3>
-          <p>
-            1.瀏覽器創建 Document 物件並開始解析 HTML
-            文件。解析器將解析到的元素和文本節點添加到文件中，此時
-            document.readyState 屬性為 "loading"。
-          </p>
-          <br />
-          <p>
-            2.HTML 解析器遇到沒有 async 和 defer 屬性的 script
-            標籤時，將它們添加到文件中並開始執行內部或外部腳本。這些腳本將同步執行，解析器在腳本下載和執行期間會暫停解析。因此，可以使用
-            document.write()
-            方法將文本插入到輸入流中。同步腳本通常用於定義函數和註冊事件處理程序，它們可以遍歷和操作腳本之前的文件內容。
-          </p>
-          <br />
-          <p>
-            3.當解析器遇到設置了 async 屬性的 script
-            標籤時，它會開始下載該腳本並繼續解析文件。這些腳本將在下載完成後盡快執行，但解析器不會等待它們的下載。異步腳本禁止使用
-            document.write()，它們可以訪問其所在的 script
-            標籤以及之前的文件元素。
-          </p>
-          <br />
-          <p>
-            4.所有設置了 defer
-            屬性的腳本將按照它們在文件中出現的順序執行。延遲腳本能夠訪問完整的文件樹，但禁止使用
-            document.write()。
-          </p>
-          <br />
-          <p>
-            5.當文件上的所有延遲腳本執行完成時，瀏覽器將在 Document 物件上觸發
-            DOMContentLoaded 事件。這表示文件的 DOM
-            結構已完全構建，可以進行操作。
-          </p>
-          <br />
-          <p>
-            6.等待其他內容加載完成並且所有異步腳本執行完成後，document.readyState
-            屬性變為 "complete"，此時 window 物件觸發 load
-            事件。這表示整個文件和相關資源已經加載完成。
-          </p>
-          <br />
-          <br />
-          <h3 class="articleCardTitle cor36">OSI七層模型</h3>
+
+          <h3 id="web009" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ OSI七層模型
+          </h3>
           <p>
             1.物理層利用傳輸介質為數據鏈路層提供物理連接，實現比特流的透明傳輸。
           </p>
@@ -831,7 +994,20 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h3 class="articleCardTitle cor36">DOMContentLoaded和load的差別?</h3>
+          <h3 class="articleCardTitle cor36"># 五層網絡協議</h3>
+          <p>1.應用層（DNS，HTTP）：域名解析為IP並發送HTTP請求</p>
+          <p>2.傳輸層（TCP，UDP）：建立TCP連接（三次握手）</p>
+          <p>3.網路層（IP，ARP）：IP尋址</p>
+          <p>4.數據鏈路層（PPP）：封裝成幀</p>
+          <p>
+            5.物理層（利用物理介質傳輸比特流）：物理傳輸（通過雙絞線、電磁波等各種介質）
+          </p>
+          <br />
+          <br />
+
+          <h3 id="web010" class="articleCardTitle cor36">
+            [ Web筆記 ] ≫ DOMContentLoaded和load的差別?
+          </h3>
           <p>DOMContentLoaded:</p>
           <p>瀏覽器已完全加載 HTML 並構建 DOM 樹，</p>
           <p>但像 ＜img> 和樣式表之類的外部資源 可能尚未加載完成。</p>
@@ -843,78 +1019,8 @@ function locate(idPound) {
           <p>unload 是在網頁被卸載「之後」觸發</p>
           <br />
           <br />
-          <div id="web003" class="articleCardTitle cor36">
-            [ Web筆記 ] ≫ 什麼是重排(回流)和重繪?如何避免
-          </div>
-          <h2>重繪不一定重排，重排一定重繪</h2>
-          <br />
-          <h3 class="cor36"># 重排(回流)（reflow）是什麼:</h3>
-          <p>當瀏覽器偵測到頁面的佈局發生變化時，就需要進行回退並重新渲染。</p>
-          <br />
-          <p class="cor36"># 觸發重排(回流)條件：</p>
-          <p>1.頁面第一次渲染（初始化）</p>
-          <p>2.DOM樹節點的增刪或移動</p>
-          <p>3.DOM元素的幾何屬性變化</p>
-          <p class="pFou">寬度（width）</p>
-          <p class="pFou">高度（height）</p>
-          <p class="pFou">內邊距（padding）</p>
-          <p class="pFou">邊框（border）等</p>
-          <p class="pFou">外邊距（margin）</p>
-          <p class="pFou">左偏移（left）</p>
-          <p class="pFou">上偏移（top）</p>
-          <br />
-          <p>4.瀏覽器窗口大小改變（resize）</p>
-          <p>獲取元素的某些屬性，如offset系列、scroll系列和client系列屬性。</p>
-          <br />
-          <p class="cor36"># 重排(回流)過程</p>
-          <p>
-            劉覽器會從根節點＜html>元素
-            開始進行遞歸，逐個計算所有節點的幾何尺寸和位置，以確定是渲染樹的一部分發生變化還是整個渲染樹需要重新渲染。
-          </p>
-          <br />
-          <br />
-          <h3 class="cor36"># 重繪（repaint）是什麼:</h3>
-          <p>
-            當我們改變某個元素的背景色、文字顏色、邊框顏色等屬性時，屏幕的一部分需要重繪，但是元素的幾何尺寸和位置沒有發生改變。重繪過程不涉及布局的計算，只是重新繪製已有的元素。
-          </p>
-          <br />
-          <p class="cor36"># 觸發重繪條件:</p>
-          <p>
-            1.重排(回流)必會引起重繪，因為回流的過程中可能會改變元素的樣式屬性，需要重新繪製已有的元素。
-          </p>
-          <p>2.背景色、文字顏色、字體等的改變會觸發重繪。</p>
-          <p class="pTwo">
-            注意 字體大小發生變化時，將觸發回流而非僅重繪。(會影響元素的佈局)
-          </p>
-          <br />
-          <p class="cor36"># 重繪過程</p>
-          <p>
-            沒有導致 DOM
-            元素的幾何屬性（寬度、高度、位置）發生變化，因此元素的位置信息不需要更新，從而省去了佈局（layout）的過程。
-          </p>
-          <br />
-          <br />
-          <h2 class="cor36"># 如何避免重排(回流).重繪?</h2>
-          <p>1.集中改變樣式: ex 用 class 集中改變</p>
-          <br />
-          <p>2.用 transform 做變形和位移，可以減少重排(回流)的次數。</p>
-          <br />
-          <p>
-            3.將需要多次修改的 DOM 元素設置為 display:none，操作完成後再顯示。
-          </p>
-          <br />
-          <p>4.避免多次讀取某些屬性</p>
-          <br />
-          <p>5.絕對定位將複雜的節點脫離文檔流中，形成新的 Render Layer。</p>
-          <br />
-          <p>
-            6.使用 DocumentFragment 將需要多次修改的 DOM
-            元素緩存起來，最後一次性添加到真實的 DOM 中進行渲染。
-          </p>
-          <br />
-          <br />
 
-          <h1 id="web008" class="articleCardTitle">
+          <h1 id="web011" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器垃圾回收機制
           </h1>
           <p>垃圾回收是一種自動的記憶體管理機制。</p>
@@ -1005,7 +1111,7 @@ function locate(idPound) {
           <p>使用內存管理工具和效能分析工具：借助工具進行內存泄漏</p>
           <br />
           <br />
-          <h1 id="web009" class="articleCardTitle">
+          <h1 id="web012" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 前端需要注意哪些SEO
           </h1>
           <p>1.合理的title、description、keywords標籤</p>
@@ -1043,7 +1149,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <h1 id="web012" class="articleCardTitle">
+          <h1 id="web013" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ WEB標準 & W3C標準
           </h1>
           <p>WEB 標準不是某一個標準，是一系列的集合</p>
@@ -1074,7 +1180,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web013" class="articleCardTitle">
+          <h1 id="web014" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 描述漸進增強和優雅降級之間的不同?
           </h1>
           <p>漸進增強（Progressive Enhancement）:</p>
@@ -1091,7 +1197,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web014" class="articleCardTitle">
+          <h1 id="web015" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 製作網頁用的圖片格式有哪些?
           </h1>
           <p>Webp . jpeg . gif . svg . Apng</p>
@@ -1106,7 +1212,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web015" class="articleCardTitle">
+          <h1 id="web016" class="articleCardTitle cor36">
             [ Web筆記 ] ≫
             大型網站有大量圖片，加載很慢，有哪些方法能優化這些圖片加載，提升用戶體驗?
           </h1>
@@ -1134,7 +1240,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web016" class="articleCardTitle">
+          <h1 id="web017" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ Web 開發中會話跟蹤的方法有哪些?
           </h1>
           <p>1.會話</p>
@@ -1193,7 +1299,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <h1 id="web017" class="articleCardTitle">
+          <h1 id="web018" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ CDN為什麼利用多個域名來存取網站資源更有效?
           </h1>
           <p>內容傳遞網路（英語：Content Delivery Network，縮寫：CDN）</p>
