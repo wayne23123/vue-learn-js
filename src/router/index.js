@@ -5,6 +5,7 @@ import AboutPage from "../views/AboutPage.vue";
 import HttpPage from "../views/HttpPage.vue";
 import HtmlPage from "../views/HtmlPage.vue";
 import CssPage from "../views/CssPage.vue";
+import JsPage from "../views/JsPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,10 @@ const router = createRouter({
         {
           path: "css",
           component: CssPage,
+        },
+        {
+          path: "js",
+          component: JsPage,
         },
       ],
     },

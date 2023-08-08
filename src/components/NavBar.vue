@@ -24,7 +24,7 @@
           <router-link to="/css"><div class="liPad">CSS</div></router-link>
         </li>
         <li>
-          <router-link to="/about"
+          <router-link to="/js"
             ><div class="liPad">JavaScript</div></router-link
           >
         </li>
