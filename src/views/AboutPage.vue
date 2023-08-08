@@ -68,7 +68,7 @@ function locate(idPound) {
           <p>1. 把它教給一個小孩子</p>
           <p>2. 回顧教學過程(ex腳本,他不懂腳本要再解釋)</p>
           <p>3. 將語言條理化,簡化</p>
-          <p>4. 傳授真正的人</p>
+          <p>4. 把它教給一個大人</p>
           <br />
           <a href="https://www.youtube.com/watch?v=gcbCXqjicu0"
             >費曼學習法：快速掌握新知識 @youtube 好葉</a
@@ -102,6 +102,10 @@ function locate(idPound) {
           <a href="https://www.youtube.com/watch?v=s73WwmWVqBg"
             >為什麼要睡覺 @youtube 文森說書
           </a>
+          <br />
+          <a href="https://www.youtube.com/watch?v=3QHjv-vOlDU&t=440s"
+            >天才和平庸的差距，是如何區分的 @youtubr 心河擺渡</a
+          >
           <br />
           <a href="https://www.youtube.com/watch?v=wcBHHyK9ig8"
             >一流的人如何保持巔峰 @youtube 文森說書</a
