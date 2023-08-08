@@ -1,6 +1,6 @@
 # vue-learn-js
 
-This template should help get you started developing with Vue 3 in Vite.
+我的 html , css , js , vue 學習筆記
 
 ## Recommended IDE Setup
 
