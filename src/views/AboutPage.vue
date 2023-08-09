@@ -107,6 +107,14 @@ function locate(idPound) {
             >天才和平庸的差距，是如何區分的 @youtubr 心河擺渡</a
           >
           <br />
+          <a href="https://www.youtube.com/watch?v=w3PIS7a7IKI"
+            >智能陷阱，如何操控我們的生活? @youtubr 心河擺渡</a
+          >
+          <br />
+          <a href="https://www.youtube.com/watch?v=oeybQjreWhU"
+            >貧窮的本質 @youtube 艾倫的悅讀空間</a
+          >
+          <br />
           <a href="https://www.youtube.com/watch?v=wcBHHyK9ig8"
             >一流的人如何保持巔峰 @youtube 文森說書</a
           >

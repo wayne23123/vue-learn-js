@@ -220,10 +220,10 @@ function locate(idPound) {
           <h1 id="web002" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ 瀏覽器輸入網址後按下 enter 會發生什麼 ?
           </h1>
-          <p>首先進行DNS域名解析, 再來與服務器三次握手建立TCP連結,</p>
-          <p>然後發送http請求, 然後服務器處理請求</p>
-          <p>服務器返回響應結果, 然後四次揮手關閉TCP連結</p>
-          <p>然後瀏覽器解析HTML, 最後瀏覽器布局渲染頁面</p>
+          <p>首先進行 DNS 域名解析, 再來與服務器三次握手建立 TCP 連結,</p>
+          <p>然後發送 http 請求, 然後服務器處理請求</p>
+          <p>服務器返回響應結果, 然後四次揮手關閉 TCP 連結</p>
+          <p>然後瀏覽器解析 HTML 文本, 最後瀏覽器布局渲染頁面</p>
           <br />
           <p>1.瀏覽器接受 URL 開啟網路請求線程 (線程&進程)</p>
           <p>
@@ -245,10 +245,10 @@ function locate(idPound) {
           <p>CSS 不會阻塞 DOM 解析，會阻塞 DOM 渲染</p>
           <p>CSS 會阻塞 JS 執行，不會阻塞 JS 文件下載</p>
           <br />
-          <p>DOM樹和CSSOM樹都加載完畢才渲染render樹</p>
-          <p>CSS 文件會在 JS 文件執行前先加載執行完畢</p>
+          <p>DOM 樹和 CSSOM 樹都加載完 才渲染 render 樹</p>
+          <p>CSS 文件會先加載執行完 再執行 JS 文件</p>
           <br />
-          <p>避免 FOUC 白屏</p>
+          <p class="cor36"># 避免 FOUC 白屏</p>
           <p>
             CSS 檔案放置在 HTML 文檔的 head 標籤中
             ,確保在頁面渲染前加載並應用CSS樣式。
@@ -258,6 +258,7 @@ function locate(idPound) {
             樣式預加載技術，如 preload 或 prefetch，提前加載 CSS
             檔案以減少延遲。
           </p>
+
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># JS 會阻塞頁面嗎?</h3>
@@ -284,6 +285,14 @@ function locate(idPound) {
           <h3 class="articleCardTitle cor36"># 解析 CSS</h3>
           <p>瀏覽器會從右到左解析CSS選擇器</p>
           <p>∕span -> ∕div -> html</p>
+          <br />
+          <br />
+          <p>
+            <spen class="cor36">因為: </spen
+            ><span
+              >性能問題,假設從左往右會先找到很多a,可能99%沒用,沒必要找</span
+            >
+          </p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># JavaScript 解析的流程</h3>
@@ -328,22 +337,39 @@ function locate(idPound) {
           <br />
 
           <h3 class="articleCardTitle cor36"># ip地址怎麼找?</h3>
-          <p>ip地址從DNS域名服務器裡存儲的地址本找出來的</p>
-          <p>之前訪問過該網站的話從本機緩存數據裡找</p>
-          <p>如果找不到就從路由器設置的電信服務商提供的DNS服務器中找</p>
-          <p>再找不到就從網站域名提供的服務商提供的DNS服務器找</p>
+          <p>ip 地址從 DNS 域名服務器裡 存儲的地址本 找出來的</p>
           <br />
+          <p>之前 訪問過該網站的話 從本機 緩存數據裡找</p>
+          <br />
+          <p>如果找不到 就從路由器設置的 電信服務商提供的 DNS 服務器中找</p>
+          <br />
+          <p>再找不到 就從網站域名提供的 服務商提供的 DNS 服務器找</p>
+          <br />
+          <br />
+          <br />
+          <p class="cor36">
+            TCP 是一種要求資料正確性的傳輸方式， 這表示它需要一些特殊機制，
+            來確保傳輸的數據不會出錯。
+          </p>
+          <br />
+          <a
+            href="https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE"
+            >傳輸控制協定 @wiki</a
+          >
           <br />
           <h3 class="articleCardTitle cor36">
             # 三次握手 -> 與 WEB 服務器建立連接 -> 確認雙方都能接收,發送正常
           </h3>
           <br />
           <p>第一次握手： 客戶端發送 SYN 數據包,服務端收到</p>
+          <br />
           <p>第二次握手： 服務端回復 SYN 和 ACK 數據包,客戶端收到</p>
+          <br />
           <p>
             第三次握手： 客戶端 檢查接收數據包正確後 發送 ACK
             數據包,服務端收到,連接建立成功
           </p>
+          <br />
           <br />
           <p>
             第一次握手：客戶端向伺服器發送一個帶有 SYN
@@ -366,27 +392,33 @@ function locate(idPound) {
           <br />
           <p class="articleCardTitle cor36"># 4次揮手</p>
           <p>
-            客戶端發送一個FIN Seq =
-            M（FIN置位，序號為M）封包，用來關閉客戶端到伺服器端的資料傳送。
+            客戶端發送一個 FIN Seq = M（FIN置位，序號為M）
+            封包，用來關閉客戶端到伺服器端的資料傳送。
           </p>
+          <br />
           <p>
-            伺服器端收到這個FIN，它回送一個ACK，確認序號Ack為收到的序號M+1。
+            伺服器端收到這個 FIN ，它回送一個 ACK ，確認序號 Ack 為收到的序號
+            M+1。
           </p>
-          <p>伺服器端關閉與客戶端的連接，發送一個FIN Seq = N給客戶端。</p>
-          <p>客戶端回覆ACK報文確認，確認序號Ack為收到的序號N+1。</p>
+          <br />
+          <p>伺服器端關閉與客戶端的連接，發送一個 FIN Seq = N 給客戶端。</p>
+          <br />
+          <p>客戶端回覆 ACK 報文確認，確認序號 Ack 為收到的序號 N+1。</p>
           <br />
           <br />
-          <p>為什麼建立是 3 次，關閉是 4 次</p>
-          <p>
-            因為服務端在 LISTEN 狀態下, 收到建立連接請求的 SYN 報文後， 把 ACK
-            和 SYN 放在一個報文裡發送給客戶端。
-          </p>
-          <p>
-            而關閉連接時, 收到對方的 FIN 報文時,
-            僅表示對方不再發送數據但還是能發送數據,
-            己方是否現在關閉發送數據通道, 需要上層應用來決定, 因此己方 ACK 和
-            FIN 分開發送
-          </p>
+          <br />
+          <p class="cor36"># 為什麼建立是 3 次，關閉是 4 次</p>
+          <p>因為服務端在 LISTEN 狀態下, 收到建立連接請求的 SYN 報文後，</p>
+          <br />
+          <p>把 ACK 和 SYN 放在一個報文裡發送給客戶端。</p>
+          <br />
+          <p>而關閉連接時, 收到對方的 FIN 報文時</p>
+          <br />
+          <p>僅表示對方不再發送數據但還是能發送數據</p>
+          <br />
+          <p>己方是否現在關閉發送數據通道, 需要上層應用來決定</p>
+          <br />
+          <p>因此己方 ACK 和 FIN 分開發送</p>
           <br />
           <br />
 
@@ -419,13 +451,20 @@ function locate(idPound) {
             [ Web筆記 ] ≫ http協議?
           </h3>
           <p>超文字傳輸協定</p>
-          <p>他是基於TCP默認80端口的一個應用層協議</p>
-          <p>用於從全球資訊網傳輸資源到本地瀏覽器的傳輸協議</p>
-          <p>他主要是用來規定客戶端和服務器端的數據傳輸格式</p>
-          <p>所以HTTP是一個標準和規範</p>
-          <p>每一個HTTP連接包括請求消息和響應消息2個部分</p>
-          <p>請求報文包括4個, 請求行, 請求頭, 空行, 請求體</p>
-          <p>響應報文包括4個, 響應行, 響應頭, 空行, 請求體,</p>
+          <br />
+          <p>他是基於 TCP 默認 80 端口的一個 應用層協議</p>
+          <br />
+          <p>用於 從全球資訊網 傳輸資源 到本地瀏覽器 的傳輸協議</p>
+          <br />
+          <p>主要是用來規定 客戶端 和服務器端 的數據傳輸格式</p>
+          <br />
+          <p>所以 HTTP 是一個標準和規範</p>
+          <br />
+          <p>每一個 HTTP 連接包括 請求消息 和響應消息 2 部分</p>
+          <br />
+          <p>請求報文包括 , 請求行, 請求頭, 空行, 請求體</p>
+          <br />
+          <p>響應報文包括 , 響應行, 響應頭, 空行, 請求體,</p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36">
@@ -1430,6 +1469,20 @@ section {
 
 .cor36 {
   color: #36c1cb;
+}
+
+a {
+  display: inline-block;
+  /* 沒互動顏色 */
+  color: #c4c4c4;
+  padding: 5px 0;
+  margin: 0 1;
+  border: 3px solid transparent;
+}
+
+a:hover {
+  /* 滑進時顏色 */
+  color: #3ddbe7;
 }
 
 /* top按鈕的css -------------------------------------------------------*/

@@ -4,8 +4,8 @@
   <div class="sectionHolder"></div>
   <div class="sectionHolder"></div>
   <div class="disCen title">
-    <div class="dis spa titleCard">
-      <div>
+    <div class="titleCard">
+      <div class="titleCardLeft">
         <h1>Wayne's Blog</h1>
         <h1>前端學習筆記</h1>
         <h3>記錄一些關於前端學習的筆記</h3>
@@ -25,10 +25,12 @@
           </div>
         </div>
       </div>
-      <router-link to="/"
-        ><div class="svg">
-          <img src="../assets/wss.svg" alt="" /></div
-      ></router-link>
+      <div class="titleCardRight">
+        <router-link to="/"
+          ><div class="svg">
+            <img src="../assets/wss.svg" alt="" /></div
+        ></router-link>
+      </div>
     </div>
   </div>
   <div class="sectionHolder"></div>
@@ -98,7 +100,24 @@
 }
 
 .titleCard {
-  width: 500px;
+  width: 76vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background-color: #c4c4c4; */
+}
+
+.titleCardLeft {
+  width: 250px;
+  /* background-color: #000; */
+}
+
+.titleCardRight {
+  width: 250px;
+  /* background-color: #565656; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
