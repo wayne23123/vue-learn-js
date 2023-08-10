@@ -27,6 +27,11 @@ function locate(idPound) {
     behavior: "smooth",
   });
 }
+
+const engRef = ref(false);
+function engRefF() {
+  engRef.value = true;
+}
 </script>
 
 <template>
@@ -127,6 +132,13 @@ function locate(idPound) {
             >真正的快樂處方 @youtube 文森說書</a
           >
           <br />
+          <!-- <a href="https://www.youtube.com/watch?v=T6vwvui2EWI&list=PLJ2qsHXnALwGGLl6ID6lPKY1AIlee3ITv&index=2&t=608s"></a> -->
+          <div @click="engRefF()" style="color: #171717">test</div>
+          <div v-if="engRef">
+            <hr />
+            <br />
+            <p>Http . . . 超文本傳輸協定</p>
+          </div>
         </div>
       </div>
     </div>

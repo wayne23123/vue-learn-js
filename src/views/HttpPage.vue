@@ -225,7 +225,7 @@ function locate(idPound) {
           <p>服務器返回響應結果, 然後四次揮手關閉 TCP 連結</p>
           <p>然後瀏覽器解析 HTML 文本, 最後瀏覽器布局渲染頁面</p>
           <br />
-          <p>1.瀏覽器接受 URL 開啟網路請求線程 (線程&進程)</p>
+          <p>1.瀏覽器接受 URL 開啟網路請求線程 (進程 > 線程)</p>
           <p>
             2.瀏覽器通過 DNS 服務器得到域名的 IP位置, 向 IP 地址
             建立連接(TCP3次握手) 後發送http請求
@@ -239,6 +239,22 @@ function locate(idPound) {
           <p>6.DOM 樹和 CSSOM 構建完成之後, 渲染線程將 2 者合併成渲染樹</p>
           <p>7.渲染進程開始對渲染樹進行布局, 生成布局樹 (layout tree)</p>
           <p>8.渲染樹對布局樹進行繪製, 生成繪製紀錄</p>
+          <br />
+          <br />
+          <div class="disCen">
+            <img
+              src="../assets/htmlimg/render003.png"
+              style="max-width: 500px"
+              alt=""
+            />
+          </div>
+          <div class="disCen">
+            <img
+              src="../assets/htmlimg/render004.png"
+              style="max-width: 500px"
+              alt=""
+            />
+          </div>
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># CSS 會阻塞 DOM 嗎?</h3>
@@ -390,6 +406,32 @@ function locate(idPound) {
           </p>
           <br />
           <br />
+          <br />
+          <p>序列號（seq，32位元長）:</p>
+          <p class="pFou">
+            如果含有同步化旗標（SYN），則此為最初的序列號；第一個資料位元的序列碼為本序列號加一。
+          </p>
+          <p class="pFou">
+            如果沒有同步化旗標（SYN），則此為第一個資料位元的序列碼。
+          </p>
+          <br />
+          <p>確認號（ack，32位元長）:</p>
+          <p class="pFou">
+            期望收到的資料的開始序列號。也即已經收到的資料的位元組長度加1。
+          </p>
+          <br />
+          <p>標誌符（9位元長）:</p>
+          <p class="pFou">
+            SYN: 為1表示這是連接請求或是連接接受請求，用於建立連接和使順序號同步
+          </p>
+          <p class="pFou">FIN: 為1表示傳送方沒有資料要傳輸了，要求釋放連接。</p>
+          <br />
+          <br />
+          <p class="cor36">內容傳輸：</p>
+          <p>確認封包機制： 接收端接收到包時, 要回傳確認信息給 發送端</p>
+          <p>逾時與重送： 如果接收端 一直無返回確認信息，發送端 會重發一次</p>
+          <br />
+          <br />
           <p class="articleCardTitle cor36"># 4次揮手</p>
           <p>
             客戶端發送一個 FIN Seq = M（FIN置位，序號為M）
@@ -407,6 +449,7 @@ function locate(idPound) {
           <br />
           <br />
           <br />
+
           <p class="cor36"># 為什麼建立是 3 次，關閉是 4 次</p>
           <p>因為服務端在 LISTEN 狀態下, 收到建立連接請求的 SYN 報文後，</p>
           <br />
@@ -423,26 +466,31 @@ function locate(idPound) {
           <br />
 
           <h3 class="articleCardTitle cor36"># 什麼是SYN Flood攻擊?</h3>
-          <p>SYNflood利用TCP協議缺陷, 發送大量偽造TCP請求,</p>
-          <p>請求連接的第一個握手包(SYN), 服務器回應第二個握手包(SYN+ACK),</p>
-          <p>因為偽造IP 對方不會收到包且不會回應第三個握手包,</p>
+          <p>SYNflood 利用 TCP 協議缺陷, 發送大量偽造 TCP 請求</p>
+          <br />
+          <p>請求連接的第一個握手包 (SYN), 服務器回應第二個握手包 (SYN+ACK)</p>
+          <br />
+          <p>因為偽造IP 對方不會收到包且不會回應第三個握手包</p>
+          <br />
           <p>
-            導致服務器保持大量SYN_RECE為半連結, 且會默認5次回應第二個握手包,
+            導致服務器保持大量 SYN_RECE 為半連結, 且會默認 5 次回應第二個握手包,
           </p>
-          <p>大量惡意SYN佔滿未完成連接列隊,導致正常業務連不進來</p>
+          <br />
+          <p>大量惡意 SYN 佔滿未完成連接列隊,導致正常業務連不進來</p>
           <br />
           <br />
 
           <h3 class="articleCardTitle cor36"># SYNflood怎麼檢測?</h3>
-          <p>在服務器上看到大量半連接狀態時, 特別是源ip位置是隨機的</p>
+          <p>在服務器上看到大量半連接狀態時, 特別是源 ip 位置是隨機的</p>
           <br />
           <br />
 
           <h3 class="articleCardTitle cor36"># SYNflood攻擊怎麼解決?</h3>
-          <p>1.縮短超時SYN Timeout</p>
+          <p>1.縮短超時 SYN Timeout</p>
           <p>2.增加最大半連接數</p>
           <p>
-            3.SYN cookie技術(收到SYN報文不直接TCP分配資源,先打開半套的套接字)
+            3.SYN cookie 技術(收到 SYN 報文不直接 TCP
+            分配資源,先打開半套的套接字)
           </p>
           <br />
           <br />
@@ -450,7 +498,14 @@ function locate(idPound) {
           <h3 id="web003" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ http協議?
           </h3>
-          <p>超文字傳輸協定</p>
+          <p>
+            超文本傳輸協定
+            <span
+              ><a href="https://www.runoob.com/http/http-tutorial.html"
+                >http協議 @菜鳥教程</a
+              ></span
+            >
+          </p>
           <br />
           <p>他是基於 TCP 默認 80 端口的一個 應用層協議</p>
           <br />
@@ -472,7 +527,7 @@ function locate(idPound) {
           </h3>
           <p>第一部分:第一行第一個字是get, 然後是url, http協議版本</p>
           <p>第二部分:content-type:</p>
-          <p>第三部分:enter, 第四部份:body a=1&a=2</p>
+          <p>第三部分:enter2</p>
           <p>第四部份:body a=1&a=2</p>
           <br />
           <br />
@@ -482,21 +537,31 @@ function locate(idPound) {
           <br />
           <h3 class="articleCardTitle cor36"># http和https差別?(443端口)</h3>
           <p>http協議傳輸的數據都是未加密的, 因此用http傳輸隱私的訊息不安全</p>
+          <br />
           <p>為了保證這些隱私數據能加密傳輸, 就誕生HTTPS 所以比http協議安全</p>
+          <br />
           <p>
             https由tls加http協議構建的, 可以進行加密傳輸, 身分認證的網路協議
           </p>
+          <br />
           <p>所以比http協議安全</p>
+          <br />
           <p>https有兩個作用</p>
+          <br />
           <p>1.可以建立一個訊息安全通道, 用來保證數據傳輸的安全性</p>
+          <br />
           <p>2.確認網站的真實性</p>
+          <br />
           <p>http和https差別</p>
+          <br />
           <p>1.http不用證書,https需要申請ca證書</p>
+          <br />
           <p>
             2.http下的訊息明文傳輸,
             而https由tls加http協議構建的可進行加密傳輸身分認證的網路協議,
             可以防止傳輸內容被竊取竄改
           </p>
+          <br />
           <p>
             3.http和https使用不同的連接方式, 所以端口不一樣http(80), https(443)
           </p>
@@ -505,25 +570,33 @@ function locate(idPound) {
 
           <h1 class="articleCardTitle cor36"># SSL怎麼做?</h1>
           <p>客戶端發送請求連接的請求給伺服器，請求中包含一個 SSL</p>
+          <br />
           <p>
             版本號以及所支持的加密算法。伺服器收到客戶端的請求後，將自己的 SSL
             證書發送給客戶端。
           </p>
+          <br />
           <p>證書中包含伺服器的公鑰、伺服器的名稱以及證書的頒發機構等信息。</p>
+          <br />
           <p>
             客戶端收到伺服器的 SSL
             證書後，會對證書進行驗證，包括證書的頒發機構是否可信、證書中的伺服器名稱是否和請求的伺服器名稱匹配等。
           </p>
+          <br />
           <p>
             客戶端驗證通過後，生成一個隨機數，使用伺服器的公鑰進行加密，並將加密後的隨機數發送給伺服器。
           </p>
+          <br />
           <p>
             伺服器收到客戶端發送的加密隨機數後，使用自己的私鑰進行解密，得到客戶端的隨機數。
           </p>
+          <br />
           <p>
             伺服器和客戶端分別使用這兩個隨機數來生成對稱加密算法所需的密鑰。
           </p>
+          <br />
           <p>這個密鑰只有伺服器和客戶端才知道，可以保證數據傳輸的安全性。</p>
+          <br />
           <p>
             客戶端和伺服器之間的數據傳輸會使用對稱加密算法來加密和解密，以保證傳輸的安全性。
           </p>
@@ -545,6 +618,16 @@ function locate(idPound) {
           <br />
           <br />
 
+          <h1 class="articleCardTitle cor36"># POST 和 PUT?</h1>
+          <p>1.兩者都可以 用來新增資源， 但 PUT 比較像 覆蓋或替代資源</p>
+          <p>2.PUT 會指定要覆蓋掉哪個資源， POST 不用</p>
+          <p>
+            3.假設資料庫不能有重複資料的話，用 POST 新增多個可能會報錯，但 PUT
+            不會，因為它只是不停的 對某個資源 進行覆蓋而已
+          </p>
+          <br />
+          <br />
+
           <h3 class="articleCardTitle cor36"># 強緩存和弱緩存?</h3>
           <p>
             瀏覽器緩存是瀏覽器在本地磁碟對使用者最近請求過的文件進行存儲，當訪問者再次訪問同一頁面時，瀏覽器就可以直接從本地磁碟載入文件。
@@ -554,22 +637,34 @@ function locate(idPound) {
           <br />
           <p class="cor36">強緩存</p>
           <p>首先在http1.1時,他會在它的上面會有一個 catch crtl 頭</p>
-          <p>裡面可能加上 max age 假設他是 3600, 也就是在這一個小時內,</p>
-          <p>再去訪問這個東西的時候, 它不會再去發請求, 它會從硬碟上去讀取,</p>
-          <p>因為他已經緩存下來了, 同時它會再給他配置一個 etag,</p>
-          <p>這個 etag 是它的特徵值, 可能它特徵值是 AAA,</p>
-          <p>等到期3600過了之後也就到期了,</p>
           <br />
-          <p class="cor36">這裡涉及到協商緩存,</p>
-          <p>就是它會去跟他協商, 然後發請求去協商,</p>
-          <p>這時候可能會發一個 if 開頭的響應頭,</p>
+          <p>裡面可能加上 max age 假設他是 3600, 也就是在這一個小時內</p>
+          <br />
+          <p>再去訪問這個東西的時候, 它不會再去發請求, 它會從硬碟上去讀取</p>
+          <br />
+          <p>因為他已經緩存下來了, 同時它會再給他配置一個 etag</p>
+          <br />
+          <p>這個 etag 是它的特徵值, 可能它特徵值是 AAA</p>
+          <br />
+          <p>等到期3600過了之後也就到期了</p>
+          <br />
+          <br />
+          <p class="cor36">這裡涉及到協商緩存</p>
+          <br />
+          <p>就是它會去跟他協商, 然後發請求去協商</p>
+          <br />
+          <p>這時候可能會發一個 if 開頭的響應頭</p>
+          <br />
           <p>
             把那個特徵值帶上也就是剛剛說道的 AAA,
             然後去看他是否需要繼續給它存著,
           </p>
-          <p>還是要改變這個文件, 它可能會返回 200 或 304, 如果返回 200,</p>
-          <p>不僅返回 200 還會附帶 body,就是會把新的內容給它, 如果返回 304,</p>
-          <p>304 這個狀態碼代表未修改繼續用, 那就不需要新的返回,</p>
+          <br />
+          <p>還是要改變這個文件, 它可能會返回 200 或 304, 如果返回 200</p>
+          <br />
+          <p>不僅返回 200 還會附帶 body,就是會把新的內容給它, 如果返回 304</p>
+          <br />
+          <p>304 這個狀態碼代表未修改繼續用, 那就不需要新的返回</p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># HTTP狀態碼和其含義</h3>
@@ -583,9 +678,11 @@ function locate(idPound) {
           <p>2xx（成功狀態碼）：表示請求已成功被伺服器接收、理解和處理。</p>
           <br />
           <div class="pTwo">200 OK：請求已成功，伺服器正常返回請求的內容。</div>
+          <br />
           <div class="pTwo">
             201 Created：請求已成功並在伺服器上創建了新的資源。
           </div>
+          <br />
           <div class="pTwo">202 Accepted：伺服器已接受請求，但尚未處理。</div>
           <br />
           <p>
@@ -595,7 +692,9 @@ function locate(idPound) {
           <div class="pTwo">
             301 Moved Permanently：請求的資源已永久移動到新位置。
           </div>
+          <br />
           <div class="pTwo">302 Found：請求的資源已臨時移動到新位置。</div>
+          <br />
           <div class="pTwo">
             304 Not Modified：客戶端的快取資源是最新的，可以直接使用。
           </div>
@@ -605,14 +704,19 @@ function locate(idPound) {
           <div class="pTwo">
             400 Bad Request：請求語法錯誤，伺服器無法理解。
           </div>
+          <br />
           <div class="pTwo">401 Unauthorized：請求需要用戶驗證。</div>
+          <br />
           <div class="pTwo">403 Forbidden：禁止訪問。</div>
+          <br />
           <div class="pTwo">404 Not Found：請求的資源不存在。</div>
           <br />
           <p>5xx（伺服器錯誤狀態碼）：表示伺服器在處理請求時發生了錯誤。</p>
+          <br />
           <div class="pTwo">
             500 Internal Server Error：伺服器遇到了一個未知的錯誤。
           </div>
+          <br />
           <div class="pTwo">
             503 Service
             Unavailable：伺服器暫時無法處理請求，可能是由於過載或維護。
@@ -681,13 +785,11 @@ function locate(idPound) {
             [ Web筆記 ] ≫ 什麼是同源策略,不同源會怎樣?
           </h1>
           <p>
-            瀏覽器給出的一個規定,規定說2個URL他的域名,端口,協議都相同, 就是同源,
+            瀏覽器給出的一個規定,規定說2個URL他的域名,端口,協議都相同, 就是同源
           </p>
           <br />
-          <p>不同源的話, 比如運行在一個URL上的腳本, 如果它發出的請求,</p>
-          <p>
-            請求的目標和它所運行的環境不同源, 就會受到同源策略不准你發這個請求
-          </p>
+          <p>不同源的話, 比如運行在一個URL上的腳本, 如果它發出的請求</p>
+          <br />
           <p>
             請求的目標和它所運行的環境不同源, 就會受到同源策略不准你發這個請求
           </p>
@@ -834,7 +936,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <h1 class="articleCardTitle"># 網站開發流程?</h1>
+          <h1 class="articleCardTitle cor36"># 網站開發流程?</h1>
           <p>
             首先產品經理提出想做的網站是什麼, 前後端討論定一下對應API格式,
             訂好規則後前端根據UI給的設計圖把頁面做出來,

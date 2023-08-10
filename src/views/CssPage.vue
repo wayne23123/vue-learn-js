@@ -727,6 +727,13 @@ function cssPageTwoRefF() {
           <div id="" class="articleCardTitle cor36">
             [ CSS ] ≫ 畫三角形的方法?
           </div>
+          <div>
+            <span
+              ><a href="https://codepen.io/wayne23123/pen/QWJdjVJ?editors=1100"
+                >@codePen demo</a
+              >
+            </span>
+          </div>
           <p>1.</p>
           <p>用border, 給四個邊距, 然後給三個透明</p>
           <br />

@@ -327,6 +327,19 @@ function PageTwoRefF() {
               <span class="comment">// [1,2,3,4,5,6]</span>
             </div>
             <br />
+            <div class="comment">也可以</div>
+            <div>
+              <span class="word">a.push</span> <span class="brackets">(</span>
+              <span class="word">...b</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">a</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+
             <div class="comment">可以做陣列淺拷貝</div>
             <div>
               <span class="function">const </span> <span class="word">e</span>
@@ -334,8 +347,17 @@ function PageTwoRefF() {
               <span class="word">...a</span> <span class="brackets">]</span>
             </div>
             <div>
-              <span class="word">e.push(4) </span>
+              <span class="word">e.push</span> <span class="brackets">(</span>
+              <span class="number">4</span> <span class="brackets">)</span>
+
               <span class="comment">// 不會影響 a</span>
+            </div>
+            <br />
+            <div class="comment">
+              淺拷貝是指複製值時，原本的變數和新的變數會指向同一個址 (reference)
+            </div>
+            <div class="comment">
+              深拷貝是指在拷貝時不共享相同的址 (reference)
             </div>
             <br />
           </div>
@@ -392,8 +414,31 @@ function PageTwoRefF() {
           <p class="cor36">這三個點除了把一個東西展開,它在函數參數有什麼用?</p>
           <p>可以不去命名那個函數的參數, 直接用函數參數對象裡面的某一個東西</p>
           <br />
+          <p class="cor36">參數裡面可不可以用三個點?</p>
+          <p>可以</p>
+          <br />
+          <p class="cor36">在賦值可以用三個點嗎?</p>
+          <p>可以</p>
+          <br />
+          <p class="cor36">
+            我有一個陣列長度為10,我想把前面第一個元素命名為a,後面9個元素命名為新的數組叫b怎麼做?
+          </p>
+          <p>
+            方括號a然後點,然後逗號,然後點點點rest,然後方括號,然後等於array1,那就是a,那個a就是array裡的第一個
+          </p>
+          <br />
+          <br />
           <div class="bgcVS">
             <br />
+            <div class="comment">// 用於函數傳參</div>
+            <br />
+            <div class="comment">// 實參的用法</div>
+            <div>
+              <span class="function">const </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1, 2, 3</span>
+              <span class="brackets">]</span>
+            </div>
             <dir>
               <span class="function">function </span>
               <span class="word">test</span> <span class="brackets">(</span>
@@ -417,8 +462,83 @@ function PageTwoRefF() {
             </div>
             <div class="brackets">}</div>
             <div>
-              <span class="word">test</span> <span class="brackets">(</span>
+              <span class="word">test</span><span class="brackets">(</span>
               <span class="word">...a</span> <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">sum</span> <span class="brackets">(</span>
+              <span class="word">a,b,c</span> <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">a+b+c</span>
+            </div>
+            <span class="brackets">}</span>
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">sum</span> <span class="then">=</span>
+              <span class="brackets">(</span> <span class="word">a,b,c</span>
+              <span class="brackets">)</span> <span class="function">=></span>
+              <span class="word">a+b+c</span>
+            </div>
+            <div>
+              <span class="word">sum</span> <span class="brackets">(</span>
+              <span class="word">...a</span> <span class="brackets">) </span>
+              <span class="comment">// 6</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">sum</span> <span class="then">=</span>
+              <span class="word">sum</span> <span class="brackets">(</span>
+              <span class="word">...a</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div class="comment">// 形參的用法</div>
+            <div>
+              <span class="function">const </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1, 2, 3</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">b</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">4, 5, 6</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">max</span>
+              <span class="then">=</span> <span class="word">Math</span>
+              <span class="variable">.max</span> <span class="brackets">(</span>
+              <span class="word">...a,...b</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">max</span> <span class="brackets">)</span>
+            </div>
+
+            <br />
+            <div class="comment">// 形參 & 實參</div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">test</span> <span class="brackets">(</span>
+              <span class="word">形參1,形參2</span>
+              <span class="brackets">){ </span>
+              <span class="comment">// 函數聲明的小括號裡是 形參 </span>
+            </div>
+            <div class="comment pTwo">// 代碼</div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">test</span> <span class="brackets">(</span>
+              <span class="word">形參1,形參2</span>
+              <span class="brackets">) </span>
+              <span class="comment">// 函數調用的小括號裡是 實參</span>
             </div>
             <br />
           </div>
