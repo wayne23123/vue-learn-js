@@ -35,13 +35,22 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
+          <div @click="locate('html001')" class="leftNavText">
+            塊級元素和行內元素的差別
+          </div>
+          <div @click="locate('html002')" class="leftNavText">html5新特性</div>
+          <div @click="locate('html003')" class="leftNavText">
+            那些操作可以提升SEO
+          </div>
+          <div @click="locate('html004')" class="leftNavText">
+            Doctype作用,嚴格模式和混雜模式
+          </div>
+          <!-- <div @click="locate('html00')" class="leftNavText">1</div>
+          <div @click="locate('html00')" class="leftNavText">1</div>
+          <div @click="locate('html00')" class="leftNavText">1</div>
+          <div @click="locate('html00')" class="leftNavText">1</div>
+          <div @click="locate('html00')" class="leftNavText">1</div>
+          <div @click="locate('html00')" class="leftNavText">1</div> -->
         </div>
       </div>
     </div>
@@ -77,7 +86,7 @@ function locate(idPound) {
         <br />
         <br />
         <h2 class="articleCardTitle cor36">
-          [ Html ] ≫ 頁面導入樣式,使用@import和link差異?
+          頁面導入樣式,使用@import和link差異?
         </h2>
         <p>
           link支持早於import, 兼容性link比import好, 先加載的是link標籤,
@@ -105,8 +114,8 @@ function locate(idPound) {
         </h3>
         <br />
         <br />
-        <h1 id="" class="articleCardTitle cor36">
-          [ Html ] ≫ ＜img> 元素的 title 屬性和 alt 屬性有甚麼不同?
+        <h1 class="articleCardTitle cor36">
+          ＜img> 元素的 title 屬性和 alt 屬性有甚麼不同?
         </h1>
         <p>
           alt 屬性是必需的，它提供了對於圖像的描述。當圖像無法加載時， alt
@@ -119,7 +128,7 @@ function locate(idPound) {
         </p>
         <br />
         <br />
-        <h1 id="" class="articleCardTitle cor36">
+        <h1 id="html002" class="articleCardTitle cor36">
           [ Html ] ≫ html5有哪些新特性
         </h1>
         <p>1. 語意化標籤: header footer nav aside article section</p>
@@ -136,13 +145,13 @@ function locate(idPound) {
         <p>6. web worker</p>
         <br />
         <br />
-        <h1 id="" class="articleCardTitle cor36">[ Html ] ≫ 語義化的理解?</h1>
+        <h1 class="articleCardTitle cor36">語義化的理解?</h1>
         <p>HTML語意化就是的 編寫方式, 包括header nav footer標籤</p>
         <p>讓頁面結構更加清晰, 更容易去維護開發</p>
         <p>更容易SEO搜尋引擎優化</p>
         <br />
         <br />
-        <h1 id="" class="articleCardTitle cor36">
+        <h1 id="html003" class="articleCardTitle cor36">
           [ Html ] ≫ 那些操作可以提升SEO?
         </h1>
         <p>可以在header裡面的meta這一章節加上description網頁的描述</p>
@@ -240,7 +249,7 @@ function locate(idPound) {
         <br />
         <br />
 
-        <h1 id="html008" class="articleCardTitle cor36">
+        <h1 id="html004" class="articleCardTitle cor36">
           [ Html ] ≫ Doctype作用?嚴格模式和混雜模式如何區分?他們有何意義?
         </h1>
         <p>
@@ -268,7 +277,7 @@ function locate(idPound) {
         <br />
         <br />
 
-        <h1 id="" class="articleCardTitle cor36">
+        <h1 class="articleCardTitle cor36">
           [ Html ] ≫ HTML全局属性(global attribute)有哪些?
         </h1>
 

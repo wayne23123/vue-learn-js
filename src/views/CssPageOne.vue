@@ -27,17 +27,6 @@ function locate(idPound) {
     behavior: "smooth",
   });
 }
-
-const cssPageOneRef = ref(true);
-// const cssPageTwoRef = ref(false);
-function cssPageOneRefF() {
-  cssPageOneRef.value = true;
-  // cssPageTwoRef.value = false;
-}
-function cssPageTwoRefF() {
-  cssPageOneRef.value = false;
-  // cssPageTwoRef.value = true;
-}
 </script>
 
 <template>
@@ -46,36 +35,21 @@ function cssPageTwoRefF() {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div class="dis spa">
-            <div class="leftNavText" @click="cssPageOneRefF">主文章</div>
-            <div class="leftNavText" @click="cssPageTwoRefF">練習題</div>
-          </div>
-
-          <div v-if="cssPageOneRef">
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-          </div>
-          <div v-else>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-          </div>
+          <br />
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
         </div>
       </div>
     </div>
     <!-- maintopMAINTOP -->
     <!-- 右邊文章內容 -->
     <div class="Main">
-      <div class="mainContainer" v-if="cssPageOneRef">
+      <div class="mainContainer">
         <div class="mainLayout">
           <p class="cor36">SCSS相比於CSS有那些好處?</p>
           <p>它可以在寫語法時層層包裹, 可以用變量</p>
@@ -763,56 +737,6 @@ function cssPageTwoRefF() {
 
           <p class="cor36"></p>
           <p></p>
-          <br />
-          <br />
-
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-
-          <div id="" class="articleCardTitle cor36">[ CSS ] ≫</div>
-          <p></p>
-          <br />
-          <br />
-        </div>
-      </div>
-      <div class="mainContainer" v-else="cssPageTwoRef">
-        <div class="mainLayout">
-          <div id="" class="articleCardTitle cor36">[ CSS ] ≫ 樣式的順序</div>
-          <p>有如下代碼，請問HTML代碼中"文本"最終渲染出的顏色分別是？</p>
-          <br />
-          <div class="bgcVS">
-            <div>
-              <span class="then">＜</span> <span class="number">div </span>
-              <span class="function">class </span> <span class="then">="</span>
-              <span class="word">red</span> <span class="word">blue</span>
-              <span class="word">"></span> <span class="word">文本</span>
-              <span class="then">＜/</span> <span class="number">div </span>
-              <span class="then">></span>
-            </div>
-            <div>
-              <span class="then">＜</span> <span class="number">div </span>
-              <span class="function">class </span> <span class="then">="</span>
-              <span class="word">blue</span> <span class="word">red</span>
-              <span class="word">"></span> <span class="word">文本</span>
-              <span class="then">＜/</span> <span class="number">div </span>
-              <span class="then">></span>
-            </div>
-            <div class="brackets">.red { color: red; }</div>
-            <div class="brackets">.blue { color: blue; }</div>
-          </div>
-          <br />
-          <br />
-          <p>兩個都是藍色。</p>
-          <br />
-          <p>
-            為什麼？CSS的層疊規則裡有一條叫做「後來居上原則」，即兩個相同權值的樣式，如存在相同的聲明屬性，則後者獲勝。
-            本題的CSS樣式裡，.blue 和 .red 權值相同，且都聲明了 color 屬性，但
-            .blue 在樣式表中位於 .red
-            後面的位置，所以當HTML中的同一標籤同時引用這兩個類名時，以 .blue 的
-            color 聲明為準，和HTML中的 className 的先後順序無關。
-          </p>
           <br />
           <br />
 

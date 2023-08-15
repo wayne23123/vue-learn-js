@@ -36,9 +36,9 @@ window.addEventListener("scroll", function () {
             ><div class="liPad">JavaScript</div></router-link
           >
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/about"><div class="liPad">Vue</div></router-link>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <label for="nav_check" class="hamburger">

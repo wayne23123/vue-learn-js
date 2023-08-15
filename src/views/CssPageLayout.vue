@@ -4,16 +4,14 @@
   <div>
     <ul>
       <li>
-        <!-- <RouterLink to="/js">主文章</RouterLink> -->
-        <RouterLink to="/js/jsone">主文章</RouterLink>
+        <RouterLink to="/css">主文章</RouterLink>
       </li>
       <li>
-        <RouterLink to="/js/jstwo">練習題</RouterLink>
+        <RouterLink to="/css/pagetwo">練習題</RouterLink>
       </li>
-      <li>
-        <!-- <RouterLink to="/js/jsthree">上課筆記</RouterLink> -->
-        <RouterLink to="/js">上課筆記</RouterLink>
-      </li>
+      <!-- <li>
+        <RouterLink to="/">上課筆記</RouterLink>
+      </li> -->
     </ul>
   </div>
   <RouterView />

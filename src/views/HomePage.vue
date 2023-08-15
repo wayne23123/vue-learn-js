@@ -13,7 +13,7 @@
           <br />
           <div class="btnContainer">
             <div>
-              <router-link to="/about"
+              <router-link to="/js"
                 ><div class="btnL btn-background-slideL">
                   快速開始
                 </div></router-link
@@ -39,10 +39,10 @@
         <div class="cardContainer">
           <div class="card">
             <div class="cardLayout">
-              <div class="cardTop">
+              <div class="cardTop disCen">
                 <span class="cardTopBGC">💡</span>
               </div>
-              <h3 class="corTitle">About Me</h3>
+              <h3 class="corTitle disCen">About Me</h3>
               <p class="corText">
                 Hi, I'm Wayne Lu, <br />
                 a passionate frontend developer from Taiwan.
@@ -53,10 +53,10 @@
         <div class="cardContainer">
           <div class="card">
             <div class="cardLayout">
-              <div class="cardTop">
+              <div class="cardTop disCen">
                 <span class="cardTopBGC">💻</span>
               </div>
-              <h3 class="corTitle">Languages</h3>
+              <h3 class="corTitle disCen">Languages</h3>
               <p class="corText">JavaScript</p>
             </div>
           </div>
@@ -64,10 +64,10 @@
         <div class="cardContainer">
           <div class="card">
             <div class="cardLayout">
-              <div class="cardTop">
+              <div class="cardTop disCen">
                 <span class="cardTopBGC">📚</span>
               </div>
-              <h3 class="corTitle">Frontend Skills</h3>
+              <h3 class="corTitle disCen">Frontend Skills</h3>
               <p class="corText">Vue</p>
             </div>
           </div>
@@ -75,10 +75,10 @@
         <div class="cardContainer">
           <div class="card">
             <div class="cardLayout">
-              <div class="cardTop">
+              <div class="cardTop disCen">
                 <span class="cardTopBGC">🛠️</span>
               </div>
-              <h3 class="corTitle">Tools</h3>
+              <h3 class="corTitle disCen">Tools</h3>
               <p class="corText">Vite、Webpack</p>
             </div>
           </div>
@@ -186,7 +186,7 @@ img {
 
 .card {
   width: 300px;
-  padding: 30px;
+  padding: 30px 30px 50px 30px;
   background-color: #252529;
   border-radius: 15px;
   overflow: hidden;
