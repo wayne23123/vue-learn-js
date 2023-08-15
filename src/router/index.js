@@ -74,7 +74,7 @@ const router = createRouter({
                   component: JsPageThreeOne,
                 },
                 {
-                  path: "jspagethreetwo",
+                  path: "function",
                   component: JsPageThreeTwo,
                 },
               ],

@@ -41,7 +41,7 @@ function locate(idPound) {
             <RouterLink to="/js">1.作用域</RouterLink>
           </div>
           <div>
-            <RouterLink to="/js/jspagethreetwo">2.函數進階</RouterLink>
+            <RouterLink to="/js/function">2.函數進階</RouterLink>
           </div>
           <div>
             <RouterLink to="/js"></RouterLink>

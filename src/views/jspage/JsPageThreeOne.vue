@@ -369,7 +369,7 @@ function locate(idPound) {
               <br />
             </div>
 
-            >>>
+            <div class="bgcVSMid">></div>
 
             <div class="bgcVS fz30">
               <br />
