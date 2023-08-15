@@ -169,7 +169,7 @@ function engRefF() {
   width: 100vw;
   max-width: 100%;
   height: 70px;
-  background-color: 171717;
+  background-color: #171717;
 }
 
 section {
