@@ -39,8 +39,8 @@ function engRefF() {
   <!-- thetopTHETOPtabTAB -->
   <section>
     <div class="aboutContainer disCen">
-      <div class="aboutLayout">
-        <div>
+      <div>
+        <div class="aboutLayout">
           <br />
           <h3 class="cor36"># 關於此筆記</h3>
           <p>Wayne Lu 的學習筆記。</p>
@@ -179,6 +179,14 @@ section {
   color: #a1b6cb;
 }
 
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 24px;
+}
+
 .cor36 {
   color: #36c1cb;
 }
@@ -190,6 +198,7 @@ a {
   padding: 5px 0;
   margin: 0 1;
   border: 3px solid transparent;
+  font-size: 24px;
 }
 
 a:hover {
@@ -199,15 +208,13 @@ a:hover {
 
 /* top按鈕的css -------------------------------------------------------*/
 .toTop {
-  /* bottom: 50px; */
-  bottom: 20vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 170px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -216,25 +223,33 @@ a:hover {
 }
 .toTopButton {
   position: relative;
+  font-size: 20px;
   bottom: 7px;
   padding-left: 0;
   color: #999;
   pointer-events: none;
 }
 .toBot {
-  /* bottom: 50px; */
-  bottom: 10vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 100px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
   background-color: #6f020250;
+}
+
+.toBotButton {
+  position: relative;
+  font-size: 20px;
+  bottom: 0;
+  padding-left: 0;
+  color: #999;
+  pointer-events: none;
 }
 </style>

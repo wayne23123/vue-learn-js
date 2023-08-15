@@ -27,54 +27,30 @@ function locate(idPound) {
     behavior: "smooth",
   });
 }
-const PageOneRef = ref(true);
-// const PageTwoRef = ref(false);
-function PageOneRefF() {
-  PageOneRef.value = true;
-  // PageTwoRef.value = false;
-}
-function PageTwoRefF() {
-  PageOneRef.value = false;
-  // PageTwoRef.value = true;
-}
 </script>
 
 <template>
   <section>
-    <div class="sectionHolderNav"></div>
+    <!-- <div class="sectionHolderNav"></div> -->
     <!-- 左邊導航條 -->
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div class="dis spa">
-            <div class="leftNavText" @click="PageOneRefF">主文章</div>
-            <div class="leftNavText" @click="PageTwoRefF">練習題</div>
-          </div>
-          <div v-if="PageOneRef">
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-          </div>
-          <div v-else>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText">1</div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-            <div class="leftNavText"></div>
-          </div>
+          <br />
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
         </div>
       </div>
     </div>
     <!-- maintopMAINTOP -->
     <!-- 右邊文章內容 -->
     <div class="Main">
-      <div class="mainContainer" v-if="PageOneRef">
+      <div class="mainContainer">
         <div class="mainLayout">
           <div class="articleCardTitle cor36">[ JS ] ≫ 延遲加載JS方式?</div>
           <p>正常: 解析HTML > 遇到JS > 下載 > 執行 > 繼續解析HTML</p>
@@ -669,7 +645,7 @@ function PageTwoRefF() {
           <br />
         </div>
       </div>
-      <div class="mainContainer" v-else>
+      <div class="mainContainer">
         <div class="mainLayout">
           <div class="articleCardTitle cor36">[ JS ] ≫</div>
 
@@ -685,6 +661,7 @@ function PageTwoRefF() {
         </div>
       </div>
     </div>
+    <!-- thebottomTHEBOTTOMTABBOTTOMtabbottom -->
   </section>
   <div>
     <transition name="fade" tag="div" v-show="toTopRef">
@@ -704,6 +681,7 @@ function PageTwoRefF() {
       </div>
     </transition>
   </div>
+  <!-- thebottomcssTHEBOTTOMCSSTABBOTTOMCSStabbottomcss -->
 </template>
 
 <style scoped>
@@ -723,7 +701,7 @@ section {
 }
 
 .leftNav {
-  font-size: 12px;
+  font-size: 20px;
   position: fixed;
   width: 19vw;
   height: 100%;
@@ -752,32 +730,36 @@ section {
   color: #a1b6cb;
   width: 80vw;
   left: 20vw;
+  font-size: 30px;
 }
 
 .mainContainer {
   padding: 0 50px;
 }
 
+p {
+  font-size: 30px;
+}
+
 .articleCardTitle {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   padding: 30px 5px 30px 5px;
 }
 
 .cor36 {
   color: #36c1cb;
+  font-size: 1.25em;
 }
 
 /* top按鈕的css -------------------------------------------------------*/
 .toTop {
-  /* bottom: 50px; */
-  bottom: 20vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 170px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -786,25 +768,33 @@ section {
 }
 .toTopButton {
   position: relative;
+  font-size: 20px;
   bottom: 7px;
   padding-left: 0;
   color: #999;
   pointer-events: none;
 }
 .toBot {
-  /* bottom: 50px; */
-  bottom: 10vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 100px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
   background-color: #6f020250;
+}
+
+.toBotButton {
+  position: relative;
+  font-size: 20px;
+  bottom: 0;
+  padding-left: 0;
+  color: #999;
+  pointer-events: none;
 }
 </style>

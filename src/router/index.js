@@ -5,7 +5,8 @@ import AboutPage from "../views/AboutPage.vue";
 import HttpPage from "../views/HttpPage.vue";
 import HtmlPage from "../views/HtmlPage.vue";
 import CssPage from "../views/CssPage.vue";
-import JsPage from "../views/JsPage.vue";
+import JsPageLayout from "../views/JsPageLayout.vue";
+import JsNoteOne from "../views/JsNoteOne.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,7 +37,13 @@ const router = createRouter({
         },
         {
           path: "js",
-          component: JsPage,
+          component: JsPageLayout,
+          children: [
+            {
+              path: "",
+              component: JsNoteOne,
+            },
+          ],
         },
       ],
     },

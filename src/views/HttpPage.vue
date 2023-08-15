@@ -31,7 +31,6 @@ function locate(idPound) {
 
 <template>
   <section>
-    <div class="sectionHolderNav"></div>
     <!-- 左邊導航條 -->
     <div class="leftNav">
       <div class="leftNavContainer">
@@ -1505,7 +1504,7 @@ function locate(idPound) {
       <div @click="toBotFunction" class="toBot">
         <div class="toBotButton">
           <div class="disCen">▼</div>
-          <div class="disCen">￣</div>
+          <div class="disCen">￣￣</div>
         </div>
       </div>
     </transition>
@@ -1529,7 +1528,7 @@ section {
 }
 
 .leftNav {
-  font-size: 12px;
+  font-size: 20px;
   position: fixed;
   width: 19vw;
   height: 100%;
@@ -1543,6 +1542,7 @@ section {
 
 .leftNavContainer {
   padding: 25px 5px 0 5px;
+  /* background-color: #fff; */
 }
 
 .leftNavText:hover {
@@ -1558,19 +1558,25 @@ section {
   color: #a1b6cb;
   width: 80vw;
   left: 20vw;
+  font-size: 30px;
 }
 
 .mainContainer {
   padding: 0 50px;
 }
 
+p {
+  font-size: 30px;
+}
+
 .articleCardTitle {
-  font-size: 1.25rem;
+  font-size: 1.75em;
   padding: 30px 5px 30px 5px;
 }
 
 .cor36 {
   color: #36c1cb;
+  font-size: 1.25em;
 }
 
 a {
@@ -1588,43 +1594,53 @@ a:hover {
 }
 
 /* top按鈕的css -------------------------------------------------------*/
+
 .toTop {
-  /* bottom: 50px; */
-  bottom: 20vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 170px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
-.toTop:hover {
-  background-color: #6f020250;
-}
+
 .toTopButton {
   position: relative;
+  font-size: 20px;
   bottom: 7px;
   padding-left: 0;
   color: #999;
   pointer-events: none;
 }
+
+.toTop:hover {
+  background-color: #6f020250;
+}
+
 .toBot {
-  /* bottom: 50px; */
-  bottom: 10vh;
-  /* right: 200px; */
-  right: 10px;
+  bottom: 100px;
+  right: 50px;
   position: fixed;
-  z-index: 100;
-  background-color: #6f020290;
-  height: 40px;
-  width: 40px;
+  z-index: 200;
+  background-color: #7f010190;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
   background-color: #6f020250;
+}
+
+.toBotButton {
+  position: relative;
+  font-size: 20px;
+  bottom: 0;
+  padding-left: 0;
+  color: #999;
+  pointer-events: none;
 }
 </style>
