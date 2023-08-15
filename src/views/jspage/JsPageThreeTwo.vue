@@ -36,9 +36,15 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('twofunction001')" class="leftNavText">
+            函數提升
+          </div>
+          <div @click="locate('twofunction002')" class="leftNavText">
+            函數參數
+          </div>
+          <div @click="locate('twofunction003')" class="leftNavText">
+            箭頭函數
+          </div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
@@ -51,6 +57,155 @@ function locate(idPound) {
       <div class="mainContainer">
         <div class="mainLayout">
           <!-- 這裡 -->
+          <br />
+          <br />
+          <p class="fz28">總分總</p>
+          <p class="fz28">1.要講哪個知識點</p>
+          <p class="fz28">2.細講</p>
+          <p class="fz28">3.總結</p>
+          <br />
+          <br />
+          <div id="twofunction001" class="articleCardTitle cor36 fz34">
+            2.1 函數提升
+          </div>
+          <br />
+          <div class="bgcVS fz30">
+            <div class="comment">
+              // 1.會把所有函數聲明提升到當前作用域最前面
+            </div>
+            <div class="comment">// 2.只提升函數聲明, 不提升函數調用->()</div>
+
+            <div>
+              <span class="word">fn</span> <span class="brackets">()</span>
+            </div>
+
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="src">"函數提升</span> <span class="then">"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="brackets">)</div>
+            <br />
+            <br />
+            <div>
+              <span class="word">fun</span> <span class="brackets">() </span>
+              <span class="comment">// fun is not a function</span>
+            </div>
+            <div>
+              <span class="function">var </span>
+
+              <span class="variable">fun </span>
+              <span class="then">= </span>
+
+              <span class="function">function </span>
+              <span class="brackets">(){ </span>
+              <span class="comment">// 這叫 賦值</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="src">"函數表達式"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="brackets">}</div>
+            <span class="comment">// var 只提升聲明 不賦值</span>
+          </div>
+          <div id="twofunction002" class="articleCardTitle cor36 fz34">
+            2. 函數參數
+          </div>
+          <p class="fz28">形式參數</p>
+          <p class="fz28">接收函數在調用的時候傳入的具體參數值</p>
+          <br />
+          <p class="fz28">1.出現在函數的定義裡面 , 只能在函數體內使用</p>
+          <br />
+          <p class="fz28">實際參數</p>
+          <p class="fz28">調用的時候傳入的具體值</p>
+          <br />
+          <p class="fz28">1.出現在主調函數裡面 , 被調不能訪問實參</p>
+          <p class="fz28">
+            2.實參是基本類型的值, 將實參值進行拷貝傳給形參, 函數運行完,
+            釋放形參, 所以實參不會被改變
+          </p>
+          <br />
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn1</span> <span class="brackets">(){</span>
+            </div>
+            <div class="pTwo">
+              <span class="function">var </span>
+              <span class="word">param</span> <span class="then">=</span>
+              <span class="src">"hi";</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">fn2</span> <span class="brackets">(</span>
+              <span class="word">param</span> <span class="brackets">) </span>
+              <span class="comment">// 對 fn2 來說是 實參</span>
+            </div>
+            <div class="brackets">}</div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn2</span> <span class="brackets">(</span>
+              <span class="word">arg</span> <span class="brackets">){ </span>
+              <span class="comment">// 形參</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arg</span> <span class="brackets">);</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">param</span> <span class="brackets">); </span>
+              <span class="comment">// param is not defined</span>
+            </div>
+
+            <div class="brackets">}</div>
+            <br />
+            <div class="comment">
+              // 實參是基本類型的值, 將實參值進行拷貝傳給形參, 函數運行完,
+              釋放形參, 所以實參不會被改變
+            </div>
+            <div>
+              <span class="function">var </span> <span class="word">arg</span>
+              <span class="then">=</span> <span class="word">1;</span>
+            </div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(</span>
+              <span class="word">param</span> <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">param</span> <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">param</span> <span class="then">=</span>
+              <span class="word">2;</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">fn</span> <span class="brackets">(</span>
+              <span class="word">arg</span> <span class="brackets">); </span>
+              <span class="comment">// 1</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arg</span> <span class="brackets">); </span>
+              <span class="comment">// 1 </span>
+              <span class="comment">// 所以實參不會被改變 </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

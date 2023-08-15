@@ -206,10 +206,10 @@ button {
 .bgcVS {
   background-color: #292d3e;
   border-radius: 5px;
-  padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 100px 0 100px 80px;
   overflow-x: auto;
+
+  font-size: 30px;
 }
 
 .keyword {
