@@ -711,10 +711,27 @@ function locate(idPound) {
               <span class="comment">// 函數調用的小括號裡是 實參</span>
             </div>
           </div>
+          <div class="articleCardTitle cor36 fz34">匿名函數</div>
+          <a href="https://juejin.cn/post/6844903962257129485"
+            >https://juejin.cn/post/6844903962257129485</a
+          >
+          <a href="https://hackmd.io/@Jung/H1H3ErwUI"
+            >https://hackmd.io/@Jung/H1H3ErwUI</a
+          >
+          <p class="fz28">1.事件</p>
+          <p class="fz28">2.物件</p>
+          <p class="fz28">3.函數表達式</p>
+          <p class="fz28">4.回調函數</p>
+          <p class="fz28">5.函數返回值</p>
+          <p class="fz28">6.模仿塊及作用域 IIFE</p>
           <div id="twofunction006" class="articleCardTitle cor36 fz34">
-            2.6 箭頭函數
+            2.6 箭頭函數 -> 更適用於本來需要匿名函數的地方
           </div>
-          <p class="fz28"></p>
+          <p class="fz28">箭頭函數 和 普通function區別</p>
+          <p class="fz28">
+            在執行過程中不會初始化this, 也不會初始化aruguments, 它不能被new,
+            沒有prototype, 它不能當成構造函數執行
+          </p>
           <div class="dis">
             <div class="bgcVS">
               <div>
@@ -792,9 +809,15 @@ function locate(idPound) {
                 <span class="number">1</span> <span class="brackets">)</span>
                 <span class="comment">// 這裡放實參</span>
               </div>
+              <span class="comment"
+                >// 沒有形參 或 2 個形參 不可省略小括號</span
+              >
+
               <br />
               <br />
-              <div class="comment">// 只有一個語句 可省略大括號</div>
+              <div class="comment">
+                // 只有一個語句 可省略大括號 並自動做為返回值被返回
+              </div>
               <div class="comment">// ( 只有一行代碼 )</div>
 
               <div>
@@ -857,8 +880,420 @@ function locate(idPound) {
               </div>
               <br />
               <br />
+              <div class="comment">// 可以直接返回一個物件</div>
+              <div class="comment">// 注意! 物件和函數都是 {}</div>
+              <div class="comment">// 直接 ( { 物件 } )</div>
+
+              <div>
+                <span class="function">const </span>
+                <span class="word">fn</span> <span class="then">= </span>
+                <span class="brackets">(</span> <span class="word">uname</span>
+                <span class="brackets">)</span>
+                <span class="function">=></span>
+                <span class="brackets">( {</span>
+                <span class="word">name: uname</span>
+                <span class="brackets">} )</span>
+              </div>
+              <div>
+                <span class="function">const </span>
+                <span class="word">fn</span> <span class="then">= </span>
+                <span class="brackets">(</span> <span class="word">uname</span>
+                <span class="brackets">)</span>
+                <span class="function">=></span>
+                <span class="brackets">( {</span>
+                <span class="word">uname: uname</span>
+                <span class="brackets">} )</span>
+              </div>
+
+              <div>
+                <span class="word">fn</span> <span class="brackets">(</span>
+                <span class="src">"wayne"</span> <span class="brackets">)</span>
+              </div>
+              <br />
+              <br />
             </div>
           </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">form</span> <span class="then">=</span>
+              <span class="word">document.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"form"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">form.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="function">function</span>
+              <span class="brackets">(e){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">e.preventDefault</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">form.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="word">ev</span> <span class="function">=></span>
+              <span class="word">ev.preventDefault</span>
+              <span class="brackets">())</span>
+            </div>
+          </div>
+          <p class="fz28">結論</p>
+          <p class="fz28">1. 箭頭屬於表達式函數, 不存在函數提升</p>
+          <p class="fz28">2. 只有一個形參 可省略小括號 ( )</p>
+          <p class="fz28">
+            3. 只有一個語句 (一行代碼) 可省略大括號 { } 並自動做為返回值被返回
+          </p>
+          <p class="fz28">4. 加括號 ( ) 的函數體 返回 物件字面量 表達式</p>
+          <br />
+          <br />
+          <div class="articleCardTitle cor36 fz34">箭頭函數參數</div>
+          <p class="fz28">箭頭函數 沒有 arguments 動態參數</p>
+          <p class="fz28">有 剩餘參數 ...args</p>
+          <div class="bgcVS">
+            <div class="comment">// 利用箭頭函數來求和</div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">getSum</span> <span class="then">=</span>
+              <span class="brackets">(</span> <span class="word">...arr</span>
+              <span class="brackets">)</span> <span class="function">=></span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="function">let </span> <span class="word">sum</span>
+              <span class="then">=</span> <span class="number">0</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">i</span>
+              <span class="then">=</span> <span class="number">0</span>
+              <span class="then">;</span> <span class="word">i</span>
+              <span class="then">＜</span> <span class="word">arr.length</span>
+              <span class="then">;</span> <span class="word">i</span>
+              <span class="then">++</span> <span class="brackets">){</span>
+            </div>
+            <div class="pFou">
+              <span class="word">sum</span> <span class="then">+=</span>
+              <span class="word">arr</span> <span class="brackets">[</span>
+              <span class="word">i</span> <span class="brackets">]</span>
+            </div>
+            <div class="pTwo brackets">}</div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">sum</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">getSum</span> <span class="brackets">(</span>
+              <span class="number">2,3</span> <span class="brackets">)</span>
+            </div>
+          </div>
+          <div class="articleCardTitle cor36 fz34">箭頭函數 this</div>
+          <p class="fz28">箭頭函數的this指向哪裡?</p>
+          <p class="fz28">外部的this or (捕獲其上下文中的this)</p>
+          <p class="fz28">
+            箭頭函數不創建 this , 他從自己的作用域鏈的上一層沿用 this
+          </p>
+
+          <div class="bgcVS">
+            <div class="comment">
+              // 以前學this指向:誰調用的這個函數,this就指向誰
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+            </div>
+            <div class="brackets">}</div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+
+            <div class="pTwo">
+              <span class="word">sayHi:</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="pFou">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// obj</span>
+            </div>
+            <div class="brackets pTwo">}</div>
+
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">obj.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+
+            <div class="comment">// sayHi() 是 obj 調用的</div>
+            <div class="comment">// this 指向 obj</div>
+
+            <br />
+            <br />
+            <div class="comment">// 箭頭 this指向 上一層作用域的 this 指向</div>
+            <div>
+              <span class="function">const </span> <span class="word">fn</span>
+              <span class="then">=</span> <span class="brackets">()</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+            </div>
+            <div class="brackets">}</div>
+            <span class="word">fn</span> <span class="brackets">()</span>
+
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">sayHi:</span>
+              <span class="brackets">()</span>
+
+              <span class="function">=> </span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pFou">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// window</span>
+            </div>
+            <div class="comment pFou">// 1. { 裡面沒有 this }</div>
+            <div class="comment pFou">// 2. 往上一層 作用域找</div>
+            <div class="comment pFou">
+              // 3. obj.sayHi() 是 window.obj.sayHi()
+            </div>
+            <div class="comment pFou">// . 是window來調用的</div>
+            <div class="comment pFou">// this 指向 window</div>
+
+            <div class="brackets pTwo">}</div>
+
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">obj.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+
+            <div class="">
+              <div class="pTwo">
+                <span class="word">sayHi:</span>
+                <span class="function">function </span>
+                <span class="brackets">(){</span>
+              </div>
+              <div class="pFou">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="then">this</span>
+                <span class="brackets">)</span>
+                <span class="comment">// obj</span>
+              </div>
+              <div class="pFou">
+                <span class="function">let </span> <span class="word">i</span>
+                <span class="then">=</span> <span class="number">10</span>
+              </div>
+
+              <div class="">
+                <div class="pFou">
+                  <span class="function">const </span>
+                  <span class="word">count</span> <span class="then">=</span>
+                  <span class="brackets">()</span>
+                  <span class="function">=></span>
+                  <span class="brackets">{</span>
+                </div>
+                <div class="pSix">
+                  <span class="word">console.</span>
+                  <span class="variable">log</span>
+                  <span class="brackets">(</span> <span class="then">this</span>
+                  <span class="brackets">)</span>
+                  <span class="comment">// obj</span>
+                </div>
+                <div class="brackets pFou">}</div>
+                <div class="pFou">
+                  <span class="word">count</span>
+                  <span class="brackets">()</span>
+                </div>
+              </div>
+
+              <div class="brackets pTwo">}</div>
+            </div>
+
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">obj.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+
+            <div class="bor1">
+              <span class="comment">// 這層函數 this 指向他的調用者 obj</span>
+
+              <div class="pTwo">
+                <span class="word">sayHi:</span>
+                <span class="function">function </span>
+                <span class="brackets">(){</span>
+              </div>
+              <div class="pFou">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="then">this</span>
+                <span class="brackets">)</span>
+                <span class="comment">// obj</span>
+              </div>
+              <div class="pFou">
+                <span class="function">let </span> <span class="word">i</span>
+                <span class="then">=</span> <span class="number">10</span>
+              </div>
+
+              <div class="bor2">
+                <span class="comment">// 這層沒有 this 往上一層找 ^</span>
+                <div class="pTwo">
+                  <span class="function">const </span>
+                  <span class="word">count</span> <span class="then">=</span>
+                  <span class="brackets">()</span>
+                  <span class="function">=></span>
+                  <span class="brackets">{</span>
+                </div>
+                <div class="pFou">
+                  <span class="word">console.</span>
+                  <span class="variable">log</span>
+                  <span class="brackets">(</span> <span class="then">this</span>
+                  <span class="brackets">)</span>
+                  <span class="comment">// obj</span>
+                </div>
+                <div class="brackets pTwo">}</div>
+                <div class="pTwo">
+                  <span class="word">count</span>
+                  <span class="brackets">()</span>
+                </div>
+              </div>
+
+              <div class="brackets pTwo">}</div>
+            </div>
+
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">obj.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document.querySelector</span>
+              <span class="brackets">(</span> <span class="src">".btn"</span>
+              <span class="brackets">)</span>
+            </div>
+            <span class="comment">//普通函數指DOM對象</span>
+
+            <div>
+              <span class="word">btn.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="function">function</span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// btn</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">btn.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="brackets">()</span>
+              <span class="function">=> </span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// window</span>
+            </div>
+            <div class="brackets">})</div>
+          </div>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
         </div>
       </div>
     </div>
@@ -884,6 +1319,21 @@ function locate(idPound) {
 </template>
 
 <style scoped>
+.bor1 {
+  border: 6px solid #c4c4c4;
+  display: inline-block;
+  padding-right: 15px;
+  padding: 50px 50px 50px 50px;
+}
+
+.bor2 {
+  border: 6px solid #838181;
+  display: inline-block;
+  padding-right: 15px;
+  margin-left: 50px;
+  padding: 50px 50px 50px 50px;
+}
+
 .sectionHolderNav {
   width: 100vw;
   max-width: 100%;
