@@ -36,11 +36,21 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threeobject001')" class="leftNavText">
+            創建物件
+          </div>
+          <div @click="locate('threeobject002')" class="leftNavText">
+            構造函數
+          </div>
+          <div @click="locate('threeobject003')" class="leftNavText">
+            new做了什麼
+          </div>
+          <div @click="locate('threeobject004')" class="leftNavText">
+            實例&靜態成員
+          </div>
+          <div @click="locate('threeobject005')" class="leftNavText">
+            內置構造函數
+          </div>
           <div @click="locate('')" class="leftNavText"></div>
         </div>
       </div>
@@ -51,6 +61,548 @@ function locate(idPound) {
       <div class="mainContainer">
         <div class="mainLayout">
           <!-- 這裡 -->
+          <br />
+          <br />
+          <p class="fz28">總分總</p>
+          <p class="fz28">1.要講哪個知識點</p>
+          <p class="fz28">2.細講</p>
+          <p class="fz28">3.總結</p>
+          <br />
+          <br />
+          <div id="threeobject001" class="articleCardTitle cor36 fz34">
+            5.1 創建物件
+          </div>
+          <div class="bgcVS">
+            <p>1. 利用對象字面量 創建</p>
+            <br />
+            <!-- <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+
+            <div class="pTwo">
+              <span class="word">sayHi:</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="pFou">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// obj</span>
+            </div>
+            <div class="brackets pTwo">}</div>
+
+            <div class="brackets">}</div> -->
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">uname:</span> <span class="src">"wayne"</span>
+            </div>
+
+            <div class="brackets">}</div>
+            <br />
+            <br />
+            <p>2. 利用 new Object 創建</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span>
+              <span class="then">= new </span> <span class="word">Object</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">obj.name</span> <span class="then">=</span>
+              <span class="src">"wayne"</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span>
+              <span class="then">= new </span> <span class="word">Object</span>
+              <span class="brackets">( {</span> <span class="word">name:</span>
+              <span class="src">"wayne"</span> <span class="brackets">} )</span>
+            </div>
+          </div>
+          <div id="threeobject002" class="articleCardTitle cor36 fz34">
+            5.2 利用 構造函數 創建
+          </div>
+
+          <p class="fz28">是一種特殊的 函數 , 用來 初始化 物件</p>
+          <br />
+          <p class="fz28">1. 是什麼? _ 函數</p>
+          <p class="fz28">2. 做什麼? _ 創建物件</p>
+          <br />
+          <br />
+          <p class="fz28">約定 (非強制)</p>
+          <p class="fz28">1. 第 1 個字母大寫</p>
+          <p class="fz28">2. 只能由 new 操作符</p>
+          <div class="bgcVS">
+            <p>創建 構造函數</p>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="word">uname,number</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="comment">// this.name=uname</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span>
+
+              <span class="word">.uname</span> <span class="then">=</span>
+              <span class="word">uname</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="comment">//物件的屬性 . . . 形參</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span> <span class="word">.number</span>
+              <span class="then">=</span> <span class="word">number</span>
+            </div>
+
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">new </span> <span class="word">Person</span>
+              <span class="brackets">(</span>
+              <span class="src">"wayne",</span> <span class="number">123</span>
+              <span class="brackets">))</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">p</span>
+              <span class="then">= new </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="src">"wayne",</span> <span class="number">6</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
+          <p class="fz28">說明</p>
+          <p class="fz28">1. 使用 new 調用函數 的行為 叫 實例化</p>
+          <p class="fz28">
+            2. 實例化 構造函數時 沒有參數 可以省略 ( )
+            <span class="comment">不建議省略</span>
+          </p>
+          <p class="fz28">
+            3. 構造函數內部 無需寫 return, 返回值為新創建的物件
+          </p>
+          <p class="fz28 comment">以前 調用函數 要加 return 才返回給我們</p>
+          <p class="fz28">
+            4. 構造函數內部的 return 返回的值無效 , 不要寫 return
+          </p>
+          <p class="fz28">5. new Object() new Date() 也是 實例化構造函數</p>
+          <div id="threeobject003" class="articleCardTitle cor36 fz34">
+            5.3 new做了什麼?
+          </div>
+          <p class="fz28">
+            :
+            new後面跟一個構造函數,先創造一個臨時對象,將這個臨時對象原型綁定構造函數的prototype,再把裡面的this指定為這個臨時對象,再執行構造函數,最後return這個臨時對象
+          </p>
+          <br />
+          <p class="fz28 cor36"># 當我 new 構造函數</p>
+          <p class="fz28">1. 創建 新物件 (空的)</p>
+          <p class="fz28">2. 構造函數的 this 指向 新物件</p>
+          <p class="fz28">3. 執行 構造函數 代碼</p>
+          <p class="fz28 pFou">
+            this. 指向物件
+            <span class="comment">. . . obj.name="wayne"</span>
+          </p>
+          <p class="fz28 pFou">name屬性 =賦值 "wayne"</p>
+          <p class="fz28">4. 返回 這個 新物件</p>
+          <div id="threeobject004" class="articleCardTitle cor36 fz34">
+            5.4 實例成員 & 靜態成員
+          </div>
+          <p class="fz28">通過 構造函數創建的 對象 為 實例對象</p>
+          <p class="fz28">實例對象中的屬性方法 為 實例成員</p>
+          <br />
+          <p class="fz28">說明</p>
+          <p class="fz28">1. 為構造函數傳入參數, 創建結構相同但值不同的對象</p>
+          <p class="fz28">2. 構造函數創建的實例對象彼此獨立互不影響</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="word">uname,number</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span>
+
+              <span class="word">.uname</span> <span class="then">=</span>
+              <span class="word">uname</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span> <span class="word">.number</span>
+              <span class="then">=</span> <span class="word">number</span>
+            </div>
+
+            <div class="brackets">}</div>
+            <!-- <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">new </span> <span class="word">Person</span>
+              <span class="brackets">(</span>
+              <span class="src">"wayne",</span> <span class="number">123</span>
+              <span class="brackets">))</span>
+            </div> -->
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">p</span>
+
+              <span class="then">= new </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="src">"wayne",</span> <span class="number">6</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">n</span>
+
+              <span class="then">= new </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="src">"neo",</span> <span class="number">3</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p</span>
+              <span class="then">=== </span> <span class="word">n</span>
+              <span class="brackets">) </span>
+              <span class="comment">// false</span>
+            </div>
+            <br />
+            <p>new p 時, 內存開闢了新空間 存放 p 這個新物件</p>
+            <p>new n 時, 內存開闢了新空間 存放 n 這個新物件</p>
+            <p>所以 2 個物件 在不同位置</p>
+            <br />
+            <div>
+              <span class="word">p.name</span> <span class="then">=</span>
+              <span class="src">"jack"</span>
+              <span class="comment"> // 實例屬性</span>
+            </div>
+            <br />
+            <p>不影響 n 的 name</p>
+            <br />
+            <div>
+              <span class="word">p.sayHi</span> <span class="then">=</span>
+              <span class="brackets">()</span> <span class="function">=></span>
+              <span class="brackets">{ </span>
+              <span class="comment"> // 實例方法</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="src">"hi"</span> <span class="brackets">)</span>
+            </div>
+            <div class="brackets">}</div>
+
+            <br />
+            <p class="fz28">p 增加 sayHi 方法 不影響 n</p>
+          </div>
+
+          <p class="fz28">靜態成員</p>
+          <p class="fz28">構造函數的屬性和方法 是 靜態成員</p>
+          <p class="fz28">靜態 屬性 & 靜態 方法</p>
+          <br />
+          <p class="fz28">說明</p>
+
+          <p class="fz28">1. 靜態成員 只能 構造函數來訪問</p>
+          <p class="fz28">2. 靜態方法 中的 this 指向 構造函數</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="word">uname,number</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span>
+
+              <span class="word">.uname</span> <span class="then">=</span>
+              <span class="word">uname</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">this</span> <span class="word">.number</span>
+              <span class="then">=</span> <span class="word">number</span>
+            </div>
+
+            <div class="brackets">}</div>
+            <br />
+            <div>
+              <span class="word">Person.eyes</span> <span class="then">=</span>
+              <span class="number">2 </span>
+              <span class="comment">// 靜態屬性</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Person.eyes</span>
+              <span class="brackets">) </span> <span class="comment">// 2</span>
+            </div>
+            <br />
+            <p class="fz28">Math.Pi 就是 Math 這個構造函數 加了 Pi 屬性</p>
+            <br />
+            <div>
+              <span class="word">Person.sayHi</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){ </span>
+              <span class="comment">// 這邊不要用箭頭函數,因為沒this</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">) </span>
+              <span class="comment">// Person // 指向構造函數</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="word">Person.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+          </div>
+
+          <div id="threeobject005" class="articleCardTitle cor36 fz34">
+            5.5 內置構造函數
+          </div>
+
+          <p class="fz28 cor36">
+            # 基本數據類型不是物件 為什麼 基本類型可以用方法?
+          </p>
+          <p class="fz28 cor36"># 為什麼字串可以使用.length?為什麼有方法?</p>
+          <p class="fz28">
+            在JS底層把基本數據類型包裝成了引用數據類型, 轉成物件,
+            物件有屬性和方法, 就可以使用方法了
+          </p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+              <span class="word">"wayne"</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.length</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div class="comment">// JS底層做包裝</div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">= new </span>
+              <span class="word">String</span> <span class="brackets">(</span>
+              <span class="src">"wayne"</span> <span class="brackets">)</span>
+            </div>
+            <div class="comment">
+              // JS底層把簡單數據類型包裝成了引用數據類型
+            </div>
+          </div>
+          <p class="fz28 cor36">Object</p>
+
+          <p class="fz28">
+            Object 是內置的 構造函數, 用於創建普通物件 (new Object)
+          </p>
+          <br />
+          <p class="fz28">3 個常用靜態方法</p>
+          <p class="fz28">( 靜態方法只有構造函數 Object 可以調用 )</p>
+          <br />
+          <p class="fz28">Object.values 靜態方法獲取物件中所有屬性值</p>
+          <p class="fz28">注意: 返回的是一個數組</p>
+
+          <br />
+          <div class="bgcVS">
+            <p>想要獲得物件裡面的屬性和值?</p>
+            <br />
+            <p>之前</p>
+            <br />
+            <div>
+              <span class="function">const </span> <span class="word">o</span>
+              <span class="then">=</span> <span class="brackets">{</span>
+              <span class="word">name:"wayne",number:</span>
+              <span class="number">123</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">k </span>
+              <span class="function">in </span> <span class="word">o</span>
+              <span class="brackets">){</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">k</span> <span class="brackets">) </span>
+              <span class="comment">// 屬性 name number</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">o</span> <span class="brackets">[</span>
+              <span class="word">k</span> <span class="brackets">]</span>
+              <span class="brackets">) </span>
+              <span class="comment">// 值 wayne 123</span>
+            </div>
+            <div class="brackets">}</div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span> <span class="word">o</span>
+              <span class="then">=</span> <span class="brackets">{</span>
+              <span class="word">name:"wayne",number:</span>
+              <span class="number">123</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="word">Object.keys</span>
+              <span class="brackets">(</span> <span class="word">o</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="comment">// 獲得所有 屬性名</div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="word">Object.keys</span>
+              <span class="brackets">(</span> <span class="word">o</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="comment">// 獲得所有 屬性值</div>
+
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Object.value</span>
+              <span class="brackets">(</span> <span class="word">o</span>
+              <span class="brackets">)) </span>
+              <span class="comment">//["wayne",123]</span>
+            </div>
+          </div>
+          <p class="fz28">Object.assign 靜態方法用於物件拷貝</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span> <span class="word">o</span>
+              <span class="then">=</span> <span class="brackets">{</span>
+              <span class="word">name:"wayne",number:</span>
+              <span class="number">123</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{}</span>
+            </div>
+            <div>
+              <span class="word">Object.assign</span>
+              <span class="brackets">(</span> <span class="word">obj,o</span>
+              <span class="brackets">) </span>
+              <span class="comment">// (要拷貝的,被拷貝的)</span>
+              <span class="comment">// (右 賦值 給 左)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">obj</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <p>可用來新增屬性</p>
+            <br />
+            <div>
+              <span class="word">Object.assign</span>
+              <span class="brackets">(</span> <span class="word">o,</span>
+              <span class="brackets">{</span>
+              <span class="word">gender:"男"</span>
+              <span class="brackets">})</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">o</span>
+              <span class="brackets">)</span>
+            </div>
+
+            <br />
+            <p>把一個物件 拷貝到裡面去</p>
+          </div>
+          <div>
+            <RouterLink to="/js/method" class="fz28">Array 方法</RouterLink>
+          </div>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
         </div>
       </div>
     </div>

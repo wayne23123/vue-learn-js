@@ -47,7 +47,7 @@ function locate(idPound) {
             <RouterLink to="/js/destructuringassignment">3.解構賦值</RouterLink>
           </div>
           <div>
-            <RouterLink to="/js/method">4.方法</RouterLink>
+            <RouterLink to="/js/method">4.數組方法</RouterLink>
           </div>
           <div>
             <RouterLink to="/js/object">5.創建物件</RouterLink>

@@ -451,31 +451,6 @@ function locate(idPound) {
             物件解構是將物件屬性和方法快速批量賦值給一系列變量的簡潔語法
           </p>
           <div class="bgcVS">
-            <!-- <div>
-              <span class="function">const </span>
-              <span class="word">obj</span> <span class="then">=</span>
-              <span class="brackets">{</span>
-            </div>
-            <div class="pTwo">
-              <span class="word">uname:</span> <span class="src">"wayne"</span>
-            </div>
-
-            <div class="pTwo">
-              <span class="word">sayHi:</span>
-              <span class="function">function </span>
-              <span class="brackets">(){</span>
-            </div>
-            <div class="pFou">
-              <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="then">this</span> <span class="brackets">)</span>
-              <span class="comment">// obj</span>
-            </div>
-            <div class="brackets pTwo">}</div>
-
-            <div class="brackets">}</div>
-          </div> -->
-
             <div>
               <span class="comment">const name = "不能變量名衝突" // 報錯</span>
             </div>

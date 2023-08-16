@@ -39,7 +39,9 @@ function locate(idPound) {
           <div @click="locate('threemethod001')" class="leftNavText">
             forEach
           </div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threemethod002')" class="leftNavText">
+            reduce
+          </div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
@@ -61,8 +63,106 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
+          <table class="fz30">
+            <tr class="cor36">
+              <th>方法</th>
+              <th>作用</th>
+              <th>說明</th>
+            </tr>
+            <tr>
+              <td>map</td>
+              <td>迭代數組</td>
+              <td>
+                <span class="cor36">返回</span> 新數組,
+                <span class="cor36">返回</span>的是處理之後的數組元素,
+                想要使用返回的新數組
+              </td>
+            </tr>
+
+            <tr>
+              <td>forEach</td>
+              <td>遍歷數組</td>
+              <td>不返回數組, 常用於查找遍歷數組元素</td>
+            </tr>
+            <tr>
+              <td>filter</td>
+              <td>過濾數組</td>
+              <td>
+                <span class="cor36">返回</span>新數組,
+                <span class="cor36">返回</span>的是篩選滿足條件的數組元素
+              </td>
+            </tr>
+            <tr>
+              <td>reduce</td>
+              <td>累計器</td>
+              <td><span class="cor36">返回</span>累計處理的結果, 常用於求和</td>
+            </tr>
+            <tr>
+              <td>join</td>
+              <td></td>
+              <td>數組拼接成字串, <span class="cor36">返回</span> 字串</td>
+            </tr>
+            <tr>
+              <td>find</td>
+              <td>查找元素</td>
+              <td>
+                <span class="cor36">返回</span>符合條件的第一個數組元素值,
+                沒有則<span class="cor36">返回</span>undefined
+              </td>
+            </tr>
+            <tr>
+              <td>every</td>
+              <td></td>
+              <td>
+                數組所有元素是否都符合條件, 所有都符合<span class="cor36"
+                  >返回</span
+                >true, 否<span class="cor36">返回</span>false
+              </td>
+            </tr>
+            <tr>
+              <td>some</td>
+              <td></td>
+              <td>
+                數組中的元素是否有滿足條件的, 如果有<span class="cor36"
+                  >返回</span
+                >true, 沒有<span class="cor36">返回</span>false
+              </td>
+            </tr>
+            <tr>
+              <td>concat</td>
+              <td></td>
+              <td>合併 2 個數組, <span class="cor36">返回</span>生成新數組</td>
+            </tr>
+            <tr>
+              <td>sort</td>
+              <td></td>
+              <td>對原數組單元值排序</td>
+            </tr>
+            <tr>
+              <td>splice</td>
+              <td></td>
+              <td>刪除或替換原數組單元</td>
+            </tr>
+            <tr>
+              <td>reverse</td>
+              <td></td>
+              <td>反轉數組</td>
+            </tr>
+            <tr>
+              <td>findIndex</td>
+              <td></td>
+              <td>查找元素的索引值</td>
+            </tr>
+
+            <!-- <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> -->
+          </table>
+
           <div id="threemethod001" class="articleCardTitle cor36 fz34">
-            4.1 forEach
+            4. forEach
           </div>
           <p class="fz28">
             forEach() 方法用於調用數組的每個元素, 並將元素傳遞給回調函數
@@ -153,6 +253,231 @@ function locate(idPound) {
           </div>
           <p class="fz28">1. forEach 主要是遍歷數組</p>
           <p class="fz28">2. 索引號可以不寫</p>
+
+          <div id="threemethod002" class="articleCardTitle cor36 fz34">
+            4. reduce
+          </div>
+          <p class="fz28">reduce 返回累計處理的結果, 常用於求和</p>
+          <div class="bgcVS">
+            <div>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){},</span>
+              <span class="word">起始值</span>
+              <span class="brackets">) </span>
+              <span class="comment">// 第 1 個參數回調函數</span>
+            </div>
+            <div class="comment">// 回調裡面有 2 個形參</div>
+            <div>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">上一次值,當前值</span>
+              <span class="brackets">){},</span>
+              <span class="word">初始值</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span> <span class="number">1,5,8</span>
+              <span class="brackets">]</span>
+            </div>
+            <br />
+            <div class="comment">//1.沒初始值</div>
+            <div>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">prev,current</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">prev</span>
+              <span class="then">+</span> <span class="word">current</span>
+            </div>
+            <div class="brackets">})</div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">total</span> <span class="brackets">) </span>
+              <span class="comment">// 14</span>
+            </div>
+
+            <br />
+            <div class="comment">//2.有初始值</div>
+            <div>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">prev,current</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">prev</span>
+              <span class="then">+</span> <span class="word">current</span>
+            </div>
+            <div>
+              <span class="brackets">},</span> <span class="number">10</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">total</span> <span class="brackets">) </span>
+              <span class="comment">// 24</span>
+            </div>
+            <br />
+            <div class="comment">//3.匿名函數</div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">total</span> <span class="then">=</span>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">((</span>
+              <span class="word">prev,current</span>
+              <span class="brackets">)</span> <span class="function">=></span>
+              <span class="word">prev</span> <span class="then">+</span>
+              <span class="word">current,</span> <span class="number">10</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">total</span> <span class="brackets">) </span>
+              <span class="comment">// 24</span>
+            </div>
+          </div>
+          <p class="fz28">reduce 執行過程</p>
+          <p class="fz28">
+            1. 如果 沒有 起始值 , 則 上一次值 以 數組的 第一個 數組元素 的值
+          </p>
+          <p class="fz28">
+            2. 每一次循環 , 把返回值 做為 下一次循環的 上一次值
+          </p>
+          <p class="fz28">3. 如果 有 起始值, 則 起始值 做為 上一次值</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[{</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">1000</span>
+            </div>
+            <div class="brackets">}, {</div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"neo"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">2000</span>
+            </div>
+            <div class="brackets">}, {</div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"jack"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">3000</span>
+            </div>
+            <div class="brackets">} ]</div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">total</span> <span class="then">=</span>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">((</span>
+              <span class="word">prev,current</span>
+              <span class="brackets">)</span> <span class="function">=></span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">prev</span>
+              <span class="then">+</span>
+              <span class="word">current.number</span>
+            </div>
+            <div>
+              <span class="brackets">},</span> <span class="number">0</span>
+              <span class="brackets">) </span>
+              <span class="comment"
+                >// 不寫出使值則以數組第一個元素{}為初始值</span
+              >
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">total</span> <span class="brackets">) </span>
+              <span class="comment">// 6000</span>
+            </div>
+            <br />
+            <p>數字 + 30% 怎麼改?</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">total</span> <span class="then">=</span>
+              <span class="word">arr.reduce</span>
+              <span class="brackets">((</span>
+              <span class="word">prev,current</span>
+              <span class="brackets">)</span> <span class="function">=></span>
+              <span class="word">prev</span>
+              <span class="then">+</span>
+              <span class="word">current.number </span>
+              <span class="then">* </span>
+
+              <span class="number">1.3 , 0</span>
+              <span class="brackets">) </span>
+            </div>
+            <div id="threemethod003" class="articleCardTitle cor36 fz34">
+              4. join
+            </div>
+          </div>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
         </div>
       </div>
     </div>
@@ -178,6 +503,11 @@ function locate(idPound) {
 </template>
 
 <style scoped>
+td {
+  padding: 150px 35px 0 0;
+  border-bottom: 1px solid #2f2f2f;
+}
+
 .sectionHolderNav {
   width: 100vw;
   max-width: 100%;
