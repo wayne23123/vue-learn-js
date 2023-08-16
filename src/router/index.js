@@ -15,6 +15,7 @@ import JsPageThreeOne from "../views/jspage/JsPageThreeOne.vue";
 import JsPageThreeTwo from "../views/jspage/JsPageThreeTwo.vue";
 import JsPageThreeThree from "../views/jspage/JsPageThreeThree.vue";
 import JsPageThreeFour from "../views/jspage/JsPageThreeFour.vue";
+import JsPageThreeFive from "../views/jspage/JsPageThreeFive.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -86,6 +87,10 @@ const router = createRouter({
                 {
                   path: "method",
                   component: JsPageThreeFour,
+                },
+                {
+                  path: "object",
+                  component: JsPageThreeFive,
                 },
               ],
             },

@@ -36,7 +36,9 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threemethod001')" class="leftNavText">
+            forEach
+          </div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
@@ -51,6 +53,106 @@ function locate(idPound) {
       <div class="mainContainer">
         <div class="mainLayout">
           <!-- 這裡 -->
+          <br />
+          <br />
+          <p class="fz28">總分總</p>
+          <p class="fz28">1.要講哪個知識點</p>
+          <p class="fz28">2.細講</p>
+          <p class="fz28">3.總結</p>
+          <br />
+          <br />
+          <div id="threemethod001" class="articleCardTitle cor36 fz34">
+            4.1 forEach
+          </div>
+          <p class="fz28">
+            forEach() 方法用於調用數組的每個元素, 並將元素傳遞給回調函數
+          </p>
+          <br />
+          <p class="fz28">適合用來遍歷數組對象</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="word">被遍歷的數組</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">當前數組元素,當前元素索引號</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="comment pTwo">//函數體</div>
+            <div class="brackets">}</div>
+            <br />
+            <div class="number">只遍歷 , 不返回值</div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span>
+              <span class="src">"wayne","neo","jack"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">item,index</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">item</span> <span class="brackets">) </span>
+              <span class="comment">// wayne neo jack</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">index</span> <span class="brackets">) </span>
+              <span class="comment">// 0 1 2</span>
+            </div>
+            <div class="brackets">})</div>
+            <br />
+            <div class="number">和 map 差在 他不返回數組</div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">result</span> <span class="then">=</span>
+
+              <span class="word">arr</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">item,index</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">item</span> <span class="brackets">) </span>
+              <span class="comment">// wayne neo jack</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">index</span> <span class="brackets">) </span>
+              <span class="comment">// 0 1 2</span>
+            </div>
+            <div class="brackets">})</div>
+
+            <div class="">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">result</span> <span class="brackets">) </span>
+              <span class="comment">// undefined</span>
+            </div>
+          </div>
+          <p class="fz28">1. forEach 主要是遍歷數組</p>
+          <p class="fz28">2. 索引號可以不寫</p>
         </div>
       </div>
     </div>
