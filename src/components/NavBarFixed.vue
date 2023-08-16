@@ -111,7 +111,12 @@ a:hover {
   filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(100deg);
 }
 
-a.router-link-exact-active {
+/* 到頁面 active 顏色 */
+/* a.router-link-exact-active {
+  color: #36c1cb;
+} */
+
+a.router-link-active {
   /* 到頁面 active 顏色 */
   color: #36c1cb;
 }

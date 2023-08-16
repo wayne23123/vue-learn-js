@@ -39,7 +39,11 @@ a {
   color: #a1b6cb;
 }
 
-a.router-link-exact-active {
+/* a.router-link-exact-active {
+  color: #36c1cb;
+} */
+
+a.router-link-active {
   color: #36c1cb;
 }
 

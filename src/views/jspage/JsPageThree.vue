@@ -44,7 +44,7 @@ function locate(idPound) {
             <RouterLink to="/js/function">2.函數進階</RouterLink>
           </div>
           <div>
-            <RouterLink to="/js"></RouterLink>
+            <RouterLink to="/js/destructuringassignment">3.解構賦值</RouterLink>
           </div>
           <div>
             <RouterLink to="/js"></RouterLink>
@@ -101,6 +101,7 @@ function locate(idPound) {
 a.router-link-exact-active {
   color: #36c1cb;
 }
+
 .sectionHolderNav {
   width: 100vw;
   max-width: 100%;

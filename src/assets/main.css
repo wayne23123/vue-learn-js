@@ -215,7 +215,7 @@ button {
 }
 
 .bgcVSMid {
-  margin: 100px 0;
+  margin: 110px 0;
   display: flex;
   align-items: center;
   font-size: 40px;
@@ -223,6 +223,14 @@ button {
   /* background-color: #1f222f; */
   background-color: #292d3e;
   border-right: 4px solid #1f222f;
+}
+
+.VSL {
+  border-left: 1px solid #676e95;
+}
+
+.w100 {
+  width: 100%;
 }
 
 .keyword {
