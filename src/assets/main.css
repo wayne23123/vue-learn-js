@@ -109,6 +109,10 @@ button {
   justify-content: space-between;
 }
 
+.spaAro {
+  justify-content: space-around;
+}
+
 .disCen {
   display: flex;
   justify-content: center;
@@ -172,6 +176,10 @@ button {
   padding: 0 10px 0 10px;
 }
 
+.pad204 {
+  padding: 20px 20px 20px 20px;
+}
+
 .mar10 {
   margin: 0 10px 0 10px;
 }
@@ -199,6 +207,10 @@ button {
   text-indent: 2.5rem;
 }
 
+.padTwo {
+  padding: 0 0 0 50px;
+}
+
 .pFou {
   text-indent: 5rem;
 }
@@ -216,8 +228,8 @@ button {
 }
 
 .bor {
-  padding: 10px 10px 10px 10px;
-  border: 1px solid #000;
+  /* padding: 10px 10px 10px 10px; */
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
 }
 
