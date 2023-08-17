@@ -126,6 +126,12 @@ button {
   left: 0;
 }
 
+.spo {
+  padding: 10px;
+  background-color: #292d3e;
+  border-radius: 12px;
+}
+
 .r0 {
   right: 0;
 }
@@ -146,6 +152,10 @@ button {
   padding: 0 0 0 15px;
 }
 
+.padL20 {
+  padding: 0 0 0 20px;
+}
+
 .padR10 {
   padding: 0 10px 0 0;
 }
@@ -160,6 +170,14 @@ button {
 
 .mar10 {
   margin: 0 10px 0 10px;
+}
+
+.marL20 {
+  margin: 0 0 0 20px;
+}
+
+.marL100 {
+  margin: 0 0 0 100px;
 }
 
 .marA {

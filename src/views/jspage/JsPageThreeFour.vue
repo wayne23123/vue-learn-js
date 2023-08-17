@@ -63,7 +63,78 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <table class="fz30">
+          <table class="fz28">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <table class="fz28">
+            <tr>
+              <td>🐕🐕🐕🐕.map(🐕=>🐶)</td>
+              <td class="pad10">></td>
+              <td>🐶🐶🐶🐶</td>
+            </tr>
+
+            <tr>
+              <td>🐕🐶🐕🐕.filter(🐶)</td>
+              <td class="pad10">></td>
+              <td>🐶</td>
+            </tr>
+            <tr>
+              <td>🐕🐶🐕🐕.every(🐕)</td>
+              <td class="pad10">></td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>🐕🐶🐶🐕.some(🐶)</td>
+              <td class="pad10">></td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>🐕🐕🐕🐕.fill(🐶,1)</td>
+              <td class="pad10">></td>
+              <td>🐕🐶🐶🐶</td>
+            </tr>
+            <tr>
+              <td>🐕🐕🐶🐕.findIndex.(el=>el===🐶)</td>
+              <td class="pad10">></td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>🐕🐶🐕🐕.find(🐶)</td>
+              <td class="pad10">></td>
+              <td>🐶</td>
+            </tr>
+
+            <!-- <tr>
+              <td></td>
+              <td class="pad10"></td>
+              <td></td>
+            </tr> -->
+          </table>
+          <table class="fz30 methodTable">
             <tr class="cor36">
               <th>方法</th>
               <th>作用</th>
@@ -80,78 +151,84 @@ function locate(idPound) {
             </tr>
 
             <tr>
-              <td>forEach</td>
-              <td>遍歷數組</td>
-              <td>不返回數組, 常用於查找遍歷數組元素</td>
+              <td class="tdPad">forEach</td>
+              <td class="tdPad">遍歷數組</td>
+              <td class="tdPad">不返回數組, 常用於查找遍歷數組元素</td>
             </tr>
             <tr>
-              <td>filter</td>
-              <td>過濾數組</td>
-              <td>
+              <td class="tdPad">filter</td>
+              <td class="tdPad">過濾數組</td>
+              <td class="tdPad">
                 <span class="cor36">返回</span>新數組,
                 <span class="cor36">返回</span>的是篩選滿足條件的數組元素
               </td>
             </tr>
             <tr>
-              <td>reduce</td>
-              <td>累計器</td>
-              <td><span class="cor36">返回</span>累計處理的結果, 常用於求和</td>
+              <td class="tdPad">reduce</td>
+              <td class="tdPad">累計器</td>
+              <td class="tdPad">
+                <span class="cor36">返回</span>累計處理的結果, 常用於求和
+              </td>
             </tr>
             <tr>
-              <td>join</td>
-              <td></td>
-              <td>數組拼接成字串, <span class="cor36">返回</span> 字串</td>
+              <td class="tdPad">join</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">
+                數組拼接成字串, <span class="cor36">返回</span> 字串
+              </td>
             </tr>
             <tr>
-              <td>find</td>
-              <td>查找元素</td>
-              <td>
+              <td class="tdPad">find</td>
+              <td class="tdPad">查找元素</td>
+              <td class="tdPad">
                 <span class="cor36">返回</span>符合條件的第一個數組元素值,
                 沒有則<span class="cor36">返回</span>undefined
               </td>
             </tr>
             <tr>
-              <td>every</td>
-              <td></td>
-              <td>
+              <td class="tdPad">every</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">
                 數組所有元素是否都符合條件, 所有都符合<span class="cor36"
                   >返回</span
                 >true, 否<span class="cor36">返回</span>false
               </td>
             </tr>
             <tr>
-              <td>some</td>
-              <td></td>
-              <td>
+              <td class="tdPad">some</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">
                 數組中的元素是否有滿足條件的, 如果有<span class="cor36"
                   >返回</span
                 >true, 沒有<span class="cor36">返回</span>false
               </td>
             </tr>
             <tr>
-              <td>concat</td>
-              <td></td>
-              <td>合併 2 個數組, <span class="cor36">返回</span>生成新數組</td>
+              <td class="tdPad">concat</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">
+                合併 2 個數組, <span class="cor36">返回</span>生成新數組
+              </td>
             </tr>
             <tr>
-              <td>sort</td>
-              <td></td>
-              <td>對原數組單元值排序</td>
+              <td class="tdPad">sort</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">對原數組單元值排序</td>
             </tr>
             <tr>
-              <td>splice</td>
-              <td></td>
-              <td>刪除或替換原數組單元</td>
+              <td class="tdPad">splice</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">刪除或替換原數組單元</td>
             </tr>
             <tr>
-              <td>reverse</td>
-              <td></td>
-              <td>反轉數組</td>
+              <td class="tdPad">reverse</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">反轉數組</td>
             </tr>
             <tr>
-              <td>findIndex</td>
-              <td></td>
-              <td>查找元素的索引值</td>
+              <td class="tdPad">findIndex</td>
+              <td class="tdPad"></td>
+              <td class="tdPad">查找元素的索引值</td>
             </tr>
 
             <!-- <tr>
@@ -434,9 +511,71 @@ function locate(idPound) {
               <span class="number">1.3 , 0</span>
               <span class="brackets">) </span>
             </div>
-            <div id="threemethod003" class="articleCardTitle cor36 fz34">
-              4. join
+          </div>
+          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+            4. find <span class="spo marL100">回調</span>
+          </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span>
+              <span class="src">"wayne","neo","jack"</span>
+              <span class="brackets">]</span>
             </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">re </span> <span class="then">= </span>
+
+              <span class="word">arr</span>
+              <span class="variable">.find</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">item</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo">
+              <span class="then">return </span> <span class="word">item</span>
+              <span class="then">===</span> <span class="src">"wayne"</span>
+            </div>
+            <div class="brackets">})</div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">re</span> <span class="brackets">); </span>
+              <span class="comment">// wayne</span>
+            </div>
+            <br />
+            <br />
+            <p>我只想要 wayne 怎麼做?</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">= </span>
+              <span class="brackets">[ {</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">1000</span>
+            </div>
+            <div class="brackets">}, {</div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"neo"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">2000</span>
+            </div>
+            <div class="brackets">}, {</div>
+            <div class="pTwo VSL">
+              <span class="word">name:</span> <span class="src">"jack"</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">number:</span> <span class="number">3000</span>
+            </div>
+            <div class="brackets">} ]</div>
+            <br />
           </div>
 
           <p class="fz28"></p>
@@ -504,8 +643,11 @@ function locate(idPound) {
 
 <style scoped>
 td {
-  padding: 150px 35px 0 0;
   border-bottom: 1px solid #2f2f2f;
+}
+
+.tdPad {
+  padding: 150px 35px 0 0;
 }
 
 .sectionHolderNav {
