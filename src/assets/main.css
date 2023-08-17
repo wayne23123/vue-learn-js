@@ -24,6 +24,10 @@ button {
   border: none;
 }
 
+.cor17 {
+  color: #171717;
+}
+
 .fz6 {
   transform: scale(0.5);
   -webkit-transform: scale(0.5);

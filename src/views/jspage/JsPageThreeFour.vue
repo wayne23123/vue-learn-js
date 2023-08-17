@@ -42,7 +42,7 @@ function locate(idPound) {
           <div @click="locate('threemethod002')" class="leftNavText">
             reduce
           </div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threemethod003')" class="leftNavText">find</div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
@@ -63,33 +63,14 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <table class="fz28">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
+          <div class="fz28">
+            <span class="cor17"> . . . . . </span> shift ↖
+            <span class="cor17"> . . . </span> ↗ pop
+          </div>
+          <div class="fz28">unshift → ▯▮▮▮▯ ← push</div>
+
+          <br />
+
           <table class="fz28">
             <tr>
               <td>🐕🐕🐕🐕.map(🐕=>🐶)</td>
@@ -134,6 +115,10 @@ function locate(idPound) {
               <td></td>
             </tr> -->
           </table>
+          <br />
+          <br />
+          <br />
+          <br />
           <table class="fz30 methodTable">
             <tr class="cor36">
               <th>方法</th>
@@ -249,6 +234,12 @@ function locate(idPound) {
 
           <div class="bgcVS">
             <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
               <span class="word">被遍歷的數組</span>
               <span class="variable">.forEach</span>
               <span class="brackets">(</span>
@@ -336,6 +327,12 @@ function locate(idPound) {
           </div>
           <p class="fz28">reduce 返回累計處理的結果, 常用於求和</p>
           <div class="bgcVS">
+            <div>
+              <span class="commsnt"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
             <div>
               <span class="word">arr.reduce</span>
               <span class="brackets">(</span>
@@ -517,6 +514,20 @@ function locate(idPound) {
           </div>
           <div class="bgcVS">
             <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">arr.</span> <span class="variable">find</span>
+              <span class="brackets">(</span> <span class="cor36">回調</span>
+              <span class="word">返回數組第一個滿足條件的值</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            #
+            <div>
               <span class="function">const </span>
               <span class="word">arr</span> <span class="then">=</span>
               <span class="brackets">[</span>
@@ -549,6 +560,7 @@ function locate(idPound) {
             <br />
             <br />
             <p>我只想要 wayne 怎麼做?</p>
+            <br />
             <div>
               <span class="function">const </span>
               <span class="word">arr</span> <span class="then">= </span>
@@ -576,6 +588,210 @@ function locate(idPound) {
             </div>
             <div class="brackets">} ]</div>
             <br />
+            <br />
+            <div>
+              <span class="word">arr.</span> <span class="variable">find</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span>
+
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">)</span>
+              <span class="comment">//{name:"wayne",number:1000},{...}</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span>
+
+              <span class="brackets">(</span>
+              <span class="word">item.name</span>
+              <span class="brackets">)</span>
+              <span class="comment">//wayne neo jack</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="number">1</span> <span class="brackets">)</span>
+              <span class="comment"
+                >//打印1次//找到數組中第一個滿足就不再找了</span
+              >
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">return </span>
+              <span class="word">item.name</span> <span class="then">===</span>
+              <span class="src">"wayne"</span>
+              <span class="comment">//返回這條物件 數組元素</span>
+            </div>
+            <div class="brackets">})</div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span> <span class="word">mi</span>
+              <span class="then">=</span>
+
+              <span class="word">arr.</span> <span class="variable">find</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="then">return </span>
+              <span class="word">item.name</span> <span class="then">===</span>
+              <span class="src">"wayne"</span>
+              <span class="comment">//返回這條物件 數組元素</span>
+            </div>
+            <div class="brackets">})</div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">mi</span> <span class="brackets">)</span>
+              <span class="comment">//{name:"wayne",number:1000}</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span> <span class="word">mi</span>
+              <span class="then">=</span> <span class="word">arr.</span
+              ><span class="variable">find</span>
+
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span>
+              <span class="word">item.name</span> <span class="then">===</span>
+              <span class="src">"wayne"</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">mi</span> <span class="brackets">)</span>
+              <span class="comment">//{name:"wayne",number:1000}</span>
+            </div>
+          </div>
+          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+            4. every & some <span class="spo marL100">回調</span>
+          </div>
+
+          <p class="fz28">
+            every 每一個是否都符合條件, 都符合返回 true, 否返回 false
+          </p>
+          <br />
+          <p class="fz28">🐕🐶🐕🐕.every(🐕) > false</p>
+          <div class="bgcVS">
+            <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">arr.</span>
+              <span class="variable">every</span>
+              <span class="brackets">(</span> <span class="cor36">回調</span>
+              <span class="word">返回布林值</span>
+              <span class="brackets">)</span> <span class="word"></span>
+            </div>
+            <br />
+            #
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span>
+              <span class="number">10,20,30</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">flag</span> <span class="then">=</span>
+              <span class="word">arr.</span> <span class="variable">every</span>
+
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span> <span class="word">item</span>
+              <span class="then">>=</span> <span class="number">10</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">flag</span> <span class="brackets">) </span>
+              <span class="comment">// true</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">flag</span> <span class="then">=</span>
+              <span class="word">arr.</span> <span class="variable">some</span>
+
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span> <span class="word">item</span>
+              <span class="then">>=</span> <span class="number">20</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">flag</span> <span class="brackets">) </span>
+              <span class="comment">// true</span>
+            </div>
+          </div>
+
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. Array.form()
+          </div>
+
+          <p class="fz28">偽數組轉換為真數組</p>
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="word">ul</span>
+              <span class="then">></span>
+            </div>
+            <div class="pTwo">
+              <span class="then">＜</span> <span class="word">li</span>
+              <span class="then">></span>
+            </div>
+            <div class="pTwo">
+              <span class="then">＜</span> <span class="word">li</span>
+              <span class="then">></span>
+            </div>
+            <div class="pTwo">
+              <span class="then">＜</span> <span class="word">li</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="then">＜/</span> <span class="word">ul</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">lis</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelectorAll</span>
+              <span class="brackets">(</span> <span class="src">"ul li"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">lis</span> <span class="brackets">)</span>
+              <span class="comment">// 是 偽數組 Argument 也是</span>
+            </div>
+            <div>
+              <span class="word">lis.</span> <span class="variable">pop</span>
+              <span class="brackets">() </span>
+              <span class="comment">// pop is not a function</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">liss</span> <span class="then">=</span>
+              <span class="brackets">Array</span>
+              <span class="variable">.from</span>
+              <span class="brackets">(</span> <span class="word">lis</span>
+              <span class="brackets">)</span>
+            </div>
           </div>
 
           <p class="fz28"></p>
@@ -614,9 +830,187 @@ function locate(idPound) {
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. 綜合練習
+          </div>
+          <div class="dis">
+            <div class="bgcVS w100">
+              <p>JSON格式msg={"code":200,"data":[{...}]}</p>
+              <br />
+              <div>
+                <span class="function">const </span>
+                <span class="brackets">{</span> <span class="word">data</span>
+                <span class="brackets">}</span> <span class="then">=</span>
+                <span class="word">msg</span>
+              </div>
+              <div>
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+              </div>
+              <br />
+              <div>
+                <span class="function">function </span>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">arr</span>
+                <span class="brackets">){</span>
+              </div>
+              <div class="pTwo VSL">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">arr</span>
+                <span class="brackets">)</span>
+              </div>
+              <div class="brackets">}</div>
+              <div>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+              </div>
+            </div>
+            <div class="bgcVSMid">></div>
+            <div class="bgcVS w100">
+              <br />
+              <br />
+              <div>
+                <span class="function">function </span>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">arr</span>
+                <span class="brackets">){</span>
+              </div>
+              <div class="pTwo VSL">
+                <span class="function">const </span>
+                <span class="brackets">{</span> <span class="word">data</span>
+                <span class="brackets">}</span> <span class="then">=</span>
+                <span class="word">arr</span>
+              </div>
+
+              <div class="pTwo VSL">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+              </div>
+              <div class="brackets">}</div>
+              <div>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">msg</span>
+                <span class="brackets">)</span>
+              </div>
+              <br />
+              <div class="disCen comment">更簡潔寫法 V</div>
+              <br />
+              <div>
+                <span class="function">function </span>
+                <span class="word">render</span>
+                <span class="brackets">( { </span>
+                <span class="word">data </span>
+                <span class="brackets">} ) {</span>
+              </div>
+
+              <div class="pTwo VSL">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+              </div>
+              <div class="brackets">}</div>
+              <div>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">msg</span>
+                <span class="brackets">)</span>
+              </div>
+              <br />
+              <div class="comment">data容易命名衝突, 接進來資料改名myData</div>
+              <br />
+              <div>
+                <span class="function">function </span>
+                <span class="word">render</span>
+                <span class="brackets">( { </span>
+                <span class="word">data: myData </span>
+                <span class="brackets">} ) {</span>
+              </div>
+
+              <div class="pTwo VSL">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">myData</span>
+                <span class="brackets">)</span>
+              </div>
+              <div class="brackets">}</div>
+              <div>
+                <span class="word">render</span>
+                <span class="brackets">(</span> <span class="word">msg</span>
+                <span class="brackets">)</span>
+              </div>
+            </div>
+          </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">spec</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">size:</span>
+              <span class="src">"40cm*40cm"</span>
+              <span class="word">,color:</span>
+              <span class="src">"black"</span> <span class="brackets">}</span>
+            </div>
+            <span class="comment">//1.獲取所有屬性值</span>
+            <div>
+              <span class="brackets">Object</span>
+              <span class="variable">.values</span>
+              <span class="brackets">(</span> <span class="word">spec</span>
+              <span class="brackets">)</span>
+            </div>
+
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Object.values</span>
+              <span class="brackets">(</span> <span class="word">spec</span>
+              <span class="brackets">))</span>
+              <span class="comment">//["40cm*40cm","black"]</span>
+            </div>
+            <span class="comment">// 2. 轉換為字串 join("/")</span>
+
+            <span class="comment">// 2. 轉換為字串</span>
+            <div>
+              <span class="brackets">Object</span>
+              <span class="variable">.values</span>
+              <span class="brackets">(</span> <span class="word">spec</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">"/"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="brackets">Object</span>
+              <span class="variable">.values</span>
+              <span class="brackets">(</span> <span class="word">spec</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">"/"</span>
+              <span class="brackets">)) </span>
+              <span class="comment">//40cm*40cm/black</span>
+            </div>
+            <div>
+              <span class="word">document.</span>
+              <span class="variable">querySelect</span>
+              <span class="brackets">(</span>
+              <span class="src">".showDiv"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span> <span class="brackets">Object</span>
+              <span class="word">.value</span> <span class="brackets">(</span>
+              <span class="word">spec</span> <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">"/"</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
