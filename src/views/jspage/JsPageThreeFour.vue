@@ -1011,6 +1011,184 @@ function locate(idPound) {
               <span class="brackets">)</span>
             </div>
           </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">tea</span> <span class="then">=</span>
+              <span class="src">"50g的飲料,100g茶葉"</span>
+            </div>
+
+            <span class="comment">// 1.把字串轉成數組</span>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)) </span>
+              <span class="comment">// [ "50g的飲料", "100g茶葉" ]</span>
+            </div>
+            <span class="comment">// 2. 有幾條數據 我就生成幾個 ＜span></span>
+            <div>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+              <span class="comment">//item是裡面的每一個值</span>
+            </div>
+            <div class="pTwo">
+              <div class="dis">
+                <div>
+                  <span class="then">return </span>
+                  <span class="src">`＜span>贈品</span>
+                  <span class="then">${</span> <span class="word">item</span>
+                  <span class="then">}</span> <span class="src">＜/span>`</span>
+                </div>
+                <div class="comment">
+                  <span>//贈品50g的飲料</span>
+                  <br />
+                  <span>//贈品100g茶葉</span>
+                </div>
+              </div>
+            </div>
+            <span class="brackets">})</span>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+            </div>
+            <div class="pTwo">
+              <div>
+                <span class="then">return </span>
+                <span class="src">`＜span>贈品</span>
+                <span class="then">${</span> <span class="word">item</span>
+                <span class="then">}</span> <span class="src">＜/span>`</span>
+              </div>
+            </div>
+            <span class="brackets">})</span>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr</span> <span class="brackets">) </span>
+              <span class="comment"
+                >["＜span>贈品50g的飲料＜/span>","＜span>贈品100g茶葉＜/span>"]</span
+              >
+            </div>
+            <br />
+            <div class="comment">數組不能直接往盒子加</div>
+            <div class="comment">想要改成字串</div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+            </div>
+            <div class="pTwo">
+              <div>
+                <span class="then">return </span>
+                <span class="src">`＜span>贈品</span>
+                <span class="then">${</span> <span class="word">item</span>
+                <span class="then">}</span> <span class="src">＜/span>`</span>
+              </div>
+            </div>
+            <div>
+              <span class="brackets">})</span
+              ><span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str</span> <span class="brackets">)</span>
+            </div>
+            <span class="comment"
+              >＜span>贈品50g的飲料＜/span>＜span>贈品100g茶葉＜/span></span
+            >
+
+            <div>
+              <span class="word">document.</span>
+              <span class="variable">querySelector</span>
+              <span class="brackets">(</span> <span class="src">"div"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span> <span class="word">str</span>
+            </div>
+            <br />
+            <br />
+            <p>轉成箭頭函數</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">tea</span> <span class="then">=</span>
+              <span class="src">"50g的飲料,100g茶葉"</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="then">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span>
+              <span class="src">`＜span>贈品</span>
+              <span class="then">${</span> <span class="word">item</span>
+              <span class="then">}</span>
+              <span class="src">＜/span>＜br>`</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">document.</span>
+              <span class="variable">querySelector</span>
+              <span class="brackets">(</span> <span class="word">"div"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="then">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span>
+              <span class="src">`＜span>贈品</span>
+              <span class="then">${</span> <span class="word">item</span>
+              <span class="then">}</span>
+              <span class="src">＜/span>＜br>`</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

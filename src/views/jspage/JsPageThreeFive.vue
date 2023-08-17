@@ -542,14 +542,442 @@ function locate(idPound) {
             <p>把一個物件 拷貝到裡面去</p>
           </div>
           <div>
-            <RouterLink to="/js/method" class="fz28">Array 方法</RouterLink>
+            <RouterLink to="/js/method" class="fz34">Array 方法</RouterLink>
           </div>
-          <p class="fz28"></p>
 
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <div id="" class="articleCardTitle cor36 fz34">String 方法</div>
+
+          <p class="fz28">1. 實例屬性 length 獲取字串長度</p>
+          <br />
+
+          <p class="fz28">2. 實例方法 split("分隔符") 用來將字串拆分成數組</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+              <span class="src">"wayne,jack"</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="word">str.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="then">","</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr</span> <span class="brackets">)</span>
+              <span class="comment">//["wayne","jack"]</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str1</span> <span class="then">=</span>
+              <span class="src">"2077-1-1"</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr1</span> <span class="then">=</span>
+              <span class="word">str1.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">"-"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr</span> <span class="brackets">)</span>
+              <span class="comment">//["2077","1","1"]</span>
+            </div>
+          </div>
+          <p class="fz28">
+            3. 實例方法 substring (需要擷取的第一個字符的索引[,結束的索引號])
+            用於字串擷取
+          </p>
+          <br />
+          <p class="fz28">3.1 省略 結束索引號 默認取到最後</p>
+          <p class="fz28">3.2 結束索引號 不包含 想要擷取的部分</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">str.</span>
+              <span class="variable">substring</span>
+              <span class="brackets">(</span>
+              <span class="word">要截的第一個字所引</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="cor36">返回</span>
+              <span class="word">擷取的那部分的新字串</span>
+            </div>
+            <br />
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+              <span class="src">"waynetestneo"</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.</span>
+              <span class="variable">substring</span>
+              <span class="brackets">(</span> <span class="number">9</span>
+              <span class="brackets">)) </span>
+              <span class="comment">// neo</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.</span>
+              <span class="variable">substring</span>
+              <span class="brackets">(</span> <span class="number">5 , 9</span>
+              <span class="brackets">)) </span>
+              <span class="comment">// test</span>
+            </div>
+          </div>
+          <p class="fz28">
+            4. 實例方法 startWith (檢測字串[,檢測位置索引號])
+            判斷是否以某字符開頭
+          </p>
+
+          <p class="fz28">返回 true or false</p>
+          <div class="bgcVS">
+            <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">str.</span>
+              <span class="variable">starstWith</span>
+              <span class="brackets">(</span>
+              <span class="word">要搜索的字串</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">一定要開頭 </span>
+              <span class="comment">＜=> includes 就不用</span>
+            </div>
+            <p class="fz28">返回 true or false</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+              <span class="src">"wayne學JS中"</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.</span>
+              <span class="variable">startsWith</span>
+              <span class="brackets">(</span> <span class="word"></span>
+              <span class="src">"yne"</span> <span class="brackets">))</span>
+              <span class="comment">//true</span>
+            </div>
+          </div>
+          <p class="fz28">
+            5. 實例方法 includes (搜索的字串[,檢測位置索引號])
+            判斷一個字串是否包含在另一個字串中
+          </p>
+          <p class="fz28">返回 true or false</p>
+          <div class="bgcVS">
+            <div>
+              <span class="comment"
+                >1.裡面幾個參數 2. 返回值返回什麼 3. 使用方法</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">str.</span>
+              <span class="variable">includes</span>
+              <span class="brackets">(</span>
+              <span class="word">要搜索的字串</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">裡面有就 true </span>
+              <span class="comment">＜=> starstWith 一定要開頭</span>
+            </div>
+
+            <p class="fz28">返回 true or false</p>
+            <p class="fz28">有區分大小寫 false</p>
+
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+              <span class="src">"我是wayne"</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.</span>
+              <span class="variable">includes</span>
+              <span class="brackets">(</span> <span class="src">"wayne"</span>
+              <span class="brackets">) )</span>
+              <span class="comment">//true</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str.</span>
+              <span class="variable">includes</span>
+              <span class="brackets">(</span> <span class="src">"wayne" </span>
+              <span class="number">, 3 </span>
+
+              <span class="brackets">) )</span>
+              <span class="comment">//false</span>
+            </div>
+          </div>
+
+          <p class="fz28">6. 實例方法 toUpperCase 用於將字母轉成大寫</p>
+          <br />
+          <p class="fz28">7. 實例方法 toLowerCase 用於將字母轉成小寫</p>
+          <br />
+          <p class="fz28">8. 實例方法 indexOf 檢測是否包含某字符</p>
+          <br />
+          <p class="fz28">9. 實例方法 endsWith 檢測是否以某字符結尾</p>
+          <br />
+          <p class="fz28">10. 實例方法 replace 用於替換字串, 支持正則匹配</p>
+          <br />
+          <p class="fz28">11. 實例方法 match 用於查找字串, 支持正則匹配</p>
+          <br />
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">tea</span> <span class="then">=</span>
+              <span class="src">"50g的飲料,100g茶葉"</span>
+            </div>
+
+            <span class="comment">// 1.把字串轉成數組</span>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)) </span>
+              <span class="comment">// [ "50g的飲料", "100g茶葉" ]</span>
+            </div>
+            <span class="comment">// 2. 有幾條數據 我就生成幾個 ＜span></span>
+            <div>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+              <span class="comment">//item是裡面的每一個值</span>
+            </div>
+            <div class="pTwo">
+              <div class="dis">
+                <div>
+                  <span class="then">return </span>
+                  <span class="src">`＜span>贈品</span>
+                  <span class="then">${</span> <span class="word">item</span>
+                  <span class="then">}</span> <span class="src">＜/span>`</span>
+                </div>
+                <div class="comment">
+                  <span>//贈品50g的飲料</span>
+                  <br />
+                  <span>//贈品100g茶葉</span>
+                </div>
+              </div>
+            </div>
+            <span class="brackets">})</span>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+            </div>
+            <div class="pTwo">
+              <div>
+                <span class="then">return </span>
+                <span class="src">`＜span>贈品</span>
+                <span class="then">${</span> <span class="word">item</span>
+                <span class="then">}</span> <span class="src">＜/span>`</span>
+              </div>
+            </div>
+            <span class="brackets">})</span>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr</span> <span class="brackets">) </span>
+              <span class="comment"
+                >["＜span>贈品50g的飲料＜/span>","＜span>贈品100g茶葉＜/span>"]</span
+              >
+            </div>
+            <br />
+            <div class="comment">數組不能直接往盒子加</div>
+            <div class="comment">想要改成字串</div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">str</span> <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){ </span>
+            </div>
+            <div class="pTwo">
+              <div>
+                <span class="then">return </span>
+                <span class="src">`＜span>贈品</span>
+                <span class="then">${</span> <span class="word">item</span>
+                <span class="then">}</span> <span class="src">＜/span>`</span>
+              </div>
+            </div>
+            <div>
+              <span class="brackets">})</span
+              ><span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">str</span> <span class="brackets">)</span>
+            </div>
+            <span class="comment"
+              >＜span>贈品50g的飲料＜/span>＜span>贈品100g茶葉＜/span></span
+            >
+
+            <div>
+              <span class="word">document.</span>
+              <span class="variable">querySelector</span>
+              <span class="brackets">(</span> <span class="src">"div"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span> <span class="word">str</span>
+            </div>
+            <br />
+            <br />
+            <p>轉成箭頭函數</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">tea</span> <span class="then">=</span>
+              <span class="src">"50g的飲料,100g茶葉"</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="then">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span>
+              <span class="src">`＜span>贈品</span>
+              <span class="then">${</span> <span class="word">item</span>
+              <span class="then">}</span>
+              <span class="src">＜/span>＜br>`</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">document.</span>
+              <span class="variable">querySelector</span>
+              <span class="brackets">(</span> <span class="word">"div"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span>
+
+              <span class="word">tea.</span>
+              <span class="variable">split</span>
+              <span class="brackets">(</span> <span class="then">","</span>
+              <span class="brackets">)</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span>
+              <span class="src">`＜span>贈品</span>
+              <span class="then">${</span> <span class="word">item</span>
+              <span class="then">}</span>
+              <span class="src">＜/span>＜br>`</span>
+              <span class="brackets">)</span>
+              <span class="variable">.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
+
+          <p class="fz28 cor36">Number</p>
+          <p class="fz28">1. toFixed() 設置保留小數位的長度</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">num</span> <span class="then">=</span>
+              <span class="number">10.123</span>
+            </div>
+
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">num.toFixed</span>
+              <span class="brackets">()) </span>
+              <span class="comment">// 10 // 四捨五入到整數位</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">num.toFixed</span>
+              <span class="brackets">(</span> <span class="number">2</span>
+
+              <span class="brackets"> )) </span>
+              <span class="comment">// 10.12</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">integer</span> <span class="then">=</span>
+              <span class="number">10</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">num.toFixed</span>
+              <span class="brackets">(</span> <span class="number">2</span>
+
+              <span class="brackets"> )) </span>
+              <span class="comment">// 10.00</span>
+            </div>
+          </div>
+          <p class="fz28">
+            2. Math.floor()：無條件捨去，回傳大於所給數字的最小整數
+          </p>
+          <br />
+          <br />
+
           <p class="fz28"></p>
           <p class="fz28"></p>
 
