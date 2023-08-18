@@ -99,7 +99,7 @@ const router = createRouter({
                   component: JsPageThreeSix,
                 },
                 {
-                  path: "tip",
+                  path: "tips",
                   component: JsPageThreeSeven,
                 },
               ],

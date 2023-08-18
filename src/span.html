@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../pictures/W.png" type="image/png" />
+    <title>WaynLuSpan工具</title>
+
+    <style>
+      html {
+        background-color: #000;
+      }
+
+      section {
+        width: 100vw;
+        max-width: 100%;
+
+        overflow: hidden;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100%;
+        /* background-color: #c4c4c4; */
+        background-color: #000000;
+        font-size: 40px;
+        color: #7e7e7e;
+
+        /* text-align: center; */
+      }
+
+      textarea:focus {
+        /* border: 5px solid #342c2c; */
+        outline: 1px solid #7e7e7e;
+        /* color: #c4c4c4; */
+        color: #7e7e7e;
+
+        /* text-align: center; */
+      }
+
+      .keyword {
+        color: #0077aa;
+        font-weight: bold;
+      }
+
+      .variable {
+        color: #82aaff;
+        /* color: #a6accd; */
+      }
+
+      .operator {
+        color: #82aaff;
+        /* color: #5f5f5f; */
+      }
+
+      .number {
+        color: #f78c6c;
+        /* color: #008000; */
+      }
+
+      .string {
+        color: #a31515;
+      }
+
+      .function {
+        color: #c792ea;
+        /* color: #6f42c1; */
+      }
+
+      .parameter {
+        color: #b2ccd6;
+        /* color: #0077aa; */
+      }
+
+      .comment {
+        /* color: #6a9955; */
+        color: #676e95;
+      }
+
+      .then {
+        color: #89ddff;
+      }
+
+      .tag {
+        color: #f07178;
+      }
+
+      .src {
+        color: #c3e88d;
+      }
+
+      .word {
+        color: #a6accd;
+      }
+
+      .brackets {
+        /* color: #ff5370; */
+        /* color: #b2ccd6; */
+        /* color: #ff5370; */
+        /* color: #ff5370; */
+        color: #ffcb6b;
+      }
+
+      .dis {
+        display: flex;
+      }
+
+      .midLayout {
+        width: 30vw;
+        padding: 0 0 0 20px;
+      }
+
+      .btnLayout {
+        width: 100%;
+        /* background-color: #c4c4c4; */
+      }
+
+      .buttonMid {
+        width: 100%;
+        padding: 50px;
+        font-size: 34px;
+        background-color: #171717;
+
+        color: #c4c4c4;
+      }
+
+      .clearBtn {
+        position: relative;
+        left: 300px;
+        padding: 5px;
+        font-size: 34px;
+        background-color: #171717;
+
+        color: #c4c4c4;
+      }
+
+      .fz34 {
+        font-size: 34px;
+      }
+      .textAreaLayout {
+        height: 80vh;
+        padding: 150px 10px 10px 30px;
+        /* background-color: #565656; */
+      }
+      .showCopy {
+        position: fixed;
+        right: 50px;
+        top: 0;
+        background-color: #00000050;
+        color: #c4c4c480;
+        width: 30vw;
+      }
+
+      input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        /* 隱藏框框 */
+      }
+
+      input[type="checkbox"] + label {
+        display: block;
+        position: relative;
+        margin: 20px;
+        padding: 15px 30px 15px 60px;
+        border: 3px solid #5a5a5a;
+        border-radius: 100px;
+        color: #5a5a5a;
+        font-size: 1.25em;
+        letter-spacing: 0.05em;
+        background-color: #171717;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s, box-shadow 0.2s;
+      }
+      label::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 15px;
+        width: 32px;
+        height: 32px;
+        border: 3px solid #5a5a5a;
+        border-radius: 100px;
+        transition: background-color 0.2s;
+      }
+
+      /*:hoever 與 :focus 效果*/
+      input[type="checkbox"] + label:hover,
+      input[type="checkbox"]:focus + label {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      }
+
+      input[type="checkbox"]:checked + label {
+        background-color: #154360;
+        color: #c4c4c4;
+      }
+
+      input[type="checkbox"]:checked + label::before {
+        background-color: #c4c4c4;
+      }
+
+      .colorDiv {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+      }
+
+      .showTimeDiv {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: #00000050;
+        color: #565656;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="layout dis">
+        <div class="textAreaLayout">
+          <textarea
+            autofocus
+            placeholder="輸入 function . . . "
+            id="input"
+            rows="12"
+            cols="70"
+          ></textarea>
+        </div>
+        <div class="midLayout">
+          <br />
+          <br /><br /><br /><br /><br />
+          <div>
+            <input id="includeDiv" type="checkbox" />
+            <label for="includeDiv">前面不要div</label>
+          </div>
+          <div>
+            <input id="pTwo" type="checkbox" />
+            <label for="pTwo">div pTwo</label>
+          </div>
+          <div>
+            <input id="classEmp" type="checkbox" />
+            <label for="classEmp">div class=""</label>
+          </div>
+          <div class="btnLayout">
+            <button onmouseenter="convert()" class="buttonMid">1 . 傳換</button>
+            <br />
+            <br />
+            <br />
+            <button onmouseenter="copyCode()" class="buttonMid">
+              2 . 複製
+            </button>
+          </div>
+          <div>
+            <input id="commentSpan" type="checkbox" />
+            <label for="commentSpan">comment</label>
+          </div>
+          <!-- <div><button id="clearButton2" class="clearBtn">清空</button></div> -->
+
+          <!-- <label for="includeDiv">前面不要div:</label>
+          <input type="checkbox" id="includeDiv" /> -->
+        </div>
+        <br />
+        <div class="textAreaLayout">
+          <textarea
+            placeholder="輸出 <class='function'>function</span>"
+            id="output"
+            rows="12"
+            cols="70"
+          ></textarea>
+        </div>
+      </div>
+      <div class="colorDiv fz34">
+        <div class="dis">
+          <div class="variable">variable</div>
+          <div class="number">number</div>
+          <div class="function">function</div>
+          <div class="parameter">parameter</div>
+          <div class="comment">comment</div>
+          <div class="then">then</div>
+          <div class="src">src</div>
+          <div class="word">word</div>
+          <div class="brackets">brackets</div>
+        </div>
+        <div><button id="clearButton" class="clearBtn">清空</button></div>
+      </div>
+      <div class="showCopy">複製狀態</div>
+      <div class="showTimeDiv"></div>
+    </section>
+    <script>
+      function convert() {
+        var inputCode = document.getElementById("input").value;
+        var convertedCode = convertCode(inputCode);
+        document.getElementById("output").value = convertedCode;
+      }
+
+      // function convertCode(code) {
+      function convertCode(code) {
+        let includeDivCheckbox = document.getElementById("includeDiv");
+        let includeDiv = includeDivCheckbox.checked;
+
+        let pTwoCheckbox = document.getElementById("pTwo");
+        let pTwo = pTwoCheckbox.checked;
+
+        let classEmpCheckbox = document.getElementById("classEmp");
+        let classEmp = classEmpCheckbox.checked;
+
+        let commentSpanCheckbox = document.getElementById("commentSpan");
+        let commentSpan = commentSpanCheckbox.checked;
+
+        if (commentSpan) {
+          return "<span class='comment'>" + code + "</span>";
+        } else {
+          var convertedCode = "";
+
+          var lines = code.split("\n");
+          for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            var convertedLine = "";
+
+            var words = line.split(" ");
+            for (var k = 0; k < words.length; k++) {
+              var word = words[k];
+
+              var convertedWord = "";
+              switch (word) {
+                case "log":
+                case "forEach":
+                case ".forEach":
+                case "ref":
+                case "addEventListener":
+                case "play":
+                case "add":
+                case "remove":
+                case "querySelector":
+                case ".querySelector":
+                case "querySelectorAll":
+                case ".querySelectorAll":
+                case "setProperty":
+                case "json":
+                case ".json":
+                case "then":
+                case ".then":
+                case "filter":
+                case ".filter":
+                case "match":
+                case ".match":
+                case "call":
+                case ".call":
+                case "apply":
+                case ".apply":
+                case "fetch":
+                case "catch":
+                case ".catch":
+                case "create":
+                case "create.":
+                case "push":
+                case ".push":
+                case "open":
+                case ".open":
+                case "onreadystatechange":
+                case ".onreadystatechange":
+                case "innerHTML":
+                case ".innerHTML":
+                case "innerText":
+                case ".innerText":
+                case "send":
+                case ".send":
+                case "onload":
+                case ".onload":
+                case "onerror":
+                case ".onerror":
+                case "parse":
+                case ".parse":
+                case "error":
+                case ".error":
+                case "try":
+                case ".try":
+                case "get":
+                case ".get":
+                case "results":
+                case ".results":
+                case "length":
+                case ".length":
+                case "map":
+                case ".map":
+                case "every":
+                case ".every":
+                case "some":
+                case ".some":
+                case "fill":
+                case ".fill":
+                case "findIndex":
+                case ".findIndex":
+                case "find":
+                case ".find":
+                case "reduce":
+                case ".reduce":
+                case "join":
+                case ".join":
+                case "concat":
+                case ".concat":
+                case "sort":
+                case ".sort":
+                case "splice":
+                case ".splice":
+                case "slice":
+                case ".slice":
+                case "reverse":
+                case ".reverse":
+                case "values":
+                case ".values":
+                case "pop":
+                case ".pop":
+                case "shift":
+                case ".shift":
+                case "unshift":
+                case ".unshift":
+                case "push":
+                case ".push":
+                case "from":
+                case ".from":
+                case "split":
+                case ".split":
+                case "substring":
+                case ".substring":
+                case "startsWith":
+                case ".startsWith":
+                case "includes":
+                case ".includes":
+                case "toUpperCase":
+                case ".toUpperCase":
+                case "toLowerCase":
+                case ".toLowerCase":
+                case "indexOf":
+                case ".indexOf":
+                case "endsWith":
+                case ".endsWith":
+                case "replace":
+                case ".replace":
+                case "math":
+                case ".math":
+                case "dir":
+                case ".dir":
+                case "toLocaleString":
+                case ".toLocaleString":
+                  // case "":
+                  // case ".":
+
+                  convertedWord = '<span class="variable">' + word + "</span>";
+                  break;
+
+                case "let":
+                  convertedWord = '<span class="function">let </span>';
+                  break;
+                case "function":
+                  convertedWord = '<span class="function">function </span>';
+                  break;
+                case "const":
+                  convertedWord = '<span class="function">const </span>';
+                  break;
+                case "var":
+                  convertedWord = '<span class="function">var </span>';
+                  break;
+                case "class":
+                  convertedWord = '<span class="function">class </span>';
+                  break;
+                case "extends":
+                  convertedWord = '<span class="function">class </span>';
+                  break;
+                case "asyncfunction":
+                  convertedWord =
+                    '<span class="function">async function </span>';
+                  break;
+                case "of":
+                  convertedWord = '<span class="function">of </span>';
+                  break;
+                case "in":
+                  convertedWord = '<span class="function">in </span>';
+                  break;
+
+                case "constructor":
+                case "in":
+                case "async":
+                case "id":
+                  convertedWord = '<span class="function">' + word + "</span>";
+                  break;
+
+                case "[]":
+                case "[],":
+                case "},":
+                case "}":
+                case "};":
+                case "(":
+                case ")":
+                case ");":
+                case "[":
+                case "]":
+                case "];":
+                case "])":
+                case "]);":
+                case "()":
+                case "();":
+                case "){":
+                case "){;":
+                case "{":
+                case "})":
+                case "});":
+                case "))":
+                case "));":
+                case "(){":
+                case "())":
+                case "());":
+                case "((":
+                case "{}":
+                case "{};":
+                case "][":
+                case ")}":
+                case ")};":
+                case "(()":
+                case "(();":
+                case "})()":
+                case "})();":
+                case "Promise":
+                case "Object":
+                case "Object.":
+                case "Array":
+                case "Array.":
+                case "String":
+                case "String.":
+                case "Number":
+                case "Number.":
+                case "([":
+                case "[,":
+                case "(){}":
+                case "Date()":
+                case "Date().":
+                  // case "":
+                  // case ".":
+                  convertedWord = '<span class="brackets">' + word + "</span>";
+                  break;
+
+                case "></":
+                  convertedWord = '<span class="then">>＜/ </span>';
+                  break;
+                case '"></':
+                  convertedWord = '<span class="then">">＜/ </span>';
+                  break;
+                case "new":
+                  convertedWord = '<span class="then">new </span>';
+                  break;
+                case "=new":
+                  convertedWord = '<span class="then">= new </span>';
+                  break;
+                case "else":
+                  convertedWord = '<span class="then">else </span>';
+                  break;
+                case "await":
+                  convertedWord = '<span class="then">await </span>';
+                  break;
+                case "=await":
+                  convertedWord = '<span class="then">= await </span>';
+                  break;
+                case "@keyframes":
+                  convertedWord = '<span class="then">@keyframes </span>';
+                  break;
+                case "for":
+                  convertedWord = '<span class="then">for </span>';
+                  break;
+
+                case "==":
+                case "===":
+
+                case "*":
+                case ":":
+                case "this":
+                case "this.":
+                case "=new":
+                case '",':
+                case '+"':
+                case '="':
+                case "+=":
+                case "if":
+                case ");":
+                case "&":
+                case ",":
+                case '"':
+                case "=":
+                case "+":
+                case "++":
+                case "-":
+                case "--":
+                case ";":
+                case "`":
+                case "$":
+                case "${":
+                case "null":
+                case "=null":
+                case "||":
+                case "typeof":
+                case "undefined":
+                case "null":
+                case "NaN":
+                case "returnnew":
+                case '",':
+                case '","':
+                case '";':
+                case ">":
+                case "/>":
+                case '"/>':
+                  convertedWord = '<span class="then">' + word + "</span>";
+                  break;
+
+                case "return":
+                  convertedWord = '<span class="then">return </span>';
+                  break;
+
+                case "=>":
+                  convertedWord = '<span class="function">=></span>';
+                  break;
+
+                case "</":
+                  convertedWord = '<span class="then">＜/</span>';
+                  break;
+                case "<":
+                  convertedWord = '<span class="then">＜</span>';
+                  break;
+
+                case ">":
+                  convertedWord = '<span class="then">></span>';
+                  break;
+
+                case ">=":
+                  convertedWord = '<span class="then">>=</span>';
+                  break;
+
+                default:
+                  convertedWord = '<span class="word">' + word + "</span>";
+                  break;
+
+                case "div":
+                  convertedWord = '<span class="number">div </span>';
+                  break;
+                case "false":
+                case "true":
+                case "360":
+                case "404":
+                case "304":
+                case "300":
+                case "200":
+                case "100":
+                case "88":
+                case "20":
+                case "19":
+                case "18":
+                case "17":
+                case "16":
+                case "15":
+                case "14":
+                case "13":
+                case "12":
+                case "11":
+                case "10":
+                case "9":
+                case "8":
+                case "7":
+                case "6":
+                case "5":
+                case "4":
+                case "3":
+                case "2":
+                case "1":
+                case "0":
+                case "10,":
+                case "9,":
+                case "8,":
+                case "7,":
+                case "6,":
+                case "5,":
+                case "4,":
+                case "3,":
+                case "2,":
+                case "1,":
+                case "0,":
+                case "100%":
+                case "75%":
+                case "50%":
+                case "25%":
+                case "0%":
+                  convertedWord = '<span class="number">' + word + "</span>";
+                  break;
+
+                case '""':
+                  convertedWord = '<span class="src">' + word + "</span>";
+                  break;
+
+                case "回調":
+                case "返回":
+                  convertedWord = '<span class="cor36">' + word + "</span>";
+              }
+
+              convertedLine += convertedWord + " ";
+            }
+
+            convertedCode += convertedLine.trim() + "\n";
+          }
+
+          // return convertedCode;
+          // return "<div>" + convertedCode + "</div>";
+
+          if (classEmp) {
+            // classEmp勾起來
+            return "<div class=''>" + convertedCode + "</div>";
+          } else if (includeDiv) {
+            // includeDiv沒勾
+            if (pTwo) {
+              // pTwo沒勾
+              return convertedCode;
+            } else {
+              // pTwo勾起來
+              return convertedCode;
+            }
+          } else {
+            // includeDiv勾起來
+
+            if (pTwo) {
+              // pTwo沒勾
+              // return "<div class='pTwo'>" + convertedCode + "</div>";
+              // return "<div class='pTwo VSL'>" + convertedCode + "</div>";
+              return (
+                "<div class='padTwo VSL'> " +
+                convertedCode +
+                " <div></div> </div>"
+              );
+            } else {
+              // pTwo勾起來
+              return "<div>" + convertedCode + "</div>";
+            }
+            // return "<div>" + convertedCode + "</div>";
+          }
+        }
+      }
+
+      let showCopy = document.querySelector(".showCopy");
+
+      // function copyCode() {
+      //   var outputCode = document.getElementById("output");
+      //   outputCode.select();
+      //   outputCode.setSelectionRange(0, 99999); // For mobile devices
+      //   document.execCommand("copy");
+
+      //   showCopy.innerText = "已複製：" + outputCode.value; // 將複製的內容顯示在 showCopy 元素中
+      // }
+
+      function copyCode() {
+        var outputCode = document.querySelectorAll(".clearBtn");
+
+        navigator.clipboard
+          .writeText(outputCode.value)
+          .then(function () {
+            showCopy.innerText = "已複製：" + outputCode.value;
+          })
+          .catch(function (err) {
+            console.error("複製失敗：" + err);
+          });
+      }
+
+      let inputTextArea = document.getElementById("input");
+      // let clearButton = document.querySelectorAll(".clearBtn");
+      let clearButton = document.getElementById("clearButton");
+
+      // clearButton.addEventListener("click", function () {
+      // clearButton.addEventListener("mouseenter", function () {
+      clearButton.addEventListener("mouseenter", function () {
+        inputTextArea.value = ""; // 清空 textarea 的值
+      });
+
+      // for (let i = 0; i < clearButton.length; i++) {
+      //   // clearButton.addEventListener("click", function () {
+      //   // clearButton.addEventListener("mouseenter", function () {
+      //   clearButton[i].addEventListener("mouseenter", function () {
+      //     inputTextArea.value = ""; // 清空 textarea 的值
+      //   });
+      // }
+
+      // function getTime() {
+      //   document.querySelector(".showTimeDiv").innerHTML =
+      //     new Date().toLocaleString();
+      //   setTimeout(getTime, 1000);
+      // }
+      // getTime();
+    </script>
+  </body>
+</html>
