@@ -101,8 +101,16 @@ button {
   cursor: pointer;
 }
 
+.disInl {
+  display: inline-block;
+}
+
 .dis {
   display: flex;
+}
+
+.col {
+  flex-direction: column;
 }
 
 .spa {
@@ -152,6 +160,14 @@ button {
   padding: 0 0 0 5px;
 }
 
+.padT10 {
+  padding: 10px 0 0 0;
+}
+
+.padB10 {
+  padding: 0 0 10px 0;
+}
+
 .padL10 {
   padding: 0 0 0 10px;
 }
@@ -173,7 +189,11 @@ button {
 }
 
 .pad10 {
-  padding: 0 10px 0 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.pad20 {
+  padding: 20px;
 }
 
 .pad204 {
@@ -233,8 +253,32 @@ button {
   border-radius: 10px;
 }
 
+.borT {
+  /* padding: 10px 10px 10px 10px; */
+  border-top: 1px solid #c4c4c4;
+}
+
+.borR {
+  /* padding: 10px 10px 10px 10px; */
+  border-right: 1px solid #c4c4c4;
+}
+
+.borB {
+  /* padding: 10px 10px 10px 10px; */
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.borL {
+  /* padding: 10px 10px 10px 10px; */
+  border-left: 1px solid #c4c4c4;
+}
+
 .tex {
   text-decoration: line-through;
+}
+
+.cor29 {
+  color: #292d3e;
 }
 
 .bgcVS {

@@ -36,12 +36,24 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText">函數導向&物件導向</div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threeobject001')" class="leftNavText">
+            函數導向&物件導向
+          </div>
+          <div @click="locate('threeobject002')" class="leftNavText">
+            構造函數
+          </div>
+          <div @click="locate('threeobject003')" class="leftNavText">
+            constructor
+          </div>
+          <div @click="locate('threeobject004')" class="leftNavText">
+            對象原型
+          </div>
+          <div @click="locate('threeobject005')" class="leftNavText">
+            原型繼承
+          </div>
+          <div @click="locate('threeobject006')" class="leftNavText">
+            原型鏈
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +71,9 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <div class="articleCardTitle cor36 fz34">6.1 編程思想</div>
+          <div id="threeobject001" class="articleCardTitle cor36 fz34">
+            6.1 編程思想
+          </div>
           <p class="fz28">
             <span class="cor36"> 面相過程 </span>
             <span class="cor17"> . . . </span>
@@ -140,7 +154,9 @@ function locate(idPound) {
             </div>
           </div>
           <br />
-          <div class="articleCardTitle cor36 fz34">6.2 構造函數</div>
+          <div id="threeobject002" class="articleCardTitle cor36 fz34">
+            6.2 構造函數
+          </div>
 
           <div>
             <span class="cor36 fz28">封裝 </span>
@@ -485,7 +501,9 @@ function locate(idPound) {
               <span class="brackets">())</span>
             </div>
           </div>
-          <div class="articleCardTitle cor36 fz34">6.3 constructor</div>
+          <div id="threeobject003" class="articleCardTitle cor36 fz34">
+            6.3 constructor
+          </div>
           <p class="fz28">在哪裡?</p>
           <p class="fz28">每個 原型對象 裡面都有 constructor 屬性</p>
           <br />
@@ -676,7 +694,9 @@ function locate(idPound) {
           <br />
           <br />
           <p class="fz28">為什麼 實例對象 可以訪問 原型的 方法?</p>
-          <div class="articleCardTitle cor36 fz34">6.4 對象原型</div>
+          <div id="threeobject004" class="articleCardTitle cor36 fz34">
+            6.4 對象原型
+          </div>
 
           <p class="fz28">
             對象都會有一個屬性 __proto__ 指向 構造函數的 prototype 原型對象
@@ -752,7 +772,7 @@ function locate(idPound) {
 
           <p class="fz28">注意</p>
           <p class="fz28">__proto__ 是 js 非標準屬性</p>
-          <p class="fz28">[[prototype]] 和 __proto__ 意義相同</p>
+          <p class="fz28">[[Prototype]] 和 __proto__ 意義相同</p>
           <p class="fz28">用來表明當前實例對象指向哪個原型對象 prototype</p>
           <p class="fz28">
             __proto__ 對象原型裡面也有一個 constructor 屬性,
@@ -779,12 +799,13 @@ function locate(idPound) {
           <br />
           <div class="fz28">
             <span class="cor17"> . . . . . . . . . </span> ↓
-            <span class="cor17"> . . . . . . . . . . . . . . . . </span> ↗
+            <!-- <span class="cor17"> . . . . . . . . . . . . . . . . </span> ↗ -->
           </div>
           <br />
           <div class="fz28">
             constructor ↑
-            <span class="cor17"> . . . . . . . . . . . </span> ↗ __proto__
+            <span class="cor17"> . . . . . . . . . . . </span> ↗ __proto__ 也是
+            [[Prototype]]
           </div>
           <br />
           <div class="fz28">
@@ -817,20 +838,649 @@ function locate(idPound) {
           <p class="fz28 cor36">指向誰?</p>
           <p class="fz28">對象原型 指向 原型對象</p>
           <br />
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <div id="threeobject005" class="articleCardTitle cor36 fz34">
+            6.5 原型繼承
+          </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">Man</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.eyes</span>
+              <span class="then">=</span> <span class="number">2</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">Woman</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.eyes</span>
+              <span class="then">=</span> <span class="number">2</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="comment"
+                >// 想要繼承 Person , 公共的部分放到原型上 , 就是原型繼承</span
+              >
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">Person</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">eyes:</span> <span class="number">2,</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">Man</span> <span class="brackets">(){}</span>
+            </div>
+            <br />
+            <div class="comment">// Man 通過原型來繼承 Person</div>
+            <div>
+              <span class="word">Man.prototype</span>
+              <span class="then">=</span> <span class="brackets">Person</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Man.prototype</span>
+              <span class="brackets">)</span>
+              <span class="comment">//看有沒有constructor</span>
+            </div>
+            <div class="comment">// 沒有 , 因為 Person 是 物件 形式</div>
+            <div class="comment">// 直接進行覆蓋 , 覆蓋完後指不回來了</div>
+            <br />
+            <br />
+            <div class="comment">// Man 通過原型來繼承 Person</div>
+            <div>
+              <span class="word">Man.prototype</span>
+              <span class="then">=</span> <span class="brackets">Person</span>
+            </div>
+            <br />
+            <div>
+              <span class="number">!指回原來的構造函數! . . . constructor</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">Man.prototype.</span>
+              <span class="function">constructor</span>
+              <span class="then">=</span> <span class="word">Man</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Man.prototype</span>
+              <span class="brackets">)</span>
+              <span class="comment">//有constructor</span>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">Woman</span> <span class="brackets">(){}</span>
+            </div>
+            <div>
+              <span class="word">Woman.prototype</span>
+              <span class="then">=</span> <span class="brackets">Person</span>
+            </div>
+            <div>
+              <span class="word">Woman.prototype.</span>
+              <span class="function">constructor</span>
+              <span class="then">=</span> <span class="word">Woman</span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">p</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="word">Woman</span> <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p</span> <span class="brackets">)</span>
+              <span class="comment">//看到constructor指回Person</span>
+            </div>
 
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p># 我除了繼承 父 的屬性 還想添加方法</p>
+            <br />
+            <div>
+              <span class="word">Woman.prototype.</span>
+              <span class="variable">baby</span> <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">"baby"</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">red</span> <span class="then">=</span>
+              <span class="then">new </span>
+              <span class="brackets">Woman</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">red</span> <span class="brackets">)</span>
+              <span class="comment">//看[[Prototype]]看到有baby方法</span>
+            </div>
+            <br />
+            <div>
+              <span class="comment">// 我想 Man 沒有添加 baby 方法</span>
+            </div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">wayne</span> <span class="then">=</span>
+              <span class="then">new </span> <span class="brackets">Man</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">wayne</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="comment">// 看 [[Prototype]] 也有 baby 方法</span>
+            </div>
+            <br />
+            <p># 為什麼?</p>
+            <p>因為他們 2 個的 原型 都是 繼承 Person</p>
+            <br />
+            <br />
+            <div class="dis">
+              <div>
+                <br />
+                <div>
+                  <span class="word">Woman.prototype</span>
+                  <span class="then">=</span>
+                  <span class="brackets">Person</span>
+                </div>
+                <br />
+                <div>
+                  <span class="word">Man.prototype</span>
+                  <span class="then">=</span>
+                  <span class="brackets">Person</span>
+                </div>
+              </div>
+              <div class="padL20">
+                棧
+                <div>→0x1111→</div>
+                <br />
+                <div>→0x2222↗</div>
+              </div>
+              <div class="padL20">
+                堆
+                <div>
+                  <span class="function">const </span>
+                  <span class="word">Person</span> <span class="then">=</span>
+                  <span class="brackets">{</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="word">eyes:</span> <span class="number">2,</span>
+                  <div></div>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="word">baby:</span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){}</span>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+                <br />
+                <br />
+                <br />
+              </div>
+            </div>
+            <p># 我要 Woman & Man 不互相影響 . . . > 給他們不同的對象</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">Person1</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">eyes:</span> <span class="number">2,</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">Person2</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">eyes:</span> <span class="number">2,</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">Woman.prototype</span>
+              <span class="then">=</span>
+              <span class="brackets">Person1</span>
+            </div>
+
+            <div>
+              <span class="word">Man.prototype</span>
+              <span class="then">=</span>
+              <span class="brackets">Person2</span>
+            </div>
+            <br />
+            <br />
+            <p># 我要 內容一樣 但是 物件 結構不一樣 . . . > 構造函數</p>
+            <p># 構造函數 new 出來的對象 結構一樣 , 但是 對象 不一樣</p>
+            <br />
+            <div class="comment">//const Person1 = { eyes:2 }</div>
+            <div class="comment">//const Person2 = { eyes:2 }</div>
+            <div>
+              <span class="function">function </span>
+              <span class="brackets">Person</span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this.</span> <span class="word">eyes</span>
+              <span class="then">=</span> <span class="number">2</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">Woman.prototype</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="brackets">Person</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="comment">// new Person 新增一個物件</div>
+            <div class="comment">// 這個物件就是 我們寫的 結構 eyes:2</div>
+            <div>
+              <span class="word">Man.prototype</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="brackets">Person</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="comment">// new Person 又 新增一個物件</div>
+            <div class="comment">
+              // 這個物件 結構一樣 內容一樣 這 2 個 物件 不一樣
+            </div>
+            <br />
+            <div>
+              <span class="word">Woman.prototype.</span>
+              <span class="variable">baby</span> <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="src">"baby"</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <p># 以上 原型繼承</p>
+            <p>
+              需求: Man Woman 不要用同一個物件, 但不同物件裡面包含相同屬性和方法
+            </p>
+            <p>用: 構造函數</p>
+            <p>new 每次都會創建一個新物件</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>1. 換成 構造函數</p>
+            <p>2. prototype 不再是物件名了, 用 new Person 的方法</p>
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <p>父構造函數 (父類) . . . 子構造函數 (子類)</p>
+            <p>function Person(){} 父構造函數</p>
+            <p>Woman 子構造函數</p>
+            <br />
+            <p>子類的原型 = new 父類</p>
+            <div>
+              <span class="word">Woman.prototype</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="brackets">Person</span>
+              <span class="brackets">()</span>
+            </div>
+            <br />
+            <br />
+            <p>JS 繼承很多方法</p>
+            <p>Java 用 class 類</p>
+            <p>後面 JS 引入 class</p>
+          </div>
+          <div id="threeobject006" class="articleCardTitle cor36 fz34">
+            6.6 原型鏈
+          </div>
+
+          <p class="fz28">作用域鏈 一層一層 查找 變量在哪個作用域</p>
+          <p class="fz28">原型鏈 查找 原型</p>
+
+          <div class="bgcVS">
+            <div class="fz28">
+              <span class="cor29">. . . </span>
+              <span class="bor pad204"> 構造函數</span> → ← constructor
+              <span class="bor pad204"> 原型 prototype 共享屬性方法 </span>
+            </div>
+
+            <div class="fz28">
+              <span class="cor29"> . . . . . . . . . </span> ↓
+              <!-- <span class="cor29"> . . . . . . . . . . . . . . . . </span> ↗ -->
+            </div>
+
+            <div class="fz28">
+              constructor ↑
+              <span class="cor29"> . . . . . . . . . . . </span> ↗ __proto__
+              也是 [[Prototype]]
+            </div>
+
+            <div class="fz28 pad20 disInl bor">
+              <span class="">實例對象 new Person()</span>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="fz28">
+              <span class="cor29">. . . </span>
+              <span class="bor pad204"> Person</span> → ← constructor
+              <span class="bor pad204"> Person.prototype </span>
+            </div>
+
+            <div class="fz28">
+              <span class="cor29"> . . . . . . . . . </span> ↓
+              <!-- <span class="cor29"> . . . . . . . . . . . . . . . . </span> ↗ -->
+            </div>
+
+            <div class="fz28">
+              constructor ↑
+              <span class="cor29"> . . . . . . . . . . . </span> ↗ __proto__
+            </div>
+
+            <div class="fz28">
+              <div class="disInl bor pad20">
+                <span>實例對象 new Person()</span>
+                <br />
+                <span>p</span>
+                <br />
+                <span>p.__proto__</span>
+              </div>
+            </div>
+            <br />
+
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p.__proto__</span>
+              <span class="then">===</span>
+              <span class="word">Person.prototype</span>
+              <span class="brackets">)</span>
+              <span class="comment">//true</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Person.prototype</span>
+              <span class="brackets">) </span>
+              <span class="comment">// 發現裡面也有[[Prototype]]</span>
+            </div>
+            <div>
+              <span class="comment"
+                >//原型對象也是對象, 只要是對象 都有 __proto__</span
+              >
+            </div>
+            <div><span class="comment">// 他指向誰?</span></div>
+            <div><span class="comment">// 指向 object</span></div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Person.prototype.__proto__</span>
+              <span class="brackets">)</span>
+            </div>
+            <div><span class="comment">// 這個 __proto__ 指向誰?</span></div>
+            <div><span class="comment">// 對象原型 指向 原型對象</span></div>
+            <br />
+            <div>
+              <span class="comment">// 而 Person.prototype 屬於原型對象</span>
+            </div>
+            <div>
+              <span class="comment">// 原型對象裡面有一個對象原型</span>
+            </div>
+            <div>
+              <span class="comment">// 這個 對象原型 指向 原型對象</span>
+            </div>
+            <br />
+            <div><span class="comment">// 那他 指向 誰的 原型對象?</span></div>
+            <br />
+            <br />
+            <p>構造函數 Object</p>
+            <div>
+              <span class="function">function </span>
+              <span class="brackets">Object</span>
+              <span class="brackets">(){}</span>
+            </div>
+            <p>構造函數 就有 原型對象</p>
+            <br />
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">object</span> <span class="brackets">)</span>
+              <span class="comment">//是Object(){[native code]}</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">object.prototype</span>
+              <span class="brackets">)</span>
+              <span class="comment">//</span>
+            </div>
+            <br />
+            <p>原型鏈</p>
+            <div class="fz28">
+              <span class="cor29">
+                . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . . . .
+              </span>
+              <div class="disInl bor pad20">
+                <span>null</span>
+              </div>
+            </div>
+
+            <div class="fz28">
+              <span class="cor29">
+                . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . .</span
+              >
+              ↗ __proto__
+            </div>
+            <br />
+
+            <div class="fz28">
+              <span class="cor29">. . . . . . . . . . . </span>
+              <span class="bor pad204"> Object</span> → ← Object.constructor
+              <div class="disInl bor pad20">
+                <span>Object.prototype</span>
+                <br />
+                <span>Object.prototype.__proto__</span>
+              </div>
+            </div>
+            <br />
+            <div class="fz28">
+              <span class="cor29">
+                . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                . . . .</span
+              >
+              ↗ __proto__
+            </div>
+            <br />
+            <div class="fz28">
+              <span class="cor29">. . . </span>
+              <span class="bor pad204"> Person</span> → ← constructor
+              <div class="disInl bor pad20">
+                <span> Person.prototype </span>
+                <br />
+                <span>Person.prototype.__proto__</span>
+              </div>
+            </div>
+
+            <div class="fz28">
+              <span class="cor29"> . . . . . . . . . </span> ↓
+              <!-- <span class="cor29"> . . . . . . . . . . . . . . . . </span> ↗ -->
+            </div>
+
+            <div class="fz28">
+              constructor ↑
+              <span class="cor29"> . . . . . . . . . . . </span> ↗ __proto__
+            </div>
+
+            <div class="fz28">
+              <div class="disInl bor pad20">
+                <span>實例對象 new Person()</span>
+                <br />
+                <span>p</span>
+                <br />
+                <span>p.__proto__</span>
+              </div>
+            </div>
+            <br />
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Person.prototype.__proto__</span>
+              <span class="then">===</span>
+              <span class="brackets">Object</span>
+              <span class="word">.prototype</span>
+              <span class="brackets">) </span>
+              <span class="comment">// true</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="brackets">Object</span>
+              <span class="word">.prototype.__proto__</span>
+              <span class="brackets">) </span>
+              <span class="comment">// null</span>
+            </div>
+          </div>
+
+          <p class="fz28 cor36">原型鏈</p>
+          <p class="fz28">
+            基於 原型對象 的 繼承 使得不同 構造函數的 原型對象 關聯在一起,
+            並且這種關聯的關係是一種 鏈狀的結構
+          </p>
+          <p class="fz28">1. 只要是 物件 就有 __proto__</p>
+          <p class="fz28">
+            2. 只要是 原型對象 裡面就有 constructor 指向 創造我的 構造函數
+          </p>
+          <br />
+          <br />
+          <p class="fz28 cor36">原型鏈 查找規則</p>
+          <p class="fz28">
+            1. 當訪問一個物件的屬性&方法 , 先找 物件自身 有沒有 該屬性
+          </p>
+          <p class="fz28">
+            2. 沒有 . . > 找 它的 原型 ( __proto__ 指向的 prototype 原型對象 )
+          </p>
+
+          <p class="fz28">
+            3. 沒有 . . > 找 原型對象的原型 ( Object 的原型對象 )
+          </p>
+          <p class="fz28">4. 依此類推 一直找到 Object 為止 ( null )</p>
+
+          <br />
+          <br />
+          <p class="fz28">
+            : 首先任何物件都會有屬於它的隱藏屬性下滑線proto屬性,
+            這個隱藏屬性就會指向它的構造函數的prototype,
+            這時我們就可以說這個物件的原型就是它的構造函數的prototype,
+            這就是原型, 然後原型鏈就是比如A的原型是B, B的原型是C,
+            這樣一條像鏈式的就稱為原型鏈
+          </p>
+          <br />
+          <p class="fz28">
+            :定義一個物件A,它的原型的地址對應著object.prototype,object.prototype它的原型又會到了null
+            這樣一條像鏈式的就稱為原型鏈
+          </p>
+          <br />
+          <p class="fz28 cor36">instanceof</p>
+          <p class="fz28">
+            可用 instanceof 檢測構造函數的 prototype
+            屬性是否出現在某個實例對象的原型鏈上
+          </p>
+
+          <p class="fz28">他 屬不屬於 另外一個 構造函數</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">Person</span>
+              <span class="brackets">(){}</span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">p</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="word">Person</span> <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p</span> <span class="word">instanceof </span>
+              <span class="brackets">Person</span>
+              <span class="brackets">) </span>
+              <span class="comment">// true</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p</span> <span class="word">instanceof </span>
+              <span class="brackets">Object</span>
+              <span class="brackets">) </span>
+              <span class="comment">// true</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">p </span> <span class="word">instanceof </span>
+              <span class="brackets">Array</span>
+              <span class="brackets">) </span>
+              <span class="comment">// false</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="brackets">Array </span>
+              <span class="word">instanceof </span>
+              <span class="brackets">Object</span>
+              <span class="brackets">)</span>
+              <span class="comment">//true</span>
+            </div>
+            <br />
+            <p>萬物皆物件</p>
+          </div>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
