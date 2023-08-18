@@ -36,22 +36,22 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('threeobject001')" class="leftNavText">
+          <div @click="locate('threeprototype001')" class="leftNavText">
             函數導向&物件導向
           </div>
-          <div @click="locate('threeobject002')" class="leftNavText">
+          <div @click="locate('threeprototype002')" class="leftNavText">
             構造函數
           </div>
-          <div @click="locate('threeobject003')" class="leftNavText">
+          <div @click="locate('threeprototype003')" class="leftNavText">
             constructor
           </div>
-          <div @click="locate('threeobject004')" class="leftNavText">
+          <div @click="locate('threeprototype004')" class="leftNavText">
             對象原型
           </div>
-          <div @click="locate('threeobject005')" class="leftNavText">
+          <div @click="locate('threeprototype005')" class="leftNavText">
             原型繼承
           </div>
-          <div @click="locate('threeobject006')" class="leftNavText">
+          <div @click="locate('threeprototype006')" class="leftNavText">
             原型鏈
           </div>
         </div>
@@ -71,7 +71,7 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <div id="threeobject001" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype001" class="articleCardTitle cor36 fz34">
             6.1 編程思想
           </div>
           <p class="fz28">
@@ -154,7 +154,7 @@ function locate(idPound) {
             </div>
           </div>
           <br />
-          <div id="threeobject002" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype002" class="articleCardTitle cor36 fz34">
             6.2 構造函數
           </div>
 
@@ -501,7 +501,7 @@ function locate(idPound) {
               <span class="brackets">())</span>
             </div>
           </div>
-          <div id="threeobject003" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype003" class="articleCardTitle cor36 fz34">
             6.3 constructor
           </div>
           <p class="fz28">在哪裡?</p>
@@ -694,7 +694,7 @@ function locate(idPound) {
           <br />
           <br />
           <p class="fz28">為什麼 實例對象 可以訪問 原型的 方法?</p>
-          <div id="threeobject004" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype004" class="articleCardTitle cor36 fz34">
             6.4 對象原型
           </div>
 
@@ -838,7 +838,7 @@ function locate(idPound) {
           <p class="fz28 cor36">指向誰?</p>
           <p class="fz28">對象原型 指向 原型對象</p>
           <br />
-          <div id="threeobject005" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype005" class="articleCardTitle cor36 fz34">
             6.5 原型繼承
           </div>
           <div class="bgcVS">
@@ -1172,7 +1172,7 @@ function locate(idPound) {
             <p>Java 用 class 類</p>
             <p>後面 JS 引入 class</p>
           </div>
-          <div id="threeobject006" class="articleCardTitle cor36 fz34">
+          <div id="threeprototype006" class="articleCardTitle cor36 fz34">
             6.6 原型鏈
           </div>
 
