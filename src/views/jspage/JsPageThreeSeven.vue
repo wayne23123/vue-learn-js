@@ -40,8 +40,13 @@ function locate(idPound) {
           <div @click="locate('threetips002')" class="leftNavText">深拷貝</div>
           <div @click="locate('threetips003')" class="leftNavText">lodash</div>
           <div @click="locate('threetips004')" class="leftNavText">JSON</div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threetips005')" class="leftNavText">
+            異常處理
+          </div>
+          <div @click="locate('threetips006')" class="leftNavText">this</div>
+          <div @click="locate('threetips007')" class="leftNavText">call</div>
+          <div @click="locate('threetips008')" class="leftNavText">apply</div>
+          <div @click="locate('threetips009')" class="leftNavText">bind</div>
         </div>
       </div>
     </div>
@@ -1341,7 +1346,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threetips004" class="articleCardTitle cor36 fz34">
+          <div id="threetips005" class="articleCardTitle cor36 fz34">
             7.5 異常處理
           </div>
 
@@ -1660,7 +1665,7 @@ function locate(idPound) {
             <div><span class="brackets">}</span></div>
           </div>
 
-          <div id="threetip006" class="articleCardTitle cor36 fz34">
+          <div id="threetips006" class="articleCardTitle cor36 fz34">
             7.6 this 指向
           </div>
           <p class="fz28">1. 普通函數 this</p>
@@ -1934,11 +1939,10 @@ function locate(idPound) {
           <p class="fz28">2. 不適用 . . > 構造函數 . 原型函數 . dom 事件函數</p>
           <p class="fz28">3. 適用 . . > 需要用上層 this 的地方</p>
 
-          <div id="threetip006" class="articleCardTitle cor36 fz34">
-            7.7 改變 this
+          <div id="threetips007" class="articleCardTitle cor36 fz34">
+            7.7 改變 this --- call()
           </div>
 
-          <p class="fz28">call() . . . 低 少</p>
           <br />
 
           <p class="fz28">
@@ -1966,22 +1970,519 @@ function locate(idPound) {
             <div><span class="brackets">}</span></div>
             <div><span class="comment">//1.調用函數</span></div>
             <div><span class="comment">//2.改變this指向</span></div>
+            <div>
+              <span class="word">fn</span> <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">fn</span> <span class="variable">.call</span>
+              <span class="brackets">()</span>
+              <span class="comment">//只調用</span>
+            </div>
+            <div>
+              <span class="word">fn</span> <span class="variable">.call</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+              <span class="comment">//打印了obj//代表改變了this指向</span>
+            </div>
+            <div>
+              <span class="comment"
+                >// 3. 返回值: 本身在調用函數, 所以返回值就是函數的返回值</span
+              >
+            </div>
+
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span>
+
+              <span class="brackets">(</span> <span class="word">x,y</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div>
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">x</span>
+                <span class="then">+</span> <span class="word">y</span>
+                <span class="brackets">)</span> <span class="comment">//3</span>
+              </div>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">fn</span> <span class="variable">.call</span>
+              <span class="brackets">(</span> <span class="word">obj,</span>
+              <span class="number">1,2</span> <span class="brackets">)</span>
+            </div>
           </div>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <div id="threetips008" class="articleCardTitle cor36 fz34">
+            7.8 改變 this --- apply()
+          </div>
+          <p class="fz28">
+            使用 apply 方法 <span class="spo cor36"> 調用函數 </span> , 同時
+            指定 被調用 函數中的 <span class="spo cor36"> this 的值 </span>
+          </p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">name:</span>
+              <span class="src">"wayne"</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//1.調用函數</span></div>
+            <div><span class="comment">//2.改變this指向</span></div>
+            <div>
+              <span class="word">fn</span> <span class="variable">.apply</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(</span>
+              <span class="word">x,y</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div>
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="word">x+y</span>
+                <span class="brackets">)</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">fn</span> <span class="word">.</span>
+              <span class="variable">apply</span>
+              <span class="brackets">(</span> <span class="word">obj, </span>
+              <span class="brackets">[</span> <span class="number">1, 2 </span>
+              <span class="brackets">])</span>
+            </div>
+
+            <div>
+              <span class="comment"
+                >// 3. 返回值: 本身在調用函數, 所以返回值就是函數的返回值</span
+              >
+            </div>
+            <div>
+              <span class="comment">//使用場景:用Math.max()求數組最大值</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="variable">max</span> <span class="then">=</span>
+              <span class="word">Math</span><span class="variable">.max</span>
+              <span class="brackets">(</span> <span class="number">1,2,3</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="variable">max</span> <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="variable">max</span> <span class="then">=</span>
+              <span class="word">Math</span>
+              <span class="variable">.max.apply</span>
+              <span class="brackets">(</span> <span class="word">Math,</span>
+              <span class="brackets">[</span> <span class="number">1,2,3</span>
+              <span class="brackets">])</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="variable">max</span> <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span>
+              <span class="number">100,44,77</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="variable">max</span> <span class="then">=</span>
+              <span class="word">Math</span>
+              <span class="variable">.max.apply</span>
+              <span class="brackets">(</span>
+              <span class="word">Math,arr</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="variable">min</span> <span class="then">=</span>
+              <span class="word">Math</span>
+              <span class="variable">.max.apply</span>
+
+              <span class="brackets">(</span>
+              <span class="word">Math,arr</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="variable">min</span> <span class="then">=</span>
+              <span class="word">Math</span>
+              <span class="variable">.max.apply</span>
+
+              <span class="brackets">(</span>
+              <span class="word">null,arr</span> <span class="brackets">)</span>
+              <span class="comment">//this指向用null不改變也可以</span>
+            </div>
+
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="variable">max</span> <span class="brackets">)</span>
+            </div>
+            <br />
+            <br />
+            <p>求數組最大值</p>
+            <p>1.for循環</p>
+            <p>2.apply(要綁定的this,[數組])</p>
+            <p>3.console.log(Math.max(...arr))</p>
+          </div>
+
+          <p class="fz28">call & apply</p>
+          <p class="fz28">都能調用函數 , 改變 this 指向</p>
+          <p class="fz28">差在 參數不一樣 , apply 傳遞的 必須是 數組</p>
+          <div id="threetips009" class="articleCardTitle cor36 fz34">
+            7.9 改變 this --- bind()
+          </div>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">name:</span>
+              <span class="src">"wayne"</span> <span class="brackets">}</span>
+            </div>
+
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//1.bind不調用函數</span></div>
+            <div><span class="comment">//2.能改變this指向</span></div>
+            <div>
+              <span class="word">fn</span><span class="variable">.bind</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="comment">//3.返回值:返回 已改變this後 的函數</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">fun</span> <span class="then">=</span>
+              <span class="word">fn</span><span class="variable">.bind</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span><span class="brackets">(</span>
+              <span class="word">fun</span><span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">fun</span><span class="brackets">()</span>
+            </div>
+            <br />
+            <br />
+            <p>場景: 改變定時器內的 this 指向</p>
+            <br />
+            <p>需求: 有一個按鈕 , 點擊後禁用 , 2 秒後開啟</p>
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">發送信息</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">() { </span>
+              <span class="comment"> //回調</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span>
+              <span class="variable">.disabled</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <span class="comment">//這樣btn改名btn111也可以</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="then">this</span>
+                  <span class="variable">.disabled</span>
+                  <span class="then">=</span> <span class="number">false</span>
+                  <div></div>
+                </div>
+              </div>
+              <div>
+                <span class="brackets">},</span>
+                <span class="number">2000</span> <span class="brackets">)</span>
+              </div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <p>出問題, setTimeout 裡面的 this 指向 window</p>
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">發送信息</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">() { </span>
+              <span class="comment"> //回調</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span>
+              <span class="variable">.disabled</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <span class="comment">//這樣btn改名btn111也可以</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="then">btn</span>
+                  <span class="variable">.disabled</span>
+                  <span class="then">=</span> <span class="number">false</span>
+                  <div></div>
+                </div>
+              </div>
+              <div>
+                <span class="brackets">},</span>
+                <span class="number">2000</span> <span class="brackets">)</span>
+              </div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">發送信息</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">() { </span>
+              <span class="comment"> //回調</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span>
+              <span class="variable">.disabled</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <span class="comment">//這樣btn改名btn111也可以</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="comment"
+                      >//在這個普通函數裡面,我們要this由原來的window改為btn</span
+                    >
+                  </div>
+                  <span class="then">this</span>
+                  <span class="variable">.disabled</span>
+                  <span class="then">=</span> <span class="number">false</span>
+                  <div></div>
+                </div>
+              </div>
+              <div>
+                <span class="brackets">}</span>
+                <span class="variable">.bind</span>
+                <span class="brackets">( btn ), </span>
+
+                <span class="number">2000</span> <span class="brackets">)</span>
+              </div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+
+            <hr />
+            <div>
+              <img
+                style="width: 100%"
+                src="../../../src/assets/jsimg/jstip001.jpg"
+              />
+            </div>
+            <hr />
+
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">發送信息</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">() { </span>
+              <span class="comment"> //回調</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span>
+              <span class="variable">.disabled</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <span class="comment">//這樣btn改名btn111也可以</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="comment"
+                      >//在這個普通函數裡面,我們要this由原來的window改為btn</span
+                    >
+                  </div>
+                  <span class="then">this</span>
+                  <span class="variable">.disabled</span>
+                  <span class="then">=</span> <span class="number">false</span>
+                  <div></div>
+                </div>
+              </div>
+              <div>
+                <span class="brackets">}</span>
+                <span class="variable">.bind</span>
+                <span class="brackets">(</span> <span class="then">this</span>
+                <span class="brackets">),</span>
+
+                <span class="number">2000</span> <span class="brackets">)</span>
+              </div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+          </div>
+
+          <p class="fz28">call & apply & bind</p>
+          <p class="fz28">相同:</p>
+          <p class="fz28">都可以改變函數內部的 this 指向</p>
+          <br />
+
+          <p class="fz28">區別:</p>
+          <p class="fz28">
+            call & apply 會 調用函數 , 並改變函數內部 this 指向
+          </p>
+          <br />
+          <p class="fz28">
+            call & apply 傳遞的參數不一樣 , call (aru1 , aru2) apply ([數組])
+          </p>
+          <br />
+          <p class="fz28">bind 不會調用 , 會改變 this 指向</p>
+          <br />
+          <p class="fz28">場景:</p>
+          <p class="fz28">call 調用 並 傳遞 參數</p>
+          <br />
+          <p class="fz28">apply 並用 並 傳遞 數組</p>
+          <br />
+          <p class="fz28">
+            bind 不調用 , 但想改 this 指向 ex 改定時器內部 this 指向
+          </p>
+          <br />
+          <br />
+          <br />
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
