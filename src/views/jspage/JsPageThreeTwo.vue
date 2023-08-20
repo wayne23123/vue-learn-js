@@ -1251,6 +1251,10 @@ function locate(idPound) {
             </div>
             <div class="brackets">}</div>
             <div>
+              <span class="comment">// 箭頭函數 此時 this 指向 window</span>
+            </div>
+
+            <div>
               <span class="word">btn.addEventListener</span>
               <span class="brackets">(</span> <span class="src">"click",</span>
               <span class="brackets">()</span>

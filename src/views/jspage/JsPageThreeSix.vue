@@ -37,7 +37,7 @@ function locate(idPound) {
       <div class="leftNavContainer">
         <div class="leftNavLayout">
           <div @click="locate('threeprototype001')" class="leftNavText">
-            函數導向&物件導向
+            物件導向
           </div>
           <div @click="locate('threeprototype002')" class="leftNavText">
             構造函數

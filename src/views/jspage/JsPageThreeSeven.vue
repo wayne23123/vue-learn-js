@@ -38,8 +38,8 @@ function locate(idPound) {
         <div class="leftNavLayout">
           <div @click="locate('threetips001')" class="leftNavText">淺拷貝</div>
           <div @click="locate('threetips002')" class="leftNavText">深拷貝</div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threetips003')" class="leftNavText">lodash</div>
+          <div @click="locate('threetips004')" class="leftNavText">JSON</div>
           <div @click="locate('')" class="leftNavText"></div>
           <div @click="locate('')" class="leftNavText"></div>
         </div>
@@ -235,7 +235,7 @@ function locate(idPound) {
           </div>
           <p class="fz28">解決 多層次嵌套 問題</p>
           <div id="threetips002" class="articleCardTitle cor36 fz34">
-            深拷貝
+            7.2 深拷貝
           </div>
           <p class="fz28">深拷貝 拷貝的是 物件 不是地址</p>
           <p class="fz28 cor36"># 3 方法</p>
@@ -1096,6 +1096,7 @@ function locate(idPound) {
                     <span class="comment">// oldObj [ k ] 屬性值</span>
                   </div>
                   <div class="padTwo VSL">
+                    <br />
                     <div>
                       <span class="word">newObj</span>
                       <span class="brackets">[ </span>
@@ -1103,9 +1104,11 @@ function locate(idPound) {
                       <span class="brackets">]</span>
                       <span class="then">=</span>
                       <span class="brackets">{ }</span>
-                      <span class="cor36">
-                        ← . . . . . . . . ↑ . . . 改這兩個
+                      <span class="cor36 padTwo">
+                        ← . . . . . ↑ . . . 改這兩個
                       </span>
+                      <div></div>
+                      <br />
 
                       <div>
                         <span class="variable">deepCopy</span>
@@ -1161,46 +1164,809 @@ function locate(idPound) {
               <br />
               <p># 一定要 先數組 再物件</p>
               <p>因為 數組 屬於物件 他就把 數組當物件</p>
+              <br />
+              <div>
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">([</span>
+                <span class="number">1, 2, 3</span>
+                <span class="brackets">]</span>
+                <span class="word">instanceof</span>
+                <span class="brackets">Object</span>
+                <span class="brackets">) </span>
+                <span class="comment">// true</span>
+              </div>
+              <div class="comment">// 陣列 被當成 物件</div>
             </div>
           </div>
 
           <p class="fz28 cor36"># 你怎麼實現 深拷貝?</p>
-          <p class="fz28">1. 深拷貝 是</p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <p class="fz28">深拷貝 是做到 拷貝出來的 新物件 不會影響 舊物件</p>
+          <p class="fz28">想實現 深拷貝 函數遞歸</p>
+          <p class="fz28">當我在 普通拷貝 直接賦值就好了</p>
+          <p class="fz28">當我遇到 陣列 我再次調用 這個函數</p>
+          <p class="fz28">當我遇到物件 我再次調用遞歸</p>
+          <p class="fz28">先 陣列 後 物件</p>
+          <div id="threetips003" class="articleCardTitle cor36 fz34">
+            7.3 lodash
+          </div>
+          <a href="https://lodashjs.com/" class="fz28">@ lodash中文</a>
+
+          <p class="fz28">
+            庫 . 把一些常用的 方法 封裝好 . 只需要把庫引用進來 .
+            調用一個函數就可以用了
+          </p>
+          <a
+            href="https://www.lodashjs.com/docs/lodash.cloneDeep#_clonedeepvalue"
+            class="fz28"
+            >@ lodash深拷貝</a
+          >
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="number">script </span>
+              <span class="word">src</span> <span class="then">=</span>
+              <span class="src">"lodash.js"</span>
+              <span class="then">>＜/ </span>
+              <span class="number">script</span> <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">uname:</span>
+              <span class="src">"wayne"</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">1</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">hobby:</span>
+              <span class="brackets">[</span>
+              <span class="src">"跑步","足球"</span>
+              <span class="brackets">]</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">family:</span>
+              <span class="brackets">{</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="word">baby:</span>
+                  <span class="src">"小neo"</span>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">o </span> <span class="then">= </span>
+              <span class="word">_.</span>
+              <span class="variable">cloneDeep</span>
+              <span class="brackets">( obj )</span>
+            </div>
+            <div>
+              <span class="comment"
+                >// _.cloneDeep 有返回值 , 我 const o 接過來</span
+              >
+            </div>
+          </div>
+          <div id="threetips004" class="articleCardTitle cor36 fz34">
+            7.4 JSON 實現 深拷貝
+          </div>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">uname:</span>
+              <span class="src">"wayne"</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">1</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">hobby:</span>
+              <span class="brackets">[</span>
+              <span class="src">"跑步","足球"</span>
+              <span class="brackets">]</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">family:</span>
+              <span class="brackets">{</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="word">baby:</span>
+                  <span class="src">"小neo"</span>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">o </span> <span class="then">= </span>
+              <span class="word">_.</span>
+              <span class="variable">cloneDeep</span>
+              <span class="brackets">( obj )</span>
+            </div>
+            <div>
+              <span class="comment"
+                >// _.cloneDeep 有返回值 , 我 const o 接過來</span
+              >
+            </div>
+            <div><span class="comment">//把物件轉成JSON字串</span></div>
+            <div>
+              <span class="brackets">JSON</span>
+              <span class="variable">.stringify</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+              <span class="comment">// 得到字串</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="brackets">JSON</span>
+              <span class="variable">.stringify</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">))</span>
+            </div>
+            <div>
+              <span class="brackets">JSON</span>
+              <span class="variable">.parse</span>
+              <span class="brackets">(</span>
+              <span class="brackets">JSON</span>
+              <span class="variable">.stringify</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">))</span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">o</span>
+              <span class="then">=</span> <span class="brackets">JSON</span>
+              <span class="variable">.parse</span>
+              <span class="brackets">(</span>
+              <span class="brackets">JSON</span>
+              <span class="variable">.stringify</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">))</span>
+            </div>
+          </div>
+
+          <div id="threetips004" class="articleCardTitle cor36 fz34">
+            7.5 異常處理
+          </div>
+
+          <div id="" class="articleCardTitle cor36 fz34">throw 拋異常</div>
+
+          <div class="bgcVS">
+            <p>JavaScript 中的驚嘆號（"!"）操作符</p>
+            <br />
+            <p>1. 邏輯 NOT 運算符：</p>
+            <br />
+            <p>
+              驚嘆號（"!"）在 JavaScript 中被用作邏輯 NOT
+              運算符。它會將其後的表達式的真值反轉，即如果表達式是真，則 NOT
+              運算後為假；如果表達式是假，則 NOT 運算後為真。
+            </p>
+            <br />
+            <div>
+              <span class="function">let </span>
+              <span class="word">isTrue</span> <span class="then">=</span>
+              <span class="number">true</span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">isFalse</span> <span class="then">=</span>
+              <span class="number">!isTrue</span>
+              <span class="comment">//isFalse將會是false</span>
+            </div>
+            <br />
+            <p>1.1</p>
+            <br />
+            <p>
+              如果您的變數 x 沒有被定義，那麼在使用 ! 來取得布林相反值時，會得到
+              true，因為 undefined 被轉換為布林值時為 false，而取其相反值則是
+              true。
+            </p>
+            <br />
+            <div>
+              <span class="function">var </span> <span class="word">y</span>
+              <span class="comment">//y是undefined</span>
+            </div>
+            <div>
+              <span class="function">var </span>
+              <span class="word">oppositeValue</span>
+              <span class="then">=</span> <span class="number">!y</span>
+              <span class="comment">//oppositeValue將是true</span>
+            </div>
+
+            <br />
+            <p>2. 轉換為布林值：</p>
+            <br />
+            <p>
+              在一些情況下，驚嘆號也可以將值轉換為布林值。將任何值進行這樣的轉換後，非空字串將轉換為
+              true，數字 0 轉換為 false，以及其他值按通常的 JavaScript
+              轉換規則進行轉換。
+            </p>
+            <br />
+            <div>
+              <span class="function">let </span>
+              <span class="word">value</span> <span class="then">=</span>
+              <span class="src">"Hello"</span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">convertedValue</span>
+              <span class="then">=</span> <span class="number">!!value</span>
+              <span class="comment"
+                >//convertedValue將會是true，因為非空字串轉換為true</span
+              >
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(</span>
+              <span class="word">x,y</span> <span class="brackets">){</span>
+            </div>
+
+            <div class="padTwo VSL">
+              <div>
+                <span class="comment"
+                  >//如果變數x沒有被定義,那麼在使用!來取得布林相反值時,得到true,因為undefined被轉換為布林值時為false,而取其相反值則是true。</span
+                >
+              </div>
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="number">!x</span> <span class="then">|| </span>
+              <span class="number">!y</span> <span class="brackets">){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <div><span class="comment">//當undefined時,為true</span></div>
+
+                  <span class="function">throw </span>
+                  <span class="brackets">(</span>
+
+                  <span class="src">"沒有參數傳遞進來"</span>
+                  <span class="brackets">)</span>
+
+                  <div>
+                    <span class="comment"
+                      >//發現不return值了,一扔錯誤,直接中斷</span
+                    >
+                  </div>
+                  <span class="function">throw </span>
+                  <span class="then">new </span>
+                  <span class="word">Error </span>
+                  <span class="brackets">(</span>
+                  <span class="src">"沒有參數傳遞進來"</span>
+                  <span class="brackets">)</span>
+
+                  <div>
+                    <span class="comment"
+                      >//一般用這個,效果一樣,且會標註第幾行</span
+                    >
+                  </div>
+                  <div></div>
+                </div>
+
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span> <span class="word">x</span>
+              <span class="then">+</span> <span class="word">y</span>
+              <div>
+                <span class="comment"
+                  >// 我沒有傳值 x+y 是 undefined + undefined = NaN</span
+                >
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
+
+          <p class="fz28">總結</p>
+          <p class="fz28">1. throw 後面跟異常訊息,程式也會中止執行</p>
+          <p class="fz28">2. Error 對象配合 throw 可設置詳細錯誤訊息</p>
+
+          <div id="" class="articleCardTitle cor36 fz34">try catch</div>
+
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="number">p</span>
+              <span class="then">></span> <span class="word">test</span>
+              <span class="then">＜/</span> <span class="number">p</span>
+              <span class="then">></span>
+            </div>
+
+            <br />
+
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">try</span> <span class="brackets">{</span>
+
+              <div>
+                <div class="padTwo VSL">
+                  <span class="comment">//try寫可能發送錯誤的代碼</span>
+                </div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="function">const </span>
+                    <span class="word">p</span> <span class="then">=</span>
+                    <span class="word">document</span>
+                    <span class="variable">.querySelector</span>
+                    <span class="brackets">(</span>
+                    <span class="src">".p"</span>
+                    <span class="brackets">) </span>
+                    <span class="comment">//往錯誤的catch(){}走</span>
+                  </div>
+                  <div>
+                    <span class="comment"
+                      >//const p = document.querySelector("p") //
+                      正確往下走</span
+                    >
+                  </div>
+                  <div>
+                    <span class="word">p.style.color</span>
+                    <span class="then">=</span> <span class="src">"red"</span>
+                  </div>
+
+                  <div></div>
+                </div>
+              </div>
+
+              <div>
+                <span class="brackets">}</span>
+                <span class="variable">catch</span>
+                <span class="brackets">(</span> <span class="word">err</span>
+
+                <span class="brackets">){ </span>
+                <span class="comment"
+                  >// 注意catch後面() , ()裡面是形參 寫什麼都行</span
+                >
+                <div>
+                  <div class="padTwo VSL">
+                    <div>
+                      <span class="comment">// 這邊拋錯後 依然會繼續執行</span>
+                    </div>
+                    <div>
+                      <span class="comment"
+                        >//
+                        攔截錯誤,提示瀏覽器提供的錯誤訊息,但不中斷程式執行</span
+                      >
+                    </div>
+                    <div>
+                      <span class="word">console.</span>
+                      <span class="variable">log</span>
+                      <span class="brackets">(</span>
+                      <span class="word">err</span>
+                      <span class="word">.message</span>
+                      <span class="brackets">)</span>
+                    </div>
+                    <span class="comment"
+                      >//err是我的形參可以自訂,message是固定的屬性</span
+                    >
+                    <div>
+                      <span class="function">throw </span>
+                      <span class="then">new </span>
+                      <span class="brackets">Error</span>
+                      <span class="brackets">(</span>
+                      <span class="src">"選擇器選取錯誤"</span>
+                      <span class="brackets">)</span>
+                    </div>
+                    <div>
+                      <span class="comment">//需要加return中斷程式</span>
+                    </div>
+                    <div><span class="comment">// return </span></div>
+                    <div></div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                  <div>
+                    <span class="function">finally</span>
+                    <span class="brackets">{</span>
+                  </div>
+                  <div class="padTwo VSL">
+                    <span class="comment"
+                      >//不管程式對不對,一定會執行的代碼</span
+                    >
+                    <div>
+                      <span class="word">console.</span>
+                      <span class="variable">log</span>
+                      <span class="brackets">(</span>
+                      <span class="src">"比如可用在獲取資料的轉圈"</span>
+                      <span class="brackets">)</span>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                  <div>
+                    <span class="word">console.</span>
+                    <span class="variable">log</span>
+                    <span class="brackets">(</span>
+                    <span class="number">11</span>
+                    <span class="brackets">)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">fn</span> <span class="brackets">()</span>
+            </div>
+          </div>
+          <p class="fz28">小結</p>
+          <p class="fz28">1. try...catch用於捕獲錯誤訊息</p>
+          <p class="fz28">2. 將預估可能發生錯誤的代碼寫在 try</p>
+          <p class="fz28">3. 如果 try 錯誤 執行 catch 並獲取錯誤訊息</p>
+          <p class="fz28">4. finally 不管怎樣 都執行</p>
+
+          <div id="" class="articleCardTitle cor36 fz34">debugger</div>
+
+          <p class="fz28">代碼特別長 一打斷點 就自動跳過來了</p>
+          <p class="fz28">目的</p>
+          <p class="fz28">在運行時 可直接跳到這邊 不用再開sorce...</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="variable">deepCopy</span>
+              <span class="brackets">( </span>
+              <span class="word">newObj, oldObj </span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="number">debugger</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">k </span>
+              <span class="function">in </span>
+              <span class="word">oldObj </span>
+              <span class="brackets">){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="word">newObj</span>
+                    <span class="brackets">[ </span>
+                    <span class="word">k </span>
+                    <span class="brackets">]</span>
+                    <span class="then">= </span>
+                    <span class="word">oldObj</span>
+                    <span class="brackets">[ </span>
+                    <span class="word">k </span>
+                    <span class="brackets">]</span>
+                  </div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
+
+          <div id="threetip006" class="articleCardTitle cor36 fz34">
+            7.6 this 指向
+          </div>
+          <p class="fz28">1. 普通函數 this</p>
+          <p class="fz40">誰調用 this的值 指向誰</p>
+          <div class="bgcVS">
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="comment"
+                >//是 window.fn() // window 調用的指向 window</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div></div>
+            </div>
+            <div>
+              <span class="brackets">},</span> <span class="number">1000</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">window</span>
+              <span class="variable">.setTimeout</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){})</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="src">"use strict"</span>
+              <span class="comment">//語法要嚴格按照正常語法來寫</span>
+            </div>
+            <div><span class="comment">//所有變量要先聲明在賦值</span></div>
+            <div><span class="comment">//函數不允許聲明多個一樣的</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="src">"use strict"</span>
+            </div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//undefined</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">點擊</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="pTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//button , button 調用了我這個函數</span>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">sayHi:</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div>
+                <div class="pTwo VSL">
+                  <span class="word">console.</span>
+                  <span class="variable">log</span>
+                  <span class="brackets">(</span>
+                  <span class="then">this</span>
+                  <span class="brackets">)</span>
+                  <span class="comment">//指向obj</span>
+                </div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">obj.sayHi</span>
+              <span class="brackets">()</span>
+            </div>
+          </div>
+
+          <p class="fz28">2. 箭頭函數 this</p>
+          <p class="fz40">箭頭函數 this 根據上下文 , 去上一級作用域找 this</p>
+
+          <br />
+          <p class="fz28">
+            1.箭頭函數 默認 綁定 外層 this 的值, 所以在 箭頭函數中 this 的值和
+            外層的 this 是一樣的
+          </p>
+          <p class="fz28">2.箭頭函數的的 this 引用的就是最近作用域中的 this</p>
+          <p class="fz28">
+            3.向外層作用域中 , 一層一層查找 this , 直到有 this 的定義
+          </p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">user</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <div class="bor pad20 disInl">
+                <span class="word">name:</span> <span class="src">"wayne"</span>
+                <div><span class="comment">//箭頭函數中的this為</span></div>
+                <div>
+                  <span class="comment">//函數聲明環境中的this一致</span>
+                </div>
+                <div>
+                  <span class="word">sayHi:</span>
+                  <span class="brackets">()</span>
+                  <span class="function">=></span>
+                  <span class="brackets">{</span>
+                </div>
+                <div>
+                  <div class="padTwo VSL">
+                    <span class="word">console.</span>
+                    <span class="variable">log</span>
+                    <span class="brackets">(</span>
+                    <span class="then">this</span>
+                    <span class="brackets">)</span>
+                    <span class="comment">//箭頭函數裡面沒有this</span>
+                    <div>
+                      <span class="comment"
+                        >//他綁定最近一級的this(這個物件裡面的this)</span
+                      >
+                    </div>
+                    <div><span class="comment">//物件的this是誰?</span></div>
+                    <div><span class="comment">//函數有this</span></div>
+                    <div>
+                      <span class="comment">//而物件的this是外層 //window</span>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div><span class="brackets">},</span></div>
+                </div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document.querySelector</span>
+              <span class="brackets">(</span> <span class="src">".btn"</span>
+              <span class="brackets">)</span>
+            </div>
+            <span class="comment">//普通函數指DOM對象</span>
+
+            <div>
+              <span class="word">btn.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="function">function</span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// btn</span>
+            </div>
+            <div class="brackets">}</div>
+            <div>
+              <span class="comment">// 箭頭函數 此時 this 指向 window</span>
+            </div>
+            <div>
+              <span class="word">btn.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click",</span>
+              <span class="brackets">()</span>
+              <span class="function">=> </span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="pTwo">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">// window</span>
+            </div>
+            <div class="brackets">})</div>
+            <br />
+            <br />
+            <p>原型對象時</p>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="brackets">(){}</span>
+            </div>
+            <div>
+              <span class="word">Person.prototype.sayHi</span>
+              <span class="then">=</span> <span class="brackets">()</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="src">"hi"</span> <span class="brackets">)</span>
+              <div>
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span> <span class="then">this</span>
+                <span class="brackets">)</span>
+                <span class="comment">//window</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="comment">//構造函數&原型對象裡的this都指向實例</span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">p1</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="brackets">Person()</span>
+              <span class="comment">//this不指向p1了</span>
+            </div>
+          </div>
+          <p class="fz28">總結</p>
+          <p class="fz28">1. 函數內不存在 this , 沿用上一級的</p>
+          <p class="fz28">2. 不適用 . . > 構造函數 . 原型函數 . dom 事件函數</p>
+          <p class="fz28">3. 適用 . . > 需要用上層 this 的地方</p>
+
+          <div id="threetip006" class="articleCardTitle cor36 fz34">
+            7.7 改變 this
+          </div>
+
+          <p class="fz28">call() . . . 低 少</p>
+          <br />
+
+          <p class="fz28">
+            使用 call 方法 <span class="spo cor36"> 調用函數 </span> , 同時 指定
+            被調用 函數中的 <span class="spo cor36"> this 的值 </span>
+          </p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">name:</span>
+              <span class="src">"wayne"</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="then">this</span> <span class="brackets">)</span>
+              <span class="comment">//window</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//1.調用函數</span></div>
+            <div><span class="comment">//2.改變this指向</span></div>
+          </div>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>

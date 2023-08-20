@@ -6,10 +6,32 @@ import { ref } from "vue";
 //   time.value = new Date().toLocaleString();
 // }, 1000);
 
+// const time = ref("");
+// setInterval(function () {
+//   time.value = new Date().toLocaleString();
+// }, 1000);
+
 const time = ref("");
 setInterval(function () {
-  time.value = new Date().toLocaleString();
-}, 1000);
+  // time.value = new Date(year);new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
+  let date = new Date();
+  time.value =
+    `${date.getMonth() + 1} / ` +
+    `${date.getDate()} _ ` +
+    `${date.getHours()} : ` +
+    `${date.getMinutes()}`;
+}, 60000);
+
+const getTime = () => {
+  // time.value = new Date(year);new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
+  let date = new Date();
+  time.value =
+    `${date.getMonth() + 1} / ` +
+    `${date.getDate()} _  ` +
+    `${date.getHours()} : ` +
+    `${date.getMinutes()}`;
+};
+getTime();
 </script>
 
 <template>
