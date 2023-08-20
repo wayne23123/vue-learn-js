@@ -19,6 +19,7 @@ import JsPageThreeFive from "../views/jspage/JsPageThreeFive.vue";
 import JsPageThreeSix from "../views/jspage/JsPageThreeSix.vue";
 import JsPageThreeSeven from "../views/jspage/JsPageThreeSeven.vue";
 import JsPageThreeEight from "../views/jspage/JsPageThreeEight.vue";
+import JsPageThreeNine from "../views/jspage/JsPageThreeNine.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -104,8 +105,12 @@ const router = createRouter({
                   component: JsPageThreeSeven,
                 },
                 {
-                  path: "ajax",
+                  path: "dom",
                   component: JsPageThreeEight,
+                },
+                {
+                  path: "ajax",
+                  component: JsPageThreeNine,
                 },
               ],
             },
