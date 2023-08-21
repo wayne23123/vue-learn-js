@@ -152,6 +152,12 @@ button {
   border-radius: 12px;
 }
 
+.spoGra {
+  padding: 10px;
+  background-color: #3a3a3a;
+  border-radius: 12px;
+}
+
 .r0 {
   right: 0;
 }

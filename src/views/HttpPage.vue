@@ -497,14 +497,15 @@ function locate(idPound) {
           <h3 id="web003" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ http協議?
           </h3>
-          <p>
-            超文本傳輸協定
+          <div>
             <span
               ><a href="https://www.runoob.com/http/http-tutorial.html"
-                >http協議 @菜鳥教程</a
-              ></span
+                >http協議 @菜鳥教程
+              </a></span
             >
-          </p>
+          </div>
+          <br />
+          <p>超文本傳輸協定 . . . (Hypertext Transfer Protocol)</p>
           <br />
           <p>他是基於 TCP 默認 80 端口的一個 應用層協議</p>
           <br />

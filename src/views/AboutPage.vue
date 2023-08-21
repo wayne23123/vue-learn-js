@@ -133,6 +133,8 @@ function engRefF() {
           >
           <br />
           <!-- <a href="https://www.youtube.com/watch?v=T6vwvui2EWI&list=PLJ2qsHXnALwGGLl6ID6lPKY1AIlee3ITv&index=2&t=608s"></a> -->
+          <!-- https://home.gamer.com.tw/artwork.php?sn=5777104 -->
+          <!-- ⚠ -->
           <div @click="engRefF()" style="color: #171717">test</div>
           <div v-if="engRef">
             <hr />

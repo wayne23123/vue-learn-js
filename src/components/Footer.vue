@@ -11,6 +11,7 @@ import { ref } from "vue";
 //   time.value = new Date().toLocaleString();
 // }, 1000);
 
+// 每1分鐘更新
 const time = ref("");
 setInterval(function () {
   // time.value = new Date(year);new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
@@ -22,6 +23,7 @@ setInterval(function () {
     `${date.getMinutes()}`;
 }, 60000);
 
+// 第一次讓畫面渲染
 const getTime = () => {
   // time.value = new Date(year);new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
   let date = new Date();
@@ -32,6 +34,14 @@ const getTime = () => {
     `${date.getMinutes()}`;
 };
 getTime();
+
+// let test;
+
+// fetch("https://randomuser.me/api/?results=1")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     (test = data.results[0]), console.log(test);
+//   });
 </script>
 
 <template>
