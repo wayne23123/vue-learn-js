@@ -36,14 +36,8 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('scope001')" class="leftNavText">局部作用域</div>
-          <div @click="locate('scope002')" class="leftNavText">全局作用域</div>
-          <div @click="locate('scope003')" class="leftNavText">作用域鏈</div>
-          <div @click="locate('scope004')" class="leftNavText">
-            JS垃圾回收機制
-          </div>
-          <div @click="locate('scope005')" class="leftNavText">閉包</div>
-          <div @click="locate('scope006')" class="leftNavText">變量提升</div>
+          <div @click="locate('threedom001')" class="leftNavText">事件流</div>
+          <div @click="locate('threedom002')" class="leftNavText">事件委託</div>
         </div>
       </div>
     </div>
@@ -60,7 +54,9 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <div class="articleCardTitle cor36 fz34">8.1 事件流</div>
+          <div id="threedom001" class="articleCardTitle cor36 fz34">
+            8.1 事件流
+          </div>
           <p class="fz28">事件流</p>
           <p class="fz28">指事件完整執行過程中的流動路徑</p>
           <br />
@@ -167,6 +163,67 @@ function locate(idPound) {
 
           <br />
           <br />
+
+          <p class="fz28">阻止默認行為:</p>
+          <p class="fz28">阻止表單提交</p>
+          <p class="fz28">阻止連接跳轉</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">form</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"form"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">form</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"submit"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">e</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//阻止默認提交行為</span>
+              <div>
+                <span class="word">e.preventDefault</span>
+                <span class="brackets">()</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <div>
+              <span class="function">const </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"a"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">a</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">e</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//阻止默認提交行為</span>
+              <div>
+                <span class="word">e.preventDefault</span>
+                <span class="brackets">()</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+          </div>
+
           <p class="fz34 cor36">解綁事件</p>
 
           <div class="bgcVS">
@@ -237,15 +294,332 @@ function locate(idPound) {
           <p class="fz28">鼠標經過</p>
           <p class="fz28">mouseover & mouseout 有冒泡效果</p>
           <p class="fz28">mouseenter & mouseleave 沒冒泡 (推薦)</p>
-          <div class="articleCardTitle cor36 fz34">8.2 事件委託</div>
+          <div id="threedom002" class="articleCardTitle cor36 fz34">
+            8.2 事件委託
+          </div>
+
+          <p class="fz28">利用 事件流的 特徵 解決一些開發需求</p>
+          <br />
+          <p class="fz28">原理:</p>
+          <p class="fz28">
+            給 父元素 註冊事件 , 當觸發子元素時 , 會冒泡到 父元素 ,
+            觸發父元素的事件
+          </p>
+
+          <br />
+
+          <p class="fz28">優點:</p>
+          <p class="fz28">減少 註冊次數 , 提高程序性能</p>
+
+          <div class="bgcVS">
+            <p>以前</p>
+            <div>
+              <span class="then">＜</span> <span class="number">ul</span>
+              <span class="then">></span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第1個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第2個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第3個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div>
+              <span class="then">＜/</span> <span class="number">ul</span>
+              <span class="then">></span>
+            </div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">lis</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelectorAll</span>
+              <span class="brackets">(</span> <span class="src">"ul li"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">i</span>
+              <span class="then">=</span> <span class="number">0</span>
+              <span class="then">;</span> <span class="word">i</span>
+              <span class="then">＜</span> <span class="word">lis</span>
+              <span class="variable">.length</span> <span class="then">;</span>
+              <span class="word">i</span> <span class="then">++</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">lis</span> <span class="brackets">[</span>
+              <span class="word">i</span> <span class="brackets">]</span>
+              <span class="word">.addEventListner</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div class="padTwo VSL">
+                <span class="variable">alert</span>
+                <span class="brackets">(</span>
+                <span class="src">"點擊了"</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div></div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+
+            <br />
+            <br />
+            <p>事件委託</p>
+            <div>
+              <span class="then">＜</span> <span class="number">ul</span>
+              <span class="then">></span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第1個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第2個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">li</span>
+              <span class="then">></span> <span class="word">第3個孩子</span>
+              <span class="then">＜/</span> <span class="number">li</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">＜</span> <span class="number">p</span>
+              <span class="then">></span> <span class="word">我不要變色</span>
+              <span class="then">＜/</span> <span class="number">P</span>
+              <span class="then">></span>
+              <div></div>
+            </div>
+            <div>
+              <span class="then">＜/</span> <span class="number">ul</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span> <span class="word">ul</span>
+              <span class="then">=</span> <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"ul"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">ul</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+
+              <span class="word">e</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">alert</span> <span class="brackets">(</span>
+              <span class="src">"點擊了"</span> <span class="brackets">)</span>
+              <div>
+                <span class="then">this</span>
+                <span class="word">.style.color</span>
+                <span class="then">=</span> <span class="src">"red"</span>
+                <span class="comment">//發現red給父ul,全變色了</span>
+              </div>
+              <div><span class="comment">//要知道你點了哪個元素</span></div>
+              <div>
+                <span class="word">console</span>
+                <span class="word">.log</span> <span class="brackets">(</span>
+                <span class="word">e</span> <span class="brackets">) </span>
+                <span class="comment">// 找 e.target 發現 li</span>
+              </div>
+              <div>
+                <span class="comment"
+                  >//console.log(e.target)//就是我們點擊的那個對象</span
+                >
+              </div>
+              <div>
+                <span class="word">e.target.style.color</span>
+                <span class="then">=</span> <span class="src">"red"</span>
+              </div>
+              <div><span class="comment">//處理p不變色</span></div>
+              <div>
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">e.target.tagName</span>
+                <span class="then">===</span> <span class="src">"LI"</span>
+                <span class="brackets">){</span>
+              </div>
+
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">e.target.style.color</span>
+                <span class="then">=</span> <span class="src">"red"</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+          </div>
+
+          <p class="fz28">事件委託好處?</p>
+          <p class="fz28">減少註冊次數 , 提高程序性能</p>
+          <br />
+          <p class="fz28">委託誰?</p>
+          <p class="fz28">父元素</p>
+          <br />
+          <p class="fz28">如何找真正觸發元素?</p>
+          <p class="fz28">事件對象.target.tagName</p>
+
+          <div id="threedom002" class="articleCardTitle cor36 fz34">
+            8.3 其他事件
+          </div>
+
+          <p class="fz28">事件名: load</p>
+          <p class="fz28">監聽頁面所有資源加載完畢</p>
+          <div class="bgcVS">
+            <div>
+              <span class="comment"
+                >//等待頁面所有資源加載完畢,就回去執行回調函數</span
+              >
+            </div>
+            <div>
+              <span class="word">window</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"load"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//執行操作</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <p>也可以針對某資源綁定 load 事件 ex圖片加載完再執行</p>
+            <div>
+              <span class="word">img</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"load"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){}</span>
+            </div>
+          </div>
+
+          <p class="fz28">事件名: DOMContentLoaded</p>
+          <p class="fz28">
+            當初使的 HTML 文檔加載解析完後 , DOMContentLoaded 事件觸發
+          </p>
+          <br />
+          <p class="fz28">不用等 圖片.. ( 比 load 快 )</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="word">document</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span>
+              <span class="src">"DOMContentLoaded"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//執行操作</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+          </div>
+
+          <p class="fz28">事件名: scroll</p>
+          <p class="fz28">監聽整個頁面滾動</p>
+          <br />
+          <a class="fz28" href="https://juejin.cn/post/7056751654854459406">
+            @掘金</a
+          >
+          <a
+            class="fz28"
+            href="https://stackoverflow.com/questions/21064101/understanding-offsetwidth-clientwidth-scrollwidth-and-height-respectively"
+          >
+            @stack overflow</a
+          >
+          <a
+            class="fz28"
+            href="https://www.runoob.com/jsref/prop-element-scrollwidth.html"
+          >
+            @菜鳥教程</a
+          >
+
+          <div class="bgcVS">
+            <div>
+              <span class="word">window</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"scroll"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"滾動"</span>
+              <span class="brackets">)</span>
+              <div>
+                <span class="function">const </span>
+                <span class="word">n</span> <span class="then">=</span>
+                <span class="word">document</span>
+                <span class="variable">.documentElement.scrollTop</span>
+              </div>
+              <div>
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">n</span> <span class="then">>=</span>
+                <span class="number">100</span> <span class="brackets">){</span>
+              </div>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"距離頂部100px"</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <p>也可以給元素添加</p>
+          </div>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <p class="fz28"></p>
 
           <p class="fz28"></p>
           <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+
+          <p class="fz28">事件名:</p>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
