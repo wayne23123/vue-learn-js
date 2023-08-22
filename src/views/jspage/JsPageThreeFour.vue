@@ -36,15 +36,20 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
+          <div @click="locate('')" class="leftNavText">.join()</div>
+          <div @click="locate('')" class="leftNavText">.map()</div>
+
           <div @click="locate('threemethod001')" class="leftNavText">
-            forEach
+            .forEach()
           </div>
           <div @click="locate('threemethod002')" class="leftNavText">
-            reduce
+            .reduce()
           </div>
-          <div @click="locate('threemethod003')" class="leftNavText">find</div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threemethod003')" class="leftNavText">
+            find()
+          </div>
+          <div @click="locate('')" class="leftNavText">.every() .some()</div>
+          <div @click="locate('')" class="leftNavText">Array.form()</div>
           <div @click="locate('')" class="leftNavText"></div>
         </div>
       </div>
@@ -224,6 +229,141 @@ function locate(idPound) {
           </table>
 
           <div id="threemethod001" class="articleCardTitle cor36 fz34">
+            4. join()
+          </div>
+          <p class="fz28">用於把 數組中的 所有元素 轉換一個字串</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span> <span class="src">"red"</span>
+              <span class="then">,</span> <span class="src">"blue"</span>
+              <span class="then">,</span> <span class="src">"pink"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr.join</span>
+              <span class="brackets">())</span>
+              <span class="comment">//小括號為空,則逗號分割</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">))</span>
+              <span class="comment">//redbluepink</span>
+            </div>
+          </div>
+
+          <div id="threemethod001" class="articleCardTitle cor36 fz34">
+            4. map()
+          </div>
+          <p class="fz28">
+            map 可以遍歷數組 處理數據 , 並
+            <span class="spo pad10 cor36"> 返回 新數組</span>
+          </p>
+          <br />
+          <p class="fz28">map([🐮,🥔,🐔,🌽] , cook) => [🍔,🍟,🍗,🍿]</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="word">被遍歷的數組</span>
+              <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function回調函數 </span>
+              <span class="brackets">(</span>
+              <span class="word">當前數組元素,當前元素索引號</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="comment pTwo">//函數體</div>
+            <div class="brackets">}</div>
+
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span> <span class="src">"red"</span>
+              <span class="then">,</span> <span class="src">"blue"</span>
+              <span class="then">,</span> <span class="src">"pink"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">arr</span> <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">ele,index</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span> <span class="word">.log</span>
+              <span class="brackets">(</span> <span class="word">ele</span>
+              <span class="brackets">)</span>
+              <span class="comment">//red//blue//pink//數組元素</span>
+              <span class="word"></span>
+              <div>
+                <span class="word">console</span>
+                <span class="word">.log</span> <span class="brackets">(</span>
+                <span class="word">index</span> <span class="brackets">)</span>
+                <span class="comment">//0//1//2//索引號</span>
+              </div>
+              <div>
+                <span class="then">return </span> <span class="word">el</span>
+                <span class="then">+</span> <span class="src">"顏色"</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <P>map 特點: 有一個數組返回給我們 , 所以 const newArr</P>
+            <br />
+            <div>
+              <span class="function">const </span>
+
+              <span class="word">newArr</span> <span class="then">=</span>
+              <span class="word">arr</span> <span class="variable">.map</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">ele,index</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span> <span class="word">.log</span>
+              <span class="brackets">(</span> <span class="word">ele</span>
+              <span class="brackets">)</span>
+              <span class="comment">//red//blue//pink//數組元素</span>
+              <span class="word"></span>
+              <div>
+                <span class="word">console</span>
+                <span class="word">.log</span> <span class="brackets">(</span>
+                <span class="word">index</span> <span class="brackets">)</span>
+                <span class="comment">//0//1//2//索引號</span>
+              </div>
+              <div>
+                <span class="then">return </span> <span class="word">el</span>
+                <span class="then">+</span> <span class="src">"顏色"</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">newArr</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
+          <div id="threemethod002" class="articleCardTitle cor36 fz34">
             4. forEach
           </div>
           <p class="fz28">
@@ -243,7 +383,7 @@ function locate(idPound) {
               <span class="word">被遍歷的數組</span>
               <span class="variable">.forEach</span>
               <span class="brackets">(</span>
-              <span class="function">function </span>
+              <span class="function">function回調函數 </span>
               <span class="brackets">(</span>
               <span class="word">當前數組元素,當前元素索引號</span>
               <span class="brackets">){</span>
@@ -318,6 +458,100 @@ function locate(idPound) {
               <span class="word">result</span> <span class="brackets">) </span>
               <span class="comment">// undefined</span>
             </div>
+            <br />
+            <br />
+            <p>練習 渲染 ul 列表</p>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">list</span> <span class="then">=</span>
+              <span class="brackets">[{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">id:</span> <span class="src">"0001",</span>
+              <div>
+                <span class="word">mame:</span> <span class="src">"wayne"</span>
+              </div>
+              <div><span class="brackets">},{</span></div>
+              <span class="word">id:</span> <span class="src">"0002",</span>
+              <div>
+                <span class="word">mame:</span> <span class="src">"jack"</span>
+              </div>
+              <div><span class="brackets">},{</span></div>
+              <span class="word">id:</span> <span class="src">"0003",</span>
+              <div>
+                <span class="word">mame:</span> <span class="src">"neo"</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}]</span></div>
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">div </span>
+              <span class="function">class </span> <span class="then">=</span>
+              <span class="src">"list"</span> <span class="then">>＜/ </span>
+              <span class="number">div </span> <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">str</span>
+              <span class="then">=</span> <span class="src">""</span>
+            </div>
+            <div>
+              <span class="word">list</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span> <span class="word">.log</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">)</span>
+              <span class="comment">//每一個數組元素->物件</span>
+              <div>
+                <span class="word">str</span> <span class="then">+=</span>
+                <span class="src">` ＜p></span>
+                <span class="then">${</span>
+                <span class="word">item.name</span> <span class="then">}</span>
+                <span class="src">＜/p>`</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <div>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">".list"</span>
+              <span class="brackets">)</span>
+              <span class="variable">.innerHTML</span>
+              <span class="then">=</span> <span class="word">str</span>
+            </div>
+            <br />
+            <p>改成 解構賦值</p>
+            <br />
+            <div>
+              <span class="word">list</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="function">const </span>
+              <span class="brackets">{</span> <span class="word">name</span>
+              <span class="brackets">}</span> <span class="then">=</span>
+              <span class="word">item</span>
+              <div>
+                <span class="word">str</span> <span class="then">+=</span>
+                <span class="src">` ＜p></span>
+                <span class="then">${</span>
+                <span class="word">name</span> <span class="then">}</span>
+                <span class="src">＜/p>`</span>
+              </div>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">})</span></div>
           </div>
           <p class="fz28">1. forEach 主要是遍歷數組</p>
           <p class="fz28">2. 索引號可以不寫</p>

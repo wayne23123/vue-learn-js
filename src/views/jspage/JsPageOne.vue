@@ -68,6 +68,10 @@ function locate(idPound) {
           <p>不是順次執行 誰先加載完 誰執行</p>
           <br />
           <br />
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ ES6 新特性?</div>
+          <p>let . const . map . set . 箭頭函數 . 解構復值 . promise</p>
+          <br />
+          <br />
           <div id="" class="articleCardTitle cor36">[ JS ] ≫ JS數據類型?</div>
           <p>幾本類型:</p>
           <p class="pFou">string number 布林 null undefined symbol bigInt</p>
@@ -474,6 +478,27 @@ function locate(idPound) {
             </div>
             <br />
             <div class="comment">// 形參的用法</div>
+            <div class="comment">// 形參的用法</div>
+            <div>
+              <span class="word">conso.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Math.max</span>
+              <span class="brackets">(</span>
+              <span class="src"
+                >必須是字符的形式,不能直接接陣列,必須逗號隔開
+              </span>
+              <span class="brackets">)</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">conso.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">Math.max</span>
+              <span class="brackets">(</span> <span class="number">1,2,3</span>
+              <span class="brackets">)</span> <span class="brackets">)</span>
+              <span class="comment">// 裡面要逗號</span>
+            </div>
+
+            <div class="comment">// 陣列沒有 求最大值 的方法</div>
             <div>
               <span class="function">const </span> <span class="word">a</span>
               <span class="then">=</span> <span class="brackets">[</span>
@@ -487,16 +512,34 @@ function locate(idPound) {
               <span class="brackets">]</span>
             </div>
             <div>
-              <span class="function">let </span> <span class="word">max</span>
-              <span class="then">=</span> <span class="word">Math</span>
-              <span class="variable">.max</span> <span class="brackets">(</span>
-              <span class="word">...a,...b</span>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">...a</span>
               <span class="brackets">)</span>
+              <span class="comment">// 1 2 3</span>
+              <span class="comment">// 打印沒逗號,一樣能用在.max</span>
+            </div>
+            <span class="comment">...a === 1,2,3</span>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="word">Math</span>
+              <span class="variable">.max</span> <span class="brackets">(</span>
+              <span class="word">...a</span>
+              <span class="brackets">)</span> <span class="comment">// 3</span>
             </div>
             <div>
               <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="word">max</span> <span class="brackets">)</span>
+              <span class="variable">log</span> <span class="word">Math</span>
+              <span class="variable">.min</span> <span class="brackets">(</span>
+              <span class="word">...a</span>
+              <span class="brackets">)</span> <span class="comment">// 3</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="word">Math</span>
+              <span class="variable">.max</span> <span class="brackets">(</span>
+              <span class="word">...a,...b</span>
+              <span class="brackets">)</span> <span class="comment">// 6</span>
             </div>
 
             <br />
@@ -512,7 +555,7 @@ function locate(idPound) {
             <div class="brackets">}</div>
             <div>
               <span class="word">test</span> <span class="brackets">(</span>
-              <span class="word">形參1,形參2</span>
+              <span class="word">實參1,實參2</span>
               <span class="brackets">) </span>
               <span class="comment">// 函數調用的小括號裡是 實參</span>
             </div>
