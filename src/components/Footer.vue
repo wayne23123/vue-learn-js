@@ -42,11 +42,30 @@ getTime();
 //   .then((data) => {
 //     (test = data.results[0]), console.log(test);
 //   });
+
+// const weatherRef = ref("");
+// fetch("http://hmajax.itheima.net/api/weather?city=710100")
+//   .then((response) => response.json())
+//   .then((result) => {
+//     weatherRef.value = result.data;
+//   })
+//   .catch((error) => console.log("error", error));
 </script>
 
 <template>
-  <div class="showTimeDiv">{{ time }}</div>
-  <footer>Copyright © 2023 Wayne Lu</footer>
+  <div class="showTimeDiv">
+    <div>{{ time }}</div>
+
+    <!-- <div>
+      {{ weatherRef.temperature }}℃ {{ weatherRef.todayWeather.humidity }}%
+    </div>
+    <div>今: {{ weatherRef.todayWeather.weather }}</div>
+    <div>明: {{ weatherRef.dayForecast[1].weather }}</div> -->
+  </div>
+  <footer>
+    Copyright © 2023 Wayne Lu
+    <!-- {{ weatherRef }} -->
+  </footer>
 </template>
 
 <style scoped>

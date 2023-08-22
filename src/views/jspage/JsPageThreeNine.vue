@@ -1812,11 +1812,95 @@ function locate(idPound) {
           <br />
           <br />
           <br />
-          <p class="fz28">Promise.all</p>
+          <p class="fz36 cor36">Promise.all</p>
           <p class="fz28">
             合併多個 Promise 對象 , 等待所有
             <span class="spo cor36">同時成功完成</span> or 某一個失敗 , 後續處理
           </p>
+          <br />
+
+          <div class="dis">
+            <div class="bor pad20">
+              <br />
+              <br />
+              <div>
+                <span class="bor pad20 fz28">new Peomise()</span>
+              </div>
+              <br />
+              <br />
+              <div>
+                <span class="bor pad20 fz28">new Peomise()</span>
+              </div>
+              <br />
+              <br />
+              <div>
+                <span class="bor pad20 fz28">new Peomise()</span>
+              </div>
+              <br />
+              <br />
+            </div>
+
+            <div class="pad20">
+              <div>
+                <br />
+                <br />
+                <span class="fz28">..></span>
+              </div>
+            </div>
+
+            <div class="pad20">
+              <div class="bor disInl pad20">
+                <span class="fz28">新的</span>
+                <br />
+                <span class="fz28">Promise</span>
+                <br />
+                <span class="fz28">對象</span>
+              </div>
+            </div>
+
+            <div class="pad20">
+              <div>
+                <span class="fz28">所有 ..></span>
+              </div>
+              <div>
+                <span class="fz28">Promise</span>
+              </div>
+              <div>
+                <span class="fz28">都成功</span>
+              </div>
+
+              <br />
+
+              <div>
+                <span class="fz28">任一個 ..></span>
+              </div>
+              <div>
+                <span class="fz28">Promise</span>
+              </div>
+              <div>
+                <span class="fz28">失敗</span>
+              </div>
+            </div>
+
+            <div class="pad20">
+              <div>
+                <span class="bor pad20 fz28">.then(回調函數)</span>
+              </div>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+
+              <div>
+                <span class="bor pad20 fz28">.catch(回調函數)</span>
+              </div>
+              <br />
+            </div>
+          </div>
+
+          <br />
           <div class="bgcVS">
             <div>
               <span class="function">const </span>
@@ -1848,6 +1932,148 @@ function locate(idPound) {
             </div>
             <div class="padTwo VSL">
               <span class="comment">//第一個失敗的Promise對象,拋出的異常</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+          </div>
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="number">ul </span>
+              <span class="function">class </span> <span class="then">=</span>
+              <span class="src">"my-ul"</span> <span class="word">>＜</span>
+              <span class="number">ul</span> <span class="then">></span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">bjPromise</span>
+              <span class="then">=</span>
+              <span class="variable">axios</span>
+              <span class="brackets">({</span> <span class="word">url:</span>
+              <span class="src">"api/weather"</span>
+              <span class="word">,params:</span>
+              <span class="brackets">{</span> <span class="word">city:</span>
+              <span class="src">"110100"</span>
+              <span class="brackets">}})</span>
+            </div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">shPromise</span>
+              <span class="then">=</span>
+              <span class="variable">axios</span>
+              <span class="brackets">({</span> <span class="word">url:</span>
+              <span class="src">"api/weather"</span>
+              <span class="word">,params:</span>
+              <span class="brackets">{</span> <span class="word">city:</span>
+              <span class="src">"310100"</span>
+              <span class="brackets">}})</span>
+            </div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">gzPromise</span>
+              <span class="then">=</span>
+              <span class="variable">axios</span>
+              <span class="brackets">({</span> <span class="word">url:</span>
+              <span class="src">"api/weather"</span>
+              <span class="word">,params:</span>
+              <span class="brackets">{</span> <span class="word">city:</span>
+              <span class="src">"440100"</span>
+              <span class="brackets">}})</span>
+            </div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">szPromise</span>
+              <span class="then">=</span>
+              <span class="variable">axios</span>
+              <span class="brackets">({</span> <span class="word">url:</span>
+              <span class="src">"api/weather"</span>
+              <span class="word">,params:</span>
+              <span class="brackets">{</span> <span class="word">city:</span>
+              <span class="src">"440300"</span>
+              <span class="brackets">}})</span>
+            </div>
+            <br />
+            <p>
+              思想: 把 city 編碼 放到數組裡 , 遍歷 數組裡 每個城市編碼 ,
+              創建一個 axios 請求
+            </p>
+            <br />
+            <div>
+              <span class="comment">//Peomise.all合併多個Promise對象</span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="number">p </span> <span class="then">=</span>
+              <span class="brackets">Promise</span>
+              <span class="variable">.all</span>
+              <span class="brackets">([</span>
+              <span class="word">bjPromise,shPromise,gzPromise,szPromise</span>
+              <span class="brackets">])</span>
+            </div>
+            <div>
+              <span class="number">p </span>
+              <span class="variable">.then</span>
+              <span class="brackets">(</span> <span class="word">result</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">result</span>
+              <span class="brackets">)</span>
+              <div></div>
+              <br />
+              <div>
+                <span class="function">const </span>
+                <span class="word">htmlStr</span> <span class="then">=</span>
+                <span class="word">result</span>
+                <span class="variable">.map</span>
+                <span class="brackets">(</span> <span class="word">item</span>
+                <span class="function">=></span> <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="then">return </span>
+                <span class="src">`＜li></span> <span class="then">${</span>
+                <span class="word">item.data.data.area</span>
+                <span class="then">}</span> <span class="word">---</span>
+                <span class="then">${</span>
+                <span class="word">item.data.data.weather</span>
+                <span class="then">}</span> <span class="src">＜/li>`</span>
+                <div></div>
+              </div>
+              <div>
+                <span class="brackets">})</span>
+                <span class="variable">.join</span>
+                <span class="brackets">(</span> <span class="then">''</span>
+                <span class="brackets">)</span>
+              </div>
+              <div>
+                <span class="word">document</span>
+                <span class="variable">.querySelector</span>
+                <span class="brackets">(</span>
+                <span class="src">".my-ul"</span>
+                <span class="brackets">)</span>
+                <span class="variable">.innerHTML</span>
+                <span class="then">=</span> <span class="word">htmlStr</span>
+              </div>
+              <br />
+            </div>
+            <div>
+              <span class="brackets">})</span>
+              <span class="variable">.catch</span>
+              <span class="brackets">(</span>
+              <span class="variable">error</span>
+              <span class="function">=></span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.dir</span>
+              <span class="brackets">(</span>
+              <span class="variable">error</span>
+              <span class="brackets">)</span>
               <div></div>
             </div>
             <div><span class="brackets">})</span></div>
