@@ -60,7 +60,387 @@ function locate(idPound) {
           <p class="fz28">3.總結</p>
           <br />
           <br />
-          <div class="articleCardTitle cor36 fz34">1. 作用域</div>
+          <div class="articleCardTitle cor36 fz34">8.1 事件流</div>
+          <p class="fz28">事件流</p>
+          <p class="fz28">指事件完整執行過程中的流動路徑</p>
+          <br />
+          <br />
+          <div class="fz30">
+            1 <span class="cor17">. . . </span>
+            <span class="cor36 pad10 bor"> Document </span>
+            <span class="cor17"> . . . </span> 7
+          </div>
+          <div class="fz30">
+            <span class="cor17">. . . </span> ↘
+            <span class="cor17">. . . . . . </span> |
+            <span class="cor17">. . . . . . . . . . </span> ↖
+            <span class="cor17">. . </span> 冒泡階段 由下往上
+          </div>
+          <div class="fz30">
+            <span class="cor17">. . . . . </span>2
+            <span class="cor17">. . </span>
+            <span class="cor36 pad10 bor"> Element html </span>
+            <span class="cor17"> . . . </span> 6
+          </div>
+
+          <div class="fz30">
+            <span class="cor17">. . . . . . . </span> ↘
+            <span class="cor17">. . . . . . </span> |
+            <span class="cor17">. . . . . . . . . . </span> ↖
+          </div>
+          <div class="fz30">
+            捕獲階段 <span class="cor17">. . </span> 3
+            <span class="cor17">. . </span>
+            <span class="cor36 pad10 bor"> Element body </span>
+            <span class="cor17"> . . . </span> 5
+          </div>
+          <div class="fz30">
+            由上往下 <span class="cor17"> . . . . </span> ↘
+            <span class="cor17">. . . . . . . . </span> |
+            <span class="cor17">. . . . . . . . . . </span> ↖
+          </div>
+          <div class="fz30">
+            <span class="cor17">. . . . . . . . . . . . . . </span> ↘
+            <span class="cor17">. . . . </span>
+            <span class="cor36 pad10 bor"> Element div </span>
+            <span class="cor17"> . . . </span> 4
+          </div>
+          <div class="fz30">
+            <span class="cor17">. . . . . . . . . . . . . . . .</span> ↘ → → → →
+            → → ↗
+          </div>
+
+          <p class="fz28">說明</p>
+          <p class="fz28">
+            假設頁面裡有 div , 當觸發事件時 , 經歷 "捕獲階段" & "冒泡階段"
+          </p>
+          <p class="fz28">捕獲 -> 父到子</p>
+          <p class="fz28">冒泡 -> 子到父</p>
+          <br />
+          <p class="fz28">實際開發 冒泡為主</p>
+          <br />
+          <br />
+          <p class="fz34 cor36">事件捕獲</p>
+          <p class="fz28">
+            從 DOM 的 根元素 開始去執行 對應的 事件 ( 從裡到外 )
+          </p>
+
+          <a class="fz28" href="https://codepen.io/wayne23123/pen/gOZbBRw"
+            >DEMO @codepen</a
+          >
+
+          <p class="fz34 cor36">事件冒泡</p>
+          <p class="fz28">
+            當一個元素被觸發 , 同樣的事件將會在該元素的所有祖先元素中
+            依次被觸發。
+          </p>
+
+          <p class="fz28">這過程為冒泡。</p>
+          <br />
+          <p class="fz28">
+            當一元素觸發事件後 , 會 依次 向上調用 所有 父級元素的 同名事件
+          </p>
+
+          <a class="fz28" href="https://codepen.io/wayne23123/pen/gOZbBRw"
+            >DEMO @codepen</a
+          >
+          <br />
+          <p class="fz34 cor36">阻止冒泡</p>
+
+          <p class="fz28">默認有冒泡模式存在 , 容易導致 事件影像到 父元素</p>
+          <br />
+          <p class="fz28">需求:</p>
+          <p class="fz28">想把事件限制在當前元素 , 需要 阻止 事件 冒泡</p>
+          <br />
+          <p class="fz28">前提:</p>
+          <p class="fz28">阻止事件冒泡 需要拿到 事件對象</p>
+          <br />
+          <div class="spo fz30">
+            <span class="number">事件對象</span>
+            <span class="variable">.stopPropagation</span>
+            <span class="brackets">()</span>
+          </div>
+
+          <a class="fz28" href="https://codepen.io/wayne23123/pen/RwENeBG"
+            >DEMO @codepen</a
+          >
+
+          <br />
+          <br />
+          <p class="fz34 cor36">解綁事件</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="number">button</span>
+              <span class="then">></span> <span class="word">test</span>
+              <span class="then">＜/</span> <span class="number">button</span>
+              <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">documnet</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.onclick</span>
+              <span class="then">=</span> <span class="then">null</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">alert</span> <span class="brackets">(</span>
+              <span class="src">"點擊了"</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//L0事件移除解綁</span></div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.onclick</span>
+              <span class="then">=</span> <span class="then">null</span>
+            </div>
+            <br />
+            <br />
+            <p>addEventListener 解綁方式</p>
+            <div><span class="comment">//L2事件移除解綁</span></div>
+
+            <div>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">alert</span> <span class="brackets">(</span>
+              <span class="src">"點擊了"</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span> <span class="word">fn</span>
+              <span class="brackets">) </span>
+              <span class="comment">//這些回調函數不用(),setTimeout也是</span>
+            </div>
+            <div>
+              <span class="word">btn</span>
+              <span class="variable">.removeEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span> <span class="word">fn</span>
+              <span class="brackets">) </span>
+            </div>
+            <br />
+            <p>匿名函數 無法解綁</p>
+          </div>
+          <p class="fz28">鼠標經過</p>
+          <p class="fz28">mouseover & mouseout 有冒泡效果</p>
+          <p class="fz28">mouseenter & mouseleave 沒冒泡 (推薦)</p>
+          <div class="articleCardTitle cor36 fz34">8.2 事件委託</div>
+
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+          <p class="fz28"></p>
+
           <br />
           <br />
         </div>

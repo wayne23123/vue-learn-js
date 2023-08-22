@@ -59,7 +59,7 @@ function locate(idPound) {
             <RouterLink to="/js/tips">7.技巧</RouterLink>
           </div>
           <div>
-            <RouterLink to="/js/dom">8.DOM</RouterLink>
+            <RouterLink to="/js/dom">8.事件</RouterLink>
           </div>
           <div>
             <RouterLink to="/js/ajax">9.AJAX</RouterLink>
