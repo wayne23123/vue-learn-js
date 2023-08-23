@@ -36,19 +36,33 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText">.join()</div>
+          <div @click="locate('')" class="leftNavText">.push()</div>
+          <div @click="locate('')" class="leftNavText">.pop()</div>
+          <div @click="locate('')" class="leftNavText">.shift</div>
+          <div @click="locate('')" class="leftNavText">.unshift</div>
+
           <div @click="locate('')" class="leftNavText">.map()</div>
 
           <div @click="locate('threemethod001')" class="leftNavText">
             .forEach()
           </div>
+          <div @click="locate('')" class="leftNavText">.join()</div>
+
           <div @click="locate('threemethod002')" class="leftNavText">
             .reduce()
           </div>
           <div @click="locate('threemethod003')" class="leftNavText">
-            find()
+            .find()
           </div>
-          <div @click="locate('')" class="leftNavText">.every() .some()</div>
+          <div @click="locate('')" class="leftNavText">.slice()</div>
+          <div @click="locate('')" class="leftNavText">.splice()</div>
+
+          <div @click="locate('')" class="leftNavText">
+            <div>.every()</div>
+            <div>.some()</div>
+          </div>
+          <div @click="locate('')" class="leftNavText">.concat(arr)</div>
+
           <div @click="locate('')" class="leftNavText">Array.form()</div>
           <div @click="locate('')" class="leftNavText"></div>
         </div>
@@ -228,34 +242,221 @@ function locate(idPound) {
             </tr> -->
           </table>
 
-          <div id="threemethod001" class="articleCardTitle cor36 fz34">
-            4. join()
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. push() . . . 會改變原數組
           </div>
-          <p class="fz28">用於把 數組中的 所有元素 轉換一個字串</p>
+          <p class="fz28">
+            push 方法 在 數組末端 添加 一個or多個 元素 ,
+            並返回添加新元素後的數組長度
+          </p>
+          <p class="fz28">注意 會改變原數組</p>
+          <br />
+          <div class="fz28">
+            <span class="cor17"> . . . . . </span> shift ↖
+            <span class="cor17"> . . . </span> ↗ pop
+          </div>
+          <div class="fz28">unshift → ▯▮▮▮▯ ← push</div>
+
           <div class="bgcVS">
             <div>
-              <span class="function">const </span>
-              <span class="word">arr</span> <span class="then">=</span>
-              <span class="brackets">[</span> <span class="src">"red"</span>
-              <span class="then">,</span> <span class="src">"blue"</span>
-              <span class="then">,</span> <span class="src">"pink"</span>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"hi"</span> <span class="brackets">]</span>
+            </div>
+            <div><span class="comment">//arr[1]="添加方法1"</span></div>
+            <div>
+              <span class="word">arr</span> <span class="variable">.push</span>
+              <span class="brackets">(</span> <span class="src">"大家好"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">arrLength</span> <span class="then">=</span>
+              <span class="word">arr</span> <span class="variable">.push</span>
+              <span class="brackets">(</span> <span class="src">"大家好"</span>
+              <span class="brackets">)</span>
+              <span class="comment">//打印添加這個東西,返回數組長度//2</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="brackets">)</span>
+              <span class="comment">//["hi","大家好"]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">arrLength</span>
+              <span class="brackets">)</span>
+              <span class="comment">// 2</span>
+            </div>
+            <br />
+            <p>也可以同時添加多條</p>
+            <div>
+              <span class="word">arr</span> <span class="variable">.push</span>
+              <span class="brackets">(</span>
+              <span class="src">"大家好",123,"hi"</span>
+              <span class="brackets">)</span>
+            </div>
+          </div>
+
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. pop() . . . 會改變原數組
+          </div>
+          <p class="fz28">push 方法 刪除數組的最後一個元素 , 並返回該元素</p>
+          <p class="fz28">注意 會改變原數組</p>
+          <br />
+          <div class="fz28">
+            <span class="cor17"> . . . . . </span> shift ↖
+            <span class="cor17"> . . . </span> ↗ pop
+          </div>
+          <div class="fz28">unshift → ▯▮▮▮▯ ← push</div>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">100,200,300,400</span>
               <span class="brackets">]</span>
             </div>
             <div>
-              <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="word">arr.join</span>
-              <span class="brackets">())</span>
-              <span class="comment">//小括號為空,則逗號分割</span>
+              <span class="word">arr</span> <span class="variable">.pop</span>
+              <span class="brackets">()</span>
             </div>
             <div>
-              <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="word">arr.join</span>
-              <span class="brackets">(</span> <span class="src">""</span>
-              <span class="brackets">))</span>
-              <span class="comment">//redbluepink</span>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="brackets">)</span>
+              <span class="comment">//[100,200,300]</span>
             </div>
+          </div>
+
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. shift() . . . 會改變原數組
+          </div>
+          <p class="fz28">shift 方法 刪除數組的第一個元素 , 並返回該元素</p>
+          <p class="fz28">注意 會改變原數組</p>
+          <br />
+          <div class="fz28">
+            <span class="cor17"> . . . . . </span> shift ↖
+            <span class="cor17"> . . . </span> ↗ pop
+          </div>
+          <div class="fz28">unshift → ▯▮▮▮▯ ← push</div>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">let </span> <span class="word">name</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"wayne","neo","jack"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">result</span> <span class="then">=</span>
+              <span class="word">name</span>
+              <span class="variable">.shift</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">name</span>
+              <span class="brackets">)</span>
+              <span class="comment">//["neo","jack"]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">result</span>
+              <span class="brackets">)</span>
+              <span class="comment">//wayne</span>
+            </div>
+            <br />
+            <div><span class="comment">//清空數組元素</span></div>
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.shift</span>
+              <span class="brackets">())</span>
+              <span class="comment">//undefined</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr1</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">100,200,300</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">item</span>
+            </div>
+            <div>
+              <span class="comment"
+                >//()裡面取布林值,當0,undefined,Null,NaN,空數值,false為false</span
+              >
+            </div>
+            <div>
+              <span class="word">while</span> <span class="brackets">(</span>
+              <span class="word">item</span> <span class="then">=</span>
+              <span class="word">arr1</span>
+              <span class="variable">.shift</span>
+              <span class="brackets">()){</span>
+              <span class="comment">//我把arr1每次刪除的數據賦值給item</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">)</span>
+              <span class="comment">//100//200//300//[]</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. unshift() . . . 會改變原數組
+          </div>
+          <p class="fz28">
+            shift 方法 向 數組的第一個位置 添加元素 , 並返回添加元素後的
+            數組長度
+          </p>
+          <p class="fz28">注意 會改變原數組</p>
+          <br />
+          <div class="fz28">
+            <span class="cor17"> . . . . . </span> shift ↖
+            <span class="cor17"> . . . </span> ↗ pop
+          </div>
+          <div class="fz28">unshift → ▯▮▮▮▯ ← push</div>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">200</span> <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.unshift</span>
+              <span class="brackets">(</span> <span class="number">100</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="brackets">)</span>
+              <span class="comment">//[100,200]</span>
+            </div>
+            <br />
+            <p>也可以添加多個</p>
           </div>
 
           <div id="threemethod001" class="articleCardTitle cor36 fz34">
@@ -555,6 +756,36 @@ function locate(idPound) {
           </div>
           <p class="fz28">1. forEach 主要是遍歷數組</p>
           <p class="fz28">2. 索引號可以不寫</p>
+
+          <div id="threemethod001" class="articleCardTitle cor36 fz34">
+            4. join()
+          </div>
+          <p class="fz28">用於把 數組中的 所有元素 轉換一個字串</p>
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">arr</span> <span class="then">=</span>
+              <span class="brackets">[</span> <span class="src">"red"</span>
+              <span class="then">,</span> <span class="src">"blue"</span>
+              <span class="then">,</span> <span class="src">"pink"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr.join</span>
+              <span class="brackets">())</span>
+              <span class="comment">//小括號為空,則逗號分割</span>
+            </div>
+            <div>
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">arr.join</span>
+              <span class="brackets">(</span> <span class="src">""</span>
+              <span class="brackets">))</span>
+              <span class="comment">//redbluepink</span>
+            </div>
+          </div>
 
           <div id="threemethod002" class="articleCardTitle cor36 fz34">
             4. reduce
@@ -906,6 +1137,63 @@ function locate(idPound) {
               <span class="comment">//{name:"wayne",number:1000}</span>
             </div>
           </div>
+
+          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+            4. slice
+          </div>
+          <p class="fz28"></p>
+          <br />
+          <div class="bgcVS">
+            <div>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span>
+              <span class="number">2個參數可選</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span>
+              <span class="word">擷取時起始位置,終止位置</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1,2,3,4,5</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">str</span>
+              <span class="then">=</span> <span class="src">"12345"</span>
+            </div>
+            <br />
+            <div>
+              <span class="comment"
+                >//沒參數,直接把原數組or原字串整個拷貝成新數組並返回</span
+              >
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">()) </span>
+              <span class="comment">//[1,2,3,4,5]</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span> <span class="number">1</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[2,3,4,5]//1當起始位置,數組末最終</span>
+            </div>
+          </div>
+
           <div id="threemethod003" class="articleCardTitle cor36 fz34">
             4. every & some <span class="spo marL100">回調</span>
           </div>
@@ -974,6 +1262,115 @@ function locate(idPound) {
           </div>
 
           <div id="threemethod00" class="articleCardTitle cor36 fz34">
+            4. concat . . . 不改變 原數組
+          </div>
+
+          <p class="fz28">
+            concat 方法用於 多個數組合並 , 他將 新數組的成員 , 加到 原數組
+            成員的 後部 , 然後返回一個 新數組
+          </p>
+
+          <p class="fz28">原數組不變</p>
+          <br />
+          <div class="bgcVS">
+            <div>
+              <span class="function">let </span> <span class="word">arr1</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"wayne","jack"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">arr2</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"hello","hi"</span>
+              <span class="brackets">]</span> <span class="word"></span>
+            </div>
+            <br />
+            <div><span class="comment">//直接+會變字串</span></div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr1</span>
+              <span class="then">+</span> <span class="word">arr2</span>
+              <span class="brackets">)</span>
+              <span class="comment">//wayne,jackhello,hi</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">arr1.concat</span>
+              <span class="brackets">(</span> <span class="word">arr2</span>
+              <span class="brackets">)) </span>
+              <span class="comment">//["wayne","jack","hello","hi"]</span>
+            </div>
+            <br />
+            <p>也可以多個</p>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr3</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"web","Python"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">arr1.concat</span>
+              <span class="brackets">(</span>
+              <span class="word">arr2,arr3</span>
+              <span class="brackets">))</span>
+              <span class="comment"
+                >//["wayne","jack","hello","hi","web","Python"]</span
+              >
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr1</span>
+              <span class="brackets">)</span>
+              <span class="comment">//3個原數組沒變</span>
+            </div>
+            <br />
+            <p>除了接受數組,也接受其他類型的值作為參數,添加到數組尾部</p>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr4</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">10</span> <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr4</span>
+              <span class="variable">.concat</span>
+              <span class="brackets">(</span>
+              <span class="number">20,30,40</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[10,20,30,40]</span>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div>
+              <span class="brackets">[</span> <span class="number">1,2,3</span>
+              <span class="brackets">]</span>
+              <span class="variable">.concat</span>
+              <span class="brackets">(</span>
+              <span class="number">4,5,6,</span>
+              <span class="brackets">[</span> <span class="number">7,8,9</span>
+              <span class="brackets">])</span>
+            </div>
+            <div>
+              <span class="brackets">[</span>
+              <span class="number">1,2,3,4,5,6,7,8,9</span>
+              <span class="brackets">]</span>
+            </div>
+          </div>
+
+          <div id="threemethod00" class="articleCardTitle cor36 fz34">
             4. Array.form()
           </div>
 
@@ -1028,7 +1425,6 @@ function locate(idPound) {
             </div>
           </div>
 
-          <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>

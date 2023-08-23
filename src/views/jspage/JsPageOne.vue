@@ -562,6 +562,9 @@ function locate(idPound) {
             <br />
           </div>
 
+          <div class="articleCardTitle cor36">[ JS ] ≫ 延遲加載JS方式?</div>
+          <p>正常: 解析HTML > 遇到JS > 下載 > 執行 > 繼續解析HTML</p>
+
           <br />
 
           <br />

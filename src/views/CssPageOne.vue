@@ -36,13 +36,25 @@ function locate(idPound) {
       <div class="leftNavContainer">
         <div class="leftNavLayout">
           <br />
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
+          <div @click="locate('cssOne001')" class="leftNavText">
+            px,rem,em,vw
+          </div>
+          <div @click="locate('cssOne002')" class="leftNavText">position</div>
+          <div @click="locate('cssOne003')" class="leftNavText">盒模型</div>
+          <div @click="locate('cssOne004')" class="leftNavText">BFC</div>
+          <div @click="locate('cssOne005')" class="leftNavText">
+            選擇器優先級
+          </div>
+          <div @click="locate('cssOne006')" class="leftNavText">
+            水平垂直置中
+          </div>
+          <div @click="locate('cssOne007')" class="leftNavText">布局</div>
+          <div @click="locate('cssOne008')" class="leftNavText">動畫</div>
+          <div @click="locate('cssOne009')" class="leftNavText">三角形</div>
+          <div @click="locate('cssOne010')" class="leftNavText">重繪回流</div>
+          <div @click="locate('cssOne0')" class="leftNavText"></div>
+          <div @click="locate('cssOne0')" class="leftNavText"></div>
+          <div @click="locate('cssOne0')" class="leftNavText"></div>
         </div>
       </div>
     </div>
@@ -51,11 +63,17 @@ function locate(idPound) {
     <div class="Main">
       <div class="mainContainer">
         <div class="mainLayout">
+          <br />
+          <br />
           <p class="cor36">SCSS相比於CSS有那些好處?</p>
           <p>它可以在寫語法時層層包裹, 可以用變量</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <p class="cor36">CSS3有哪些新屬性?</p>
+          <p>flex transform translation animation 陰影 圓角</p>
+          <br />
+          <br />
+          <div id="cssOne001" class="articleCardTitle cor36">
             [ CSS ] ≫ CSS有幾個單位px,rem,em,vw分別是怎樣?
           </div>
           <p>px是一個像素</p>
@@ -77,7 +95,7 @@ function locate(idPound) {
           <p>不是,如果窗口裡面有一個內嵌窗口, 這個viewport會變成指內嵌窗口</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne002" class="articleCardTitle cor36">
             [ CSS ] ≫ position 的值和作用?
           </div>
           <p>static . relative . absolute . fixed</p>
@@ -127,7 +145,9 @@ function locate(idPound) {
           <br />
           <br />
 
-          <div id="" class="articleCardTitle cor36">[ CSS ] ≫ 盒模型?區別?</div>
+          <div id="cssOne003" class="articleCardTitle cor36">
+            [ CSS ] ≫ 盒模型?區別?
+          </div>
           <p>分為content-box和border-box</p>
           <p>區別在於width指定寬度不同</p>
           <p>content-box的寬度是內容的寬度</p>
@@ -157,7 +177,9 @@ function locate(idPound) {
           <p>不會, 因為*就選不到偽元素, *:before *:after</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ CSS ] ≫ BFC是什麼</div>
+          <div id="cssOne004" class="articleCardTitle cor36">
+            [ CSS ] ≫ BFC是什麼
+          </div>
           <p>塊級格式化上下文</p>
           <p>當前元素把他所有子元素包起來,不受外部影響</p>
           <p>
@@ -206,7 +228,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne005" class="articleCardTitle cor36">
             [ CSS ] ≫ CSS選擇器優先級和權重?
           </div>
           <span
@@ -295,7 +317,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne006" class="articleCardTitle cor36">
             [ CSS ] ≫ 水平垂直置中?
           </div>
           <div>(margin 0 auto 前提是 child 要設寬)</div>
@@ -593,7 +615,7 @@ function locate(idPound) {
           </div>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne007" class="articleCardTitle cor36">
             [ CSS ] ≫ CSS有哪些常見的布局方法?
           </div>
           <span
@@ -655,7 +677,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne008" class="articleCardTitle cor36">
             [ CSS ] ≫ CSS動畫有哪些屬性?
           </div>
           <p>transition</p>
@@ -697,7 +719,7 @@ function locate(idPound) {
           <p>animation-iteration-count 設定 infinite</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="cssOne009" class="articleCardTitle cor36">
             [ CSS ] ≫ 畫三角形的方法?
           </div>
           <div>
@@ -716,6 +738,78 @@ function locate(idPound) {
             另一個div做為父容器把他的上面百分之50顯示, 下面百分之50
             overflow:hidden起來
           </p>
+
+          <div id="cssOne010" class="articleCardTitle cor36">
+            [ css ] ≫ 什麼是重排(回流)和重繪?如何避免
+          </div>
+          <h2>重繪不一定重排，重排一定重繪</h2>
+          <br />
+          <h3 class="cor36"># 重排(回流)（reflow）是什麼:</h3>
+          <p>當瀏覽器偵測到頁面的佈局發生變化時，就需要進行回退並重新渲染。</p>
+          <br />
+          <p class="cor36"># 觸發重排(回流)條件：</p>
+          <p>1.頁面第一次渲染（初始化）</p>
+          <p>2.DOM樹節點的增刪或移動</p>
+          <p>3.DOM元素的幾何屬性變化</p>
+          <p class="pFou">寬度（width）</p>
+          <p class="pFou">高度（height）</p>
+          <p class="pFou">內邊距（padding）</p>
+          <p class="pFou">邊框（border）等</p>
+          <p class="pFou">外邊距（margin）</p>
+          <p class="pFou">左偏移（left）</p>
+          <p class="pFou">上偏移（top）</p>
+          <br />
+          <p>4.瀏覽器窗口大小改變（resize）</p>
+          <p>獲取元素的某些屬性，如offset系列、scroll系列和client系列屬性。</p>
+          <br />
+          <p class="cor36"># 重排(回流)過程</p>
+          <p>
+            劉覽器會從根節點＜html>元素
+            開始進行遞歸，逐個計算所有節點的幾何尺寸和位置，以確定是渲染樹的一部分發生變化還是整個渲染樹需要重新渲染。
+          </p>
+          <br />
+          <br />
+          <h3 class="cor36"># 重繪（repaint）是什麼:</h3>
+          <p>
+            當我們改變某個元素的背景色、文字顏色、邊框顏色等屬性時，屏幕的一部分需要重繪，但是元素的幾何尺寸和位置沒有發生改變。重繪過程不涉及布局的計算，只是重新繪製已有的元素。
+          </p>
+          <br />
+          <p class="cor36"># 觸發重繪條件:</p>
+          <p>
+            1.重排(回流)必會引起重繪，因為回流的過程中可能會改變元素的樣式屬性，需要重新繪製已有的元素。
+          </p>
+          <p>2.背景色、文字顏色、字體等的改變會觸發重繪。</p>
+          <p class="pTwo">
+            注意 字體大小發生變化時，將觸發回流而非僅重繪。(會影響元素的佈局)
+          </p>
+          <br />
+          <p class="cor36"># 重繪過程</p>
+          <p>
+            沒有導致 DOM
+            元素的幾何屬性（寬度、高度、位置）發生變化，因此元素的位置信息不需要更新，從而省去了佈局（layout）的過程。
+          </p>
+          <br />
+          <br />
+          <h2 class="cor36"># 如何避免重排(回流).重繪?</h2>
+          <p>1.集中改變樣式: ex 用 class 集中改變</p>
+          <br />
+          <p>2.用 transform 做變形和位移，可以減少重排(回流)的次數。</p>
+          <br />
+          <p>
+            3.將需要多次修改的 DOM 元素設置為 display:none，操作完成後再顯示。
+          </p>
+          <br />
+          <p>4.避免多次讀取某些屬性</p>
+          <br />
+          <p>5.絕對定位將複雜的節點脫離文檔流中，形成新的 Render Layer。</p>
+          <br />
+          <p>
+            6.使用 DocumentFragment 將需要多次修改的 DOM
+            元素緩存起來，最後一次性添加到真實的 DOM 中進行渲染。
+          </p>
+          <br />
+          <br />
+
           <p></p>
           <p></p>
           <br />
