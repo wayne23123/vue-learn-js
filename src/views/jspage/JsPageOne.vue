@@ -562,60 +562,122 @@ function locate(idPound) {
             <br />
           </div>
 
-          <div class="articleCardTitle cor36">[ JS ] ≫ 延遲加載JS方式?</div>
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 操作陣列?</div>
+          <p>push pop unshift shift reduce find include</p>
+
+          <div id="" class="articleCardTitle cor36">
+            [ JS ] ≫ 遍歷數組有幾種方式?
+          </div>
+          <p>for . forEach</p>
+          <br />
+          <p>
+            map: 返回一個新數組 , 數組中的元素為 原始數組元素 調用函數
+            處理後的值
+          </p>
+          <br />
+          <p>
+            filter: 創建一個新數組 , 數組中的元素 是通過檢查指定數組中
+            符合條件的 所有元素
+          </p>
+          <br />
+          <p>every: 每一個元素都滿足條件 返回 true , 否則 返回 false</p>
+          <br />
+          <p>
+            some: 只要有一個以上的元素滿足條件 就 返回 true , 否則 返回 false ,
+            退出循環
+          </p>
+          <br />
+          <p>reduce: 對數組中的 每個元素 執行一個 回掉函數 , 將其結果返回值</p>
+          <br />
+          <br />
+
+          <p class="cor36"># forEach和map的區別?</p>
+          <p>
+            map需要有個返回值把它再返回到陣列, 它會接收到那個值, 修改當前元素
+          </p>
+
+          <br />
+          <br />
+
+          <p class="cor36"># for in,for of,他們用在什麼場景?</p>
+          <p>for of 循環獲取到的是一對鍵值對中的值 , 也就是 value</p>
+          <br />
+          <p>而 for in 獲取的是鍵名 , 也就是 key</p>
+          <br />
+          <br />
+          <p>對數組 for of 返回的是 數組裡面的 元素值</p>
+          <br />
+          <p>for in 返回 key , 指每個元素的 索引值</p>
+          <br />
+          <p>
+            for of 只能遍歷其底層帶有 iterator 接口的 數據結構 像 set map string
+            array
+          </p>
+          <br />
+          <p>物件沒有原生 iterator 接口 , 直接用 for of 會報錯</p>
+          <br />
+          <p>開發中 遍歷用 for in 更合適</p>
+          <br />
+          <br />
+          <p>for in 返回 數組元素的 索引值 , 而不是 元素</p>
+          <br />
+          <p>而且 遍歷順序 有可能不是按照 實際數據的 內部順序</p>
+          <br />
+          <p>所以 通常遍歷數組用 for of</p>
+          <br />
+          <br />
+          <p>總之 for in 適合遍歷 物件</p>
+          <p>for of 適合遍歷 數組</p>
+
+          <br />
+          <br />
+
+          <p class="cor36"># for循環遍歷跟forEach遍歷,for循環可以中斷嗎?</p>
+          <p>for 可以中斷 , forEach 不能中斷</p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <div id="" class="articleCardTitle cor36">
+            [ JS ] ≫ 延遲加載JS方式?
+          </div>
           <p>正常: 解析HTML > 遇到JS > 下載 > 執行 > 繼續解析HTML</p>
-
-          <br />
-
-          <br />
-          <br />
-
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
 
           <p class="cor36"></p>
           <p></p>

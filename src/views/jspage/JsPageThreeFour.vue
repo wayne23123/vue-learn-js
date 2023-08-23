@@ -36,35 +36,55 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText">.push()</div>
-          <div @click="locate('')" class="leftNavText">.pop()</div>
-          <div @click="locate('')" class="leftNavText">.shift</div>
-          <div @click="locate('')" class="leftNavText">.unshift</div>
-
-          <div @click="locate('')" class="leftNavText">.map()</div>
-
           <div @click="locate('threemethod001')" class="leftNavText">
-            .forEach()
+            .push()
           </div>
-          <div @click="locate('')" class="leftNavText">.join()</div>
-
           <div @click="locate('threemethod002')" class="leftNavText">
-            .reduce()
+            .pop()
           </div>
           <div @click="locate('threemethod003')" class="leftNavText">
+            .shift
+          </div>
+          <div @click="locate('threemethod004')" class="leftNavText">
+            .unshift
+          </div>
+
+          <div @click="locate('threemethod005')" class="leftNavText">
+            .map()
+          </div>
+
+          <div @click="locate('threemethod006')" class="leftNavText">
+            .forEach()
+          </div>
+          <div @click="locate('threemethod007')" class="leftNavText">
+            .join()
+          </div>
+
+          <div @click="locate('threemethod008')" class="leftNavText">
+            .reduce()
+          </div>
+          <div @click="locate('threemethod009')" class="leftNavText">
             .find()
           </div>
-          <div @click="locate('')" class="leftNavText">.slice()</div>
-          <div @click="locate('')" class="leftNavText">.splice()</div>
+          <div @click="locate('threemethod010')" class="leftNavText">
+            .slice()
+          </div>
+          <div @click="locate('threemethod011')" class="leftNavText">
+            .splice()
+          </div>
 
-          <div @click="locate('')" class="leftNavText">
+          <div @click="locate('threemethod012')" class="leftNavText">
             <div>.every()</div>
             <div>.some()</div>
           </div>
-          <div @click="locate('')" class="leftNavText">.concat(arr)</div>
+          <div @click="locate('threemethod013')" class="leftNavText">
+            .concat(arr)
+          </div>
 
-          <div @click="locate('')" class="leftNavText">Array.form()</div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threemethod014')" class="leftNavText">
+            Array.form()
+          </div>
+          <div @click="locate('threemethod015')" class="leftNavText">練習</div>
         </div>
       </div>
     </div>
@@ -242,7 +262,7 @@ function locate(idPound) {
             </tr> -->
           </table>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod001" class="articleCardTitle cor36 fz34">
             4. push() . . . 會改變原數組
           </div>
           <p class="fz28">
@@ -302,7 +322,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod002" class="articleCardTitle cor36 fz34">
             4. pop() . . . 會改變原數組
           </div>
           <p class="fz28">push 方法 刪除數組的最後一個元素 , 並返回該元素</p>
@@ -334,7 +354,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod003" class="articleCardTitle cor36 fz34">
             4. shift() . . . 會改變原數組
           </div>
           <p class="fz28">shift 方法 刪除數組的第一個元素 , 並返回該元素</p>
@@ -421,7 +441,7 @@ function locate(idPound) {
             </div>
             <div><span class="brackets">}</span></div>
           </div>
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod004" class="articleCardTitle cor36 fz34">
             4. unshift() . . . 會改變原數組
           </div>
           <p class="fz28">
@@ -459,7 +479,7 @@ function locate(idPound) {
             <p>也可以添加多個</p>
           </div>
 
-          <div id="threemethod001" class="articleCardTitle cor36 fz34">
+          <div id="threemethod005" class="articleCardTitle cor36 fz34">
             4. map()
           </div>
           <p class="fz28">
@@ -564,8 +584,8 @@ function locate(idPound) {
           <p class="fz28"></p>
           <p class="fz28"></p>
 
-          <div id="threemethod002" class="articleCardTitle cor36 fz34">
-            4. forEach
+          <div id="threemethod006" class="articleCardTitle cor36 fz34">
+            4. forEach()
           </div>
           <p class="fz28">
             forEach() 方法用於調用數組的每個元素, 並將元素傳遞給回調函數
@@ -757,7 +777,7 @@ function locate(idPound) {
           <p class="fz28">1. forEach 主要是遍歷數組</p>
           <p class="fz28">2. 索引號可以不寫</p>
 
-          <div id="threemethod001" class="articleCardTitle cor36 fz34">
+          <div id="threemethod007" class="articleCardTitle cor36 fz34">
             4. join()
           </div>
           <p class="fz28">用於把 數組中的 所有元素 轉換一個字串</p>
@@ -787,7 +807,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod002" class="articleCardTitle cor36 fz34">
+          <div id="threemethod008" class="articleCardTitle cor36 fz34">
             4. reduce
           </div>
           <p class="fz28">reduce 返回累計處理的結果, 常用於求和</p>
@@ -974,7 +994,7 @@ function locate(idPound) {
               <span class="brackets">) </span>
             </div>
           </div>
-          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+          <div id="threemethod009" class="articleCardTitle cor36 fz34">
             4. find <span class="spo marL100">回調</span>
           </div>
           <div class="bgcVS">
@@ -1138,10 +1158,12 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+          <div id="threemethod010" class="articleCardTitle cor36 fz34">
             4. slice
           </div>
           <p class="fz28"></p>
+          <p class="fz28">不會修改原數組</p>
+
           <br />
           <div class="bgcVS">
             <div>
@@ -1192,9 +1214,216 @@ function locate(idPound) {
               <span class="brackets">))</span>
               <span class="comment">//[2,3,4,5]//1當起始位置,數組末最終</span>
             </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span> <span class="number">-1</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[5]//從最後一項倒數,-1是5</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span> <span class="number">1,2</span>
+              <span class="brackets">))</span>
+              <span class="comment"
+                >//[2]//包括起始位置下標,不包括終止位置下標</span
+              >
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span> <span class="number">-5,-1</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[1,2,3,4]</span>
+              <span class="word"></span>
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">str</span>
+              <span class="variable">.slice</span>
+              <span class="brackets">(</span> <span class="number">-5,-1</span>
+              <span class="brackets">))</span>
+              <span class="comment">//1234</span> <span class="word"></span>
+            </div>
           </div>
 
-          <div id="threemethod003" class="articleCardTitle cor36 fz34">
+          <div id="threemethod011" class="articleCardTitle cor36 fz34">
+            4. splice
+          </div>
+          <p class="fz28">能刪改數組</p>
+
+          <p class="fz28">注意 會修改原數組</p>
+          <br />
+          <div class="bgcVS">
+            <div>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span>
+              <span class="number">2個參數可選</span>
+              <span class="brackets">)</span>
+            </div>
+
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span>
+              <span class="word"
+                >指定要插入or刪除位置, 指定刪除元素的個數, 插入的值
+              </span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1,2,3,4,5,6,7,8</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="brackets">())</span>
+              <span class="comment">//[1,2,3,4,5,6,7,8]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">()) </span>
+              <div>
+                <span class="comment"
+                  >//[] //返回由刪除元素組成的數組(沒刪返回空)</span
+                >
+              </div>
+            </div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span> <span class="word">-2</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[7,8]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span> <span class="number">4</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[5,6,7,8]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr</span>
+              <span class="brackets">)</span>
+              <span class="comment">//[1,2,3,4]</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr2</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1,2,3,4,5,6,7,8</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="comment"
+                >//console.log(arr2.splice(0,-2))//第2個不合法的值,不刪除,回傳[]</span
+              >
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr2</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span> <span class="number">0,6</span>
+              <span class="brackets">))</span>
+              <span class="comment">//[1,2,3,4,5,6]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr2</span>
+              <span class="brackets">)</span>
+              <span class="comment">//[7,8]</span>
+            </div>
+            <br />
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr3</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1,2,3,4,5,6,7,8</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">arr3</span>
+              <span class="variable">.splice</span>
+              <span class="brackets">(</span> <span class="number">0,0,</span>
+              <span class="src">"a"</span> <span class="then">,</span>
+              <span class="src">"b"</span> <span class="brackets">))</span>
+            </div>
+            <div><span class="comment">//["a","b",1,2,3,4,5,6,7,8]</span></div>
+          </div>
+
+          <table class="fz30">
+            <tr>
+              <td><div class="pad20"></div></td>
+              <td><div class="pad20">slice</div></td>
+              <td><div class="pad20">splice</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">原數組</div></td>
+              <td><div class="pad20">不改變</div></td>
+              <td><div class="pad20">會改原數組</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">沒傳參數</div></td>
+              <td><div class="pad20">返回原數組</div></td>
+              <td>
+                <div class="pad20">
+                  <div class="">返回由刪除元素</div>
+                  <div class="">組成的數組</div>
+                  <div class="">沒刪返回空</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="pad20">參數一個時</div></td>
+              <td><div class="pad20">一樣</div></td>
+              <td><div class="pad20">一樣</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20"></div></td>
+              <td><div class="pad20"></div></td>
+              <td><div class="pad20"></div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20"></div></td>
+              <td><div class="pad20"></div></td>
+              <td><div class="pad20"></div></td>
+            </tr>
+          </table>
+
+          <div id="threemethod012" class="articleCardTitle cor36 fz34">
             4. every & some <span class="spo marL100">回調</span>
           </div>
 
@@ -1261,7 +1490,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod013" class="articleCardTitle cor36 fz34">
             4. concat . . . 不改變 原數組
           </div>
 
@@ -1370,7 +1599,7 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod014" class="articleCardTitle cor36 fz34">
             4. Array.form()
           </div>
 
@@ -1461,7 +1690,7 @@ function locate(idPound) {
           <p class="fz28"></p>
           <p class="fz28"></p>
 
-          <div id="threemethod00" class="articleCardTitle cor36 fz34">
+          <div id="threemethod015" class="articleCardTitle cor36 fz34">
             4. 綜合練習
           </div>
           <div class="dis">
