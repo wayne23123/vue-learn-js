@@ -47,6 +47,8 @@ function locate(idPound) {
           <div @click="locate('threetips007')" class="leftNavText">call</div>
           <div @click="locate('threetips008')" class="leftNavText">apply</div>
           <div @click="locate('threetips009')" class="leftNavText">bind</div>
+          <div @click="locate('threetips010')" class="leftNavText">防抖</div>
+          <div @click="locate('threetips011')" class="leftNavText">節流</div>
         </div>
       </div>
     </div>
@@ -2483,7 +2485,537 @@ function locate(idPound) {
           <br />
           <br />
           <br />
-          <p class="fz28"></p>
+          <div id="threetips010" class="articleCardTitle cor36 fz34">
+            7.10 防抖 debounce
+          </div>
+
+          <p class="fz28">單位時間內 , 頻繁觸發事件 , 只執行最後一次</p>
+          <br />
+          <p class="fz28">放技能 , 只要被打斷要重施放</p>
+          <br />
+          <p class="fz28">場景</p>
+          <p class="fz28">
+            搜尋框輸入 , 只需要用戶 最後一次輸入完 , 在發送請求
+          </p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="then">＜</span> <span class="number">input </span>
+              <span class="word">type</span> <span class="then">=</span>
+              <span class="src">"text"</span> <span class="then">></span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">oInput</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"input"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">let </span> <span class="word">time</span>
+              <span class="then">=</span> <span class="then">null</span>
+            </div>
+            <div>
+              <span class="word">oInput</span>
+              <span class="variable">.oninput</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="then">this</span>
+              <span class="word">.value</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">oInput</span>
+              <span class="variable">.oninput</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="word">time</span> <span class="then">!==null</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">clearTimeout</span>
+                <span class="brackets">(</span> <span class="word">t</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <div>
+                <span class="word">time</span> <span class="then">=</span>
+                <span class="variable">setTimeout</span>
+                <span class="brackets">(()</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+                <div class="padTwo VSL">
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="then">this</span>
+                  <span class="word">.value</span>
+                  <span class="brackets">)</span>
+                </div>
+                <div>
+                  <span class="brackets">},</span>
+                  <span class="number">1000</span>
+                  <span class="brackets">)</span>
+                </div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <p>用閉包優化結構</p>
+            <div class="dis">
+              <div class="w100">
+                <div>
+                  <span class="word">oInput</span>
+                  <span class="variable">.oninput</span>
+                  <span class="then">=</span>
+                  <span class="word">debounce</span>
+                  <span class="brackets">()</span>
+                </div>
+                <div>
+                  <span class="function">function </span>
+                  <span class="word">debounce</span>
+                  <span class="brackets">(){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="function">let </span>
+                  <span class="word">time</span> <span class="then">=</span>
+                  <span class="then">null</span>
+                  <div></div>
+
+                  <span class="then">return </span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){</span>
+                  <div></div>
+                  <div class="padTwo VSL">
+                    <span class="then">if</span>
+                    <span class="brackets">(</span>
+                    <span class="word">time</span>
+                    <span class="then">!==null</span>
+                    <span class="brackets">){</span>
+                    <div></div>
+                    <div class="padTwo VSL">
+                      <span class="word">clearTimeout</span>
+                      <span class="brackets">(</span>
+                      <span class="word">t</span>
+                      <span class="brackets">)</span>
+                      <div></div>
+                    </div>
+                    <div><span class="brackets">}</span></div>
+                    <div>
+                      <span class="word">time</span>
+                      <span class="then">=</span>
+                      <span class="variable">setTimeout</span>
+                      <span class="brackets">(()</span>
+                      <span class="function">=> </span>
+                      <span class="brackets">{</span>
+                      <div class="padTwo VSL">
+                        <span class="word">console</span>
+                        <span class="variable">.log</span>
+                        <span class="brackets">(</span>
+                        <span class="then">this</span>
+                        <span class="word">.value</span>
+                        <span class="brackets">)</span>
+                      </div>
+                      <div>
+                        <span class="brackets">},</span>
+                        <span class="number">1000</span>
+                        <span class="brackets">)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+
+              <div class="w100">
+                <div>
+                  <span class="word">oInput</span>
+                  <span class="variable">.oninput</span>
+                  <span class="then">=</span>
+                  <span class="word">debounce</span>
+                  <span class="brackets">(</span>
+                  <span class="variable">function</span>
+                  <span class="brackets">(){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="then">this</span>
+                  <span class="word">.value</span>
+                  <span class="brackets">)</span>
+                  <div></div>
+                </div>
+                <div>
+                  <span class="brackets">},</span>
+                  <span class="number">1000</span>
+                  <span class="brackets">)</span>
+                </div>
+
+                <div>
+                  <span class="function">function </span>
+                  <span class="word">debounce</span>
+
+                  <span class="brackets">(</span>
+                  <span class="word">fn,delay</span>
+                  <span class="brackets">){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="function">let </span>
+                  <span class="word">time</span> <span class="then">=</span>
+                  <span class="then">null</span>
+                  <div></div>
+
+                  <span class="then">return </span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){</span>
+                  <div></div>
+                  <div class="padTwo VSL">
+                    <span class="then">if</span>
+                    <span class="brackets">(</span>
+                    <span class="word">time</span>
+                    <span class="then">!==null</span>
+                    <span class="brackets">){</span>
+                    <div></div>
+                    <div class="padTwo VSL">
+                      <span class="word">clearTimeout</span>
+                      <span class="brackets">(</span>
+                      <span class="word">t</span>
+                      <span class="brackets">)</span>
+                      <div></div>
+                    </div>
+                    <div><span class="brackets">}</span></div>
+                    <div>
+                      <span class="word">time</span>
+                      <span class="then">=</span>
+                      <span class="variable">setTimeout</span>
+                      <span class="brackets">(()</span>
+                      <span class="function">=> </span>
+                      <span class="brackets">{</span>
+                      <div class="padTwo VSL">
+                        <span class="variable">fn</span>
+                        <span class="brackets">()</span>
+                      </div>
+                      <div>
+                        <span class="brackets">},</span>
+                        <span class="number">delay</span>
+                        <span class="brackets">)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+                <p>測試發現輸出 undefined</p>
+              </div>
+            </div>
+            <div class="dis">
+              <div class="w100">
+                <div>
+                  <span class="word">oInput</span>
+                  <span class="variable">.oninput</span>
+                  <span class="then">=</span>
+                  <span class="word">debounce</span>
+                  <span class="brackets">(</span>
+                  <span class="variable">function</span>
+                  <span class="brackets">(){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="then">this</span>
+
+                  <span class="brackets">) </span>
+                  <span class="comment">//發現this指向window</span>
+                  <div></div>
+                </div>
+                <div>
+                  <span class="brackets">},</span>
+                  <span class="number">1000</span>
+                  <span class="brackets">)</span>
+                </div>
+
+                <div>
+                  <span class="function">function </span>
+                  <span class="word">debounce</span>
+
+                  <span class="brackets">(</span>
+                  <span class="word">fn,delay</span>
+                  <span class="brackets">){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <div><span class="comment">//console.log(this)</span></div>
+                  <span class="function">let </span>
+                  <span class="word">time</span> <span class="then">=</span>
+                  <span class="then">null</span>
+                  <div></div>
+
+                  <span class="then">return </span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){</span>
+                  <div></div>
+                  <div class="padTwo VSL">
+                    <span class="then">if</span>
+                    <span class="brackets">(</span>
+                    <span class="word">time</span>
+                    <span class="then">!==null</span>
+                    <span class="brackets">){</span>
+                    <div></div>
+                    <div class="padTwo VSL">
+                      <span class="word">clearTimeout</span>
+                      <span class="brackets">(</span>
+                      <span class="word">t</span>
+                      <span class="brackets">)</span>
+                      <div></div>
+                    </div>
+                    <div><span class="brackets">}</span></div>
+                    <div>
+                      <span class="word">time</span>
+                      <span class="then">=</span>
+                      <span class="variable">setTimeout</span>
+                      <span class="brackets">(()</span>
+                      <span class="function">=> </span>
+                      <span class="brackets">{</span>
+                      <div class="padTwo VSL">
+                        <div>
+                          <span class="comment"
+                            >//console.log(this) //這邊才指向input對象</span
+                          >
+                        </div>
+
+                        <span class="variable">fn</span>
+                        <span class="brackets">()</span>
+                      </div>
+                      <div>
+                        <span class="brackets">},</span>
+                        <span class="number">delay</span>
+                        <span class="brackets">)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+                <p>雖然這裡執行debounce這個函數</p>
+                <p>但返回的是內部這個函數(return..)</p>
+                <p>相當於onInput=右邊</p>
+                <p>這裡掛者的是內部返回的這個函數</p>
+                <p>所以內部這個函數的this指向</p>
+                <p>才是這個input對象</p>
+              </div>
+
+              <div class="w100">
+                <br />
+                <br />
+                <br />
+                <div>
+                  <span class="word">oInput</span>
+                  <span class="variable">.oninput</span>
+                  <span class="then">=</span>
+                  <span class="word">debounce</span>
+                  <span class="brackets">(</span>
+                  <span class="variable">function</span>
+                  <span class="brackets">(){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="then">this</span>
+
+                  <span class="brackets">) </span>
+                  <div></div>
+                </div>
+                <div>
+                  <span class="brackets">},</span>
+                  <span class="number">1000</span>
+                  <span class="brackets">)</span>
+                </div>
+
+                <div>
+                  <span class="function">function </span>
+                  <span class="word">debounce</span>
+
+                  <span class="brackets">(</span>
+                  <span class="word">fn,delay</span>
+                  <span class="brackets">){</span>
+                </div>
+                <div class="padTwo VSL">
+                  <div><span class="comment">//console.log(this)</span></div>
+                  <span class="function">let </span>
+                  <span class="word">time</span> <span class="then">=</span>
+                  <span class="then">null</span>
+                  <div></div>
+
+                  <span class="then">return </span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){</span>
+                  <div></div>
+                  <div class="padTwo VSL">
+                    <span class="then">if</span>
+                    <span class="brackets">(</span>
+                    <span class="word">time</span>
+                    <span class="then">!==null</span>
+                    <span class="brackets">){</span>
+                    <div></div>
+                    <div class="padTwo VSL">
+                      <span class="word">clearTimeout</span>
+                      <span class="brackets">(</span>
+                      <span class="word">t</span>
+                      <span class="brackets">)</span>
+                      <div></div>
+                    </div>
+                    <div><span class="brackets">}</span></div>
+                    <div>
+                      <span class="word">time</span>
+                      <span class="then">=</span>
+                      <span class="variable">setTimeout</span>
+                      <span class="brackets">(()</span>
+                      <span class="function">=> </span>
+                      <span class="brackets">{</span>
+                      <div class="padTwo VSL">
+                        <span class="variable">fn</span>
+                        <span class="number">.call</span>
+                        <span class="brackets">(</span>
+                        <span class="then">this</span>
+                        <span class="brackets">)</span>
+
+                        <span class="brackets">()</span>
+                      </div>
+                      <div>
+                        <span class="brackets">},</span>
+                        <span class="number">delay</span>
+                        <span class="brackets">)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div><span class="brackets">}</span></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="threetips011" class="articleCardTitle cor36 fz34">
+            7.11 節流 throttle
+          </div>
+
+          <p class="fz28">單位時間內 , 頻繁觸發事件 , 執行一次</p>
+          <br />
+          <p class="fz28">技能施放完 等待的 cd 時間</p>
+          <br />
+          <p class="fz28">場景</p>
+          <p class="fz28">滾動條</p>
+          <div class="bgcVS">
+            <div>
+              <span class="word">window</span>
+              <span class="word">.onscroll</span> <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">alert</span>
+              <span class="brackets">(</span> <span class="src">"廣告"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <br />
+            <div>
+              <span class="word">window</span>
+              <span class="variable">.onscroll</span>
+              <span class="then">=</span> <span class="word">throttle</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">alert</span>
+              <span class="brackets">(</span> <span class="src">"廣告"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div>
+              <span class="brackets">},</span> <span class="number">2000</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">throttle</span>
+              <span class="brackets">(</span>
+              <span class="word">fn,delay</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">let </span> <span class="word">time</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <div></div>
+
+              <span class="then">return </span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">time</span> <span class="brackets">){</span>
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="variable">setTimeout</span>
+                  <span class="brackets">(()</span>
+                  <span class="function">=></span>
+                  <span class="brackets">{</span>
+                  <div></div>
+                  <div class="padTwo VSL">
+                    <span class="word">fn</span>
+                    <span class="variable">.call</span>
+                    <span class="brackets">(</span>
+                    <span class="then">this</span>
+                    <span class="brackets">) </span>
+                    <span class="comment"
+                      >// 綁在 window 有沒有 call 都可以</span
+                    >
+                    <div>
+                      <span class="word">time</span>
+                      <span class="then">=</span>
+                      <span class="number">true</span>
+                    </div>
+
+                    <div></div>
+                  </div>
+                  <div>
+                    <span class="brackets">},</span>
+                    <span class="word">delay</span>
+                    <span class="brackets">)</span>
+                  </div>
+                </div>
+                <div><span class="brackets">}</span></div>
+
+                <div>
+                  <span class="word">time</span> <span class="then">=</span>
+                  <span class="number">false</span>
+                </div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
