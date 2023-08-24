@@ -536,7 +536,7 @@ function locate(idPound) {
           <p>2.get請求可以被瀏覽器緩存 ,post請求不能被緩存</p>
           <p>
             3.get請求因為放在url裡面, 而url長度是受限的, 最大2048字符,
-            posy長度沒有限制
+            post長度沒有限制
           </p>
           <p>
             4.get放在url裡面, 安全性比較差, post請求參數放在body裡面安全性比較好

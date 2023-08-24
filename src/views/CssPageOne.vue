@@ -239,7 +239,7 @@ function locate(idPound) {
           <div></div>
           <br />
           <p>
-            !import > 內聯樣式 > id 選擇器 > 類選擇器 > 標籤標籤選擇器 >
+            !import > 內聯樣式 > id 選擇器 > 類選擇器 > 標籤選擇器 >
             通配符選擇器
           </p>
           <br />

@@ -21,7 +21,7 @@ setInterval(function () {
     `${date.getDate()} _ ` +
     `${date.getHours()} : ` +
     `${date.getMinutes()}`;
-}, 60000);
+}, 2000);
 
 // 第一次讓畫面渲染
 const getTime = () => {

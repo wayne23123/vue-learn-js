@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Layout from "../views/Layout.vue";
 import HomePage from "../views/HomePage.vue";
 import AboutPage from "../views/AboutPage.vue";
-import HttpPage from "../views/HttpPage.vue";
+import WebPage from "../views/WebPage.vue";
 import HtmlPage from "../views/HtmlPage.vue";
 import CssPageLayout from "../views/CssPageLayout.vue";
 import CssPageOne from "../views/CssPageOne.vue";
@@ -38,7 +38,7 @@ const router = createRouter({
         },
         {
           path: "http",
-          component: HttpPage,
+          component: WebPage,
         },
         {
           path: "html",

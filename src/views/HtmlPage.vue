@@ -60,7 +60,7 @@ function locate(idPound) {
     <div class="Main">
       <div class="mainContainer">
         <h1 id="html001" class="articleCardTitle cor36">
-          [ Html ] ≫ 塊級元素和行內元素的差別?src和href差別?
+          [ Html ] ≫ 塊級元素和行內元素的差別?
         </h1>
         <h3>塊元素有哪些?</h3>
         <p>
