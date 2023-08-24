@@ -729,53 +729,393 @@ function locate(idPound) {
           <br />
 
           <p>箭頭函數不創建 this , 他從自己的作用域鏈的上一層沿用 this</p>
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 原型鏈?</div>
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 原型鏈是什麼?</div>
 
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-
-          <p></p>
-          <p></p>
-          <p></p>
-
+          <p class="cor36">物件,原型,物件的構造函數間的關係?</p>
           <br />
+          <p>首先任何物件都會有屬於它的隱藏屬性下滑線proto屬性__proto__</p>
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p>這個隱藏屬性就會指向它的構造函數的prototype</p>
           <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
+          <p>這時我們就可以說這個物件的原型就是它的構造函數的prototype</p>
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p>這就是原型</p>
+          <br />
+          <p>
+            然後原型鏈就是比如A的原型是B, B的原型是C,
+            這樣一條像鏈式的就稱為原型鏈
+          </p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p>
+            :
+            定義一個物件A,它的原型的地址對應著object.prototype,object.prototype它的原型又會到了null
+            這樣一條像鏈式的就稱為原型鏈
+          </p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p>A指向一個物件,意味著A存的是什麼東西?(注意JS沒有指向) A它的地址</p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ new 做了什麼?</div>
+
+          <br />
+          <p>new後面跟一個構造函數</p>
+          <br />
+          <p>先創造一個臨時物件</p>
+          <br />
+          <p>將這個 臨時物件 原型 綁定構造函數的 prototype</p>
+          <br />
+          <p>再把裡面的 this 指定為這個 臨時物件</p>
+          <br />
+          <p>再執行構造函數</p>
+          <br />
+          <p>最後return這個臨時物件</p>
+          <br />
+          <p class="cor36"># 當我 new 構造函數</p>
+          <p>1. 創建 新物件 (空的)</p>
+          <p>2. 構造函數的 this 指向 新物件</p>
+          <p>3. 執行 構造函數 代碼</p>
+
+          <p class="pFou">this. 指向物件 . . . obj.name="wayne"</p>
+          <p class="pFou">name屬性 =賦值 "wayne"</p>
+          <p>4. 返回 這個 新物件</p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">
+            # 如果我再new後面構造函數後面最後一行加一個return一個數組會怎樣?
+          </p>
+          <p>它就會代替這個 this</p>
+          <br />
+          <p class="cor36">
+            # 如果我再new後面構造函數後面最後一行加一個return一個物件會怎樣?
+          </p>
+          <p>它就會代替這個 this</p>
+          <br />
+          <p class="cor36"># 原型綁定是綁到這個this的哪個屬性上面?</p>
+          <p>__proto__</p>
+          <br />
+          <p>new後面跟一個構造函數,這個函數可以是箭頭函數嗎? _ 不可以</p>
+          <br />
+          <p class="cor36"># 你new出來的對象原型是什麼?</p>
+          <p>new 出來的 物件的 原型 指向 構造函數的 原型</p>
+          <br />
+          <br />
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 繼承?</div>
+          <p class="cor36">1. 原型鏈繼承</p>
+          <p>每個 構造函數 都有一個 原型對象 (prototype),</p>
+          <br />
+          <p>每個 實例對象 包含一個 指向 原型對象的 指針 (__proto__)</p>
+          <br />
+          <p>當代碼 讀取實例的 某屬性時 ,</p>
+          <br />
+          <p>都會先在 實例上 搜尋這個屬性, 沒找到 則搜索原型對象</p>
+          <br />
+          <p class="cor36">缺點</p>
+          <p>
+            包含引用類型值的 原型屬性 會被所有實例共享。 ( 當一個實例改變該屬性
+            , 其他也會改 )
+          </p>
+          <br />
+          <p class="cor36">2. 構造函數繼承</p>
+
+          <p>通過使用 call apply 方法 ,</p>
+          <br />
+          <p>可以在子類中 執行父類 構造函數 , 從而實現繼承</p>
+          <br />
+          <p class="cor36">優點</p>
+          <p>原型屬性 不會 被共享</p>
+          <p class="cor36">缺點</p>
+          <p>不能繼承 父類 prototype 上的屬性</p>
+          <br />
+          <p class="cor36">3. 構造函數繼承 + 構造函數繼承</p>
+
+          <p>child.prototype = new Parent()</p>
+          <p class="cor36">優點</p>
+          <p>1. 原型屬性不會被共享</p>
+          <p>2. 可以繼承父類的 原型鏈上的 屬性和方法</p>
+          <br />
+          <p class="cor36">點</p>
+          <p>調用了 2 次 Parent()</p>
+          <p>他在 child 的 prototype 上添加了父類的 屬性和方法</p>
+
           <br />
           <br />
 
           <div id="" class="articleCardTitle cor36">
-            [ JS ] ≫ 延遲加載JS方式?
+            [ JS ] ≫ call apply bind
           </div>
-          <p>正常: 解析HTML > 遇到JS > 下載 > 執行 > 繼續解析HTML</p>
+          <p class="cor36">call和apply有什麼區別?</p>
+          <p>call指定一個this, 傳參數, 直接調用他,</p>
+          <br />
+          <p>apply指定this, 傳的參數是放在陣列裡面的, 也是直接調用</p>
+
+          <br />
+          <br />
+          <p class="cor36">什麼情況下只能用apply不能用call?</p>
+          <p>你要傳的數據是陣列的話用apply, 你傳的參數很多也用apply</p>
+          <br />
+          <br />
+          <p class="cor36"># 現在ES6,我能不能強行用call? _ 可以</p>
+          <p>
+            sumNumbers.call(null, ...numbers);
+            直接函數.call,null三個點把那個陣列展開
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36"># call和bind有什麼區別?</p>
+          <p>
+            bind只綁定this,但它不去立即調用它,而是返回一個綁定這個this的新函數
+          </p>
+          <br />
+          <br />
+          <p class="cor36">proxy做什麼的?</p>
+          <p>
+            用於接管物件內部屬性的讀取或函數的調用方法,
+            它跟object.definedproperty是一樣的功能,
+            但是object.definedproperty一次只能處理一個屬性
+          </p>
+          <br />
+          <br />
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 什麼是DOM?</div>
+          <p>DOM是文檔物件模型</p>
+          <br />
+          <p>用途是把網頁變成JS中的對象來進行增刪改查操作</p>
+          <br />
+          <p>平時要操作DOM可以通過document.getElementByID</p>
+          <br />
+          <p>然後去對他的各種屬性進行修改,</p>
+          <br />
+          <p class="cor36">什麼是事件捕獲?什麼是事件冒泡?</p>
+          <p>
+            事件捕獲是從最外層然後向觸發事件子層去一層一層往下傳遞事件,
+            冒泡是從子層向外層一層一層冒泡這個事件
+          </p>
+          <br />
+          <br />
+          <p class="cor36">那一次點擊會同時觸發捕獲和冒泡嗎?</p>
+          <p>會,不管什麼事件一定會先捕獲在冒泡</p>
+          <br />
+          <p>先從document一層一層的到那個元素</p>
+          <br />
+          <p>然後再從那個元素一層一層到 document</p>
+          <br />
+
+          <p>你監聽捕獲只不過是在其中插入一個函數而已</p>
+          <br />
+          <p>監聽捕獲是在捕獲那邊插入函數</p>
+          <br />
+          <p>監聽冒泡是在冒泡那邊插入一個函數</p>
+          <br />
+          <p>
+            如果你兩個都監聽還是先經過捕獲階段觸發你的函數,
+            經過冒泡階段在觸發函數
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36"># BOM</p>
+          <br />
+          <p>BOM是瀏覽器對象模型, 用途是用JS來操作瀏覽器來前進後退和地址欄</p>
+          <br />
+          <br />
+
+          <p class="cor36"># DOM的事件模型是什麼?</p>
+          <p>觸發事件時, 先從上往下進行事件捕獲階段</p>
+          <br />
+          <p>從觸發結點最上面 document 往下到觸發節點</p>
+          <br />
+          <p>然後監聽事件有沒有發生</p>
+          <br />
+          <p>要有同類型事件發生的話就執行函數</p>
+          <br />
+          <p>之後再從這個節點往上進行事件冒泡</p>
+          <br />
+          <p class="cor36"># 不想某一個元素往上冒泡可以用什麼API?</p>
+          <br />
+          <p>e.stopPropergation</p>
+          <br />
+          <br />
+          <p class="cor36">
+            假設我點擊一個按鈕得到事件e,我把事件e綁定到變數上面,過一秒後打印這個變數,請問打印出什麼?
+          </p>
+          <p>
+            空 , 因為 setTimeout 他是一個 異步事件, 他等同步執行完再執行,
+            這時他那個變量 e 不存在了
+          </p>
+          <br />
+          <br />
+          <p class="cor36">事件委託是什麼?</p>
+          <p>假設有父子元素, 監聽子元素事件</p>
+          <br />
+          <p>假設ul裡面有很多li, 然後要求點擊li觸發一個事件</p>
+          <br />
+          <p>假如在每個li都綁定事件 會增大代碼量和內存</p>
+
+          <br />
+          <p>
+            可以根據事件冒泡在list item上面觸發的事件會向上冒泡到父元素 ul 上面
+          </p>
+          <br />
+          <p>所以可以在 ul 上面監聽</p>
+          <br />
+          <p class="cor36">事件委託優點?</p>
+          <p>可以減少代碼量, 減少內存, 動態綁定</p>
+          <br />
+          <p class="cor36">事件委託缺點?</p>
+          <p>
+            用了之後在開發者工具看他的事件綁定會發現沒有,
+            會不知道誰在監聽這個元素
+          </p>
+          <br />
+          <br />
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 深淺拷貝?</div>
+
+          <p>
+            潛拷貝是直接複製一層, 深拷貝向下去把它完全複製下來,
+            它的實現原理可以用到 遞規 去實現
+          </p>
+          <br />
+          <p class="cor36">
+            遞歸怎麼分類呢?你怎麼知道他是基本類型?你怎麼知道它不是一個物件?
+          </p>
+          <p>用typeof</p>
+          <br />
+          <br />
+          <p class="cor36">typeof返回什麼值,你認為它不是物件或者是物件呢?</p>
+          <p>判定 typeof 是 object 就說明他肯定不是基本類型</p>
+          <br />
+          <br />
+          <p class="cor36">如果它不是object有幾種情況?</p>
+          <p>string number 布林 null function(返回function)</p>
+          <br />
+          <br />
+          <p class="cor36">假設你知道哪些是物件,那些不是物件,接下來怎麼區分?</p>
+          <p>在物件裡面區分看他是不是函數,再看它是普通函數還是箭頭函數</p>
+          <br />
+          <br />
+          <p class="cor36">普通函數還是箭頭函數怎麼看?</p>
+          <p>看他有沒有prototype,箭頭函數沒有prototype</p>
+          <br />
+          <br />
+          <p class="cor36">
+            你知道他們區別後接下來做什麼?如果它是普通函數要怎麼複製它?
+          </p>
+          <p>所有參數傳給那個函數,然後返回它的返回值</p>
+          <br />
+          <p>: 直接用function然後return一個a.call然後地址,然後把參數弄下來</p>
+          <br />
+          <p class="cor36">如果是箭頭函數要怎麼複製它?</p>
+          <p>普通函數創建function 箭頭函數創建箭頭函數</p>
+          <br />
+          <br />
+          <p class="cor36">.函數判斷完再來判斷什麼?</p>
+          <p>看他是不是陣列</p>
+          <br />
+          <br />
+          <p class="cor36">陣列判斷完再來判斷什麼?</p>
+          <p>看他是不是Date</p>
+          <br />
+          <p>再來判斷什麼? 正則</p>
+          <br />
+          <br />
+          <p class="cor36">要著重檢測的類型有哪些?</p>
+          <p>物件 日期 函數 字串 正則表達式</p>
+          <br />
+          <br />
+          <p class="cor36">先檢查她是對象還是陣列呢?</p>
+          <p>先檢查陣列</p>
+          <br />
+          <br />
+          <p class="cor36">對JSON的理解?</p>
+          <p>是一門表示通用數據結構的語言</p>
+          <br />
+          <p>用來代替XML用來做數據交換</p>
+          <br />
+          <p>JSON可以表示物件 數組 不林 string number</p>
+          <br />
+          <p>一般在 AJAX 得到的請求就是 JSON</p>
+          <br />
+
+          <br />
+          <p class="cor36">什麼是 RESTful API</p>
+          <p>RESTful API (表示性狀態轉移接口) 是一種設計風格</p>
+          <br />
+          <p>API 設計規範</p>
+          <br />
+          <p>1. 將一切數據視作資源</p>
+          <br />
+          <p>2. 利用 HTTP 請求方式 , 描述對資源的操作 ( 增 刪 改 查 )</p>
+          <br />
+          <p>3. 通過 HTTP 響應狀態碼 , 描述對資源的 操作結果</p>
+          <br />
+          <p>就是通過 URL 就知道要什麼資源 ,</p>
+          <br />
+
+          <p>通過 HTTP method 就知道要做什麼,</p>
+          <br />
+          <p>通過 HTTP status code 就知道結果如何</p>
+          <br />
+          <p>比如</p>
+          <br />
+          <p>GET 代表獲取一個資源</p>
+          <br />
+          <p>POST 代表添加一個資源</p>
+          <br />
+          <p>PUT 代表修改一個資源</p>
+          <br />
+          <p>DELETE 代表刪除一個資源</p>
+          <br />
+          <p>
+            用 HTTP Status Code 傳遞 server 的狀態訊息 ,ex 200 表示成功 , 500
+            表示 server 內部錯誤
+          </p>
+          <br />
+          <p class="cor36">用 Rest 的優勢?</p>
+          <p>1. 風格統一 , 不會出現各種命名的代碼</p>
+          <br />
+          <p>2. 面相資源 , 一目了然 , 有自解釋性</p>
+          <br />
+          <p>3. 充分利用 HTTP 協議本身語意</p>
+          <br />
+          <br />
+          <p class="cor36">併發和併行?</p>
+          <p>
+            併發是宏觀概念,表示並行發生, 並行是微觀概念,
+            表示cpu有多個核心同時執行兩個任務
+          </p>
+          <br />
+          <p>並行是微觀概念, 表示cpu有多個核心同時執行兩個任務</p>
+          <br />
+          <br />
+          <p class="cor36">JS異步編程實現方式?</p>
+          <p>回調函數 . promise . async和await</p>
+
+          <br />
+          <br />
+          <p class="cor36">AJAX有2種方法,XMLHttpRequest和fetch,他們的優缺點?</p>
+          <p>XHR大多數用他的庫axios</p>
+          <br />
+          <p>
+            Fetch優勢在於瀏覽器原生支持, 方便去用, 他的API也比xhr使用起來簡單
+          </p>
+          <br />
+          <br />
+
+          <div id="" class="articleCardTitle cor36">
+            [ JS ] ≫ promise 的狀態?
+          </div>
+          <p>pending 待定: 初始狀態</p>
+          <br />
+          <p>fullfilled 兌現: 操作成功</p>
+          <br />
+          <p>rejected 拒絕: 操作失敗</p>
+          <br />
+          <br />
+          <p>Promise 狀態 一但 兌現 / 拒絕 就 無法再改變</p>
+          <br />
 
           <p class="cor36"></p>
           <p></p>
