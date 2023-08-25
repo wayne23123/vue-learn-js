@@ -69,6 +69,10 @@ function locate(idPound) {
           <div id="threetips001" class="articleCardTitle cor36 fz34">
             7.1 淺拷貝
           </div>
+          <p class="fz28">
+            深拷貝會複製物件的所有屬性和嵌套物件，而淺拷貝只會複製一層屬性
+          </p>
+          <br />
           <p class="fz28">只針對引用數據類型</p>
           <div class="bgcVS">
             <div>
@@ -244,6 +248,10 @@ function locate(idPound) {
           <div id="threetips002" class="articleCardTitle cor36 fz34">
             7.2 深拷貝
           </div>
+          <p class="fz28">
+            深拷貝會複製物件的所有屬性和嵌套物件，而淺拷貝只會複製一層屬性
+          </p>
+          <br />
           <p class="fz28">深拷貝 拷貝的是 物件 不是地址</p>
           <p class="fz28 cor36"># 3 方法</p>
           <p class="fz28">1. 通過 遞歸 實現 深拷貝</p>
