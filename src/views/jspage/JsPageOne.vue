@@ -1117,9 +1117,9 @@ function locate(idPound) {
           <p>Promise 狀態 一但 兌現 / 拒絕 就 無法再改變</p>
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
-          <br />
+          <p class="cor36">promise解決了什麼問題?</p>
+          <p>解決回調地獄</p>
+          <br />ㄋ
           <br />
           <p class="cor36"></p>
           <p></p>

@@ -10,6 +10,8 @@ import CssPageTwo from "../views/CssPageTwo.vue";
 import JsPageLayout from "../views/JsPageLayout.vue";
 import JsPageOne from "../views/jspage/JsPageOne.vue";
 import JsPageTwo from "../views/jspage/JsPageTwo.vue";
+import JsPageTwoOne from "../views/jspage/JsPageTwoOne.vue";
+import JsPageTwoTwo from "../views/jspage/JsPageTwoTwo.vue";
 import JsPageThree from "../views/jspage/JsPageThree.vue";
 import JsPageThreeOne from "../views/jspage/JsPageThreeOne.vue";
 import JsPageThreeTwo from "../views/jspage/JsPageThreeTwo.vue";
@@ -63,13 +65,23 @@ const router = createRouter({
           component: JsPageLayout,
           children: [
             {
-              path: "jstwo",
-              component: JsPageTwo,
+              path: "jsone",
+              component: JsPageOne,
             },
 
             {
-              path: "jsone",
-              component: JsPageOne,
+              path: "jspractice",
+              component: JsPageTwo,
+              children: [
+                {
+                  path: "",
+                  component: JsPageTwoOne,
+                },
+                {
+                  path: "two",
+                  component: JsPageTwoTwo,
+                },
+              ],
             },
 
             {

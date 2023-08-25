@@ -8,7 +8,7 @@
         <RouterLink to="/js/jsone">總結</RouterLink>
       </li>
       <li>
-        <RouterLink to="/js/jstwo">練習題</RouterLink>
+        <RouterLink to="/js/jspractice">練習題</RouterLink>
       </li>
       <li>
         <!-- <RouterLink to="/js/jsthree">上課筆記</RouterLink> -->

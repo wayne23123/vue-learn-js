@@ -1,87 +1,49 @@
-<script setup>
-import { ref } from "vue";
-
-const toTopRef = ref(false);
-window.addEventListener("scroll", function () {
-  // 當 scrollY大於0 則 showRef 為 true
-  toTopRef.value = window.scrollY > 0;
-});
-// 當點擊返回頂部時，滾動到頁面頂部
-function toTopFunction() {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-}
-function toBotFunction() {
-  window.scrollTo({
-    top: 999999,
-    left: 0,
-    behavior: "smooth",
-  });
-}
-function locate(idPound) {
-  window.scrollTo({
-    top: document.getElementById(`${idPound}`).offsetTop,
-    behavior: "smooth",
-  });
-}
-</script>
+<script setup></script>
 
 <template>
-  <section>
-    <!-- 左邊導航條 -->
-    <div class="leftNav">
-      <div class="leftNavContainer">
-        <div class="leftNavLayout">
-          <br />
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-        </div>
-      </div>
-    </div>
-    <!-- maintopMAINTOP -->
-    <!-- 右邊文章內容 -->
-    <div class="Main">
-      <div class="mainContainer">
-        <div class="mainLayout">
-          <div class="articleCardTitle cor36">[ 演算法 ] ≫ 快速排序法</div>
-        </div>
-      </div>
-    </div>
-  </section>
   <div>
-    <transition name="fade" tag="div" v-show="toTopRef">
-      <div @click="toTopFunction" class="toTop">
-        <div class="toTopButton">
-          <div class="disCen">___</div>
-          <div class="disCen">▲</div>
-        </div>
-      </div>
-    </transition>
-    <transition name="fade" tag="div" v-show="toTopRef">
-      <div @click="toBotFunction" class="toBot">
-        <div class="toBotButton">
-          <div class="disCen">▼</div>
-          <div class="disCen">￣</div>
-        </div>
-      </div>
-    </transition>
+    <ul>
+      <li>
+        <!-- <RouterLink to="/js">主文章</RouterLink> -->
+        <RouterLink to="/jspractice/one">練習題1</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/jspractice/two">練習題2</RouterLink>
+      </li>
+      <!-- <li>
+           <RouterLink to="/js">上課筆記</RouterLink>
+      </li> -->
+    </ul>
   </div>
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
-.sectionHolderNav {
-  width: 100vw;
-  max-width: 100%;
-  height: 70px;
-  background-color: #171717;
+ul {
+  position: fixed;
+  top: 110px;
+  z-index: 10;
+  display: flex;
+  padding: 0 0 0 15px;
+  /* background-color: #c4c4c4; */
+  background-color: #000;
+}
+
+li {
+  padding: 0 15px;
+}
+
+a {
+  font-size: 20px;
+  color: #a1b6cb;
+}
+
+/* a.router-link-exact-active {
+  color: #36c1cb;
+} */
+
+a.router-link-active {
+  color: #36c1cb;
 }
 
 section {
@@ -134,27 +96,13 @@ p {
 }
 
 .articleCardTitle {
-  font-size: 1.75em;
+  font-size: 1.75rem;
   padding: 30px 5px 30px 5px;
 }
 
 .cor36 {
   color: #36c1cb;
   font-size: 1.25em;
-}
-
-a {
-  display: inline-block;
-  /* 沒互動顏色 */
-  color: #c4c4c4;
-  padding: 5px 0;
-  margin: 0 1;
-  border: 3px solid transparent;
-}
-
-a:hover {
-  /* 滑進時顏色 */
-  color: #3ddbe7;
 }
 
 /* top按鈕的css -------------------------------------------------------*/
@@ -169,7 +117,9 @@ a:hover {
   border-radius: 50%;
   cursor: pointer;
 }
-
+.toTop:hover {
+  background-color: #6f020250;
+}
 .toTopButton {
   position: relative;
   font-size: 20px;
@@ -178,11 +128,6 @@ a:hover {
   color: #999;
   pointer-events: none;
 }
-
-.toTop:hover {
-  background-color: #6f020250;
-}
-
 .toBot {
   bottom: 100px;
   right: 50px;
