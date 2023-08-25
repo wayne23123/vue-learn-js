@@ -51,6 +51,10 @@ function locate(idPound) {
       <div class="mainContainer">
         <div class="mainLayout">
           <!-- 這裡 -->
+          <div id="" class="articleCardTitle cor36 fz34"></div>
+          <p class="fz28"></p>
+          <br />
+          <br />
         </div>
       </div>
     </div>

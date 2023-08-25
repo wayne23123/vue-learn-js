@@ -473,6 +473,10 @@ function locate(idPound) {
           <div id="scope006" class="articleCardTitle cor36 fz34">
             1.6 變量提升 ( Hoisting )
           </div>
+          <p class="fz28">變數提升是指變數在其宣告之前已經可以使用</p>
+          <p class="fz28">只提升聲明 , 不賦值</p>
+
+          <br />
           <p class="fz28">把所有 var 聲明的變量提升到當前作用域的最前面</p>
           <p class="fz28">只提升聲明 , 不賦值</p>
           <br />
@@ -490,6 +494,9 @@ function locate(idPound) {
           <p class="fz28 pTwo">console.log( num ) . . . // 10</p>
           <p class="fz28">}</p>
 
+          <br />
+          <br />
+          <p class="fz28">用 let 或 const 宣告的變量和常量不會被提升</p>
           <br />
           <br />
           <p class="fz28">注意:</p>
