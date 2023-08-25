@@ -62,6 +62,8 @@ function locate(idPound) {
           <div id="threeda001" class="articleCardTitle cor36 fz34">
             3.1 數組解構
           </div>
+          <p class="fz28">解構賦值允許從物件或陣列中提取值並將其賦給變數</p>
+          <br />
           <p class="fz28">
             數組解構是將數組的單元值快速批量賦值給一系列變量的簡潔語法
           </p>
