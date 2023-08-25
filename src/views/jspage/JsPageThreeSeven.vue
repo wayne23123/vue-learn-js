@@ -251,7 +251,7 @@ function locate(idPound) {
           <p class="fz28">3. 通過 JSON.stringify() 實現</p>
           <br />
           <br />
-          <p class="fz28">什麼是遞歸函數?</p>
+          <p class="fz28">什麼是遞歸函數（recursion）?</p>
           <p class="fz28">一個函數在內部 調用自己 就是遞歸函數</p>
           <p class="fz28">
             遞歸容易 "棧溢出" 錯誤 , 所以必須加 退出條件 return
