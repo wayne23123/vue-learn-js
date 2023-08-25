@@ -704,6 +704,35 @@ function locate(idPound) {
             你function後面直接跟一個括號, 他不知道是甚麼東西
           </p>
           <br />
+          <div id="" class="articleCardTitle cor36">[ JS ] ≫ this 指向</div>
+          <table>
+            <tr>
+              <th><div class="pad20">調用方式</div></th>
+              <th><div class="pad20">示例</div></th>
+              <th><div class="pad20">函數中this指向</div></th>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過new調用</div></td>
+              <td><div class="pad20">mew method()</div></td>
+              <td><div class="pad20">新物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">直接調用</div></td>
+              <td><div class="pad20">method()</div></td>
+              <td><div class="pad20">全局對象window</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過物件調用</div></td>
+              <td><div class="pad20">obj.method()</div></td>
+              <td><div class="pad20">前面的物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">call.apply.bind</div></td>
+              <td><div class="pad20">method.call(ctx)</div></td>
+              <td><div class="pad20">第一個參數</div></td>
+            </tr>
+          </table>
+
           <div id="" class="articleCardTitle cor36">
             [ JS ] ≫ 箭頭函數和普通function有甚麼區別?
           </div>
@@ -1123,18 +1152,139 @@ function locate(idPound) {
           <p>解決回調地獄</p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">promise成功失敗的回調放哪?</p>
+          <p>.then</p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">catch是幹嘛的?</p>
+          <p>捕獲promise的錯誤</p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">finally?</p>
+          <p>不論成功 (.then) 失敗 (.catch) 都會調用的方法</p>
           <br />
           <br />
+          <p class="cor36">promise的缺點?</p>
+          <p>一旦執行promise沒辦法取消, 它裡面的錯誤只能用回調函數來捕獲</p>
+          <br />
+          <br />
+
+          <p class="cor36">Promise.all?</p>
+          <p>
+            傳入多個promise而這些promise都是成功的話 Promise.all就執行相對應函數
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36">Promise.race?</p>
+          <p>傳入多個promise而只要一個成功或失敗, 就返回那個</p>
+          <br />
+          <br />
+          <p class="cor36">promise的缺點?</p>
+          <p>一旦執行promise沒辦法取消, 它裡面的錯誤只能用回調函數來捕獲</p>
+          <p>就整個都失敗</p>
+          <br />
+          <p>Promise.all如果失敗了一個會不會執行失敗的回調? _ 會</p>
+          <br />
+          <p class="cor36">那是第一個失敗時執行還是所有都失敗在執行?</p>
+          <p>只要第一個失敗就執行,並以這個失敗的結果來執行下面的回調</p>
+          <br />
+          <br />
+          <p class="cor36">Promise是一個類還是函數呢?</p>
+          <p>
+            它可以是函數, 你把它做為單獨的函數的話要自己實現原型, 用類的話,
+            直接把它方法寫到類的定義上就好
+          </p>
+          <br />
+          <br />
+          <p class="cor36">這個Promise接收什麼參數呢?</p>
+          <p>它是一個回調函數</p>
+          <br />
+          <br />
+
+          <p class="cor36">這個回調函數接收什麼參數呢?</p>
+          <p>resolve 和 reject</p>
+          <br />
+          <p>
+            Promise接受到這個參數後,它對這個函數要立即執行嗎?還是異步執行? _
+            立即執行
+          </p>
+          <br />
+          <p class="cor36">Promise執行完這個函數後要返回什麼值?</p>
+          <p>
+            物件,這個物件至少有一個than方法, 可能還會有catch跟finaly方法,
+            在then裡面可以添加更多的回調
+          </p>
+          <br />
+          <br />
+          <p class="cor36">
+            一般promise後面.then,這個.then的參數和返回值是什麼?
+          </p>
+          <p>
+            then的參數第一個是成功的回調, 第二個參數是錯誤的回調,
+            然後返回一個promise
+          </p>
+          <br />
+          <p>那返回的這個promise是之前的promise嗎? _ 是</p>
+          <br />
+          <p class="cor36">Promise.all怎麼自己去模擬?</p>
+          <p>
+            就是發三個請求,三個請求成功了,就調用成功,任何一個失敗了就調用失敗
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36">
+            不用Promise.all怎麼做? _ (可不可以給2分鐘考慮思路,promise4步)
+          </p>
+          <p>
+            先記promise.all的用法, 他會接收陣列參數,
+            第一步把所有promise封裝到陣列裡面, 陣列能做遍歷,
+            裡面寫成功函數和失敗函數,
+            如果成功成功數目加一or給結果陣列裡面的結果填充,
+            比如第一個promise成功了, 給結果第一項變成他的data, 第二個...,
+            怎麼才能繼續, 變了data後看一下是不是三項都是data或成功,
+            那就可以繼續了,
+            最終要確定是否成功就是我這次成功之後看一下這個陣列是否是全成功的,
+            如果不是就什麼都不做, 最後成功的那個請求就負責往下走,
+            而失敗就直接調用失敗不用數數
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36">async/await怎麼用?</p>
+          <p>比如在AJAX請求之間, 先聲明一個async function</p>
+          <br />
+          <p>把這個AJAX請求寫在await後面,</p>
+          <br />
+          <p>因為這個async本身是一個函數包裹了不同的異步請求的任務,</p>
+          <br />
+          <p>然後它碰到這個await就會執行這個異步函數返回一個promise</p>
+          <br />
+          <p>但不確定這個promis會返回正確還是錯誤</p>
+          <br />
+          <p>所以可以用try catch來捕捉這個異常</p>
+          <br />
+          <br />
+
+          <p class="cor36">
+            假如我有f1f2都返回promise如果我想await要等待兩個異步操作結束之後再console.log(z)?
+          </p>
+          <p>
+            可以用promise.all, peomise.all可以將多個promise合成一個新的promise,
+            當兩個promise都是成功的狀態下, 就是它返回一個結果陣列,
+            如果是失敗的話它會將, 首先哪個錯的promise的狀態的結果返回出來
+          </p>
+          <br />
+          <br />
+
+          <p class="cor36">
+            如果我想用await依次執行f1f2呢?就是等f1執行完我再去執行f2?
+          </p>
+          <p>.await(f1).await(f2)</p>
+          <br />
+          <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
@@ -1144,18 +1294,7 @@ function locate(idPound) {
           <p></p>
           <br />
           <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
-          <p class="cor36"></p>
-          <p></p>
-          <br />
-          <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
@@ -1165,18 +1304,92 @@ function locate(idPound) {
           <p></p>
           <br />
           <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
           <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
           <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
           <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
+          <p class="cor36"></p>
+          <p></p>
+          <br />
+          <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
