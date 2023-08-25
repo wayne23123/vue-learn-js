@@ -54,6 +54,9 @@ function locate(idPound) {
           <div @click="locate('threeprototype006')" class="leftNavText">
             原型鏈
           </div>
+          <div @click="locate('threeprototype007')" class="leftNavText">
+            class
+          </div>
         </div>
       </div>
     </div>
@@ -1481,6 +1484,316 @@ function locate(idPound) {
             <br />
             <p>萬物皆物件</p>
           </div>
+          <div id="threeprototype007" class="articleCardTitle cor36 fz34">
+            6.7 class
+          </div>
+
+          <div class="bgcVS">
+            <p>過去, 函數有兩種調用方法</p>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">A</span> <span class="brackets">(){}</span>
+            </div>
+            <div>
+              <span class="word">A</span> <span class="brackets">()</span>
+              <span class="comment">//直接調用</span>
+            </div>
+            <div>
+              <span class="then">new </span> <span class="word">A</span>
+              <span class="brackets">()</span>
+              <span class="comment">//做為構造函數調用</span>
+            </div>
+            <br />
+            <p>這種做法無法從定義上明確函數用途 , ES6 構造函數</p>
+            <br />
+            <div><span class="comment">//舊的寫法</span></div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">User</span> <span class="brackets">(</span>
+              <span class="word">firstName,lastName</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span>
+              <span class="word">.firstName</span> <span class="then">=</span>
+              <span class="word">firstName;</span>
+
+              <div>
+                <span class="then">this</span>
+                <span class="word">.lastName</span> <span class="then">=</span>
+                <span class="word">lastName;</span>
+              </div>
+              <div>
+                <span class="then">this</span>
+                <span class="word">.fullName</span> <span class="then">=</span>
+                <span class="src">`${</span>
+                <span class="word">firstName</span>
+                <span class="src">} ${</span>
+                <span class="word">lastName</span> <span class="src">}`</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//靜態方法</span></div>
+            <div>
+              <span class="word">User.isUser</span> <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">u</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return !! </span> <span class="word">u </span>
+              <span class="then">&& !! </span>
+              <span class="word">u.fullName</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//調用靜態方法</span></div>
+            <div>
+              <span class="word">User.isUser</span>
+              <span class="brackets">(</span> <span class="word">xxx</span>
+              <span class="brackets">)</span>
+            </div>
+            <div><span class="comment">//原型方法 (也叫 實例方法)</span></div>
+            <div>
+              <span class="word">User.prototype.sayHi</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">`Hi, </span>
+              <span class="then">${</span> <span class="then">this</span>
+              <span class="word">.fullName</span> <span class="src">}`</span>
+              <span class="word"></span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <div><span class="comment">//調用原型方法 (實例方法)</span></div>
+            <div>
+              <span class="function">const </span> <span class="word">u</span>
+              <span class="then">=</span> <span class="then">new </span>
+              <span class="word">User</span> <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">u.sayHi</span> <span class="brackets">()</span>
+            </div>
+
+            <br />
+            <br />
+            <p>es6 之後建議寫法 class 效果一樣</p>
+            <br />
+            <div>
+              <span class="function">class </span>
+              <span class="word">User</span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <div>
+                <span class="comment">//constructor表示他的構造器</span>
+              </div>
+
+              <span class="function">constructor</span>
+              <span class="brackets">(</span>
+              <span class="word">firstName,lastName</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">this</span>
+                <span class="word">.firstName</span>
+                <span class="then">=</span> <span class="word">firstName;</span>
+                <div>
+                  <span class="then">this</span>
+                  <span class="word">.lastName</span>
+                  <span class="then">=</span>
+                  <span class="word">lastName;</span>
+                </div>
+                <div>
+                  <span class="then">this</span>
+                  <span class="word">.fullName</span>
+                  <span class="then">=</span> <span class="src">`${ </span>
+                  <span class="word">firstName </span>
+                  <span class="src">} ${</span>
+                  <span class="word">lastName </span>
+                  <span class="src">}`;</span>
+                </div>
+
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <div>
+                <span class="comment">//通過關鍵字static表示靜態方法</span>
+              </div>
+              <div>
+                <span class="word">static</span>
+                <span class="word">isUser</span>
+                <span class="brackets">(</span> <span class="word">u</span>
+                <span class="brackets">){</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="then">return !!</span>
+                <span class="word">u </span> <span class="then">&& !!</span>
+                <span class="word">u.fullName</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <div>
+                <span class="word">sayHi</span>
+                <span class="brackets">(){</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="src">`Hi, </span>
+                <span class="then">${</span> <span class="then">this</span>
+                <span class="word">.fullName</span> <span class="src">}`</span>
+                <span class="word"></span> <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <p>範例2 繼承</p>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">Animal</span> <span class="brackets">(</span>
+              <span class="word">type,name</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.type</span>
+              <span class="then">=</span> <span class="word">type;</span>
+
+              <div>
+                <span class="then">this</span> <span class="word">.name</span>
+                <span class="then">=</span> <span class="word">name;</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">Animal.prototype.intro</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">`I am ${</span>
+              <span class="then">this</span> <span class="word">.type</span>
+              <span class="src">},name: ${</span>
+              <span class="then">this</span> <span class="word">.name</span>
+              <span class="src">)`</span> <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">Human</span> <span class="brackets">(</span>
+              <span class="word">name</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">Animal</span>
+              <span class="variable">.call</span>
+              <span class="brackets">(</span> <span class="then">this</span>
+              <span class="then">,</span> <span class="word">"人",</span>
+              <span class="word">name</span> <span class="brackets">);</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//設置繼承關係</span></div>
+            <div>
+              <span class="word">Human.prototype</span>
+              <span class="then">=</span> <span class="brackets">Object</span>
+              <span class="word">.create</span> <span class="brackets">(</span>
+              <span class="word">Animal.prototype</span>
+              <span class="brackets">);</span>
+            </div>
+            <br />
+            <div>
+              <span class="comment"
+                >//新的方式 //繼承 子構造函數 & 父構造函數</span
+              >
+            </div>
+            <div>
+              <span class="function">class </span>
+              <span class="word">Animal</span> <span class="brackets">{ </span
+              ><span class="comment">//父類</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">constructor</span>
+              <span class="brackets">(</span>
+              <span class="word">type,name</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">this</span> <span class="word">.type</span>
+                <span class="then">=</span> <span class="word">type;</span>
+                <div>
+                  <span class="then">this</span>
+                  <span class="word">.name</span> <span class="then">=</span>
+                  <span class="word">name;</span>
+                </div>
+
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <br />
+              <div>
+                <span class="word">intro</span>
+                <span class="brackets">(){</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">`I am ${</span>
+                <span class="then">this</span> <span class="word">.type</span>
+                <span class="src">},name: ${</span>
+                <span class="then">this</span> <span class="word">.name</span>
+                <span class="src">)`</span> <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">class </span>
+              <span class="word">Human </span>
+              <span class="function">extends </span>
+              <span class="word">Animal</span> <span class="brackets">{ </span
+              ><span class="comment">//extends 子類 去繼承 父類</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">constructor</span>
+              <span class="brackets">(</span> <span class="word">name</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="function">super </span>
+                <span class="brackets">(</span> <span class="src">"人"</span>
+                <span class="then">,</span> <span class="word">name</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
+
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
