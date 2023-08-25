@@ -1678,6 +1678,35 @@ function locate(idPound) {
           <div id="threetips006" class="articleCardTitle cor36 fz34">
             7.6 this 指向
           </div>
+          <table class="fz30">
+            <tr>
+              <th><div class="pad20">調用方式</div></th>
+              <th><div class="pad20">示例</div></th>
+              <th><div class="pad20">函數中this指向</div></th>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過new調用</div></td>
+              <td><div class="pad20">mew method()</div></td>
+              <td><div class="pad20">新物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">直接調用</div></td>
+              <td><div class="pad20">method()</div></td>
+              <td><div class="pad20">全局對象window</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過物件調用</div></td>
+              <td><div class="pad20">obj.method()</div></td>
+              <td><div class="pad20">前面的物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">call.apply.bind</div></td>
+              <td><div class="pad20">method.call(ctx)</div></td>
+              <td><div class="pad20">第一個參數</div></td>
+            </tr>
+          </table>
+          <br />
+          <br />
           <p class="fz28">1. 普通函數 this</p>
           <p class="fz40">誰調用 this的值 指向誰</p>
           <div class="bgcVS">
