@@ -732,6 +732,14 @@ function locate(idPound) {
             在執行過程中不會初始化this, 也不會初始化aruguments, 它不能被new,
             沒有prototype, 它不能當成構造函數執行
           </p>
+          <br />
+          <br />
+          <p class="fz28">另外 1. 箭頭函式可作為物件的方法使用</p>
+          <br />
+          <p class="fz28">
+            2. 箭頭函式(arrow function)的 this 不因為使用 call() / apply() /
+            bind() 方法而被修改
+          </p>
           <div class="dis">
             <div class="bgcVS">
               <div>
@@ -1270,7 +1278,10 @@ function locate(idPound) {
             <div class="brackets">})</div>
           </div>
 
-          <p class="fz28"></p>
+          <p class="fz28">
+            箭頭函式(arrow function)的 this 不因為使用 call() / apply() / bind()
+            方法而被修改
+          </p>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>

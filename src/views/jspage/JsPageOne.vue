@@ -223,6 +223,8 @@ function locate(idPound) {
           <div id="" class="articleCardTitle cor36">
             [ JS ] ≫ 0.1+0.2為什麼不等於0.3?
           </div>
+          <p>浮點數運算可能導致精度丟失，因為計算時使用的是二進制表示</p>
+          <br />
           <p>
             浮點數的精度問題, 0.1在內存裡不一定等於0.1,
             0.2在內存裡不一定等於0.2, 結果約等於0.3
@@ -1119,7 +1121,7 @@ function locate(idPound) {
 
           <p class="cor36">promise解決了什麼問題?</p>
           <p>解決回調地獄</p>
-          <br />ㄋ
+          <br />
           <br />
           <p class="cor36"></p>
           <p></p>
