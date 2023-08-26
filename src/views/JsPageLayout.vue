@@ -5,7 +5,7 @@
     <ul>
       <li>
         <!-- <RouterLink to="/js">主文章</RouterLink> -->
-        <RouterLink to="/js/jsone">總結</RouterLink>
+        <RouterLink to="/js/jsnote">總結</RouterLink>
       </li>
       <li>
         <RouterLink to="/js/jspractice">練習題</RouterLink>

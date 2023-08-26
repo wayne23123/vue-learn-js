@@ -24,9 +24,7 @@
           <router-link to="/css"><div class="liPad">CSS</div></router-link>
         </li>
         <li>
-          <router-link to="/js"
-            ><div class="liPad">JavaScript</div></router-link
-          >
+          <RouterLink to="/js"><div class="liPad">JavaScript</div></RouterLink>
         </li>
         <!-- <li>
           <router-link to="/about"><div class="liPad">Vue</div></router-link>
@@ -99,7 +97,6 @@ a:hover {
 } */
 
 a.router-link-active {
-  /* 到頁面 active 顏色 */
   color: #36c1cb;
 }
 

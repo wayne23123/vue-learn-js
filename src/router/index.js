@@ -12,6 +12,7 @@ import JsPageOne from "../views/jspage/JsPageOne.vue";
 import JsPageTwo from "../views/jspage/JsPageTwo.vue";
 import JsPageTwoOne from "../views/jspage/JsPageTwoOne.vue";
 import JsPageTwoTwo from "../views/jspage/JsPageTwoTwo.vue";
+import JsPageTwoThree from "../views/jspage/JsPageTwoThree.vue";
 import JsPageThree from "../views/jspage/JsPageThree.vue";
 import JsPageThreeOne from "../views/jspage/JsPageThreeOne.vue";
 import JsPageThreeTwo from "../views/jspage/JsPageThreeTwo.vue";
@@ -65,7 +66,7 @@ const router = createRouter({
           component: JsPageLayout,
           children: [
             {
-              path: "jsone",
+              path: "jsnote",
               component: JsPageOne,
             },
 
@@ -80,6 +81,10 @@ const router = createRouter({
                 {
                   path: "two",
                   component: JsPageTwoTwo,
+                },
+                {
+                  path: "three",
+                  component: JsPageTwoThree,
                 },
               ],
             },

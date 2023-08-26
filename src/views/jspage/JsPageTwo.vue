@@ -1,17 +1,19 @@
 <script setup></script>
 
 <template>
-  <!-- <div>
+  <div>
     <ul>
       <li>
-        <RouterLink to="/jspractice/one">練習題1</RouterLink>
+        <RouterLink to="/js/jspractice/">練習題1</RouterLink>
       </li>
       <li>
-        <RouterLink to="/jspractice/two">練習題2</RouterLink>
+        <RouterLink to="/js/jspractice/two">練習題2</RouterLink>
       </li>
-  
+      <li>
+        <RouterLink to="/js/jspractice/three">練習題3</RouterLink>
+      </li>
     </ul>
-  </div> -->
+  </div>
   <RouterView />
 </template>
 
@@ -27,7 +29,7 @@ ul {
 }
 
 li {
-  padding: 0 15px;
+  padding: 0 8px;
 }
 
 a {
@@ -35,13 +37,13 @@ a {
   color: #a1b6cb;
 }
 
-/* a.router-link-exact-active {
-  color: #36c1cb;
-} */
-
-a.router-link-active {
+a.router-link-exact-active {
   color: #36c1cb;
 }
+
+/* a.router-link-active {
+  color: #36c1cb;
+} */
 
 section {
   width: 100vw;
