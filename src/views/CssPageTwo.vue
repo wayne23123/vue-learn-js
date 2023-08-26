@@ -46,9 +46,7 @@ function PageTwoRefF() {
       <div class="leftNavContainer">
         <div class="leftNavLayout">
           <br />
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
+
           <div class="leftNavText"></div>
           <div class="leftNavText"></div>
           <div class="leftNavText"></div>
@@ -103,10 +101,10 @@ function PageTwoRefF() {
           <br />
           <br />
 
-          <div id="" class="articleCardTitle cor36">[ CSS ] ≫</div>
+          <!-- <div id="" class="articleCardTitle cor36">[ CSS ] ≫</div>
           <p></p>
           <br />
-          <br />
+          <br /> -->
         </div>
       </div>
     </div>

@@ -36,12 +36,15 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <br />
+
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText">1</div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
+          <div class="leftNavText"></div>
         </div>
       </div>
     </div>
@@ -50,7 +53,7 @@ function locate(idPound) {
     <div class="Main">
       <div class="mainContainer">
         <div class="mainLayout">
-          <!-- 這裡 -->
+          <div class="articleCardTitle cor36">[ ] ≫</div>
         </div>
       </div>
     </div>
@@ -94,29 +97,18 @@ section {
 .leftNav {
   font-size: 20px;
   position: fixed;
-  right: 80px;
-  top: 150px;
-  /* width: 19vw; */
-  /* height: 100%; */
-  /* background-color: #040404; */
-  background-color: rgba(0, 0, 0, 0.1);
+  width: 19vw;
+  height: 100%;
+  background-color: #040404;
   /* color: #36c1cb; */
-  color: #a1b6cb4b;
+  color: #a1b6cb;
   display: flex;
   justify-content: center;
   overflow: auto;
 }
 
-.leftNav:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* color: #36c1cb; */
-  color: #a1b6cb;
-  transition: all 0.2s ease;
-}
-
 .leftNavContainer {
-  /* padding: 25px 5px 0 5px; */
-  padding: 25px;
+  padding: 25px 5px 0 5px;
 }
 
 .leftNavText:hover {
@@ -126,24 +118,31 @@ section {
 }
 
 .Main {
-  /* position: relative; */
+  position: relative;
   /* background-color: #c4c4c4; */
   /* color: #36c1cb; */
   color: #a1b6cb;
-  /* width: 80vw; */
-  /* left: 20vw; */
+  width: 80vw;
+  left: 20vw;
+  font-size: 30px;
 }
 
 .mainContainer {
   padding: 0 50px;
 }
 
+p {
+  font-size: 30px;
+}
+
 .articleCardTitle {
+  font-size: 1.75em;
   padding: 30px 5px 30px 5px;
 }
 
 .cor36 {
   color: #36c1cb;
+  font-size: 1.25em;
 }
 
 a {

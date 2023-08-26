@@ -1,21 +1,18 @@
 <script setup></script>
 
 <template>
-  <div>
+  <!-- <div>
     <ul>
       <li>
-        <!-- <RouterLink to="/js">主文章</RouterLink> -->
         <RouterLink to="/jspractice/one">練習題1</RouterLink>
       </li>
       <li>
         <RouterLink to="/jspractice/two">練習題2</RouterLink>
       </li>
-      <!-- <li>
-           <RouterLink to="/js">上課筆記</RouterLink>
-      </li> -->
+  
     </ul>
-  </div>
-  <!-- <RouterView /> -->
+  </div> -->
+  <RouterView />
 </template>
 
 <style scoped>

@@ -37,13 +37,44 @@ function locate(idPound) {
       <div class="leftNavContainer">
         <div class="leftNavLayout">
           <br />
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
+          <div @click="locate('onejs001')" class="leftNavText">JS數據類型</div>
+          <div @click="locate('onejs002')" class="leftNavText">
+            null undefined
+          </div>
+          <div @click="locate('onejs003')" class="leftNavText">==&===</div>
+          <div @click="locate('onejs004')" class="leftNavText">0.1+0.2</div>
+          <div @click="locate('onejs005')" class="leftNavText">
+            let var const
+          </div>
+          <div @click="locate('onejs006')" class="leftNavText">展開運算符</div>
+          <div @click="locate('onejs007')" class="leftNavText">
+            遍歷數組有幾種方式
+          </div>
+          <div @click="locate('onejs008')" class="leftNavText">閉包</div>
+          <div @click="locate('onejs009')" class="leftNavText">
+            立即執行函數
+          </div>
+          <div @click="locate('onejs010')" class="leftNavText">this指向</div>
+          <div @click="locate('onejs011')" class="leftNavText">箭頭函數</div>
+          <div @click="locate('onejs012')" class="leftNavText">原型鏈</div>
+          <div @click="locate('onejs013')" class="leftNavText">new做了什麼</div>
+          <div @click="locate('onejs014')" class="leftNavText">繼承</div>
+          <div @click="locate('onejs015')" class="leftNavText">
+            call apply bind
+          </div>
+          <div @click="locate('onejs016')" class="leftNavText">防斗節流</div>
+          <div @click="locate('onejs017')" class="leftNavText">DOM</div>
+          <div @click="locate('onejs018')" class="leftNavText">
+            深拷貝淺拷貝
+          </div>
+          <div @click="locate('onejs019')" class="leftNavText">RESTful API</div>
+          <div @click="locate('onejs020')" class="leftNavText">promise狀態</div>
+          <div @click="locate('onejs021')" class="leftNavText">async/await</div>
+          <div @click="locate('onejs022')" class="leftNavText">JS事件循環</div>
+          <div @click="locate('onejs0')" class="leftNavText"></div>
+          <div @click="locate('onejs0')" class="leftNavText"></div>
+          <div @click="locate('onejs0')" class="leftNavText"></div>
+          <div @click="locate('onejs0')" class="leftNavText"></div>
         </div>
       </div>
     </div>
@@ -72,7 +103,9 @@ function locate(idPound) {
           <p>let . const . map . set . 箭頭函數 . 解構復值 . promise</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ JS數據類型?</div>
+          <div id="onejs001" class="articleCardTitle cor36">
+            [ JS ] ≫ JS數據類型?
+          </div>
           <p>幾本類型:</p>
           <p class="pFou">string number 布林 null undefined symbol bigInt</p>
           <br />
@@ -111,7 +144,7 @@ function locate(idPound) {
           <p>用typeof看一下, typeof object & function 是地址</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs002" class="articleCardTitle cor36">
             [ JS ] ≫ null undefined區別?
           </div>
           <p>1.undefined是聲明之後的默認值, 但null不是</p>
@@ -136,7 +169,7 @@ function locate(idPound) {
           <p>object</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs003" class="articleCardTitle cor36">
             [ JS ] ≫ ==和===有什麼不同?
           </div>
           <p class="cor36">寬鬆相等 ==</p>
@@ -220,7 +253,7 @@ function locate(idPound) {
           <p>undefined == false . . . // false</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs004" class="articleCardTitle cor36">
             [ JS ] ≫ 0.1+0.2為什麼不等於0.3?
           </div>
           <p>浮點數運算可能導致精度丟失，因為計算時使用的是二進制表示</p>
@@ -239,7 +272,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs005" class="articleCardTitle cor36">
             [ JS ] ≫ let var const區別?
           </div>
           <p>var是ES5 let是ES6</p>
@@ -262,7 +295,9 @@ function locate(idPound) {
           <p>不行 會報錯</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 展開運算符</div>
+          <div id="onejs006" class="articleCardTitle cor36">
+            [ JS ] ≫ 展開運算符
+          </div>
           <p>
             展開運算符
             是把一個陣列展開成個別值，這個運算符後面必定接著一個陣列。
@@ -567,7 +602,7 @@ function locate(idPound) {
           <div id="" class="articleCardTitle cor36">[ JS ] ≫ 操作陣列?</div>
           <p>push pop unshift shift reduce find include</p>
 
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs007" class="articleCardTitle cor36">
             [ JS ] ≫ 遍歷數組有幾種方式?
           </div>
           <p>for . forEach</p>
@@ -638,7 +673,7 @@ function locate(idPound) {
           <p>for 可以中斷 , forEach 不能中斷</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 閉包?</div>
+          <div id="onejs008" class="articleCardTitle cor36">[ JS ] ≫ 閉包?</div>
           <p class="comment">什麼是閉包 , 概念 , 用途 , 優 缺點</p>
           <br />
           <p>閉包 就是 有權訪問 另一個 函數作用域的變量 的函數</p>
@@ -689,7 +724,10 @@ function locate(idPound) {
 
           <br />
           <br />
-          <p class="cor36">JS 的立即執行函數是幹嘛用的?</p>
+          <div id="onejs009" class="articleCardTitle cor36">
+            [ JS ] ≫ JS 的立即執行函數是幹嘛用的??
+          </div>
+
           <p>避免汙染全局環境</p>
           <br />
 
@@ -704,7 +742,9 @@ function locate(idPound) {
             你function後面直接跟一個括號, 他不知道是甚麼東西
           </p>
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ this 指向</div>
+          <div id="onejs010" class="articleCardTitle cor36">
+            [ JS ] ≫ this 指向
+          </div>
           <table>
             <tr>
               <th><div class="pad20">調用方式</div></th>
@@ -733,7 +773,7 @@ function locate(idPound) {
             </tr>
           </table>
 
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs011" class="articleCardTitle cor36">
             [ JS ] ≫ 箭頭函數和普通function有甚麼區別?
           </div>
 
@@ -760,7 +800,9 @@ function locate(idPound) {
           <br />
 
           <p>箭頭函數不創建 this , 他從自己的作用域鏈的上一層沿用 this</p>
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 原型鏈是什麼?</div>
+          <div id="onejs012" class="articleCardTitle cor36">
+            [ JS ] ≫ 原型鏈是什麼?
+          </div>
 
           <p class="cor36">物件,原型,物件的構造函數間的關係?</p>
           <br />
@@ -789,7 +831,9 @@ function locate(idPound) {
           <p>A指向一個物件,意味著A存的是什麼東西?(注意JS沒有指向) A它的地址</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ new 做了什麼?</div>
+          <div id="onejs013" class="articleCardTitle cor36">
+            [ JS ] ≫ new 做了什麼?
+          </div>
 
           <br />
           <p>new後面跟一個構造函數</p>
@@ -833,7 +877,7 @@ function locate(idPound) {
           <p>new 出來的 物件的 原型 指向 構造函數的 原型</p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 繼承?</div>
+          <div id="onejs014" class="articleCardTitle cor36">[ JS ] ≫ 繼承?</div>
           <p class="cor36">1. 原型鏈繼承</p>
           <p>每個 構造函數 都有一個 原型對象 (prototype),</p>
           <br />
@@ -874,7 +918,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs015" class="articleCardTitle cor36">
             [ JS ] ≫ call apply bind
           </div>
           <p class="cor36">call和apply有什麼區別?</p>
@@ -902,6 +946,36 @@ function locate(idPound) {
           </p>
           <br />
           <br />
+          <div id="onejs016" class="articleCardTitle cor36">
+            [ JS ] ≫ 防斗是什麼?
+          </div>
+
+          <p>
+            防斗比如一個input標籤, 然後input標籤要實現一個功能,
+            再用戶輸入的時候彈出相應的提示,
+          </p>
+          <br />
+          <br />
+          <p>所以監聽它的input事件, 但是input事件是在用戶每次輸入的時候觸發,</p>
+          <br />
+          <br />
+          <p>所以需要設置一個函數的防斗來實現一個功能,</p>
+          <br />
+          <br />
+          <p>就是當用戶輸入之後停頓某個時間沒有再次輸入才會執行這個函數,</p>
+          <br />
+          <br />
+          <p>否則不執行, 重新計時</p>
+          <br />
+          <br />
+          <p class="cor36">節流是什麼?</p>
+          <p>
+            節流類似一個技能的冷卻, 就是當你進行一個操作後,
+            要等一段時間才能再次進行這個操作,
+          </p>
+          <br />
+          <br />
+
           <p class="cor36">proxy做什麼的?</p>
           <p>
             用於接管物件內部屬性的讀取或函數的調用方法,
@@ -910,7 +984,9 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 什麼是DOM?</div>
+          <div id="onejs017" class="articleCardTitle cor36">
+            [ JS ] ≫ 什麼是DOM?
+          </div>
           <p>DOM是文檔物件模型</p>
           <br />
           <p>用途是把網頁變成JS中的對象來進行增刪改查操作</p>
@@ -1002,7 +1078,9 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫ 深淺拷貝?</div>
+          <div id="onejs018" class="articleCardTitle cor36">
+            [ JS ] ≫ 深淺拷貝?
+          </div>
 
           <p>
             潛拷貝是直接複製一層, 深拷貝向下去把它完全複製下來,
@@ -1071,7 +1149,7 @@ function locate(idPound) {
           <br />
 
           <br />
-          <p class="cor36">什麼是 RESTful API</p>
+          <p id="onejs019" class="cor36">什麼是 RESTful API</p>
           <p>RESTful API (表示性狀態轉移接口) 是一種設計風格</p>
           <br />
           <p>API 設計規範</p>
@@ -1135,7 +1213,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <div id="" class="articleCardTitle cor36">
+          <div id="onejs020" class="articleCardTitle cor36">
             [ JS ] ≫ promise 的狀態?
           </div>
           <p>pending 待定: 初始狀態</p>
@@ -1252,7 +1330,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <p class="cor36">async/await怎麼用?</p>
+          <p id="onejs021" class="cor36">async/await怎麼用?</p>
           <p>比如在AJAX請求之間, 先聲明一個async function</p>
           <br />
           <p>把這個AJAX請求寫在await後面,</p>
@@ -1284,139 +1362,179 @@ function locate(idPound) {
           <p>.await(f1).await(f2)</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>await永遠異步對不對? _ 對</p>
+          <br />
+          <br />
+          <p>await後面一般接promise對不對? _ 對</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">如果不接promise會怎樣?await 1會怎樣?</p>
+          <p>它會默認返回一個promise, 它會把它封裝成promise.resolve 1</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">const a = 1 和 const a = await 1一樣嗎?</p>
+          <p>不一樣, 有await會變異步</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">a = await 1相當於a = 1嗎?</p>
+          <p>不是</p>
+          <br />
+          <br />
+          <p>
+            (await是語法糖,await所有寫法會變成promise,不是promise也強行變成promise)
+          </p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">await我們在之後接上一個異步請求,a = await ajax()?</p>
+          <p>那要等到promise結果返回,在執行a = await ajax()</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">怎麼捕獲await中的錯誤?</p>
+
+          <p>用 try , catch</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">node.js什麼是EventLoop?</p>
+          <p>Node.js將任務分成幾個大類</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>有timers階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>還有IO</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>callbacks階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>還有prepare階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>還有poll輪詢階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>還有check階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>還有close callbcak階段</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>一般在三個階段停留時間比較長 timers poll check</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
           <br />
+          <p>setTimeout哪個階段阿? timers</p>
+          <br /><br />
+          <p>
+            那promise的then回調在哪個階段執行? 跟nextTick一樣,
+            現階段結束之前執行
+          </p>
+          <br /><br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p id="onejs022" class="cor36">JS的事件循環?</p>
+          <p>打開瀏覽器頁面時, 瀏覽器會開闢隊列,</p>
           <br />
+          <p>然後隊列分為 微任務隊列 宏任務隊列,</p>
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>在執行script代碼時, 會把同步代碼之外的異步任務放到對列裡面去,</p>
+          <br />
+          <p>
+            在同步的代碼執行完成後, 去查看異步隊列中是否有滿足條件的執行任務,
+          </p>
+          <br />
+          <p>然後把它取出來防到執行環境站裡面執行,</p>
+          <br />
+          <p>然後不斷循環這個過程, 這就是事件循環</p>
+          <br />
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">微任務和宏任務?</p>
+          <p>微任務 宏任務 是nodejs說法,</p>
+          <br />
+          <br />
+          <p>瀏覽器只有 微任務 任務, 所以可以認為宏任務就是任務</p>
+          <br />
+          <br />
+          <p>
+            任務是最常規的東西, 你引入script標籤 寫一個setTimeout,
+            它的回調或代碼裡面都是任務,
+          </p>
+          <br />
+          <br />
+          <p>
+            這個任務裡面你可以不停地去啟用微任務, 例如promise.then執行微任務
+          </p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">那些函數是微任務和那些是宏任務?</p>
+          <p>
+            setTimeout宏任務 promise裡面then微任務
+            async函數裡面await後面的部分微任務
+          </p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>微任務和宏任務執行順序? _ 宏任務先執行</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>一般第一個任務是什麼任務?(宏任務裡可以插入微任務) _ 宏任務</p>
           <br />
           <br />
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>在頁面中引入一個script標籤,那這個script是什麼任務? _ 宏任務</p>
           <br />
           <br />
-
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫</div>
-          <p></p>
+          <p>
+            我在兩個宏任務之間執行一個微任務,那肯定微任務在兩個中間執行隊嗎? _
+            對
+          </p>
           <br />
           <br />
-        </div>
-      </div>
-      <div class="mainContainer">
-        <div class="mainLayout">
-          <div class="articleCardTitle cor36">[ JS ] ≫</div>
-
-          <p class="cor36"></p>
-          <p></p>
+          <p>
+            那我在中間這個微任務裡面再次執行一個微任務,它會插在下一個宏任務執行之前執行嗎?(題目問可不可以插宏任務)
+            _ 會
+          </p>
           <br />
           <br />
-
-          <div id="" class="articleCardTitle cor36">[ JS ] ≫</div>
-          <p></p>
+          <p>
+            假設我在兩個宏任務之間已經安排了兩個微任務,然後在第一個微任務執行結束的時候,又插入一個新的微任務,這個新的微任務可以在下一個微任務執行之前執行嗎?
+          </p>
+          <p>(題目問可不可以插微任務)</p>
+          <br />
+          <p>
+            不行, 微任務要排隊, 微任務只能插在宏任務之前 不能, . . .
+            兩個微任務之間不能插微任務
+          </p>
+          <br />
+          <br />
+          <p class="cor36">假設一個宏任務觸發一個微任務和宏任務,先執行哪個?</p>
+          <p>微任務之後的微任務也是會繼續執行微任務, 直到微任務隊列空</p>
+          <br />
+          <br />
+          <p>Promise.then(f1)這個then後面接的f1是異步還是同步? _ 異步</p>
+          <br />
+          <br />
+          <p>
+            第一行Promise.then(f1)第二console.log(999),f1會在999之後執行對嗎? _
+            對
+          </p>
+          <br />
+          <br />
+          <p>
+            第一行Promise.then(f1)第二setTimeout(999),f1和999哪個先執行? _ f1
+          </p>
+          <br />
+          <br />
+          <p>
+            為什麼then回調可以比setTimeout先執行? _ then屬於微任務,
+            setTimeout屬於宏任務
+          </p>
           <br />
           <br />
         </div>
