@@ -38,13 +38,40 @@ function locate(idPound) {
         <div class="leftNavLayout">
           <br />
           <br />
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText">1</div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
-          <div class="leftNavText"></div>
+          <div @click="locate('twohand001')" class="leftNavText">
+            JS作用域考题
+          </div>
+          <div @click="locate('twohand002')" class="leftNavText">
+            JS物件考题
+          </div>
+          <div @click="locate('twohand003')" class="leftNavText">
+            JS作用域+this指向+原型的考题
+          </div>
+          <div @click="locate('twohand004')" class="leftNavText">
+            JS判斷變量是不是數組
+          </div>
+          <div @click="locate('twohand005')" class="leftNavText">
+            slice&splice
+          </div>
+          <div @click="locate('twohand006')" class="leftNavText">
+            JS數組去重的方式
+          </div>
+          <div @click="locate('twohand007')" class="leftNavText">
+            找出多維數組最大值
+          </div>
+          <div @click="locate('twohand008')" class="leftNavText">
+            給字串新增方法實現功能
+          </div>
+          <div @click="locate('twohand009')" class="leftNavText">
+            找出字符串出現最多次數的字符以及次數
+          </div>
+          <div @click="locate('twohand010')" class="leftNavText">
+            作用域考题
+          </div>
+          <div @click="locate('twohand011')" class="leftNavText">
+            將下列物件進行合併
+          </div>
+          <div @click="locate('twohand012')" class="leftNavText"></div>
         </div>
       </div>
     </div>
@@ -882,7 +909,7 @@ function locate(idPound) {
           <br />
           <br />
 
-          <div id="twohand011" class="cardTitle">11. 将下列物件進行合併</div>
+          <div id="twohand011" class="cardTitle">11. 將下列物件進行合併</div>
           <div>const a = { a:1, b:4 }</div>
           <div>const b = { b:2, c:3 }</div>
           <br />

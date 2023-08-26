@@ -9,9 +9,9 @@
       <li>
         <RouterLink to="/js/jspractice/two">練習題2</RouterLink>
       </li>
-      <li>
+      <!-- <li>
         <RouterLink to="/js/jspractice/three">練習題3</RouterLink>
-      </li>
+      </li> -->
     </ul>
   </div>
   <RouterView />
