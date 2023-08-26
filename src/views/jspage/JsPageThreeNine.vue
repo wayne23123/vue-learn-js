@@ -36,12 +36,20 @@ function locate(idPound) {
     <div class="leftNav">
       <div class="leftNavContainer">
         <div class="leftNavLayout">
-          <div @click="locate('threeajax001')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
-          <div @click="locate('')" class="leftNavText"></div>
+          <div @click="locate('threeajax001')" class="leftNavText">AJAX</div>
+          <div @click="locate('threeajax002')" class="leftNavText">axios</div>
+          <div @click="locate('threeajax003')" class="leftNavText">
+            Promise狀態
+          </div>
+          <div @click="locate('threeajax004')" class="leftNavText">
+            async await
+          </div>
+          <div @click="locate('threeajax005')" class="leftNavText">
+            事件循環
+          </div>
+          <div @click="locate('threeajax006')" class="leftNavText">
+            宏任務微任務
+          </div>
         </div>
       </div>
     </div>
