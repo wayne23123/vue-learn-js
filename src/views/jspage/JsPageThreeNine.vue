@@ -37,17 +37,21 @@ function locate(idPound) {
       <div class="leftNavContainer">
         <div class="leftNavLayout">
           <div @click="locate('threeajax001')" class="leftNavText">AJAX</div>
-          <div @click="locate('threeajax002')" class="leftNavText">axios</div>
-          <div @click="locate('threeajax003')" class="leftNavText">
+          <div @click="locate('threeajax002')" class="leftNavText">
+            xhr.axios.fetch
+          </div>
+
+          <div @click="locate('threeajax003')" class="leftNavText">axios</div>
+          <div @click="locate('threeajax004')" class="leftNavText">
             Promise狀態
           </div>
-          <div @click="locate('threeajax004')" class="leftNavText">
+          <div @click="locate('threeajax005')" class="leftNavText">
             async await
           </div>
-          <div @click="locate('threeajax005')" class="leftNavText">
+          <div @click="locate('threeajax006')" class="leftNavText">
             事件循環
           </div>
-          <div @click="locate('threeajax006')" class="leftNavText">
+          <div @click="locate('threeajax007')" class="leftNavText">
             宏任務微任務
           </div>
         </div>
@@ -84,7 +88,459 @@ function locate(idPound) {
           </p>
 
           <div id="threeajax002" class="articleCardTitle cor36 fz34">
-            9.2 axios
+            9.2 xhr , axios , fetch 基本介紹
+          </div>
+          <div class="bgcVS">
+            <div><span class="comment">//原生AJAX get</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">xhr</span> <span class="then">=</span>
+              <span class="then">new </span>
+              <span class="brackets">XMLHttpRequest</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">xhr</span> <span class="variable">.open</span>
+              <span class="brackets">(</span> <span class="src">"GET"</span>
+              <span class="then">,</span> <span class="src">"這裡放url"</span>
+              <span class="brackets">) </span>
+              <span class="comment">//url後可接請求參數?name=wayne&age=18</span>
+            </div>
+            <div>
+              <span class="word">xhr</span> <span class="variable">.send</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">xhr</span>
+              <span class="variable">.onreadystatechange</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="word">xhr</span>
+              <span class="word">.readyState</span>
+              <span class="then">===</span>
+              <span class="word">XMLHttpRequest.DONE</span>
+              <span class="then">&&</span> <span class="word">xhr.status</span>
+              <span class="then">===</span> <span class="number">200</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">xhr.responseText</span>
+                <span class="brackets">)</span>
+                <div>
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="brackets">JSON</span>
+                  <span class="variable">.parse</span>
+                  <span class="brackets">(</span>
+                  <span class="word">xhr.responseText</span>
+                  <span class="brackets">))</span>
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//原生AJAX post</span></div>
+
+            <div>
+              <span class="function">const </span>
+              <span class="word">xhr</span> <span class="then">=</span>
+              <span class="then">new </span>
+              <span class="brackets">XMLHttpRequest</span>
+              <span class="brackets">()</span>
+            </div>
+            <div>
+              <span class="word">xhr</span> <span class="variable">.open</span>
+              <span class="brackets">(</span> <span class="src">"POST"</span>
+              <span class="then">,</span> <span class="src">"這裡放url"</span>
+              <span class="brackets">) </span>
+            </div>
+
+            <div>
+              <span class="word">xhr</span>
+              <span class="word">.setRequestHeader</span>
+              <span class="brackets">(</span>
+              <span class="src">"Content-Type"</span>
+              <span class="then">,</span>
+              <span class="src">"application/x-www-form-urlencoded"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">xhr</span> <span class="variable">.send</span>
+              <span class="brackets">(</span>
+              <span class="src">"name=wayne&age=18"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">xhr</span>
+              <span class="variable">.onreadystatechange</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="word">xhr</span>
+              <span class="word">.readyState</span>
+              <span class="then">===</span>
+              <span class="word">XMLHttpRequest.DONE</span>
+              <span class="then">&&</span> <span class="word">xhr.status</span>
+              <span class="then">===</span> <span class="number">200</span>
+              <span class="brackets">){</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">xhr.responseText</span>
+                <span class="brackets">)</span>
+                <div>
+                  <span class="word">console</span>
+                  <span class="variable">.log</span>
+                  <span class="brackets">(</span>
+                  <span class="brackets">JSON</span>
+                  <span class="variable">.parse</span>
+                  <span class="brackets">(</span>
+                  <span class="word">xhr.responseText</span>
+                  <span class="brackets">))</span>
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div><span class="comment">//axios get</span></div>
+            <div>
+              <span class="then">＜</span> <span class="number">script </span>
+              <span class="function">src</span> <span class="then">=</span>
+              <span class="src">"axios.min.js"</span>
+              <span class="then">>＜/ </span>
+              <span class="number">script </span> <span class="then">></span>
+            </div>
+            <br />
+            <div>
+              <span class="variable">axios</span>
+              <span class="variable">.get</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url"</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div><span class="comment">//async + axios</span></div>
+
+            <div>
+              <span class="function">async </span>
+              <span class="brackets">() </span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">const </span>
+              <span class="word">res</span> <span class="then">=</span>
+              <span class="then">await </span>
+              <span class="variable">axios</span>
+              <span class="variable">.get</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url可帶請求參數?name=wayne&age=18"</span>
+              <span class="brackets">)</span>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">res.data</span>
+                <span class="brackets">)</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//請求參數可以寫在params</span></div>
+            <div>
+              <span class="function">async </span>
+              <span class="brackets">() </span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="function">const </span>
+              <span class="word">res</span> <span class="then">=</span>
+              <span class="then">await </span>
+              <span class="variable">axios</span>
+              <span class="variable">.get</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url"</span> <span class="then">,</span>
+              <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">params:</span>
+                <span class="brackets">{</span>
+
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="word">name:</span>
+                  <span class="src">"wayne"</span> <span class="then">,</span>
+
+                  <div>
+                    <span class="word">age:</span>
+                    <span class="number">18</span>
+                  </div>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">res.data</span>
+                <span class="brackets">)</span>
+              </div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//axios post</span></div>
+            <div>
+              <span class="function">async </span>
+              <span class="brackets">() </span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="function">const </span>
+              <span class="word">res</span> <span class="then">=</span>
+              <span class="then">await </span>
+              <span class="variable">axios</span>
+              <span class="variable">.post</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url"</span> <span class="then">,</span>
+              <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">name:</span>
+                <span class="src">"wayne"</span> <span class="then">,</span>
+
+                <div>
+                  <span class="word">age:</span>
+                  <span class="number">18</span>
+                </div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">res.data</span>
+                <span class="brackets">)</span>
+              </div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//axios 請求攔截器</span></div>
+
+            <div>
+              <span class="function">async </span>
+              <span class="brackets">() </span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <div>
+                <span class="comment"
+                  >//只要發送請求 都會經過請求攔截器 處理</span
+                >
+              </div>
+              <div>
+                <span class="variable">axios.interceptors.request.use</span>
+                <span class="brackets">(</span>
+                <span class="word">config</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"發送了請求"</span>
+                <span class="brackets">)</span>
+                <div>
+                  <span class="then">return </span>
+                  <span class="word">config</span>
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <br />
+              <div><span class="comment">//響應攔截器</span></div>
+              <div>
+                <span class="variable">axios.interceptors.response,use</span>
+                <span class="brackets">(</span> <span class="word">res</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="then">return </span> <span class="word">res</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+
+              <span class="function">const </span>
+              <span class="word">res</span> <span class="then">=</span>
+              <span class="then">await </span>
+              <span class="variable">axios</span>
+              <span class="variable">.get</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url可帶請求參數?name=wayne&age=18"</span>
+              <span class="brackets">)</span>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="word">res.data</span>
+                <span class="brackets">)</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//fetch 返回一個 promise</span></div>
+            <div>
+              <span class="variable">fetch</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url可帶請求參數?name=wayne&age=18"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(</span> <span class="word">res</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">res</span> <span class="variable">.ok</span>
+                <span class="brackets">){</span>
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="then">return </span>
+                  <span class="word">res</span>
+                  <span class="variable">.json</span>
+                  <span class="brackets">()</span>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <div>
+                <span class="variable">.then</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+
+              <div><span class="brackets">})</span></div>
+              <br />
+            </div>
+            <div><span class="comment">//fetch 做 post</span></div>
+            <div>
+              <span class="variable">fetch</span>
+              <span class="brackets">(</span>
+              <span class="src">"這裡放url"</span>
+              <span class="brackets">, {</span>
+            </div>
+            <div class="padTwo VSL">
+              <div>
+                <span class="word">method:</span>
+                <span class="src">"POST"</span> <span class="then">,</span>
+              </div>
+              <div>
+                <span class="word">headers: </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="src">"Content-Type"</span>
+                <span class="then">: </span>
+                <span class="src">"application/json"</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">},</span></div>
+              <div>
+                <span class="word">body:</span>
+                <span class="brackets">JSON</span>
+                <span class="variable">.stringify</span>
+                <span class="brackets">({</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">name:</span>
+                <span class="src">"wayne"</span> <span class="then">,</span>
+                <div>
+                  <span class="word">age:</span>
+                  <span class="number">18</span>
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div><span class="brackets">})</span></div>
+            <br />
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(</span> <span class="word">res</span>
+              <span class="function">=> </span>
+              <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">res</span>
+                <span class="variable">.ok</span>
+                <span class="brackets">){</span>
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="then">return </span>
+                  <span class="word">res</span>
+                  <span class="variable">.json</span>
+                  <span class="brackets">()</span>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <div>
+                <span class="variable">.then</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="word">data</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+
+              <div><span class="brackets">})</span></div>
+            </div>
+          </div>
+
+          <div id="threeajax003" class="articleCardTitle cor36 fz34">
+            9.3 axios
           </div>
           <a class="fz28" href="https://www.axios-http.cn/">@ axios</a>
           <div class="bgcVS">
@@ -552,8 +1008,8 @@ function locate(idPound) {
               <span class="brackets">()</span>
             </div>
           </div>
-          <div id="threeajax003" class="articleCardTitle cor36 fz34">
-            9.3 Promise 3 狀態 pending . . . fullfilled . . . rejected
+          <div id="threeajax004" class="articleCardTitle cor36 fz34">
+            9.4 Promise 3 狀態 pending . . . fullfilled . . . rejected
           </div>
 
           <p class="fz28">pending 待定: 初始狀態</p>
@@ -1141,8 +1597,8 @@ function locate(idPound) {
           <br />
           <p class="fz28">3. Promise 鏈式調用有什麼用?</p>
           <p class="fz28">解決 回調嵌套 問題</p>
-          <div id="threeajax004" class="articleCardTitle cor36 fz34">
-            9.4 async await
+          <div id="threeajax005" class="articleCardTitle cor36 fz34">
+            9.5 async await
           </div>
 
           <p class="fz28">
@@ -1280,8 +1736,8 @@ function locate(idPound) {
             </div>
           </div>
 
-          <div id="threeajax005" class="articleCardTitle cor36 fz34">
-            9.5 事件循環 EventLoop
+          <div id="threeajax006" class="articleCardTitle cor36 fz34">
+            9.6 事件循環 EventLoop
           </div>
 
           <p class="fz28">
@@ -1433,8 +1889,8 @@ function locate(idPound) {
           <p class="fz28">異步有結果後 , 把回調函數 放入 任務隊列排隊</p>
           <p class="fz28">當 調用棧 空閒時 , 反覆調用 任務隊列裡 的回調函數</p>
 
-          <div id="threeajax006" class="articleCardTitle cor36 fz34">
-            9.6 宏任務 微任務
+          <div id="threeajax007" class="articleCardTitle cor36 fz34">
+            9.7 宏任務 微任務
           </div>
 
           <p class="fz28">ES6 引入 Promise物件 , 讓 JS 引擎可發起異步任務</p>
