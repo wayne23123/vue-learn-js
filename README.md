@@ -1,6 +1,6 @@
 # vue-learn-js
 
-我的 html , css , js , vue 學習筆記
+我的 html , css , js  學習筆記
 
 ## Recommended IDE Setup
 
