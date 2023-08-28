@@ -366,7 +366,61 @@ function locate(idPound) {
                 // 實現外部函數 使用 outer 函數 內部的變量
               </div>
               <br />
+
               <br />
+              <p>另外 return 也可以這樣寫</p>
+              <div>
+                <span class="function">function </span>
+                <span class="word">fn</span> <span class="brackets">(){</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="function">let </span> <span class="word">a</span>
+                <span class="then">=</span> <span class="number">0</span>
+                <div>
+                  <span class="then">return </span>
+                  <span class="function">function </span>
+                  <span class="brackets">(){</span>
+                </div>
+
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="word">a</span> <span class="then">++</span>
+                  <div>
+                    <span class="word">console</span>
+                    <span class="variable">.log</span>
+                    <span class="brackets">(</span> <span class="word">a</span>
+                    <span class="brackets">)</span>
+                  </div>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <div>
+                <span class="function">let </span> <span class="word">f</span>
+                <span class="then">=</span> <span class="word">fn</span>
+                <span class="brackets">() </span
+                ><span class="comment">//</span> <span class="word">外部</span>
+                <span class="word">fn</span>
+                <span class="word">只是一開始創建閉包時</span>
+                <span class="then">,</span> <span class="word">執行一次</span>
+              </div>
+              <div>
+                <span class="word">f</span> <span class="brackets">() </span
+                ><span class="comment">//</span>
+                <span class="word">後面每次執行</span>
+                <span class="then">return </span>
+                <span class="word">後的</span>
+                <span class="function">function </span>
+              </div>
+              <div>
+                <span class="word">f</span> <span class="brackets">() </span
+                ><span class="comment">//</span>
+                <span class="word">後面每次執行</span>
+                <span class="then">return </span>
+                <span class="word">後的</span>
+                <span class="function">function </span>
+              </div>
             </div>
 
             <div class="bgcVSMid">></div>
