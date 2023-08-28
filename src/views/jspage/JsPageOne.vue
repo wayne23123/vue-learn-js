@@ -236,6 +236,8 @@ function locate(idPound) {
           <br />
           <p>"" == 0 . . . // true, "" 先變 0</p>
           <br />
+          <p>" " == 0 . . . // true, " " 先變 0</p>
+          <br />
           <p>+0 == -0 . . . // true</p>
           <br />
           <p>null == undefined . . . // true</p>
@@ -251,6 +253,12 @@ function locate(idPound) {
           <p>undefined == 0 . . . // false</p>
           <br />
           <p>undefined == false . . . // false</p>
+          <br />
+          <p>"false" == false . . . // false // false 轉成 0</p>
+          <br />
+          <p>NaN == false . . . // false</p>
+          <br />
+          <p>NaN === false . . . // false</p>
           <br />
           <br />
           <div id="onejs004" class="articleCardTitle cor36">

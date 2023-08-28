@@ -712,12 +712,19 @@ function locate(idPound) {
           <div>var arr1 = [ 1,2,3,2,4,1 ];</div>
           <div>console.log( new Set( arr1 ) );</div>
           <div>發現打印的是物件</div>
-          <div>console.log( Array.form( new Set( arr1 ) ) );</div>
+          <div>console.log( Array.from( new Set( arr1 ) ) );</div>
           <div>打印出陣列</div>
           <div>也可以</div>
           <div>console.log( [...new Set( arr1 ) ] );</div>
           <br />
           <div>面試可能要你封裝:</div>
+          <div>function unique( arr ){</div>
+          <div>. return [ Array.from( new Set(arr) ) ]</div>
+          <div>}</div>
+          <div>console.log( unique( arr1 ) );</div>
+          <br />
+          <br />
+
           <div>function unique( arr ){</div>
           <div>. return [...new Set(arr)]</div>
           <div>}</div>
