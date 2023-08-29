@@ -39,20 +39,38 @@ function locate(idPound) {
           <div @click="locate('cssOne001')" class="leftNavText">
             px,rem,em,vw
           </div>
+          <div @click="locate('cssOne014')" class="leftNavText">
+            link&@import
+          </div>
+
           <div @click="locate('cssOne002')" class="leftNavText">position</div>
+          <div @click="locate('cssOne012')" class="leftNavText">display</div>
+
           <div @click="locate('cssOne003')" class="leftNavText">盒模型</div>
           <div @click="locate('cssOne004')" class="leftNavText">BFC</div>
           <div @click="locate('cssOne005')" class="leftNavText">
             選擇器優先級
           </div>
+
           <div @click="locate('cssOne006')" class="leftNavText">
             水平垂直置中
           </div>
           <div @click="locate('cssOne007')" class="leftNavText">布局</div>
           <div @click="locate('cssOne008')" class="leftNavText">動畫</div>
-          <div @click="locate('cssOne009')" class="leftNavText">三角形</div>
+          <div @click="locate('cssOne015')" class="leftNavText">
+            偽類&偽元素
+          </div>
+
+          <div @click="locate('cssOne011')" class="leftNavText">
+            隱藏元素的方法
+          </div>
+
           <div @click="locate('cssOne010')" class="leftNavText">重繪回流</div>
-          <div @click="locate('cssOne0')" class="leftNavText"></div>
+          <div @click="locate('cssOne013')" class="leftNavText">
+            那些屬性可繼承
+          </div>
+          <div @click="locate('cssOne009')" class="leftNavText">三角形</div>
+
           <div @click="locate('cssOne0')" class="leftNavText"></div>
           <div @click="locate('cssOne0')" class="leftNavText"></div>
         </div>
@@ -65,10 +83,6 @@ function locate(idPound) {
         <div class="mainLayout">
           <br />
           <br />
-          <p class="cor36">SCSS相比於CSS有那些好處?</p>
-          <p>它可以在寫語法時層層包裹, 可以用變量</p>
-          <br />
-          <br />
           <p class="cor36">CSS3有哪些新屬性?</p>
           <p>flex transform translation animation 陰影 圓角</p>
           <br />
@@ -76,15 +90,32 @@ function locate(idPound) {
           <div id="cssOne001" class="articleCardTitle cor36">
             [ CSS ] ≫ CSS有幾個單位px,rem,em,vw分別是怎樣?
           </div>
-          <p>px是一個像素</p>
-          <p>rem是根據根元素(html)</p>
+          <p>px是一個像素 . . . 絕對單位長度</p>
+          <br />
+          <br />
+          <p class="pTwo">像素 是 顯示器上 給我們呈現畫面的 像素</p>
+          <br />
+          <p>rem是根據根元素(html) . . . 相對單位</p>
+          <br />
+          <p class="pTwo">
+            相對 html 根節點的 font-size 的值 , 直接給 html 節點的 font-size:
+            62.5%
+          </p>
+          <br />
+          <p class="pTwo">1rem = 10px ( 16px * 62.5% = 10px)</p>
+          <br />
+          <br />
           <p>em當前節點字體大小的倍數</p>
+          <br />
+          <br />
           <p>vw相對於設備視口的寬度</p>
           <br />
           <br />
           <p class="cor36"># 像素是絕對的單位嗎?</p>
           <p>像素是由操作系統和硬件決定的</p>
+          <br />
           <p>一般來說硬件的象素是改變不了的</p>
+          <br />
           <p>但是操作系統可以說你這個硬件我 2 個象素做 1 個象素用</p>
           <br />
           <br />
@@ -95,6 +126,39 @@ function locate(idPound) {
           <p>不是,如果窗口裡面有一個內嵌窗口, 這個viewport會變成指內嵌窗口</p>
           <br />
           <br />
+          <div id="cssOne014" class="articleCardTitle cor36">
+            [ CSS ] ≫ link & @import
+          </div>
+
+          <p>都是引入外部 CSS 的方式</p>
+          <br />
+          <br />
+
+          <p>1.</p>
+          <p>link 是 HTML 提供的標籤</p>
+          <br />
+          <p>
+            @import 是 CSS 提供語法 /p>
+            <br />
+            <br />
+          </p>
+
+          <p>2.加載順</p>
+
+          <p>加載頁面時 link 標籤引入 CSS 可同時加載</p>
+          <br />
+
+          <p>@import 只會在頁面加載完畢後 才被加載</p>
+          <br />
+          <br />
+          <p>3.</p>
+          <p>link 支持使用 JS 控制 DOM 去改變樣式 (插入link標籤)</p>
+          <br />
+
+          <p>@import 不支持</p>
+          <br />
+          <br />
+
           <div id="cssOne002" class="articleCardTitle cor36">
             [ CSS ] ≫ position 的值和作用?
           </div>
@@ -145,6 +209,42 @@ function locate(idPound) {
           <br />
           <br />
 
+          <div id="cssOne012" class="articleCardTitle cor36">
+            [ CSS ] ≫ display的值?
+          </div>
+          <h3>none . 隱藏元素</h3>
+          <br />
+          <br />
+          <h3>block . 把某元素 轉成 塊元素</h3>
+          <br />
+          <br />
+          <h3>inline . 把某元素 轉成 內聯元素</h3>
+          <br />
+          <br />
+          <h3>inline-block . 把某元素 轉成 行內塊元素</h3>
+          <br />
+          <br />
+          <h3>flex . 彈性盒子</h3>
+          <br />
+          <br />
+          <h3></h3>
+          <br />
+          <br />
+          <h3>塊元素</h3>
+          <p>
+            ＜div> . ＜p> . ＜h1> . ＜ul> . ＜table> 獨佔一行, 頁面中垂直排列,
+            可以設置寬高 和 內外邊距可控
+          </p>
+          <br />
+          <h3>行內元素</h3>
+          <p>
+            ＜span> . ＜a> . ＜img> . ＜input> 默認同行排列, 寬高由內容決定,
+            不能設置寬高
+          </p>
+          <br />
+          <h3>行內塊元素</h3>
+          <p>display:inline-block 不獨佔一行, 可以設置寬高</p>
+          <br />
           <div id="cssOne003" class="articleCardTitle cor36">
             [ CSS ] ≫ 盒模型?區別?
           </div>
@@ -317,6 +417,7 @@ function locate(idPound) {
           </p>
           <br />
           <br />
+
           <div id="cssOne006" class="articleCardTitle cor36">
             [ CSS ] ≫ 水平垂直置中?
           </div>
@@ -719,32 +820,77 @@ function locate(idPound) {
           <p>animation-iteration-count 設定 infinite</p>
           <br />
           <br />
-          <div id="cssOne009" class="articleCardTitle cor36">
-            [ CSS ] ≫ 畫三角形的方法?
+          <div id="cssOne015" class="articleCardTitle cor36">
+            [ CSS ] ≫ 偽類 偽元素?
           </div>
-          <div>
-            <span
-              ><a href="https://codepen.io/wayne23123/pen/QWJdjVJ?editors=1100"
-                >@codePen demo</a
-              >
-            </span>
-          </div>
-          <p>1.</p>
-          <p>用border, 給四個邊距, 然後給三個透明</p>
+          <p class="cor36">:偽類</p>
           <br />
-          <p>2.</p>
-          <p>用2個div做, 第一個div做正方形, 然後旋轉90度變成菱形,</p>
-          <p>
-            另一個div做為父容器把他的上面百分之50顯示, 下面百分之50
-            overflow:hidden起來
-          </p>
+          <br />
+          <p>當我們 希望樣式在 某些特定狀態下 才被呈現到 指定的 元素時</p>
+          <br />
+          <br />
+
+          <p>就是 當某元素狀態改變時 , 我們期待給這元素添加一些特殊效果</p>
+          <br />
+          <br />
+
+          <p>:hover 懸浮在某元素上時 , 期望該元素要顯示的樣式</p>
+          <br />
+          <br />
+
+          <p class="cor36">::偽元素</p>
+          <br />
+          <br />
+
+          <p>創建一些不在文檔樹中的元素 , 並為其添加樣式</p>
+          <br />
+          <br />
+
+          <p>要注意 偽元素樣式裡 必須要給 content 屬性</p>
+          <br />
+          <br />
+
+          <p>::before 在一個元素前增加一些文本 , 並對文本添加樣式</p>
+          <br />
+          <br />
+
+          <p class="cor36">小結:</p>
+          <p>偽類 操作對象 是 文檔樹中 已有的元素</p>
+          <br />
+          <br />
+
+          <p>偽元素 創建文檔樹 以外的元素 並添加樣式</p>
+          <br />
+          <br />
+
+          <div id="cssOne011" class="articleCardTitle cor36">
+            [ CSS ] ≫ 隱藏元素的方法?
+          </div>
+          <h3>display: none</h3>
+          <p>元素在 頁面上消失 , 不佔空間 . . . 重排 重繪</p>
+          <br />
+          <br />
+          <h3>opacity: 0</h3>
+          <p>設置元素透明度 0 , 元素不可見 , 佔空間</p>
+          <br />
+          <br />
+          <h3>visbility: hidden</h3>
+          <p>讓 元素消失 , 佔位置 . . . 重繪</p>
+          <br />
+          <br />
+          <h3>position: absolute</h3>
+          <br />
+          <br />
 
           <div id="cssOne010" class="articleCardTitle cor36">
             [ css ] ≫ 什麼是重排(回流)和重繪?如何避免
           </div>
           <h2>重繪不一定重排，重排一定重繪</h2>
           <br />
+          <br />
           <h3 class="cor36"># 重排(回流)（reflow）是什麼:</h3>
+          <p>布局引擎會根據所有的樣式計算出盒模型在頁面上的位置 & 大小</p>
+          <br />
           <p>當瀏覽器偵測到頁面的佈局發生變化時，就需要進行回退並重新渲染。</p>
           <br />
           <p class="cor36"># 觸發重排(回流)條件：</p>
@@ -770,6 +916,12 @@ function locate(idPound) {
           <br />
           <br />
           <h3 class="cor36"># 重繪（repaint）是什麼:</h3>
+          <p>
+            計算好盒模型的 位置 大小 其他屬性後 , 瀏覽器根據每個盒模型的 特性
+            進行 繪製瀏覽器的渲染機制
+          </p>
+          <br />
+
           <p>
             當我們改變某個元素的背景色、文字顏色、邊框顏色等屬性時，屏幕的一部分需要重繪，但是元素的幾何尺寸和位置沒有發生改變。重繪過程不涉及布局的計算，只是重新繪製已有的元素。
           </p>
@@ -809,21 +961,63 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-
-          <p></p>
-          <p></p>
+          <div id="cssOne013" class="articleCardTitle cor36">
+            [ CSS ] ≫ CSS 的那些屬性 可以繼承?
+          </div>
+          <p>css 3 特性 : 繼承 、 層疊 、 優先級</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">子元素 可繼承 父元素 樣式</p>
+          <div id="" class="articleCardTitle cor36">[ CSS ] ≫</div>
+          <p>1. 字體 fonst . . . 顏色 大小</p>
+          <br />
+          <br />
+          <p>2. 文本 line-height</p>
+          <br />
+          <br />
+          <p>3. 元素可見性 visbility: hidden</p>
+          <br />
+          <br />
+          <p>4. 表格布局的屬性 border-spacing</p>
+          <br />
+          <br />
+          <p>5. 列表屬性 list-style</p>
+          <br />
+          <br />
+          <div id="cssOne013" class="articleCardTitle cor36">
+            [ CSS ] ≫ 預處理器?
+          </div>
+          <p class="cor36">SCSS相比於CSS有那些好處?</p>
+          <p>它可以在寫語法時層層包裹, 可以用變量</p>
           <br />
           <br />
 
-          <p class="cor36"></p>
-          <p></p>
+          <p class="cor36">SASS 、 LESS</p>
+          <p>變量 、 函數 、 混入</p>
           <br />
           <br />
+
+          <div id="cssOne009" class="articleCardTitle cor36">
+            [ CSS ] ≫ 畫三角形的方法?
+          </div>
+          <div>
+            <span
+              ><a href="https://codepen.io/wayne23123/pen/QWJdjVJ?editors=1100"
+                >@codePen demo</a
+              >
+            </span>
+          </div>
+          <p>1.</p>
+          <p>用border, 給四個邊距, 然後給三個透明</p>
+          <br />
+          <p>2.</p>
+          <p>用2個div做, 第一個div做正方形, 然後旋轉90度變成菱形,</p>
+          <p>
+            另一個div做為父容器把他的上面百分之50顯示, 下面百分之50
+            overflow:hidden起來
+          </p>
+
           <p class="cor36"></p>
           <p></p>
           <br />
