@@ -51,6 +51,10 @@ function locate(idPound) {
             判斷一個物件為空
           </div>
 
+          <div @click="locate('onejs025')" class="leftNavText">
+            判斷一個物件是否有某屬性
+          </div>
+
           <div @click="locate('onejs005')" class="leftNavText">
             let var const
           </div>
@@ -443,6 +447,33 @@ function locate(idPound) {
             </div>
             <div><span class="brackets">}</span></div>
           </div>
+
+          <div id="onejs023" class="articleCardTitle cor36">
+            [ JS ] ≫ 如何判斷一個物件是否有某屬性?
+          </div>
+          <p>1. obj.hasOwnProperty("要找的屬性")</p>
+          <p>返回 布林</p>
+          <br />
+          <p>只判斷 自身 , 不查找 原型鏈</p>
+          <br />
+          <br />
+          <p>2. obj.屬性 or obj方括號屬性 obj["屬性"]</p>
+          <p>來獲取 物件上 屬性值</p>
+          <br />
+          <p>如果不存在 , 返回 undefined</p>
+          <br />
+          <p>
+            ( 物件 和 原型鏈 都沒這屬性 ) ( 不能用在 屬性存在 但值為 undefined
+            時 )
+          </p>
+          <br />
+          <br />
+          <p>3. in 運算符</p>
+          <p>"屬性" in obj , true 在物件 or 原型鏈有此屬性</p>
+          <br />
+          <p>( 會找自身 找原型鏈 )</p>
+          <br />
+          <br />
 
           <div id="onejs005" class="articleCardTitle cor36">
             [ JS ] ≫ let var const區別?
