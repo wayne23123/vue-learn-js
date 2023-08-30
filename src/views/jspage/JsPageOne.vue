@@ -43,6 +43,10 @@ function locate(idPound) {
           </div>
           <div @click="locate('onejs003')" class="leftNavText">==&===</div>
           <div @click="locate('onejs004')" class="leftNavText">0.1+0.2</div>
+          <div @click="locate('onejs024')" class="leftNavText">
+            判斷變量是否為陣列
+          </div>
+
           <div @click="locate('onejs023')" class="leftNavText">
             判斷一個物件為空
           </div>
@@ -284,6 +288,33 @@ function locate(idPound) {
           </p>
           <br />
           <br />
+
+          <div id="onejs024" class="articleCardTitle cor36">
+            [ JS ] ≫ 判斷變量是否為陣列?
+          </div>
+
+          <p>1. Array.isArray(變量) 方法</p>
+          <p>只需要傳入變量 , 是數組 , 這方法返回 true</p>
+          <br />
+
+          <br />
+
+          <p>2. Object.prototype.toString.call() 方法</p>
+          <p>他會 返回 一個 字串數組</p>
+          <br />
+          <p>
+            判斷 Object.prototype.toString.call(arr) 是否等於 字串 "[object
+            Array]"
+          </p>
+          <br />
+          <p>
+            另外 數組本身 toString 被改寫過 , 不能通過數組的 toString 來判斷
+          </p>
+          <br />
+          <p>想判斷數據類型要 用 Object 的原型 來實現</p>
+          <br />
+          <br />
+
           <div id="onejs023" class="articleCardTitle cor36">
             [ JS ] ≫ 如何判斷一個物件為空?
           </div>
