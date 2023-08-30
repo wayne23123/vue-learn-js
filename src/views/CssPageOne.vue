@@ -70,6 +70,9 @@ function locate(idPound) {
             那些屬性可繼承
           </div>
           <div @click="locate('cssOne009')" class="leftNavText">三角形</div>
+          <div @click="locate('cssOne016')" class="leftNavText">
+            白屏首屏時間
+          </div>
 
           <div @click="locate('cssOne0')" class="leftNavText"></div>
           <div @click="locate('cssOne0')" class="leftNavText"></div>
@@ -1018,8 +1021,19 @@ function locate(idPound) {
             overflow:hidden起來
           </p>
 
-          <p class="cor36"></p>
-          <p></p>
+          <div id="cssOne016" class="articleCardTitle cor36">
+            [ CSS ] ≫ 白屏時間 首屏時間 一樣嗎? 區別?
+          </div>
+          <p class="cor36">白屏時間:</p>
+          <p>指用戶輸入內容 enter 到瀏覽器出現第一個字符</p>
+          <br />
+          <p>開始顯示內容的時間</p>
+          <br />
+          <p>白屏 = 頁面開始展示時間 - 開始請求時間</p>
+          <br />
+
+          <p class="cor36">首屏時間:</p>
+          <p>瀏覽器響應用戶輸入 地址 到 首屏內容 全部渲染 完成的時間</p>
           <br />
           <br />
 
