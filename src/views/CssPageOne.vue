@@ -74,7 +74,7 @@ function locate(idPound) {
             白屏首屏時間
           </div>
 
-          <div @click="locate('cssOne0')" class="leftNavText"></div>
+          <div @click="locate('cssOne017')" class="leftNavText">圖片懶加載</div>
           <div @click="locate('cssOne0')" class="leftNavText"></div>
         </div>
       </div>
@@ -1044,6 +1044,150 @@ function locate(idPound) {
           <br />
           <br />
 
+          <div id="cssOne017" class="articleCardTitle cor36">
+            [ CSS ] ≫ 圖片懶加載
+          </div>
+          <p>在頁面中 有很多圖片時 , 加載圖片需要 一定時間</p>
+          <br />
+          <p>可以 優先加載 可視區域的 內容 , 其他 等進入可視區域 再加載</p>
+          <br />
+          <p>1.加載</p>
+          <p>圖片進入可視區域前 先不給 src 賦值</p>
+          <br />
+          <p>進入可視區域 再給 src 賦上地址值</p>
+          <br />
+          <p>2.判斷是否進入</p>
+          <p>通過 IntersectionObserver API 實現</p>
+          <br />
+          <p>這個 API 可以觀察元素是否可見</p>
+          <br />
+          <p>可見指 目標元素 與 視口 是否產生 交叉區</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">const </span>
+              <span class="word">observer</span>
+              <span class="then">= new </span>
+              <span class="word">IntersectionObserver</span>
+              <span class="brackets">(</span> <span class="cor36">回調</span>
+              <span class="brackets">)</span>
+            </div>
+            <p>裡面回調觸發 2 次 , 目標元素看見 觸發 , 目標看不見 觸發</p>
+            <br />
+            <br />
+            <div>
+              <span class="then">＜</span> <span class="number">img </span>
+              <span class="word">data-src</span> <span class="then">=</span>
+              <span class="src">"test.jpg"</span> <span class="then">></span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">images</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelectorAll</span>
+              <span class="brackets">(</span> <span class="src">"img"</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">callback</span> <span class="then">=</span>
+              <span class="word">entries</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">entries</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span> <span class="word">entry</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">entry</span>
+                <span class="variable">.isIntersecting</span>
+                <span class="brackets">){</span>
+                <div></div>
+
+                <div class="padTwo VSL">
+                  <span class="function">const </span>
+                  <span class="word">image</span> <span class="then">=</span>
+                  <span class="word">entry</span>
+                  <span class="variable">.target</span>
+
+                  <div>
+                    <span class="function">const </span>
+                    <span class="word">data_src</span>
+                    <span class="then">=</span> <span class="word">image</span>
+                    <span class="variable">.getAttribute</span>
+                    <span class="brackets">(</span>
+                    <span class="src">"data-src"</span>
+                    <span class="brackets">)</span>
+                  </div>
+                  <div>
+                    <span class="word">image</span>
+                    <span class="variable">.setAttribute</span>
+                    <span class="brackets">(</span>
+                    <span class="src">"src"</span> <span class="then">,</span>
+                    <span class="word">data_src</span>
+                    <span class="brackets">)</span>
+                  </div>
+                  <div>
+                    <span class="word">observer</span>
+                    <span class="variable">.unobserve</span>
+                    <span class="brackets">(</span>
+                    <span class="word">image</span>
+                    <span class="brackets">)</span>
+                  </div>
+                  <div>
+                    <span class="word">console</span>
+                    <span class="variable">.log</span>
+                    <span class="brackets">(</span>
+                    <span class="src">"觸發"</span>
+                    <span class="brackets">)</span>
+                  </div>
+
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">const </span>
+              <span class="word">observer</span>
+              <span class="then">= new </span>
+              <span class="word">IntersectionObserver</span>
+              <span class="brackets">(</span>
+              <span class="word">callback</span> <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">images</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span> <span class="word">image</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">observer</span>
+              <span class="variable">.observe</span>
+              <span class="brackets">(</span> <span class="word">image</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+          </div>
+          <br />
+          <p></p>
+          <br />
+          <p></p>
+          <br />
+          <p></p>
+          <br />
+
           <p class="cor36"></p>
           <p></p>
           <br />
@@ -1171,14 +1315,14 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toTop:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 .toTopButton {
   position: relative;
@@ -1193,14 +1337,14 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBotButton {
