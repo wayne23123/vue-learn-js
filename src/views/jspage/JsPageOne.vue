@@ -43,6 +43,10 @@ function locate(idPound) {
           </div>
           <div @click="locate('onejs003')" class="leftNavText">==&===</div>
           <div @click="locate('onejs004')" class="leftNavText">0.1+0.2</div>
+          <div @click="locate('onejs023')" class="leftNavText">
+            判斷一個物件為空
+          </div>
+
           <div @click="locate('onejs005')" class="leftNavText">
             let var const
           </div>
@@ -280,6 +284,135 @@ function locate(idPound) {
           </p>
           <br />
           <br />
+          <div id="onejs023" class="articleCardTitle cor36">
+            [ JS ] ≫ 如何判斷一個物件為空?
+          </div>
+
+          <p>1. JSON.stringify() 方法</p>
+          <p>將 json 物件 轉成 json 字串</p>
+          <br />
+          <p>判斷 序列化後 的物件 是否 等於 字串花括號 "{}"</p>
+          <br />
+          <br />
+          <p>2. Object.keys() 方法</p>
+          <p>這方法把 物件中 屬性名 取出來 以數組形式返回</p>
+          <br />
+          <p>判斷 數組長度 是否為 0 , 為0 > 該物件沒屬性 > 空物件</p>
+          <br />
+
+          <br />
+          <p>3. for in 遍歷物件</p>
+          <p>定義一個函數 , 函數內返回 true</p>
+          <br />
+          <p>將 for in 循環寫入函數</p>
+          <br />
+          <p>在循環裡 寫 return false</p>
+          <br />
+          <p>如果 物件不為空 > 有可遍歷屬性 > 進入循環 > 返回 false</p>
+          <br />
+
+          <br />
+          <p>4. getOwnPropertyNames</p>
+
+          <br />
+          <br />
+
+          <div class="bgcVS">
+            <div>
+              <span class="function">function </span>
+              <span class="word">isEmpty</span> <span class="brackets">(</span>
+              <span class="word">obj</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span>
+              <span class="brackets">JSON</span>
+              <span class="variable">.stringify</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span> <span class="then">===</span>
+              <span class="src">"{}"</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">isEmpty2</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span>
+              <span class="brackets">Object</span>
+              <span class="word">.keys</span> <span class="brackets">(</span>
+              <span class="word">obj</span> <span class="brackets">)</span>
+              <span class="variable">.length</span>
+              <span class="then">===</span> <span class="number">0</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">isEmpty3</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">let </span> <span class="word">flag</span>
+              <span class="then">=</span> <span class="number">true</span>
+              <div>
+                <span class="then">for </span> <span class="brackets">(</span>
+                <span class="function">const </span>
+                <span class="word">key</span> <span class="function">in </span>
+                <span class="word">obj</span> <span class="brackets">){</span>
+              </div>
+              <div></div>
+
+              <div class="padTwo VSL">
+                <span class="then">if</span> <span class="brackets">(</span>
+                <span class="word">key</span> <span class="brackets">){</span>
+                <div></div>
+                <div class="padTwo VSL">
+                  <span class="word">flag</span> <span class="then">=</span>
+                  <span class="number">false</span>
+
+                  <div><span class="variable">break</span></div>
+
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+
+              <div>
+                <span class="then">return </span> <span class="word">flag</span>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <br />
+            <div>
+              <span class="function">function </span>
+              <span class="word">isEmpty4</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span>
+              <span class="brackets">Object</span>
+              <span class="word">.getOwnPropertyNames</span>
+              <span class="brackets">(</span> <span class="word">obj</span>
+              <span class="brackets">)</span>
+              <span class="variable">.length</span>
+              <span class="then">===</span> <span class="number">0</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+          </div>
+
           <div id="onejs005" class="articleCardTitle cor36">
             [ JS ] ≫ let var const區別?
           </div>
@@ -753,6 +886,41 @@ function locate(idPound) {
           <div id="onejs010" class="articleCardTitle cor36">
             [ JS ] ≫ this 指向
           </div>
+          <p>1. 全局對象 的 this 指向</p>
+          <p>指向 window</p>
+          <br />
+          <br />
+          <p>2. 全局作用域 or 普通函數中的 this</p>
+          <p>指向 window</p>
+          <br />
+          <br />
+          <p>3. this 指向最後調用他的那個對象</p>
+          <p>在不是 箭頭函數 情況下</p>
+          <br />
+          <br />
+          <p>4. new 關鍵字改變 this 指向</p>
+          <p></p>
+          <br />
+          <br />
+          <p></p>
+          <p></p>
+          <br />
+          <br />
+          <p></p>
+          <p></p>
+          <br />
+          <br />
+          <p></p>
+          <p></p>
+          <br />
+          <br />
+          <p></p>
+          <p></p>
+          <br />
+          <br />
+          <p></p>
+          <p></p>
+
           <table>
             <tr>
               <th><div class="pad20">調用方式</div></th>
