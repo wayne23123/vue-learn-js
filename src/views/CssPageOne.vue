@@ -96,19 +96,26 @@ function locate(idPound) {
           <p>px是一個像素 . . . 絕對單位長度</p>
           <br />
           <br />
-          <p class="pTwo">像素 是 顯示器上 給我們呈現畫面的 像素</p>
+          <p class="pFou">像素 是 顯示器上 給我們呈現畫面的 像素</p>
           <br />
-          <p>rem是根據根元素(html) . . . 相對單位</p>
+          <p>rem是 相對 根元素 (html) 字體大小進行計算的 . . . 相對單位</p>
           <br />
-          <p class="pTwo">
-            相對 html 根節點的 font-size 的值 , 直接給 html 節點的 font-size:
-            62.5%
-          </p>
-          <br />
-          <p class="pTwo">1rem = 10px ( 16px * 62.5% = 10px)</p>
+          <p class="pFou">瀏覽器 默認字體大小 16px , 一般 1 rem = 16 px</p>
           <br />
           <br />
-          <p>em當前節點字體大小的倍數</p>
+          <p>em 相對 當前元素 字體大小 來計算</p>
+          <br />
+          <p class="pFou">有人說 相對於 父元素</p>
+          <br />
+          <p class="pFou">因為 font-size 這屬性 可以被繼承</p>
+          <br />
+          <p class="pFou">所以 父元素 字體大小 會影響 子元素 字體大小</p>
+          <br />
+          <p class="pFou">子元素 如果沒有 自己的 font-size</p>
+          <br />
+          <p class="pFou">那子元素的 font-size 會繼承 父元素</p>
+          <br />
+          <p class="pFou">此時 1 em 就會被認為 相對於 父元素 字體大小計算</p>
           <br />
           <br />
           <p>vw相對於設備視口的寬度</p>
