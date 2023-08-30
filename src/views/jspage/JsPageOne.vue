@@ -869,6 +869,173 @@ function locate(idPound) {
           <p>總之 for in 適合遍歷 物件</p>
           <p>for of 適合遍歷 數組</p>
 
+          <div class="bgcVS">
+            <div><span class="comment">// 1. 循環數組</span></div>
+            <div>
+              <span class="word">cosnt</span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"a","b","c","d"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="comment"
+                >// for...in 輸出 數組成員 在數組中 的索引</span
+              >
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">arr</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n </span>
+              <span class="brackets">) </span>
+              <span class="comment">// 0 // 1 // 2 // 3</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="comment">// for...of 輸出 數組的成員</span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">of </span> <span class="word">arr</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n </span>
+              <span class="brackets">) </span>
+              <span class="comment">// a // b // c // d</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">// 2. 循環物件</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">n:</span>
+              <span class="number">4,</span> <span class="word">m:</span>
+              <span class="number">5,</span> <span class="word">k:</span>
+              <span class="number">6</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="comment">// for...in </span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">// 物件的屬性名</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n</span>
+              <span class="brackets">) </span>
+              <span class="comment">// n // m // k</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">// 物件的屬性值</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">obj</span> <span class="brackets">[</span>
+              <span class="word">n</span> <span class="brackets">])</span>
+              <span class="comment">// 4 // 5 // 6</span>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="comment">// for...of </span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">of </span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <div><span class="comment">// 報錯 , 不能循環</span></div>
+              <div><span class="comment">// 因為沒有 iterator 接口</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+
+            <div><span class="comment">// 3. 循環數組物件</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arrObj</span> <span class="then">=</span>
+              <span class="brackets">[{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne",</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">1</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}, {</span></div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"jack",</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">9</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}]</span></div>
+            <br />
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">nObj </span>
+              <span class="function">of </span>
+              <span class="word">arrObj</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">nObj</span> <span class="brackets">)</span>
+              <span class="comment"
+                >//{name:"wayne",number:1},{name:"jack",number:9}</span
+              >
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">nObj</span>
+              <span class="brackets">){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="word">console.</span>
+                  <span class="variable">log</span>
+                  <span class="brackets">(</span>
+                  <span class="word">nObj</span>
+                  <span class="brackets">[</span> <span class="word">n</span>
+                  <span class="brackets">]) </span
+                  ><span class="comment">// wayne // 1 // jack // 9</span>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+
+            <div><span class="comment">// for in 循環 物件</span></div>
+            <div><span class="comment">// for of 循環 數組</span></div>
+          </div>
           <br />
           <br />
 
@@ -1319,12 +1486,223 @@ function locate(idPound) {
           <div id="onejs018" class="articleCardTitle cor36">
             [ JS ] ≫ 深淺拷貝?
           </div>
-
-          <p>
-            潛拷貝是直接複製一層, 深拷貝向下去把它完全複製下來,
-            它的實現原理可以用到 遞規 去實現
-          </p>
+          <p>深淺拷貝區別</p>
+          <p>淺拷貝 只會複製 最外面 那一層屬性</p>
           <br />
+          <p>簡單物件還可以 , 裡面又有物件時 ...> 多層次嵌套 時 有問題</p>
+          <br />
+          <p class="cor36"># 淺拷貝</p>
+          <p>1 ...展開運算符</p>
+          <p>const o = { ...obj }</p>
+          <p>console.log ( o )</p>
+          <br />
+
+          <p>2.</p>
+          <p>const o= {}</p>
+          <p>
+            Object.assign( o,obj)
+            <span class="comment">
+              // (要拷貝的,被拷貝的)// (右 賦值 給 左)
+            </span>
+          </p>
+          <p>console.log ( o )</p>
+          <br />
+
+          <p class="cor36"># 深拷貝</p>
+          <p>深拷貝會複製物件的所有屬性和嵌套物件</p>
+
+          <br />
+
+          <p class="cor36"># 3方法</p>
+          <p>JSON.stringify()</p>
+          <br />
+          <p class="pFou">const o = JSON.parse ( JSON.stringify ( obj ) )</p>
+          <br />
+          <p>lodash</p>
+          <br />
+          <p class="pFou">const o = _.cloneDeep( obj )</p>
+          <br />
+          <div class="bgcVS">
+            <p>遞歸</p>
+            <div>
+              <span class="function">function </span>
+              <span class="variable">deepCopy</span>
+              <span class="brackets">( </span>
+              <span class="word">newObj, oldObj </span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//把舊的值取出來給新的值</span>
+              <div></div>
+              <span class="comment">//先遍歷舊的 , 注意 k 是誰</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">k </span>
+              <span class="function">in </span>
+              <span class="word">oldObj </span>
+              <span class="brackets">){</span>
+
+              <div class="padTwo VSL">
+                <div>
+                  <span class="comment">// 處理數組問題</span>
+                </div>
+                <div>
+                  <span class="comment">// 通過值來判斷</span>
+                </div>
+                <div>
+                  <span class="then">if</span>
+                  <span class="brackets">(</span>
+                  <span class="word">oldObj</span>
+                  <span class="brackets">[</span> <span class="word">k </span>
+                  <span class="brackets">] </span>
+                  <span class="word">intanceof </span>
+                  <span class="brackets">Array</span>
+                  <span class="brackets">) { </span>
+                  <span class="comment">// oldObj [ k ] 屬性值</span>
+                </div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="comment">// 我要把hobby數組再次遍歷</span>
+                  </div>
+                  <div>
+                    <span class="comment"
+                      >// 我要把跑步拿出來放到新物件hobby第1個參數</span
+                    >
+                  </div>
+                  <div>
+                    <span class="comment"
+                      >// 我要把足球拿出來放到新物件hobby第2個參數</span
+                    >
+                  </div>
+
+                  <div>
+                    <span class="word">newObj</span>
+                    <span class="brackets">[ </span>
+                    <span class="word">k </span>
+                    <span class="brackets">]</span>
+                    <span class="then">=</span>
+                    <span class="brackets">[ ]</span>
+                    <div></div>
+                    <div>
+                      <span class="comment">// newObj[k] 是 hobby</span>
+                    </div>
+                    <div>
+                      <span class="comment">
+                        // 新物件的 hobby 先給他一個空數組</span
+                      >
+                    </div>
+                    <div>
+                      <span class="comment"
+                        >// 然後我在遍歷舊數組把他放進去</span
+                      >
+                    </div>
+                    <div>
+                      <span class="comment"
+                        >// deepCopy(newObj[k],["跑步","足球"])</span
+                      >
+                    </div>
+
+                    <div>
+                      <span class="variable">deepCopy</span>
+                      <span class="brackets">(</span>
+                      <span class="word">newObj</span>
+                      <span class="brackets">[</span>
+                      <span class="word">k</span>
+                      <span class="brackets">],</span>
+                      <span class="word">oldObj</span>
+                      <span class="brackets">[</span>
+                      <span class="word">k</span>
+                      <span class="brackets">])</span>
+                    </div>
+                    <div>
+                      <span class="comment">//調用自己遍歷數組時</span>
+                    </div>
+                    <div>
+                      <span class="comment">// K 變成數組的索引號了</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="padTwo VSL">
+                <div>
+                  <span class="brackets">} </span>
+
+                  <span class="then">else if</span>
+                  <span class="brackets">(</span>
+                  <span class="word">oldObj</span>
+                  <span class="brackets">[</span> <span class="word">k </span>
+                  <span class="brackets">] </span>
+                  <span class="word">intanceof </span>
+                  <span class="brackets">Object</span>
+                  <span class="brackets">) { </span>
+                  <span class="comment">// oldObj [ k ] 屬性值</span>
+                </div>
+                <div class="padTwo VSL">
+                  <div>
+                    <span class="word">newObj</span>
+                    <span class="brackets">[ </span>
+                    <span class="word">k </span>
+                    <span class="brackets">]</span>
+                    <span class="then">=</span>
+                    <span class="brackets">{ }</span>
+
+                    <div>
+                      <span class="variable">deepCopy</span>
+                      <span class="brackets">(</span>
+                      <span class="word">newObj</span>
+                      <span class="brackets">[</span>
+                      <span class="word">k</span>
+                      <span class="brackets">],</span>
+                      <span class="word">oldObj</span>
+                      <span class="brackets">[</span>
+                      <span class="word">k</span>
+                      <span class="brackets">])</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="padTwo VSL">
+                <span class="brackets">}</span>
+                <span class="then">else </span>
+                <span class="brackets">{</span>
+                <div>
+                  <div>
+                    <div class="padTwo VSL">
+                      <span class="comment"
+                        >// k 屬性名 oldObj[ k ] 屬性值</span
+                      >
+                    </div>
+                    <div class="padTwo VSL">
+                      <span class="comment">// newObj[ k ] === o.uname</span>
+                      <div></div>
+                    </div>
+                    <div class="padTwo VSL">
+                      <div>
+                        <span class="word">newObj</span>
+                        <span class="brackets">[ </span>
+                        <span class="word">k </span>
+                        <span class="brackets">]</span>
+                        <span class="then">= </span>
+                        <span class="word">oldObj</span>
+                        <span class="brackets">[ </span>
+                        <span class="word">k </span>
+                        <span class="brackets">]</span>
+                      </div>
+                    </div>
+                    <div><span class="brackets">}</span></div>
+                  </div>
+                </div>
+              </div>
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <p># 一定要 先數組 再物件</p>
+            <p>因為 數組 屬於物件 他就把 數組當物件</p>
+          </div>
           <p class="cor36">
             遞歸怎麼分類呢?你怎麼知道他是基本類型?你怎麼知道它不是一個物件?
           </p>
@@ -1830,6 +2208,10 @@ section {
   overflow: auto;
 }
 
+.leftNav:hover {
+  z-index: 11;
+}
+
 .leftNavContainer {
   padding: 25px 5px 0 5px;
 }
@@ -1874,14 +2256,14 @@ p {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toTop:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 .toTopButton {
   position: relative;
@@ -1896,14 +2278,14 @@ p {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBotButton {

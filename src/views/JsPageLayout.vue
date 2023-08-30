@@ -23,7 +23,7 @@
 ul {
   position: fixed;
   top: 70px;
-  z-index: 10;
+  z-index: 12;
   display: flex;
   padding: 0 0 0 15px;
   /* background-color: #c4c4c4; */
