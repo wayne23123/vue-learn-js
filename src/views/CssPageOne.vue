@@ -1181,6 +1181,11 @@ function locate(idPound) {
             <div><span class="brackets">})</span></div>
           </div>
           <br />
+          <h2 class="articleCardTitle cor36">
+            [ CSS ] ≫ 如何讓google瀏覽器支持小字體?
+          </h2>
+          <p>google 最小字體支持12px,想要更小用 transform: scale(0.5)</p>
+
           <p></p>
           <br />
           <p></p>
