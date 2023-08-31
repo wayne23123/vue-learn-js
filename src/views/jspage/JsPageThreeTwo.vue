@@ -1439,7 +1439,7 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -1456,7 +1456,7 @@ a:hover {
 }
 
 .toTop:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBot {
@@ -1464,14 +1464,14 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBotButton {
