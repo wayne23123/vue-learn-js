@@ -49,6 +49,11 @@ function locate(idPound) {
             .unshift
           </div>
 
+          <div @click="locate('threemethod017')" class="leftNavText">
+            <div>for in</div>
+            <div>for of</div>
+          </div>
+
           <div @click="locate('threemethod005')" class="leftNavText">
             .map()
           </div>
@@ -56,6 +61,11 @@ function locate(idPound) {
           <div @click="locate('threemethod006')" class="leftNavText">
             .forEach()
           </div>
+
+          <div @click="locate('threemethod016')" class="leftNavText">
+            .filter()
+          </div>
+
           <div @click="locate('threemethod007')" class="leftNavText">
             .join()
           </div>
@@ -94,12 +104,7 @@ function locate(idPound) {
       <div class="mainContainer">
         <div class="mainLayout">
           <!-- 這裡 -->
-          <br />
-          <br />
-          <p class="fz28">總分總</p>
-          <p class="fz28">1.要講哪個知識點</p>
-          <p class="fz28">2.細講</p>
-          <p class="fz28">3.總結</p>
+
           <br />
           <br />
           <div class="fz28">
@@ -118,10 +123,29 @@ function locate(idPound) {
             </tr>
 
             <tr>
-              <td>🐕🐶🐕🐕.filter(🐶)</td>
+              <td>🐕🐶🐕🐶.filter(🐶)</td>
+              <td class="pad10">></td>
+              <td>🐶🐶</td>
+            </tr>
+
+            <tr>
+              <td>🐕🐶🐕🐕.find(🐶)</td>
               <td class="pad10">></td>
               <td>🐶</td>
             </tr>
+
+            <tr>
+              <td>🐕🐶🐕🥤.at( -1 )</td>
+              <td class="pad10">></td>
+              <td>🥤</td>
+            </tr>
+
+            <tr>
+              <td>🐕🐶🐕🥤.includes(🥤)</td>
+              <td class="pad10">></td>
+              <td>true</td>
+            </tr>
+
             <tr>
               <td>🐕🐶🐕🐕.every(🐕)</td>
               <td class="pad10">></td>
@@ -142,11 +166,6 @@ function locate(idPound) {
               <td class="pad10">></td>
               <td>2</td>
             </tr>
-            <tr>
-              <td>🐕🐶🐕🐕.find(🐶)</td>
-              <td class="pad10">></td>
-              <td>🐶</td>
-            </tr>
 
             <!-- <tr>
               <td></td>
@@ -154,8 +173,12 @@ function locate(idPound) {
               <td></td>
             </tr> -->
           </table>
+
           <br />
           <br />
+          <p class="fz28">
+            會改原陣列: push.pop.unshift.shift() . sort() .reverse() .splice()
+          </p>
           <br />
           <br />
           <table class="fz30 methodTable">
@@ -479,29 +502,236 @@ function locate(idPound) {
             <p>也可以添加多個</p>
           </div>
 
+          <div id="threemethod017" class="articleCardTitle cor36 fz34">
+            4. for in , for of
+          </div>
+
+          <p class="fz28">
+            for of 循環獲取到的是一對鍵值對中的值 , 也就是 value
+          </p>
+          <br />
+          <p class="fz28">而 for in 獲取的是鍵名 , 也就是 key</p>
+          <br />
+          <br />
+          <p class="fz28">對數組 for of 返回的是 數組裡面的 元素值</p>
+          <br />
+          <p class="fz28">for in 返回 key , 指每個元素的 索引值</p>
+          <br />
+          <p class="fz28">
+            for of 只能遍歷其底層帶有 iterator 接口的 數據結構 像 set map string
+            array
+          </p>
+          <br />
+          <p class="fz28">物件沒有原生 iterator 接口 , 直接用 for of 會報錯</p>
+          <br />
+          <p class="fz28">開發中 遍歷用 for in 更合適</p>
+          <br />
+          <br />
+          <p class="fz28">for in 返回 數組元素的 索引值 , 而不是 元素</p>
+          <br />
+          <p class="fz28">而且 遍歷順序 有可能不是按照 實際數據的 內部順序</p>
+          <br />
+          <p class="fz28">所以 通常遍歷數組用 for of</p>
+          <br />
+          <br />
+          <p class="fz28">總之 for in 適合遍歷 物件</p>
+          <p class="fz28">for of 適合遍歷 數組</p>
+
+          <div class="bgcVS">
+            <div><span class="comment">// 1. 循環數組</span></div>
+            <div>
+              <span class="word">cosnt</span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="src">"a","b","c","d"</span>
+              <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="comment"
+                >// for...in 輸出 數組成員 在數組中 的索引</span
+              >
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">arr</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n </span>
+              <span class="brackets">) </span>
+              <span class="comment">// 0 // 1 // 2 // 3</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="comment">// for...of 輸出 數組的成員</span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">of </span> <span class="word">arr</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n </span>
+              <span class="brackets">) </span>
+              <span class="comment">// a // b // c // d</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">// 2. 循環物件</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">obj</span> <span class="then">=</span>
+              <span class="brackets">{</span> <span class="word">n:</span>
+              <span class="number">4,</span> <span class="word">m:</span>
+              <span class="number">5,</span> <span class="word">k:</span>
+              <span class="number">6</span> <span class="brackets">}</span>
+            </div>
+            <div>
+              <span class="comment">// for...in </span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">// 物件的屬性名</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.log</span>
+              <span class="brackets">(</span> <span class="word">n</span>
+              <span class="brackets">) </span>
+              <span class="comment">// n // m // k</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">// 物件的屬性值</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">obj</span> <span class="brackets">[</span>
+              <span class="word">n</span> <span class="brackets">])</span>
+              <span class="comment">// 4 // 5 // 6</span>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="comment">// for...of </span>
+            </div>
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">of </span> <span class="word">obj</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <div><span class="comment">// 報錯 , 不能循環</span></div>
+              <div><span class="comment">// 因為沒有 iterator 接口</span></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+
+            <div><span class="comment">// 3. 循環數組物件</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">arrObj</span> <span class="then">=</span>
+              <span class="brackets">[{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne",</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">1</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}, {</span></div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"jack",</span>
+              <div></div>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">number:</span> <span class="number">9</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}]</span></div>
+            <br />
+            <div>
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">nObj </span>
+              <span class="function">of </span>
+              <span class="word">arrObj</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console.</span>
+              <span class="variable">log</span> <span class="brackets">(</span>
+              <span class="word">nObj</span> <span class="brackets">)</span>
+              <span class="comment"
+                >//{name:"wayne",number:1},{name:"jack",number:9}</span
+              >
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">for </span> <span class="brackets">(</span>
+              <span class="function">let </span> <span class="word">n </span>
+              <span class="function">in </span> <span class="word">nObj</span>
+              <span class="brackets">){</span>
+              <div>
+                <div class="padTwo VSL">
+                  <span class="word">console.</span>
+                  <span class="variable">log</span>
+                  <span class="brackets">(</span>
+                  <span class="word">nObj</span>
+                  <span class="brackets">[</span> <span class="word">n</span>
+                  <span class="brackets">]) </span
+                  ><span class="comment">// wayne // 1 // jack // 9</span>
+                  <div></div>
+                </div>
+                <div><span class="brackets">}</span></div>
+              </div>
+            </div>
+            <div><span class="brackets">}</span></div>
+
+            <div><span class="comment">// for in 循環 物件</span></div>
+            <div><span class="comment">// for of 循環 數組</span></div>
+          </div>
+          <br />
+          <br />
+
           <div id="threemethod005" class="articleCardTitle cor36 fz34">
             4. map()
           </div>
           <p class="fz28">
             map 可以遍歷數組 處理數據 , 並
-            <span class="spo pad10 cor36"> 返回 新數組</span>
+            <span class="spo pad10 cor36"> 返回 新數組 </span>
+            <span class="cor36">不影響原數組</span>
           </p>
           <br />
           <p class="fz28">map([🐮,🥔,🐔,🌽] , cook) => [🍔,🍟,🍗,🍿]</p>
 
           <div class="bgcVS">
             <div>
-              <span class="word">被遍歷的數組</span>
+              <span class="word">arr</span>
               <span class="variable">.map</span>
               <span class="brackets">(</span>
-              <span class="function">function回調函數 </span>
+              <span class="cor36">回調函數 </span>
               <span class="brackets">(</span>
-              <span class="word">當前數組元素,當前元素索引號</span>
+              <span class="word">當前數組元素,當前元素索引號,數組本身</span>
               <span class="brackets">){</span>
             </div>
             <div class="comment pTwo">//函數體</div>
-            <div class="brackets">}</div>
-
+            <div class="brackets">} , thisValue )</div>
+            <br />
+            <p>計算結果 一定要返回 , 否則新數組會 undefined</p>
             <br />
             <div>
               <span class="function">const </span>
@@ -601,16 +831,16 @@ function locate(idPound) {
             </div>
             <br />
             <div>
-              <span class="word">被遍歷的數組</span>
+              <span class="word">arr</span>
               <span class="variable">.forEach</span>
               <span class="brackets">(</span>
-              <span class="function">function回調函數 </span>
+              <span class="cor36">回調函數 </span>
               <span class="brackets">(</span>
-              <span class="word">當前數組元素,當前元素索引號</span>
-              <span class="brackets">){</span>
+              <span class="word">當前數組元素 , 當前元素索引號 , 數組本身</span>
+              <span class="brackets">) {</span>
             </div>
             <div class="comment pTwo">//函數體</div>
-            <div class="brackets">}</div>
+            <div class="brackets">}, thisValue )</div>
             <br />
             <div class="number">只遍歷 , 不返回值</div>
             <br />
@@ -777,6 +1007,94 @@ function locate(idPound) {
           <p class="fz28">1. forEach 主要是遍歷數組</p>
           <p class="fz28">2. 索引號可以不寫</p>
 
+          <div id="threemethod016" class="articleCardTitle cor36 fz34">
+            4. filter()
+          </div>
+          <p class="fz28">
+            <span class="cor36">返回</span> 一個符合條件 的 新陣列
+            <span class="cor17">. . . </span
+            ><span class="cor36">不影響 原陣列</span>
+          </p>
+          <br />
+          <p class="fz28">🐕🐶🐕🐶.filter(🐶) > 🐶🐶</p>
+
+          <div class="bgcVS">
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.filter</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">當前數組的值 , 索引值 , 陣列本身 </span>
+              <span class="brackets">)</span> <span class="then">,</span>
+              <span class="word">thisValue</span> <span class="word"></span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <p>不給 thisValue 則 指向 全局變量</p>
+
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">1,2,1,6,7,8,1,2</span>
+              <span class="brackets">]</span>
+            </div>
+            <br />
+            <div><span class="comment">//過濾奇數</span></div>
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.filter</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">item</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">let </span>
+              <span class="word">result</span> <span class="then">=</span>
+              <span class="word">item</span> <span class="then">%</span>
+              <span class="number">2</span> <span class="then">!==</span>
+              <span class="number">0</span>
+              <div>
+                <span class="then">return </span>
+                <span class="word">result</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <br />
+            <div><span class="comment">//數組去重</span></div>
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.filter</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span>
+              <span class="word">item,index,self</span>
+              <span class="brackets">)</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">let </span>
+              <span class="word">newIndex</span> <span class="then">=</span>
+              <span class="word">self</span>
+              <span class="variable">.indexOf</span>
+              <span class="brackets">(</span> <span class="word">current</span>
+              <span class="brackets">)</span>
+              <div>
+                <span class="then">return </span>
+                <span class="word">newIndex</span>
+                <span class="then">===</span> <span class="word">index</span>
+              </div>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <div class="comment">//item newIndex index => 取出</div>
+            <div class="comment">// 1 0 0 => 1</div>
+            <div class="comment">// 2 1 1 => 2</div>
+            <div class="comment">// 1 0 3 !=> 不輸出</div>
+          </div>
+
           <div id="threemethod007" class="articleCardTitle cor36 fz34">
             4. join()
           </div>
@@ -818,22 +1136,15 @@ function locate(idPound) {
               >
             </div>
             <br />
+
             <div>
               <span class="word">arr.reduce</span>
               <span class="brackets">(</span>
-              <span class="function">function </span>
-              <span class="brackets">(){},</span>
-              <span class="word">起始值</span>
-              <span class="brackets">) </span>
-              <span class="comment">// 第 1 個參數回調函數</span>
-            </div>
-            <div class="comment">// 回調裡面有 2 個形參</div>
-            <div>
-              <span class="word">arr.reduce</span>
+              <span class="cor36">回調函數 </span>
               <span class="brackets">(</span>
-              <span class="function">function </span>
-              <span class="brackets">(</span>
-              <span class="word">上一次值,當前值</span>
+              <span class="word"
+                >上一次累加器返回值,執行累加器當前元素值,當前數組索引,數組本身</span
+              >
               <span class="brackets">){},</span>
               <span class="word">初始值</span>
               <span class="brackets">)</span>
@@ -847,7 +1158,7 @@ function locate(idPound) {
               <span class="brackets">]</span>
             </div>
             <br />
-            <div class="comment">//1.沒初始值</div>
+            <div class="comment">//1.沒初始值 , 以數組第 1 個值 來運算</div>
             <div>
               <span class="word">arr.reduce</span>
               <span class="brackets">(</span>
@@ -869,7 +1180,9 @@ function locate(idPound) {
             </div>
 
             <br />
-            <div class="comment">//2.有初始值</div>
+            <div class="comment">
+              //2.有初始值 , 第 1 個值 用你傳的初始值 來運算
+            </div>
             <div>
               <span class="word">arr.reduce</span>
               <span class="brackets">(</span>
@@ -995,8 +1308,14 @@ function locate(idPound) {
             </div>
           </div>
           <div id="threemethod009" class="articleCardTitle cor36 fz34">
-            4. find <span class="spo marL100">回調</span>
+            4. find
           </div>
+          <p class="fz28">
+            查找陣列裡 , 第一個滿足條件的值 , 並把它
+            <span class="cor36">返回</span>
+          </p>
+          <br />
+          <p class="fz28">🐕🐶🐕🐕.find(🐶) > 🐶</p>
           <div class="bgcVS">
             <div>
               <span class="comment"
@@ -1005,10 +1324,13 @@ function locate(idPound) {
             </div>
             <br />
             <div>
-              <span class="word">arr.</span> <span class="variable">find</span>
-              <span class="brackets">(</span> <span class="cor36">回調</span>
-              <span class="word">返回數組第一個滿足條件的值</span>
-              <span class="brackets">)</span>
+              <span class="word">arr</span> <span class="variable">.find</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">item,index,arr</span>
+              <span class="brackets">)</span> <span class="then">,</span>
+              <span class="word">thisArgs</span> <span class="brackets">)</span>
             </div>
             <br />
             #
@@ -1044,7 +1366,7 @@ function locate(idPound) {
             </div>
             <br />
             <br />
-            <p>我只想要 wayne 怎麼做?</p>
+            <p>物件中 , 我只想要 wayne 的物件 怎麼做?</p>
             <br />
             <div>
               <span class="function">const </span>
@@ -1161,7 +1483,8 @@ function locate(idPound) {
           <div id="threemethod010" class="articleCardTitle cor36 fz34">
             4. slice
           </div>
-          <p class="fz28"></p>
+          <p class="fz28">用來擷取片段 , 數組 或 字串 擷取一部分</p>
+          <br />
           <p class="fz28">不會修改原數組</p>
 
           <br />
@@ -1262,7 +1585,9 @@ function locate(idPound) {
           <div id="threemethod011" class="articleCardTitle cor36 fz34">
             4. splice
           </div>
-          <p class="fz28">能刪改數組</p>
+          <p class="fz28">
+            能刪改數組 , 會返回由 刪除元素 組成的 數組 , 沒刪返回 空數組
+          </p>
 
           <p class="fz28">注意 會修改原數組</p>
           <br />
@@ -1270,7 +1595,7 @@ function locate(idPound) {
             <div>
               <span class="variable">.splice</span>
               <span class="brackets">(</span>
-              <span class="number">2個參數可選</span>
+              <span class="number">3 個參數可選</span>
               <span class="brackets">)</span>
             </div>
 
@@ -1305,7 +1630,7 @@ function locate(idPound) {
               <span class="brackets">()) </span>
               <div>
                 <span class="comment"
-                  >//[] //返回由刪除元素組成的數組(沒刪返回空)</span
+                  >//[] //返回由刪除元素組成的數組(沒刪返回空數組)</span
                 >
               </div>
             </div>
@@ -1428,10 +1753,18 @@ function locate(idPound) {
           </div>
 
           <p class="fz28">
-            every 每一個是否都符合條件, 都符合返回 true, 否返回 false
+            every 判斷 數組中 每個元素 是否都符合條件, 都符合返回 true, 否返回
+            false
           </p>
           <br />
           <p class="fz28">🐕🐶🐕🐕.every(🐕) > false</p>
+          <br />
+          <br />
+          <p class="fz28">
+            some 判斷 數組中 每個元素 是否有一些 滿足 傳入條件 , 有返回 true
+          </p>
+          <br />
+          <p class="fz28">🐕🐶🐶🐕.some(🐶) > true</p>
           <div class="bgcVS">
             <div>
               <span class="comment"
@@ -1440,11 +1773,23 @@ function locate(idPound) {
             </div>
             <br />
             <div>
-              <span class="word">arr.</span>
-              <span class="variable">every</span>
-              <span class="brackets">(</span> <span class="cor36">回調</span>
-              <span class="word">返回布林值</span>
-              <span class="brackets">)</span> <span class="word"></span>
+              <span class="word">arr</span>
+              <span class="variable">.every</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">當前數組元素,元素索引值,arr</span>
+              <span class="brackets">))</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">arr</span>
+              <span class="variable">.every</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">item,index,arr</span>
+              <span class="brackets">))</span>
             </div>
             <br />
             #
@@ -1472,6 +1817,28 @@ function locate(idPound) {
               <span class="comment">// true</span>
             </div>
             <br />
+            <br />
+
+            <div>
+              <span class="word">arr</span> <span class="variable">.some</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">當前數組元素,元素索引值,arr</span>
+              <span class="brackets">))</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">arr</span> <span class="variable">.some</span>
+              <span class="brackets">(</span>
+              <span class="cor36">回調函數</span>
+              <span class="brackets">(</span>
+              <span class="word">item,index,arr</span>
+              <span class="brackets">))</span>
+            </div>
+
+            <br />
+            #
             <div>
               <span class="function">const </span>
               <span class="word">flag</span> <span class="then">=</span>
