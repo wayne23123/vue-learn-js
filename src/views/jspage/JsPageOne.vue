@@ -43,8 +43,16 @@ function locate(idPound) {
           </div>
           <div @click="locate('onejs003')" class="leftNavText">==&===</div>
           <div @click="locate('onejs004')" class="leftNavText">0.1+0.2</div>
+          <div @click="locate('onejs027')" class="leftNavText">
+            判斷數字是小數
+          </div>
+          <div @click="locate('onejs028')" class="leftNavText">數組去重</div>
+
           <div @click="locate('onejs024')" class="leftNavText">
             判斷變量是否為陣列
+          </div>
+          <div @click="locate('onejs026')" class="leftNavText">
+            獲得陣列最後一項
           </div>
 
           <div @click="locate('onejs023')" class="leftNavText">
@@ -293,6 +301,36 @@ function locate(idPound) {
           <br />
           <br />
 
+          <div id="onejs027" class="articleCardTitle cor36">
+            [ JS ] ≫ 判斷數字是小數? 小數點後幾位?
+          </div>
+          <p>數字裡 是否有 小數點</p>
+          <br />
+          <p>數字 用 .toString 轉成字串</p>
+          <br />
+          <p>字串 用 indexOf 拿到小數點在字串的 索引位置</p>
+          <br />
+          <p>沒 小數點 indexOf 返回 -1</p>
+          <br />
+          <br />
+          <p class="coe36"># 小數點後幾位?</p>
+          <p>split 方法可以把字串 切成 數組</p>
+          <br />
+          <p>把 小數點 做為 隔板 , 把字串 通過 split 方法 切割為一個 數組</p>
+          <br />
+          <p>數組 第 2 個元素 為 小數點後的部分</p>
+          <br />
+          <p>取 arr[1] , 然後 .length 方法 獲取長度 , 得到小數點後的個數</p>
+          <br />
+          <br />
+          <br />
+          <p>x.toString().split(".")[1].length</p>
+          <br />
+          <br />
+          <p>1.00 出問題 toString 後只剩 有效位</p>
+          <br />
+          <br />
+
           <div id="onejs024" class="articleCardTitle cor36">
             [ JS ] ≫ 判斷變量是否為陣列?
           </div>
@@ -317,6 +355,194 @@ function locate(idPound) {
           <br />
           <p>想判斷數據類型要 用 Object 的原型 來實現</p>
           <br />
+          <br />
+
+          <div id="onejs028" class="articleCardTitle cor36">
+            [ JS ] ≫ 數組去重?
+          </div>
+          <p class="cor36">1.</p>
+
+          <p>利用 set 結構 不允許 有 重複數據</p>
+          <br />
+          <p>返回 類 數組 物件 , 所以 new Set 後 要 Array.from 方法轉成數組</p>
+          <br />
+          <p>Array.from( new Set ( arr ) )</p>
+          <br />
+          <br />
+          <p class="cor36">2.</p>
+          <p>indexOf 從前往後遍歷數組 返回元素 第一次出現 的下標</p>
+          <br />
+          <p>先 定義 一個 新數組</p>
+          <br />
+          <p>遍歷 原數組 每次通過 indexOf 方法 , 判斷 當前元素 是否在 新數組</p>
+          <br />
+          <p>值為 -1 代表 不在新數組 , 就 加入到 新數組 ＜... 就是去重後結果</p>
+          <br />
+          <br />
+          <p class="cor36">3.</p>
+
+          <p>reduce 傳 2參數 1. 方法(A上一次值,B當前值) 2. 初始值</p>
+          <p>循環方式: 每次都是上一次結果 pre</p>
+
+          <p>
+            比如 第 1 次 1 , 把 1 放到 初始值 [ 1 ] , 第 2 次 [ 1, 2 ] ,
+            每次循環都是上一次結果
+          </p>
+          <p>
+            return 判斷有無重複 , 上次結果 包不包含 當前項目 pre.includes(item)
+          </p>
+          <p>包含 ...> 不要 , 直接返回當前數組 , 不包含 ...> 加進 pre</p>
+          <p>? pre : [ ...pre , item ]</p>
+          <br />
+          <br />
+
+          <p class="cor36">4.</p>
+          <p>兩層 for 循環比較</p>
+          <p>第 1 層循環選定 1 個值</p>
+          <p>第 2 層循環 遍歷 其餘元素</p>
+          <p>依次和 這個值 比較</p>
+          <p>相同 ..> splice 刪除</p>
+          <br />
+          <br />
+
+          <div class="cor36"># 方法1: new set</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+          <div>console.log( new Set( arr ) );</div>
+          <div>發現打印的是物件</div>
+          <div>console.log( Array.from( new Set( arr ) ) );</div>
+          <div>打印出陣列</div>
+          <div>也可以</div>
+          <div>console.log( [...new Set( arr ) ] );</div>
+          <br />
+          <div>封裝:</div>
+          <div>function unique( arr ){</div>
+          <div class="pTwo">return [ Array.from( new Set(arr) ) ]</div>
+          <div>}</div>
+          <div>console.log( unique( arr ) );</div>
+          <br />
+          <br />
+          <div class="cor36">#</div>
+          <div>function unique( arr ){</div>
+          <div class="pTwo">return [...new Set(arr)]</div>
+          <div>}</div>
+          <div>console.log( unique( arr ) );</div>
+          <br />
+          <br />
+          <div class="cor36">方法2: indexOf</div>
+          <div>
+            indexOf()
+            方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳
+            -1
+          </div>
+          <br />
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+          <div>function unique( arr ){</div>
+          <div class="pTwo">var result = [];</div>
+          <div class="pTwo">for( var i = 0 ; i ＜ arr.length ; i++ ){</div>
+          <div class="pFou">if( result.indexOf( arr[i] ) == -1 ){</div>
+          <div class="pSix">result.push( arr[i] );</div>
+          <div class="pFou">}</div>
+          <div class="pTwo">}</div>
+          <div class="pTwo">return result;</div>
+          <div>}</div>
+          <div>console.log( unique( arr ) );</div>
+          <br />
+          <div>目標, 遍歷陣列, 看有沒有在 result 陣列, 沒有就添加</div>
+          <div>去找 indexOf( arr [ i ] )</div>
+          <div>
+            第一次去找 result 肯定是空的 ( 不存在 ) 就回傳 -1 就把他推進 result
+            裡面
+          </div>
+          <div>不是 -1 就不動作 完成。</div>
+          <br />
+          <br />
+          <div class="cor36">方法3: reduce</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+
+          <div>function unique() {</div>
+          <div class="pTwo">var result = arr.reduce( ( pre , item ) => {</div>
+          <div class="pFou">
+            return pre.includes ( item ) ? pre : [ ...pre , item ]
+          </div>
+          <div class="pTwo">} , [] )</div>
+          <div class="pTwo">console.log ( result )</div>
+          <div>}</div>
+          <div>unique()</div>
+          <br />
+
+          <div>reduce 傳 2參數 1. 方法(A上一次值,B當前值) 2. 初始值</div>
+          <div>循環方式: 每次都是上一次結果 pre</div>
+          <div>
+            比如 第 1 次 1 , 把 1 放到 初始值 [ 1 ] , 第 2 次 [ 1, 2 ] ,
+            每次循環都是上一次結果
+          </div>
+          <div>
+            return 判斷有無重複 , 上次結果 包不包含 當前項目 pre.includes(item)
+          </div>
+          <div>包含 ...> 不要 , 直接返回當前數組 , 不包含 ...> 加進 pre</div>
+          <div>? pre : [ ...pre , item ]</div>
+          <br />
+          <br />
+          <div class="cor36">方法4: 兩層 for 循環比較</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+
+          <div>function unique() {</div>
+          <div class="pTwo">for ( let i = 0 ; i ＜ arr.length ; i++ ) {</div>
+          <div class="pFou">for ( let j = i +1 ; j ＜ arr.length ; j++ ) {</div>
+          <div class="pSix">if ( arr [ i ] === arr [ j ] ) {</div>
+          <div class="pEig">arr.splice ( j, 1 )</div>
+          <div class="pEig">j--</div>
+          <div class="pSix">}</div>
+          <div class="pFou">}</div>
+          <div class="pTwo">}</div>
+          <div class="pTwo">return arr</div>
+          <div>}</div>
+          <br />
+          <br />
+          <div>第 1 層循環選定 1 個值</div>
+          <div>第 2 層循環 遍歷 其餘元素</div>
+          <div>依次和 這個值 比較</div>
+          <div>相同 ..> splice 刪除</div>
+          <br />
+          <br />
+
+          <div id="onejs026" class="articleCardTitle cor36">
+            [ JS ] ≫ 獲得陣列最後一項?
+          </div>
+          <p>1. pop()</p>
+          <p>刪除陣列最後一個元素 , 並 返回該元素</p>
+          <br />
+          <p>缺: 會把原陣列 最後一個元素 刪掉</p>
+          <br />
+          <br />
+          <p>2. length</p>
+          <p>通過 array.length 得到陣列長度</p>
+          <br />
+          <p>陣列索引從 0 開始</p>
+          <br />
+          <p>最後一個元素 的索引 為 length - 1</p>
+          <br />
+          <p>array 中括號 length - 1 . . . array[length-1]</p>
+          <br />
+          <br />
+          <p>3. slice()</p>
+          <p>
+            通過 指定 起始索引 擷取對應元素 , 返回一個 由 這些元素 組成的 新數組
+          </p>
+          <br />
+          <p>當用 負數 做參數 , 會重 陣列 末端開始計數 ,</p>
+          <br />
+          <p>當 不傳 第 2 個參數時 , 表示一直找到 陣列 末端</p>
+          <br />
+          <p>arr.slice(-1)</p>
+          <br />
+          <br />
+          <p>4. 陣列 at 方法</p>
+          <p>接收 一個 整數 做索引值 , 並返回 索引 對應的 元素</p>
+          <br />
+          <p>傳 -1 代表 最後一個</p>
+          <br />
+          <p>arr.at(-1)</p>
           <br />
 
           <div id="onejs023" class="articleCardTitle cor36">
@@ -2176,6 +2402,7 @@ function locate(idPound) {
       </div>
     </transition>
   </div>
+  <div class="timeDiv"></div>
   <!-- thebottomcssTHEBOTTOMCSSTABBOTTOMCSStabbottomcss -->
 </template>
 
@@ -2198,8 +2425,11 @@ section {
 .leftNav {
   font-size: 20px;
   position: fixed;
+
   width: 19vw;
-  height: 100%;
+  top: 70px;
+  bottom: 0;
+
   background-color: #040404;
   /* color: #36c1cb; */
   color: #a1b6cb;
@@ -2248,6 +2478,16 @@ p {
 .cor36 {
   color: #36c1cb;
   font-size: 1.25em;
+}
+
+.timeDiv {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 15vw;
+  height: 50px;
+  background-color: #000000b4;
+  z-index: 10;
 }
 
 /* top按鈕的css -------------------------------------------------------*/

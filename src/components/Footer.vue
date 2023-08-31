@@ -73,11 +73,12 @@ getTime();
   position: fixed;
   left: 0;
   bottom: 20px;
-  background-color: #000000b3;
+  background-color: #00000050;
   color: #565656;
   font-size: 20px;
   padding: 10px;
   z-index: 10;
+  border-radius: 30px;
 }
 
 footer {
