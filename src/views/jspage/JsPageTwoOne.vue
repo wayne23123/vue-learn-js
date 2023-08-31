@@ -707,29 +707,31 @@ function locate(idPound) {
           <br />
           <br />
           <div id="twohand006" class="cardTitle">6. JS 數組去重的方式?</div>
-          <div>寫3種:</div>
-          <div class="cor36">方法1: new set</div>
-          <div>var arr1 = [ 1,2,3,2,4,1 ];</div>
-          <div>console.log( new Set( arr1 ) );</div>
+
+          <div class="cor36"># 方法1: new set</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+          <div>console.log( new Set( arr ) );</div>
           <div>發現打印的是物件</div>
-          <div>console.log( Array.from( new Set( arr1 ) ) );</div>
+          <div>console.log( Array.from( new Set( arr ) ) );</div>
           <div>打印出陣列</div>
           <div>也可以</div>
-          <div>console.log( [...new Set( arr1 ) ] );</div>
+          <div>console.log( [...new Set( arr ) ] );</div>
           <br />
-          <div>面試可能要你封裝:</div>
+          <div>封裝:</div>
           <div>function unique( arr ){</div>
-          <div>. return [ Array.from( new Set(arr) ) ]</div>
+          <div class="pTwo">return [ Array.from( new Set(arr) ) ]</div>
           <div>}</div>
-          <div>console.log( unique( arr1 ) );</div>
+          <div>console.log( unique( arr ) );</div>
+          <br />
+          <br />
+          <div class="cor36">#</div>
+          <div>function unique( arr ){</div>
+          <div class="pTwo">return [...new Set(arr)]</div>
+          <div>}</div>
+          <div>console.log( unique( arr ) );</div>
           <br />
           <br />
 
-          <div>function unique( arr ){</div>
-          <div>. return [...new Set(arr)]</div>
-          <div>}</div>
-          <div>console.log( unique( arr1 ) );</div>
-          <br />
           <div class="cor36">方法2: indexOf</div>
           <div>
             indexOf()
@@ -737,24 +739,79 @@ function locate(idPound) {
             -1
           </div>
           <br />
-          <div>var arr2 = [ 1,2,3,2,4,1 ];</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
           <div>function unique( arr ){</div>
-          <div>. var brr = [];</div>
-          <div>. for( var i = 0 ; i ＜ arr.length ; i++ ){</div>
-          <div>. . if( brr.indexOf( arr[i] ) == -1 ){</div>
-          <div>. . . brr.push( arr[i] );</div>
-          <div>. . }</div>
-          <div>. }</div>
-          <div>. return brr;</div>
+          <div class="pTwo">var result = [];</div>
+          <div class="pTwo">for( var i = 0 ; i ＜ arr.length ; i++ ){</div>
+          <div class="pFou">if( result.indexOf( arr[i] ) == -1 ){</div>
+          <div class="pSix">result.push( arr[i] );</div>
+          <div class="pFou">}</div>
+          <div class="pTwo">}</div>
+          <div class="pTwo">return result;</div>
           <div>}</div>
-          <div>console.log( unique( arr2 ) );</div>
+          <div>console.log( unique( arr ) );</div>
           <br />
-          <div>目標, 遍歷陣列, 看有沒有在 brr 陣列, 沒有就添加</div>
-          <div>brr去找indexOf(arr[i])</div>
-          <div>第一次去找brr肯定是空的(不存在)就回傳-1就把他推進brr裡面</div>
-          <div>不是-1就不動作 完成。</div>
+          <div>目標, 遍歷陣列, 看有沒有在 result 陣列, 沒有就添加</div>
+          <div>去找 indexOf( arr [ i ] )</div>
+          <div>
+            第一次去找 result 肯定是空的 ( 不存在 ) 就回傳 -1 就把他推進 result
+            裡面
+          </div>
+          <div>不是 -1 就不動作 完成。</div>
           <br />
-          <div class="cor36">方法3: sort</div>
+          <br />
+
+          <div class="cor36">方法3: reduce</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+
+          <div>function unique() {</div>
+          <div class="pTwo">var result = arr.reduce( ( pre , item ) => {</div>
+          <div class="pFou">
+            return pre.includes ( item ) ? pre : [ ...pre , item ]
+          </div>
+          <div class="pTwo">} , [] )</div>
+          <div class="pTwo">console.log ( result )</div>
+          <div>}</div>
+          <div>unique()</div>
+          <br />
+
+          <div>reduce 傳 2參數 1. 方法(A上一次值,B當前值) 2. 初始值</div>
+          <div>循環方式: 每次都是上一次結果 pre</div>
+          <div>
+            比如 第 1 次 1 , 把 1 放到 初始值 [ 1 ] , 第 2 次 [ 1, 2 ] ,
+            每次循環都是上一次結果
+          </div>
+          <div>
+            return 判斷有無重複 , 上次結果 包不包含 當前項目 pre.includes(item)
+          </div>
+          <div>包含 ...> 不要 , 直接返回當前數組 , 不包含 ...> 加進 pre</div>
+          <div>? pre : [ ...pre , item ]</div>
+          <br />
+          <br />
+          <div class="cor36">方法4: 兩層 for 循環比較</div>
+          <div>var arr = [ 1,2,3,2,4,1 ];</div>
+
+          <div>function unique() {</div>
+          <div class="pTwo">for ( let i = 0 ; i ＜ arr.length ; i++ ) {</div>
+          <div class="pFou">for ( let j = i +1 ; j ＜ arr.length ; j++ ) {</div>
+          <div class="pSix">if ( arr [ i ] === arr [ j ] ) {</div>
+          <div class="pEig">arr.splice ( j, 1 )</div>
+          <div class="pEig">j--</div>
+          <div class="pSix">}</div>
+          <div class="pFou">}</div>
+          <div class="pTwo">}</div>
+          <div class="pTwo">return arr</div>
+          <div>}</div>
+          <br />
+          <br />
+          <div>第 1 層循環選定 1 個值</div>
+          <div>第 2 層循環 遍歷 其餘元素</div>
+          <div>依次和 這個值 比較</div>
+          <div>相同 ..> splice 刪除</div>
+          <br />
+          <br />
+
+          <div class="cor36">方法5: sort</div>
           <div>var arr3 = [ 1,2,3,2,4,1 ];</div>
           <div>function unique( arr ){</div>
           <div>. arr = arr.sort();</div>
@@ -1055,7 +1112,7 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -1072,7 +1129,7 @@ a:hover {
 }
 
 .toTop:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBot {
@@ -1080,14 +1137,14 @@ a:hover {
   right: 50px;
   position: fixed;
   z-index: 200;
-  background-color: #7f010190;
+  background-color: #6f020250;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   cursor: pointer;
 }
 .toBot:hover {
-  background-color: #6f020250;
+  background-color: #7f010190;
 }
 
 .toBotButton {
