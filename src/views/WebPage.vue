@@ -752,15 +752,19 @@ function locate(idPound) {
           <h1 id="" class="articleCardTitle"># 解決跨域問題:</h1>
           <h3 class="cor36">JSONP</h3>
           <p>利用script標籤不受同源策略的影響, 前端先動態創立一個script標籤,</p>
+          <br />
           <p>然後給script設置src, 然後src裡面的目標是請求的目標,</p>
+          <br />
           <p>
             通常和後端約定說一個回調函數的名字, 通常可以設callback
             function來告訴後端說我前端回調函數寫這個,
           </p>
+          <br />
           <p>
             然後後端給你返回一個script, script裡面相當於調用你前端寫的callback
             function
           </p>
+          <br />
           <p>
             然後callback function後端會給你傳一個數據, 你就可以從callback
             function裡提取這個數據出來
@@ -823,9 +827,21 @@ function locate(idPound) {
           <br />
           <h3 class="cor36">CORS . . . Cross-Origin Resource Sharing</h3>
           <p>2 種請求:</p>
-          <p class="cor36">CORS簡單請求?</p>
-          <p>在後端設置響應頭 Access-Control-Allow-Origin 建立一個白名單</p>
+
+          <p class="cor36">CORS簡單請求</p>
+          <p>請求方法為 GET HEAD POST</p>
+          <p>頭部字段 滿足 CORS 安全規範</p>
+          <p>請求頭 Content-Type 為</p>
+          <p class="pTwo">text / plain</p>
+          <p class="pTwo">multipart / form-data</p>
+          <p class="pTwo">application / x-www-form-urlencoded</p>
           <br />
+
+          <p class="cor36">CORS簡單請求?</p>
+          <p>簡單請求 , 在後端設置響應頭 Access-Control-Allow-Origin 建立一個白名單</p>
+          <br />
+          <p>就可以了</p>
+          <br>
           <br />
           <p class="cor36">CORS複雜請求兩次請求都在做什麼?</p>
           <p>第一次它會去 find options請求, 問服務器準不準我發POST請求,</p>
@@ -1038,31 +1054,37 @@ function locate(idPound) {
           <h3 id="web009" class="articleCardTitle cor36">
             [ Web筆記 ] ≫ OSI七層模型
           </h3>
-          <p>
-            1.物理層利用傳輸介質為數據鏈路層提供物理連接，實現比特流的透明傳輸。
-          </p>
+          <p>1.物理層</p>
+          <br />
+          <p>利用傳輸介質為數據鏈路層提供物理連接，實現比特流的透明傳輸。</p>
+          <br />
+          <p>2.數據鏈路層 - 各段鏈路的 通信協議</p>
           <br />
           <p>
-            2.數據鏈路層在物理層提供的比特流的基礎上，通過差錯控制、流量控制方法，使有差錯的物理線路變為無差錯的數據鏈路。
+            在物理層提供的比特流的基礎上，通過差錯控制、流量控制方法，使有差錯的物理線路變為無差錯的數據鏈路。
           </p>
           <br />
-          <p>3.網絡層向傳輸層提供最基本的端到端的數據傳輸服務。</p>
+          <p>3.網絡層 - 基於 IP 地址 進行 路由 轉發</p>
           <br />
-          <p>
-            4.數據鏈路層向用戶提供可靠的端到端的差錯和流量控制，保證報文的正確傳輸，同時向高層屏蔽下層數據通信的細節，即向用戶透明地傳送報文。
-          </p>
+          <p>向傳輸層提供最基本的端到端的數據傳輸服務。</p>
           <br />
-          <p>
-            5.會話層組織和協調兩個會話進程之間的通信，並對數據交換進行管理。
-          </p>
+          <p>4.傳輸層 - 建立 TCP 或 UDP 連接</p>
           <br />
           <p>
-            6.表示層處理用戶信息的表示問題，如編碼、數據格式轉換和加密解密等。
+            向用戶提供可靠的端到端的差錯和流量控制，保證報文的正確傳輸，同時向高層屏蔽下層數據通信的細節，即向用戶透明地傳送報文。
           </p>
           <br />
-          <p>
-            7.應用層直接向用戶提供服務，完成用戶希望在網絡上完成的各種工作。
-          </p>
+          <p>5.會話層 - 建立 2 APP 之間的 會話</p>
+          <br />
+          <p>組織和協調兩個會話進程之間的通信，並對數據交換進行管理。</p>
+          <br />
+          <p>6.表示層 - 對 APP 數據進行 編碼</p>
+          <br />
+          <p>處理用戶信息的表示問題，如編碼、數據格式轉換和加密解密等。</p>
+          <br />
+          <p>7.應用層 - 用戶 APP 裡的數據</p>
+          <br />
+          <p>直接向用戶提供服務，完成用戶希望在網絡上完成的各種工作。</p>
           <br />
           <br />
           <h3 class="articleCardTitle cor36"># 五層網絡協議</h3>
@@ -1074,6 +1096,35 @@ function locate(idPound) {
             5.物理層（利用物理介質傳輸比特流）：物理傳輸（通過雙絞線、電磁波等各種介質）
           </p>
           <br />
+          <br />
+          <h3 id="" class="articleCardTitle cor36">[ Web筆記 ] ≫ IPv4 IPv6</h3>
+          <p>IPv4 的 二進制數 是 32 位的</p>
+          <br />
+          <p>192.168.1.1</p>
+          <br />
+          <p>IPv6 的長度 是 128 位 十六進制</p>
+          <br />
+          <p>2001:0db8:85a3:0000:0000:8a2e:0370:7334</p>
+          <br />
+          <p>地址數量:</p>
+          <br />
+          <p>IPv4 43億地址</p>
+          <br />
+          <p>IPv6 2^128</p>
+          <br />
+          <p>IPv6 比 IPv4 更安全</p>
+          <br />
+          <p>IPv4 安全性取決於 網站 和 應用程序</p>
+          <br />
+          <p>IPv6 集成了 Internet 協議的 安全標準</p>
+          <br />
+          <p>IPv4 安全是可選項 IPv6 強制性的</p>
+          <br />
+          <p>IPv6 性能好</p>
+          <br />
+          <p>IPv6 路由表更小 , 聚合能力更強</p>
+          <br />
+
           <br />
 
           <h3 id="web010" class="articleCardTitle cor36">
