@@ -1185,10 +1185,13 @@ function locate(idPound) {
             [ CSS ] ≫ 如何讓google瀏覽器支持小字體?
           </h2>
           <p>google 最小字體支持12px,想要更小用 transform: scale(0.5)</p>
-
-          <p></p>
           <br />
-          <p></p>
+          <br />
+          <h2 class="articleCardTitle cor36">[ CSS ] ≫ Sass 和 SCSS ?</h2>
+
+          <p>
+            語法書寫方式不同，Sass是以嚴格的縮進式語法規則來書寫，不帶大括號({})和分號(;)，而SCSS的語法書寫和我們的CSS語法書寫方式非常類似
+          </p>
           <br />
           <p></p>
           <br />
