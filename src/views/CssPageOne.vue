@@ -181,7 +181,7 @@ function locate(idPound) {
           </p>
           <br />
           <p class="cor36">relative</p>
-          <p class="pTwo">將元素偏離文檔流, 但占用正常文檔流位置</p>
+          <p class="pTwo">元素仍在文檔流, 占用正常文檔流位置</p>
           <p class="pTwo">relative 相對於 自身 進行定位</p>
           <br />
           <p class="cor36">absolute</p>

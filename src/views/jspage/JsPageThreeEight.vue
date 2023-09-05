@@ -70,7 +70,8 @@ function locate(idPound) {
             <span class="cor17">. . . </span> ↘
             <span class="cor17">. . . . . . </span> |
             <span class="cor17">. . . . . . . . . . </span> ↖
-            <span class="cor17">. . </span> 冒泡階段 由下往上
+            <span class="cor17">. . </span> 冒泡階段 由下往上 .
+            事件是在冒泡階段觸發
           </div>
           <div class="fz30">
             <span class="cor17">. . . . . </span>2
