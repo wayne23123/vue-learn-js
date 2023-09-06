@@ -62,6 +62,7 @@ function locate(idPound) {
           <div @click="locate('onejs025')" class="leftNavText">
             判斷一個物件是否有某屬性
           </div>
+          <div @click="locate('onejs029')" class="leftNavText">合併 2 物件</div>
 
           <div @click="locate('onejs005')" class="leftNavText">
             let var const
@@ -700,6 +701,55 @@ function locate(idPound) {
           <p>( 會找自身 找原型鏈 )</p>
           <br />
           <br />
+
+          <div id="onejs029" class="articleCardTitle cor36">
+            [ JS ] ≫ 合併 2 物件?
+          </div>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
+          <br />
+          <p class="cor36">方法1: Object.assign</p>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
+
+          <p class="comment">
+            let obj = Object.assign( a, b ); //會改變 a 物件
+          </p>
+          <p>
+            let obj = Object.assign( {}, a, b );
+            <span class="comment">//用空物件,可以不改變a,b</span>
+          </p>
+          <p>console.log( obj );</p>
+          <p class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </p>
+          <br />
+          <p class="cor36">方法2: 解構賦值 + ...擴展運算符</p>
+
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
+
+          <p>let obj = { ...a, ...b }</p>
+          <p>console.log( obj );</p>
+          <p class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </p>
+
+          <br />
+          <p class="cor36">方法3: 遍歷 物件 a 物件 b</p>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
+          <p>const obj = {}</p>
+          <p>for ( let key in a ) {</p>
+          <p class="pTwo">obj[ key ] = a[ key ]</p>
+          <p>}</p>
+          <p>for ( let key in b)</p>
+          <p class="pTwo">obj[ key ] = b[ key ]</p>
+          <p>}</p>
+          <p>coneol.log ( obj )</p>
+          <p class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </p>
 
           <div id="onejs005" class="articleCardTitle cor36">
             [ JS ] ≫ let var const區別?
