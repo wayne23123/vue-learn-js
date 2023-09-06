@@ -2466,7 +2466,7 @@ section {
 .leftNav {
   font-size: 20px;
   position: fixed;
-  right: 80px;
+  right: 0;
   top: 150px;
   /* width: 19vw; */
   /* height: 100%; */
