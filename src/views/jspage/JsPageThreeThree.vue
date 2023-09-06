@@ -191,49 +191,95 @@ function locate(idPound) {
             </div>
             <br />
             <br />
+            <p>應用場景: 一開始有字串 轉成 變量</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">info</span> <span class="then">=</span>
+              <span class="src">"wayne,18,123456"</span>
+            </div>
+            <div><span class="comment">//用逗號轉化成數組</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">person</span> <span class="then">=</span>
+              <span class="word">info</span>
+              <span class="variable">.split</span>
+              <span class="brackets">(</span> <span class="src">","</span>
+              <span class="brackets">)</span>
+            </div>
+            <div><span class="comment">//解構賦值轉成變量</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">[</span>
+              <span class="word">name,age,id</span>
+              <span class="brackets">]</span> <span class="then">=</span>
+              <span class="word">person</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">name,age,id</span>
+              <span class="brackets">)</span>
+            </div>
+
+            <br />
+            <br />
 
             <div class="comment">//交換2變量</div>
-            <div>
-              <span class="function">const </span> <span class="word">a</span>
-              <span class="then">=</span> <span class="number">1</span>
+            <div class="dis">
+              <div class="w100">
+                <div>
+                  <span class="function">const </span>
+                  <span class="word">a</span> <span class="then">=</span>
+                  <span class="number">1</span>
+                </div>
+                <div>
+                  <span class="function">const </span>
+                  <span class="word">b</span> <span class="then">=</span>
+                  <span class="number">2</span>
+                  <span class="comment">; . . . // 一定要加分號</span>
+                </div>
+                <div>
+                  <span class="brackets">[</span> <span class="word">b,a</span>
+                  <span class="brackets">]</span> <span class="then">=</span>
+                  <span class="brackets">[</span> <span class="word">a,b</span>
+                  <span class="brackets">] </span>
+                </div>
+                <div>
+                  <span class="word">console.log</span>
+                  <span class="brackets">(</span> <span class="word">a,b</span>
+                  <span class="brackets">)</span>
+                </div>
+              </div>
+
+              <div class="w100">
+                <div class="comment">//以前方法</div>
+                <div>
+                  <span class="function">let </span>
+                  <span class="word">a</span> <span class="then">=</span>
+                  <span class="number">1</span>
+                </div>
+                <div>
+                  <span class="function">let </span>
+                  <span class="word">b</span> <span class="then">=</span>
+                  <span class="number">2</span>
+                </div>
+                <div>
+                  <span class="function">let </span>
+                  <span class="word">temp</span> <span class="then">=</span>
+                  <span class="word">a</span>
+                </div>
+                <div>
+                  <span class="word">a</span> <span class="then">=</span>
+                  <span class="word">b</span>
+                </div>
+                <div>
+                  <span class="word">b</span> <span class="then">=</span>
+                  <span class="word">temp</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <span class="function">const </span> <span class="word">b</span>
-              <span class="then">=</span> <span class="number">2</span>
-            </div>
-            <div>
-              <span class="brackets">[</span> <span class="word">b,a</span>
-              <span class="brackets">]</span> <span class="then">=</span>
-              <span class="brackets">[</span> <span class="word">a,b</span>
-              <span class="brackets">] </span>
-              <span class="number">// !!!報錯了!!!</span>
-            </div>
-            <div>
-              <span class="word">console.log</span>
-              <span class="brackets">(</span> <span class="word">a,b</span>
-              <span class="brackets">)</span>
-            </div>
-            <br />
-            <div>
-              <span class="function">const </span> <span class="word">a</span>
-              <span class="then">=</span> <span class="number">1</span>
-            </div>
-            <div>
-              <span class="function">const </span> <span class="word">b</span>
-              <span class="then">=</span> <span class="number">2</span>
-              <span class="number">; . . . // 一定要加分號</span>
-            </div>
-            <div>
-              <span class="brackets">[</span> <span class="word">b,a</span>
-              <span class="brackets">]</span> <span class="then">=</span>
-              <span class="brackets">[</span> <span class="word">a,b</span>
-              <span class="brackets">] </span>
-            </div>
-            <div>
-              <span class="word">console.log</span>
-              <span class="brackets">(</span> <span class="word">a,b</span>
-              <span class="brackets">)</span>
-            </div>
+
             <br />
             <br />
             <p>當變量多 單元值少的情況</p>
@@ -453,42 +499,121 @@ function locate(idPound) {
             物件解構是將物件屬性和方法快速批量賦值給一系列變量的簡潔語法
           </p>
           <div class="bgcVS">
+            <p class="comment">1. 變量名 (左) 和 屬姓名 (右) 要一樣</p>
+            <p class="comment">2. 解構的變量名 不要和 外面的 變量名衝突</p>
+            <p class="comment">3. 變量名 (左) 可以重新改名</p>
+            <br />
             <div>
-              <span class="comment">const name = "不能變量名衝突" // 報錯</span>
+              <span class="function">const </span>
+              <span class="word">person</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne"</span>
+              <span class="then">,</span>
+              <div>
+                <span class="word">age:</span> <span class="number">18,</span>
+              </div>
+              <div>
+                <span class="word">city:</span>
+                <span class="src">"taipei"</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">};</span></div>
+            <br />
+            <div><span class="comment">//const name=person.name</span></div>
+            <div><span class="comment">//const age=person.age</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="brackets">{</span> <span class="word">name,</span>
+              <span class="word">age</span> <span class="word">,city</span>
+              <span class="brackets">}</span> <span class="then">=</span>
+              <span class="word">person</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">name,age,city</span>
+              <span class="brackets">)</span>
             </div>
             <br />
+            <br />
+            <p>多層物件</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">person</span> <span class="then">=</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">name:</span> <span class="src">"wayne"</span>
+              <span class="then">,</span>
+              <div>
+                <span class="word">age:</span> <span class="number">18,</span>
+              </div>
+              <div>
+                <span class="word">city:</span>
+                <span class="src">"taipei"</span>
+              </div>
 
+              <div></div>
+
+              <div>
+                <span class="word">social:</span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">bilibili:</span>
+                <span class="src">"123456"</span>
+                <div>
+                  <span class="word">youtube:</span>
+                  <span class="src">"654321"</span>
+                </div>
+                <div></div>
+              </div>
+
+              <div><span class="brackets">}</span></div>
+            </div>
+            <div><span class="brackets">};</span></div>
             <div>
               <span class="function">const </span>
               <span class="brackets">{</span>
-              <span class="word">name,number</span>
-              <span class="brackets">}</span> <span class="then">=</span>
-              <span class="brackets">{</span> <span class="word">name:</span>
-              <span class="src">"wayne",</span>
-              <span class="word">number:</span> <span class="number">123</span>
-              <span class="brackets">}</span>
+              <span class="word">name,social:</span>
+              <span class="brackets">{</span>
+              <span class="word">bilibili</span> <span class="word">}}</span>
+              <span class="then">=</span> <span class="word">person</span>
             </div>
-            <div class="comment">// 相當於 const name = obj.name</div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">name,bilibili</span>
+              <span class="brackets">)</span>
+            </div>
             <br />
-            <p>1. 變量名 (左) 和 屬姓名 (右) 要一樣</p>
-            <p>2. 解構的變量名 不要和 外面的 變量名衝突</p>
-            <p>3. 變量名 (左) 可以重新改名</p>
-            <br />
+            <p>賦值時,加 : 改變新變量的變量名</p>
+            <p>賦值時,加 = 設定一個預設值,避免物件沒這個值</p>
             <div>
               <span class="function">const </span>
-              <span class="brackets">{ </span>
-              <span class="word">name: username , number</span>
-              <span class="brackets">}</span> <span class="then">=</span>
-              <span class="brackets">{</span> <span class="word">name:</span>
-              <span class="src">"wayne",</span>
-              <span class="word">number:</span> <span class="number">123</span>
-              <span class="brackets">}</span>
+              <span class="brackets">{</span>
+              <span class="word">name: personName</span>
+              <span class="then">=</span> <span class="src">"guest" ,</span>
+              <span class="word">age</span> <span class="then">=</span>
+              <span class="word">-1</span>
+
+              <span class="word">, social:</span>
+              <span class="brackets">{</span>
+              <span class="word">bilibili</span> <span class="word">}}</span>
+              <span class="then">=</span> <span class="word">person</span>
             </div>
             <div>
-              <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="word">username</span> <span class="brackets">)</span>
-              <span class="comment">// wayne</span>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="word">personName,age,bilibili</span>
+              <span class="brackets">)</span>
             </div>
           </div>
           <div class="articleCardTitle cor36 fz34">數組物件解構</div>

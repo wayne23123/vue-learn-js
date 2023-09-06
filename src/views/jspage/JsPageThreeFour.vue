@@ -842,7 +842,9 @@ function locate(idPound) {
             <div class="comment pTwo">//函數體</div>
             <div class="brackets">}, thisValue )</div>
             <br />
-            <div class="number">只遍歷 , 不返回值</div>
+            <div class="number">
+              只遍歷 , 不返回值 , 加 return 返回 undefined
+            </div>
             <br />
             <br />
             <div>
@@ -909,6 +911,39 @@ function locate(idPound) {
               <span class="word">result</span> <span class="brackets">) </span>
               <span class="comment">// undefined</span>
             </div>
+            <br />
+            <br />
+            <p>練習 假設 3 個 button 添加 點擊 事件</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">buttons</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelectorAll</span>
+              <span class="brackets">(</span> <span class="src">".btn"</span>
+              <span class="brackets">);</span>
+            </div>
+            <div>
+              <span class="word">buttons</span>
+              <span class="variable">.forEach</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">button</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">button</span>
+              <span class="variable">.addEventListener</span>
+              <span class="brackets">(</span> <span class="src">"click"</span>
+              <span class="then">,</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+              <div></div>
+              <div class="padTwo VSL"><span class="comment">//...</span></div>
+
+              <div><span class="brackets">})</span></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+
             <br />
             <br />
             <p>練習 渲染 ul 列表</p>
@@ -1041,6 +1076,31 @@ function locate(idPound) {
               <span class="brackets">]</span>
             </div>
             <br />
+            <div>
+              <span class="function">const </span>
+              <span class="variable">filter</span> <span class="then">=</span>
+              <span class="word">arr</span>
+              <span class="variable">.filter</span>
+              <span class="brackets">(</span>
+              <span class="function">function </span>
+              <span class="brackets">(</span> <span class="word">age</span>
+              <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span> <span class="word">age</span>
+              <span class="then">>=</span> <span class="number">18;</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="variable">filter</span>
+              <span class="brackets">)</span>
+            </div>
+
+            <br />
             <div><span class="comment">//過濾奇數</span></div>
             <div>
               <span class="word">arr</span>
@@ -1138,7 +1198,9 @@ function locate(idPound) {
             <br />
 
             <div>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
+
               <span class="brackets">(</span>
               <span class="cor36">回調函數 </span>
               <span class="brackets">(</span>
@@ -1160,7 +1222,8 @@ function locate(idPound) {
             <br />
             <div class="comment">//1.沒初始值 , 以數組第 1 個值 來運算</div>
             <div>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
               <span class="brackets">(</span>
               <span class="function">function </span>
               <span class="brackets">(</span>
@@ -1184,7 +1247,8 @@ function locate(idPound) {
               //2.有初始值 , 第 1 個值 用你傳的初始值 來運算
             </div>
             <div>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
               <span class="brackets">(</span>
               <span class="function">function </span>
               <span class="brackets">(</span>
@@ -1210,7 +1274,8 @@ function locate(idPound) {
             <div>
               <span class="function">const </span>
               <span class="word">total</span> <span class="then">=</span>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
               <span class="brackets">((</span>
               <span class="word">prev,current</span>
               <span class="brackets">)</span> <span class="function">=></span>
@@ -1264,7 +1329,8 @@ function locate(idPound) {
             <div>
               <span class="function">const </span>
               <span class="word">total</span> <span class="then">=</span>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
               <span class="brackets">((</span>
               <span class="word">prev,current</span>
               <span class="brackets">)</span> <span class="function">=></span>
@@ -1294,7 +1360,8 @@ function locate(idPound) {
             <div>
               <span class="function">const </span>
               <span class="word">total</span> <span class="then">=</span>
-              <span class="word">arr.reduce</span>
+              <span class="word">arr</span>
+              <span class="variable">.reduce</span>
               <span class="brackets">((</span>
               <span class="word">prev,current</span>
               <span class="brackets">)</span> <span class="function">=></span>
@@ -2467,7 +2534,7 @@ section {
   font-size: 20px;
   position: fixed;
   right: 0;
-  top: 150px;
+  top: 0;
   /* width: 19vw; */
   /* height: 100%; */
   /* background-color: #040404; */
@@ -2484,6 +2551,7 @@ section {
   /* color: #36c1cb; */
   color: #a1b6cb;
   transition: all 0.2s ease;
+  z-index: 201;
 }
 
 .leftNavContainer {
@@ -2530,5 +2598,13 @@ a {
 a:hover {
   /* 滑進時顏色 */
   color: #3ddbe7;
+}
+
+.toTop {
+  bottom: 120px;
+}
+
+.toBot {
+  bottom: 50px;
 }
 </style>

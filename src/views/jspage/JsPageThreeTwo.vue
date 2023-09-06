@@ -86,6 +86,7 @@ function locate(idPound) {
 
             <div>
               <span class="word">fn</span> <span class="brackets">()</span>
+              <span class="comment">// "函數提升"</span>
             </div>
 
             <div>
@@ -300,7 +301,7 @@ function locate(idPound) {
               // arguments 動態參數 只存在於 函數裡面
             </div>
             <div class="comment pTwo">
-              // 1. 是偽數組 -> 有所引號 有下標 沒有常用的方法
+              // 1. 是偽數組 -> 有所引號 有.length , 沒有常用的方法
             </div>
             <div class="word pTwo">
               <span class="word">console.</span>
@@ -319,8 +320,11 @@ function locate(idPound) {
               <span class="then">=</span> <span class="number">0</span>
               <span class="then">;</span> <span class="word">i</span>
               <span class="then">＜</span>
-              <span class="word">arguments.length</span>
-              <span class="then">;</span> <span class="word">i++</span>
+              <span class="word">arguments</span
+              ><span class="variable">.length</span>
+
+              <span class="then">;</span> <span class="word">i</span>
+              <span class="then">++</span>
               <span class="brackets">){</span>
             </div>
             <div class="pFou">
@@ -393,7 +397,7 @@ function locate(idPound) {
               <span class="word">arr</span>
               <span class="brackets">) </span>
               <span class="comment">// [2,3,4] </span>
-              <span class="comment">// 使用時不用...</span>
+              <span class="comment">// 使用時不用加"..."</span>
             </div>
             <div class="brackets">}</div>
             <div>
@@ -712,18 +716,18 @@ function locate(idPound) {
             </div>
           </div>
           <div class="articleCardTitle cor36 fz34">匿名函數</div>
-          <a href="https://juejin.cn/post/6844903962257129485"
+          <!-- <a href="https://juejin.cn/post/6844903962257129485"
             >https://juejin.cn/post/6844903962257129485</a
           >
           <a href="https://hackmd.io/@Jung/H1H3ErwUI"
             >https://hackmd.io/@Jung/H1H3ErwUI</a
-          >
+          > -->
           <p class="fz28">1.事件</p>
           <p class="fz28">2.物件</p>
           <p class="fz28">3.函數表達式</p>
           <p class="fz28">4.回調函數</p>
           <p class="fz28">5.函數返回值</p>
-          <p class="fz28">6.模仿塊及作用域 IIFE</p>
+          <p class="fz28">6.模仿塊級作用域 IIFE</p>
           <div id="twofunction006" class="articleCardTitle cor36 fz34">
             2.6 箭頭函數 -> 更適用於本來需要匿名函數的地方
           </div>
@@ -987,6 +991,7 @@ function locate(idPound) {
               <span class="word">arr</span> <span class="brackets">[</span>
               <span class="word">i</span> <span class="brackets">]</span>
             </div>
+            <div class="comment">// sum = sum + arr [ i ]</div>
             <div class="pTwo brackets">}</div>
             <div class="pTwo">
               <span class="then">return </span> <span class="word">sum</span>
@@ -997,7 +1002,37 @@ function locate(idPound) {
               <span class="number">2,3</span> <span class="brackets">)</span>
             </div>
           </div>
+          <div class="articleCardTitle cor36 fz34">this 指向</div>
+
+          <table>
+            <tr>
+              <th><div class="pad20">調用方式</div></th>
+              <th><div class="pad20">示例</div></th>
+              <th><div class="pad20">函數中this指向</div></th>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過new調用</div></td>
+              <td><div class="pad20">mew method()</div></td>
+              <td><div class="pad20">新物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">直接調用</div></td>
+              <td><div class="pad20">method()</div></td>
+              <td><div class="pad20">全局對象window</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">通過物件調用</div></td>
+              <td><div class="pad20">obj.method()</div></td>
+              <td><div class="pad20">前面的物件</div></td>
+            </tr>
+            <tr>
+              <td><div class="pad20">call.apply.bind</div></td>
+              <td><div class="pad20">method.call(ctx)</div></td>
+              <td><div class="pad20">第一個參數</div></td>
+            </tr>
+          </table>
           <div class="articleCardTitle cor36 fz34">箭頭函數 this</div>
+
           <p class="fz28">箭頭函數的this指向哪裡?</p>
           <p class="fz28">外部的this or (捕獲其上下文中的this)</p>
           <p class="fz28">
