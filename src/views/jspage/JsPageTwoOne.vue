@@ -1020,6 +1020,32 @@ function locate(idPound) {
 
           <br />
           <br />
+          <div id="twohand012" class="cardTitle">12. 清空數組</div>
+          <p class="cor36">1.直接賦值 空數組</p>
+          <p>let a = [ 1,2,3,4 ]</p>
+          <p>a = []</p>
+          <br />
+          <p class="cor36">
+            2. splice 方法 -> 會修改原數組 -> 返回值 是 你刪掉的元素
+          </p>
+          <p>arr.splice(起始位置, 需要刪除元素的個數, 插入的值 )</p>
+          <br />
+          <p>let arr = [ 1,2,3,4 ]</p>
+
+          <p>function fn( arr ) {</p>
+          <p class="pTwo">arr.splice( 0, arr.length )</p>
+          <p>}</p>
+          <p>fn( arr )</p>
+          <p>console.log ( arr )</p>
+          <br />
+          <p class="cor36">3.修改 length</p>
+          <p>let arr = [ 1,2,3,4 ]</p>
+          <p>arr.length = 0</p>
+          <p>console.log ( arr )</p>
+          <p></p>
+          <p></p>
+          <p></p>
+
           <br />
         </div>
       </div>
