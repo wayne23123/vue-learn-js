@@ -432,7 +432,7 @@ function locate(idPound) {
             <p>想要獲得物件裡面的屬性和值?</p>
             <br />
             <p>之前</p>
-            <br />
+
             <div>
               <span class="function">const </span> <span class="word">o</span>
               <span class="then">=</span> <span class="brackets">{</span>
@@ -445,54 +445,54 @@ function locate(idPound) {
               <span class="function">in </span> <span class="word">o</span>
               <span class="brackets">){</span>
             </div>
-            <div>
+            <div class="padTwo VSL">
               <span class="word">console.</span>
               <span class="variable">log</span> <span class="brackets">(</span>
               <span class="word">k</span> <span class="brackets">) </span>
-              <span class="comment">// 屬性 name number</span>
+              <span class="comment">// name number // 屬性</span>
             </div>
-            <div>
+            <div class="padTwo VSL">
               <span class="word">console.</span>
               <span class="variable">log</span> <span class="brackets">(</span>
               <span class="word">o</span> <span class="brackets">[</span>
               <span class="word">k</span> <span class="brackets">]</span>
               <span class="brackets">) </span>
-              <span class="comment">// 值 wayne 123</span>
+              <span class="comment">// wayne 123 // 值</span>
             </div>
             <div class="brackets">}</div>
             <br />
             <br />
+            <p>用 Object.values</p>
             <div>
               <span class="function">const </span> <span class="word">o</span>
               <span class="then">=</span> <span class="brackets">{</span>
-              <span class="word">name:"wayne",number:</span>
+              <span class="word">name:</span> <span class="src">"wayne"</span>
+              <span class="word">,number:</span>
               <span class="number">123</span> <span class="brackets">}</span>
-            </div>
-            <div>
-              <span class="function">const </span>
-              <span class="word">arr</span> <span class="then">=</span>
-              <span class="word">Object.keys</span>
-              <span class="brackets">(</span> <span class="word">o</span>
-              <span class="brackets">)</span>
             </div>
             <div class="comment">// 獲得所有 屬性名</div>
 
             <div>
-              <span class="function">const </span>
-              <span class="word">arr</span> <span class="then">=</span>
-              <span class="word">Object.keys</span>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="brackets">Object</span>
+              <span class="variable">.keys</span>
               <span class="brackets">(</span> <span class="word">o</span>
-              <span class="brackets">)</span>
+              <span class="brackets">))</span>
+              <span class="comment">//返回數組["name","number"]</span>
             </div>
             <div class="comment">// 獲得所有 屬性值</div>
 
             <div>
-              <span class="word">console.</span>
-              <span class="variable">log</span> <span class="brackets">(</span>
-              <span class="word">Object.value</span>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="brackets">Object</span>
+              <span class="variable">.values</span>
               <span class="brackets">(</span> <span class="word">o</span>
-              <span class="brackets">)) </span>
-              <span class="comment">//["wayne",123]</span>
+              <span class="brackets">))</span>
+              <span class="comment">//返回數組["wayne","123"]</span>
             </div>
           </div>
           <p class="fz28">Object.assign 靜態方法用於物件拷貝</p>
@@ -509,7 +509,8 @@ function locate(idPound) {
               <span class="brackets">{}</span>
             </div>
             <div>
-              <span class="word">Object.assign</span>
+              <span class="brackets">Object</span>
+              <span class="variable">.assign</span>
               <span class="brackets">(</span> <span class="word">obj,o</span>
               <span class="brackets">) </span>
               <span class="comment">// (要拷貝的,被拷貝的)</span>
@@ -525,7 +526,8 @@ function locate(idPound) {
             <p>可用來新增屬性</p>
             <br />
             <div>
-              <span class="word">Object.assign</span>
+              <span class="brackets">Object</span>
+              <span class="variable">.assign</span>
               <span class="brackets">(</span> <span class="word">o,</span>
               <span class="brackets">{</span>
               <span class="word">gender:"男"</span>
