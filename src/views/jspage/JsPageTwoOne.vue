@@ -972,32 +972,52 @@ function locate(idPound) {
           <br />
 
           <div id="twohand011" class="cardTitle">11. 將下列物件進行合併</div>
-          <div>const a = { a:1, b:4 }</div>
-          <div>const b = { b:2, c:3 }</div>
+          <div>const a = { name: "wayne", age: 18 }</div>
+          <div>const b = { sex: "male", hobby: "sleep" }</div>
           <br />
-          <div>方法1: Object.assign</div>
-          <div>const a = { a:1, b:4 }</div>
-          <div>const b = { b:2, c:3 }</div>
-          <div>let obj1 = Object.assign( a, b );</div>
-          <div>console.log( obj1 ); . . . // { a:1, b:2, c:3 }</div>
+          <div class="cor36">方法1: Object.assign</div>
+          <div>const a = { name: "wayne", age: 18 }</div>
+          <div>const b = { sex: "male", hobby: "sleep" }</div>
+
+          <div class="comment">
+            let obj = Object.assign( a, b ); //會改變 a 物件
+          </div>
+          <div>
+            let obj = Object.assign( {}, a, b );
+            <span class="comment">//用空物件,可以不改變a,b</span>
+          </div>
+          <div>console.log( obj );</div>
+          <div class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </div>
           <br />
-          <div>方法2: ...</div>
-          <div>const a = { a:1, b:4 }</div>
-          <div>const b = { b:2, c:3 }</div>
-          <div>;et obj2 = {...a, ...b}</div>
-          <div>console.log( obj1 ); . . . // { a:1, b:2, c:3 }</div>
+          <div class="cor36">方法2: 解構賦值 + ...擴展運算符</div>
+
+          <div>const a = { name: "wayne", age: 18 }</div>
+          <div>const b = { sex: "male", hobby: "sleep" }</div>
+
+          <div>let obj = { ...a, ...b }</div>
+          <div>console.log( obj );</div>
+          <div class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </div>
+
           <br />
-          <div>方法3: 自己封裝</div>
-          <div>const a = { a:1, b:4 }</div>
-          <div>const b = { b:2, c:3 }</div>
-          <div>function extend( target, source ){</div>
-          <div>. for( var obj in source )</div>
-          <div>. . console.log( key ); . . . // 打印 b . . 打印 c</div>
-          <div>. . target[ obj ] = source[ obj ];</div>
-          <div>. }</div>
-          <div>. return target;</div>
-          <div>}</div>
-          <div>console.log( extend( a, b ) )</div>
+          <div class="cor36">方法3: 遍歷 物件 a 物件 b</div>
+          <div>const a = { name: "wayne", age: 18 }</div>
+          <div>const b = { sex: "male", hobby: "sleep" }</div>
+          <p>const obj = {}</p>
+          <p>for ( let key in a ) {</p>
+          <p class="pTwo">obj[ key ] = a[ key ]</p>
+          <p>}</p>
+          <p>for ( let key in b)</p>
+          <p class="pTwo">obj[ key ] = b[ key ]</p>
+          <p>}</p>
+          <p>coneol.log ( obj )</p>
+          <div class="comment">
+            // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
+          </div>
+
           <br />
           <br />
           <br />
