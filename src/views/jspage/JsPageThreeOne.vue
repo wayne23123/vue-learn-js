@@ -349,7 +349,7 @@ function locate(idPound) {
                 <span class="function">const </span>
                 <span class="word">fun</span> <span class="then">=</span>
                 <span class="function">function </span>
-                <span class="word">fn</span> <span class="wbrackets">(){}</span>
+                <span class="word">fn</span> <span class="brackets">(){}</span>
               </div>
               <br />
               <div>
