@@ -972,40 +972,40 @@ function locate(idPound) {
           <br />
 
           <div id="twohand011" class="cardTitle">11. 將下列物件進行合併</div>
-          <div>const a = { name: "wayne", age: 18 }</div>
-          <div>const b = { sex: "male", hobby: "sleep" }</div>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
           <br />
-          <div class="cor36">方法1: Object.assign</div>
-          <div>const a = { name: "wayne", age: 18 }</div>
-          <div>const b = { sex: "male", hobby: "sleep" }</div>
+          <p class="cor36">方法1: Object.assign</p>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
 
-          <div class="comment">
+          <p class="comment">
             let obj = Object.assign( a, b ); //會改變 a 物件
-          </div>
-          <div>
+          </p>
+          <p>
             let obj = Object.assign( {}, a, b );
             <span class="comment">//用空物件,可以不改變a,b</span>
-          </div>
-          <div>console.log( obj );</div>
-          <div class="comment">
+          </p>
+          <p>console.log( obj );</p>
+          <p class="comment">
             // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
-          </div>
+          </p>
           <br />
-          <div class="cor36">方法2: 解構賦值 + ...擴展運算符</div>
+          <p class="cor36">方法2: 解構賦值 + ...擴展運算符</p>
 
-          <div>const a = { name: "wayne", age: 18 }</div>
-          <div>const b = { sex: "male", hobby: "sleep" }</div>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
 
-          <div>let obj = { ...a, ...b }</div>
-          <div>console.log( obj );</div>
-          <div class="comment">
+          <p>let obj = { ...a, ...b }</p>
+          <p>console.log( obj );</p>
+          <p class="comment">
             // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
-          </div>
+          </p>
 
           <br />
-          <div class="cor36">方法3: 遍歷 物件 a 物件 b</div>
-          <div>const a = { name: "wayne", age: 18 }</div>
-          <div>const b = { sex: "male", hobby: "sleep" }</div>
+          <p class="cor36">方法3: 遍歷 物件 a 物件 b</p>
+          <p>const a = { name: "wayne", age: 18 }</p>
+          <p>const b = { sex: "male", hobby: "sleep" }</p>
           <p>const obj = {}</p>
           <p>for ( let key in a ) {</p>
           <p class="pTwo">obj[ key ] = a[ key ]</p>
@@ -1014,9 +1014,9 @@ function locate(idPound) {
           <p class="pTwo">obj[ key ] = b[ key ]</p>
           <p>}</p>
           <p>coneol.log ( obj )</p>
-          <div class="comment">
+          <p class="comment">
             // { name:"wayne",age:18,sex:"male",hobby:"sleep" }
-          </div>
+          </p>
 
           <br />
           <br />
