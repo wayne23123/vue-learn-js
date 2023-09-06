@@ -57,6 +57,9 @@ function locate(idPound) {
           <div @click="locate('threeprototype007')" class="leftNavText">
             class
           </div>
+          <div @click="locate('threeprototype008')" class="leftNavText">
+            繼承總結
+          </div>
         </div>
       </div>
     </div>
@@ -1794,10 +1797,205 @@ function locate(idPound) {
             <div><span class="brackets">}</span></div>
           </div>
 
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <div id="threeprototype008" class="articleCardTitle cor36 fz34">
+            6.8 繼承總結
+          </div>
+
+          <p class="fz28">原型鏈繼承</p>
+          <p class="fz28">構造函數繼承</p>
+          <p class="fz28">組合繼承</p>
+          <p class="fz28">寄生組合繼承</p>
+          <br />
+          <br />
+          <div class="bgcVS">
+            <p class="cor36">原型鏈</p>
+            <div>
+              <span class="function">function </span>
+              <span class="word">Person</span> <span class="brackets">(</span>
+              <span class="word">name</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.name</span>
+              <span class="then">=</span> <span class="word">name</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">Person</span>
+              <span class="variable">.prototype.sayHi</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">"Hi,</span>
+              <span class="word">my</span> <span class="word">name</span>
+              <span class="word">is "</span> <span class="then">+</span>
+              <span class="then">this</span> <span class="word">.name</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">let </span>
+              <span class="word">person1</span>
+              <span class="then">= new </span> <span class="word">Person</span>
+              <span class="brackets">(</span> <span class="src">"wayne"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">person2</span>
+              <span class="then">= new </span> <span class="word">Person</span>
+              <span class="brackets">(</span> <span class="src">"jack"</span>
+              <span class="brackets">)</span>
+            </div>
+            <br />
+            <div>
+              <span class="word">person1</span>
+              <span class="word">.sayHi</span> <span class="brackets">()</span>
+              <span class="comment">//"Hi,my name is wayne"</span>
+            </div>
+            <div>
+              <span class="word">person2</span>
+              <span class="word">.sayHi</span> <span class="brackets">()</span>
+              <span class="comment">//"Hi,my name is jack"</span>
+            </div>
+            <p>有一個構造函數 Person</p>
+            <p>這 構造函數上 有 prototype 屬性</p>
+            <p>屬性上 添加 sayHi 方法</p>
+            <p>通過 Person() 這個構造函數 new 出來 兩個 實例</p>
+            <p>在 構造函數 Person() 內部 沒定義 方法</p>
+            <p>但 可以調用 person1 的 satHi 方法</p>
+            <p>這就是原型鏈作用</p>
+            <p>當我們 通過 new 創建 person1 物件時</p>
+            <p>persno1 物件本身 沒 sayHi() 方法</p>
+            <p>當調用他的 sayHi() 方法時</p>
+            <p>他會先在 物件本身 找</p>
+            <p>
+              沒有的話 會在 person1 的 構造函數 Person() 的 prototype 上尋找
+              sayHi() 方法
+            </p>
+            <p>小結:</p>
+            <p>構造函數的 prototype 屬性的作用</p>
+            <p>是當 實例對象 調用某個 方法or屬性時</p>
+            <p>如果在 實例對象本身上 找不到</p>
+            <p>就會去 他的 構造函數的 prototype 身上找</p>
+            <p>總結:</p>
+            <p>每個構造函數都有一個原型對象 prototype</p>
+            <p>每個實例對象 包含一個 指向 原型對象的指針 __proto__</p>
+            <p>每當代碼讀取 實例的 某屬性時</p>
+            <p>會先在 實例上搜索這個屬性</p>
+            <p>沒找到則 搜索 原型對象</p>
+            <br />
+            <br />
+
+            <p class="cor36">原型鏈繼承</p>
+            <div><span class="comment">//定義父類</span></div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">Parent</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.name</span>
+              <span class="then">=</span> <span class="src">"parent"</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+
+            <div><span class="comment">//在父類的原型上定義方法</span></div>
+            <div>
+              <span class="word">Parent</span>
+              <span class="variable">.prototype.getName</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span> <span class="then">this</span>
+              <span class="word">.name</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+
+            <div><span class="comment">//定義子類</span></div>
+            <div>
+              <span class="function">function </span>
+              <span class="word">Cild</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">this</span> <span class="word">.name</span>
+              <span class="then">=</span> <span class="src">"child"</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="comment">//關鍵->子類繼承父類,實現原型鏈繼承</span>
+            </div>
+            <div>
+              <span class="word">Child</span>
+              <span class="variable">.prototype</span>
+              <span class="then">= new </span> <span class="word">Parent</span>
+              <span class="brackets">()</span>
+            </div>
+            <br />
+            <div><span class="comment">//實例化子類</span></div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">child</span> <span class="then">= new </span>
+              <span class="word">Child</span> <span class="brackets">()</span>
+            </div>
+            <br />
+            <div><span class="comment">//測試</span></div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">child1</span>
+              <span class="variable">.getName</span>
+              <span class="brackets">())</span>
+            </div>
+
+            <p>child1 是透過 Child 構造函數 實例化 對象</p>
+            <p>當調用 child1 getName() 方法</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
           <p class="fz28"></p>
           <p class="fz28"></p>
           <p class="fz28"></p>
