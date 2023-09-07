@@ -1670,9 +1670,7 @@ function locate(idPound) {
               <span class="word">arr</span>
               <span class="variable">.splice</span>
               <span class="brackets">(</span>
-              <span class="word"
-                >指定要插入or刪除位置, 指定刪除元素的個數, 插入的值
-              </span>
+              <span class="word">起始位置, 需要刪除元素的個數, 插入的值 </span>
               <span class="brackets">)</span>
             </div>
             <br />
