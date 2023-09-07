@@ -1205,7 +1205,6 @@ function locate(idPound) {
           <div id="threetips003" class="articleCardTitle cor36 fz34">
             7.3 lodash
           </div>
-          <a href="https://lodashjs.com/" class="fz28">@ lodash中文</a>
 
           <p class="fz28">
             庫 . 把一些常用的 方法 封裝好 . 只需要把庫引用進來 .
@@ -1219,7 +1218,7 @@ function locate(idPound) {
           <div class="bgcVS">
             <div>
               <span class="then">＜</span> <span class="number">script </span>
-              <span class="word">src</span> <span class="then">=</span>
+              <span class="src">src</span> <span class="then">=</span>
               <span class="src">"lodash.js"</span>
               <span class="then">>＜/ </span>
               <span class="number">script</span> <span class="then">></span>
