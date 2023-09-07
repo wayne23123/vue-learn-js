@@ -2532,7 +2532,7 @@ section {
   font-size: 20px;
   position: fixed;
   right: 0;
-  top: 0;
+  top: 75px;
   /* width: 19vw; */
   /* height: 100%; */
   /* background-color: #040404; */
@@ -2554,7 +2554,7 @@ section {
 
 .leftNavContainer {
   /* padding: 25px 5px 0 5px; */
-  padding: 25px;
+  padding: 10px 25px;
 }
 
 .leftNavText:hover {
