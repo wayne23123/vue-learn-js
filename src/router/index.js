@@ -29,105 +29,115 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: Layout,
+      component: () => import("../views/Layout.vue"),
       children: [
         {
           path: "",
-          component: HomePage,
+          component: () => import("../views/HomePage.vue"),
         },
         {
           path: "about",
-          component: AboutPage,
+          component: () => import("../views/AboutPage.vue"),
         },
         {
           path: "http",
-          component: WebPage,
+          component: () => import("../views/WebPage.vue"),
         },
         {
           path: "html",
-          component: HtmlPage,
+          component: () => import("../views/HtmlPage.vue"),
         },
         {
           path: "css",
-          component: CssPageLayout,
+          component: () => import("../views/CssPageLayout.vue"),
           children: [
             {
               path: "",
-              component: CssPageOne,
+              component: () => import("../views/CssPageOne.vue"),
             },
             {
               path: "pagetwo",
-              component: CssPageTwo,
+              component: () => import("../views/CssPageTwo.vue"),
             },
           ],
         },
         {
           path: "js",
-          component: JsPageLayout,
+          component: () => import("../views/JsPageLayout.vue"),
           children: [
             {
               path: "jsnote",
-              component: JsPageOne,
+              component: () => import("../views/jspage/JsPageOne.vue"),
             },
 
             {
               path: "jspractice",
-              component: JsPageTwo,
+              component: () => import("../views/jspage/JsPageTwo.vue"),
               children: [
                 {
                   path: "",
-                  component: JsPageTwoOne,
+                  component: () => import("../views/jspage/JsPageTwoOne.vue"),
                 },
                 {
                   path: "two",
-                  component: JsPageTwoTwo,
+                  component: () => import("../views/jspage/JsPageTwoTwo.vue"),
                 },
                 {
                   path: "three",
-                  component: JsPageTwoThree,
+                  component: () => import("../views/jspage/JsPageTwoThree.vue"),
                 },
               ],
             },
 
             {
               path: "",
-              component: JsPageThree,
+              component: () => import("../views/jspage/JsPageThree.vue"),
               children: [
                 {
                   path: "",
-                  component: JsPageThreeOne,
+                  component: () => import("../views/jspage/JsPageThreeOne.vue"),
                 },
                 {
                   path: "function",
-                  component: JsPageThreeTwo,
+                  component: () => import("../views/jspage/JsPageThreeTwo.vue"),
                 },
                 {
                   path: "destructuringassignment",
-                  component: JsPageThreeThree,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeThree.vue"),
                 },
                 {
                   path: "method",
-                  component: JsPageThreeFour,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeFour.vue"),
                 },
                 {
                   path: "object",
-                  component: JsPageThreeFive,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeFive.vue"),
                 },
                 {
                   path: "prototype",
-                  component: JsPageThreeSix,
+                  component: () => import("../views/jspage/JsPageThreeSix.vue"),
                 },
                 {
                   path: "tips",
-                  component: JsPageThreeSeven,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeSeven.vue"),
                 },
                 {
                   path: "dom",
-                  component: JsPageThreeEight,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeEight.vue"),
                 },
                 {
                   path: "ajax",
-                  component: JsPageThreeNine,
+                  component: () =>
+                    import("../views/jspage/JsPageThreeNine.vue"),
+                },
+                {
+                  path: "other",
+                  component: () => import("../views/jspage/JsPageThreeTen.vue"),
                 },
               ],
             },
@@ -136,7 +146,10 @@ const router = createRouter({
       ],
     },
     // 配置404找不到頁面
-    { path: "/:pathMatch(.*)*", component: HomePage },
+    {
+      path: "/:pathMatch(.*)*",
+      component: () => import("../views/HomePage.vue"),
+    },
   ],
   scrollBehavior() {
     return {
