@@ -23,121 +23,116 @@ import JsPageThreeSix from "../views/jspage/JsPageThreeSix.vue";
 import JsPageThreeSeven from "../views/jspage/JsPageThreeSeven.vue";
 import JsPageThreeEight from "../views/jspage/JsPageThreeEight.vue";
 import JsPageThreeNine from "../views/jspage/JsPageThreeNine.vue";
+import JsPageThreeTen from "../views/jspage/JsPageThreeTen.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      component: () => import("../views/Layout.vue"),
+      component: Layout,
       children: [
         {
           path: "",
-          component: () => import("../views/HomePage.vue"),
+          component: HomePage,
         },
         {
           path: "about",
-          component: () => import("../views/AboutPage.vue"),
+          component: AboutPage,
         },
         {
           path: "http",
-          component: () => import("../views/WebPage.vue"),
+          component: WebPage,
         },
         {
           path: "html",
-          component: () => import("../views/HtmlPage.vue"),
+          component: HtmlPage,
         },
         {
           path: "css",
-          component: () => import("../views/CssPageLayout.vue"),
+          component: CssPageLayout,
           children: [
             {
               path: "",
-              component: () => import("../views/CssPageOne.vue"),
+              component: CssPageOne,
             },
             {
               path: "pagetwo",
-              component: () => import("../views/CssPageTwo.vue"),
+              component: CssPageTwo,
             },
           ],
         },
         {
           path: "js",
-          component: () => import("../views/JsPageLayout.vue"),
+          component: JsPageLayout,
           children: [
             {
               path: "jsnote",
-              component: () => import("../views/jspage/JsPageOne.vue"),
+              component: JsPageOne,
             },
 
             {
               path: "jspractice",
-              component: () => import("../views/jspage/JsPageTwo.vue"),
+              component: JsPageTwo,
               children: [
                 {
                   path: "",
-                  component: () => import("../views/jspage/JsPageTwoOne.vue"),
+                  component: JsPageTwoOne,
                 },
                 {
                   path: "two",
-                  component: () => import("../views/jspage/JsPageTwoTwo.vue"),
+                  component: JsPageTwoTwo,
                 },
                 {
                   path: "three",
-                  component: () => import("../views/jspage/JsPageTwoThree.vue"),
+                  component: JsPageTwoThree,
                 },
               ],
             },
 
             {
               path: "",
-              component: () => import("../views/jspage/JsPageThree.vue"),
+              component: JsPageThree,
               children: [
                 {
                   path: "",
-                  component: () => import("../views/jspage/JsPageThreeOne.vue"),
+                  component: JsPageThreeOne,
                 },
                 {
                   path: "function",
-                  component: () => import("../views/jspage/JsPageThreeTwo.vue"),
+                  component: JsPageThreeTwo,
                 },
                 {
                   path: "destructuringassignment",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeThree.vue"),
+                  component: JsPageThreeThree,
                 },
                 {
                   path: "method",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeFour.vue"),
+                  component: JsPageThreeFour,
                 },
                 {
                   path: "object",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeFive.vue"),
+                  component: JsPageThreeFive,
                 },
                 {
                   path: "prototype",
-                  component: () => import("../views/jspage/JsPageThreeSix.vue"),
+                  component: JsPageThreeSix,
                 },
                 {
                   path: "tips",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeSeven.vue"),
+                  component: JsPageThreeSeven,
                 },
                 {
                   path: "dom",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeEight.vue"),
+                  component: JsPageThreeEight,
                 },
                 {
                   path: "ajax",
-                  component: () =>
-                    import("../views/jspage/JsPageThreeNine.vue"),
+                  component: JsPageThreeNine,
                 },
                 {
                   path: "other",
-                  component: () => import("../views/jspage/JsPageThreeTen.vue"),
+                  component: JsPageThreeTen,
                 },
               ],
             },
@@ -148,7 +143,7 @@ const router = createRouter({
     // 配置404找不到頁面
     {
       path: "/:pathMatch(.*)*",
-      component: () => import("../views/HomePage.vue"),
+      component: HomePage,
     },
   ],
   scrollBehavior() {
