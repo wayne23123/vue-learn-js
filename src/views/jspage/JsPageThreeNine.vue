@@ -1899,6 +1899,24 @@ function locate(idPound) {
           <br />
           <p class="fz28">微任務: 由 JS 引擎環境執行的 異步代碼</p>
           <br />
+          <p class="fz28 cor36"># js 規則</p>
+          <br />
+          <p class="fz28">1. 由上到下 , 由左到右</p>
+
+          <br />
+          <p class="fz28">2. 先執行 同步代碼 , 再執行 異步代碼</p>
+          <br />
+          <p class="fz28">3. 先執行 微任務 再執行宏任務</p>
+          <br />
+          <p class="fz28 cor36"># 微任務 宏任務 DOM 三者間關係?</p>
+          <br />
+          <p class="fz28">1. 先執行 同步代碼</p>
+          <br />
+          <p class="fz28">2. 執行 微任務</p>
+          <br />
+          <p class="fz28">3. 渲染 DOM</p>
+          <br />
+          <p class="fz28">4. 執行 宏任務</p>
           <br />
           <br />
           <table>
@@ -1922,8 +1940,8 @@ function locate(idPound) {
             </tr>
             <tr>
               <td>
-                <div class="padL20 fz30">setTimeout</div>
-                <div class="padL20 fz30">setInterval</div>
+                <div class="padL20 fz30">setTimeout 4毫秒</div>
+                <div class="padL20 fz30">setInterval 10毫秒</div>
               </td>
               <td><div class="pad20 fz30">瀏覽器</div></td>
               <td><div class="pad20"></div></td>
