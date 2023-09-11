@@ -503,8 +503,31 @@ function locate(idPound) {
           </div>
 
           <div id="threemethod017" class="articleCardTitle cor36 fz34">
-            4. for in , for of
+            for in , for of
           </div>
+          <table>
+            <tr>
+              <td><div class="pad20">for...in</div></td>
+              <td><div class="pad20">遍歷得到 key</div></td>
+              <td>
+                <div class="pad20">
+                  <div>可枚舉數據</div>
+                  <div>數組、字串、物件</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="pad20">for...of</div></td>
+              <td><div class="pad20">遍歷得到 value</div></td>
+              <td>
+                <div class="pad20">
+                  <div>可迭代數據</div>
+                  <div>數組、字串、Set、Map</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <br />
 
           <p class="fz28">
             for of 循環獲取到的是一對鍵值對中的值 , 也就是 value
