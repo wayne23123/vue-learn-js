@@ -54,6 +54,9 @@ function locate(idPound) {
           <div @click="locate('threeajax007')" class="leftNavText">
             宏任務微任務
           </div>
+          <div @click="locate('threeajax008')" class="leftNavText">
+            promise練習
+          </div>
         </div>
       </div>
     </div>
@@ -1427,6 +1430,10 @@ function locate(idPound) {
           <br />
           <br />
           <p class="fz28">回調地獄 . . . 回調函數嵌套問題</p>
+          <br />
+          <p class="fz28">你的下一次網路請求 , 依賴於 上一次網路請求數據</p>
+          <br />
+          <br />
           <p class="fz28">setTimeout(function () {</p>
           <p class="fz28 pTwo">console.log(111);</p>
           <p class="fz28 pTwo">setTimeout(function () {</p>
@@ -2560,104 +2567,780 @@ function locate(idPound) {
             </div>
             <div><span class="brackets">})</span></div>
           </div>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
-          <p class="fz28"></p>
+          <br />
+          <br />
+          <div id="threeajax008" class="articleCardTitle cor36 fz34">
+            9.8 promise 閱讀代碼練習
+          </div>
+          <p class="fz28">
+            js 執行 由上往下 , 先同步 再異步 , 先微任務 再 宏任務
+          </p>
+          <p class="fz28">new Promise() ...> Promise.resolve()</p>
+          <p class="fz28">
+            then 和 catch 內部沒有 throw new Error 相當於 resolve
+          </p>
+          <p class="fz28">async function 相當於返回 Promise.resolve()</p>
+          <p class="fz28">await 後面代碼 都是異步</p>
+          <br />
+          <p class="fz28">
+            除了 new Promise 寫法 , 還可以 Promise.resolve().then().catch()
+          </p>
+          <div class="bgcVS">
+            <div>
+              <span class="brackets">Promise</span>
+              <span class="variable">.resolve</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">1</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">.catch</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">2</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <p>相當於 new Promise 直接調用 resolve 方法</p>
+            <div>
+              <span class="then">new </span>
+              <span class="brackets">Promise</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">resolve</span>
+              <span class="brackets">()</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">})</span></div>
+            <p>後續觸發 .then 方法</p>
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>1.1 then 和 catch 內部沒有 throw new Error 相當於 resolve</p>
+            <br />
+            <div>
+              <span class="brackets">Promise</span>
+              <span class="variable">.resolve</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">1</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">.catch</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">2</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <div>
+                <span class="comment"
+                  >//相當於resolve(),會執行後面的.then()</span
+                >
+              </div>
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">3</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <br />
+            <div><span class="comment">//打印1</span></div>
+            <div><span class="comment">//打印3</span></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>1.2</p>
+            <br />
+            <div>
+              <span class="brackets">Promise</span>
+              <span class="variable">.resolve</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">1</span>
+                <span class="brackets">);</span>
+                <div>
+                  <span class="function">throw </span>
+                  <span class="then">new </span>
+                  <span class="brackets">Error</span>
+                </div>
+                <div>
+                  <span class="comment"
+                    >//拋出錯誤相當於reject,執行後面.catch()</span
+                  >
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">.catch</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">2</span>
+                <span class="brackets">);</span>
+                <div>
+                  <span class="comment"
+                    >//相當於resolve(),會執行後面的.then()</span
+                  >
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">3</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <br />
+            <div><span class="comment">//打印1</span></div>
+            <div><span class="comment">//打印2</span></div>
+            <div><span class="comment">//打印3</span></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>1.3</p>
+            <br />
+            <div>
+              <span class="brackets">Promise</span>
+              <span class="variable">.reject</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">1</span>
+                <span class="brackets">);</span>
+
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">.catch</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">2</span>
+                <span class="brackets">);</span>
+                <div>
+                  <span class="comment"
+                    >//相當於resolve(),會執行後面的.then()</span
+                  >
+                </div>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">3</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <br />
+            <div><span class="comment">//打印2</span></div>
+            <div><span class="comment">//打印3</span></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>1.4</p>
+            <br />
+            <div>
+              <span class="brackets">Promise</span>
+              <span class="variable">.reject</span>
+              <span class="brackets">()</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">1</span>
+                <span class="brackets">);</span>
+
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+
+            <div class="padTwo VSL">
+              <span class="variable">.catch</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">2</span>
+                <span class="brackets">);</span>
+                <div>
+                  <span class="function">throw </span>
+                  <span class="then">new </span>
+                  <span class="brackets">Error</span>
+                </div>
+                <div>
+                  <span class="comment"
+                    >//拋出錯誤相當於reject,執行後面.catch()</span
+                  >
+                </div>
+                <div>
+                  <span class="comment">//發現後面沒.catch() , 報錯</span>
+                </div>
+
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+
+              <span class="variable">.then</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="number">3</span>
+                <span class="brackets">);</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+            </div>
+            <br />
+            <div><span class="comment">//打印2</span></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>2.1 async 相當於 返回 一個 Promise.resolve</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">res</span> <span class="then">=</span>
+              <span class="function">async function </span>
+              <span class="word">fn</span> <span class="brackets">()</span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span> <span class="number">100;</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">};</span></div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">res</span>
+              <span class="brackets">())</span>
+              <span class="comment"
+                >//得到一個promise物件,且是promise.resolve</span
+              >
+            </div>
+            <br />
+
+            <br />
+            <br />
+
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="then">return </span>
+              <span class="number">100;</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">};</span></div>
+            <br />
+            <div>
+              <span class="brackets">(</span>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="function">const </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="word">fn</span>
+              <span class="brackets">();</span>
+              <div>
+                <span class="function">const </span>
+                <span class="word">b</span> <span class="then">= await </span>
+                <span class="word">fn</span> <span class="brackets">();</span>
+              </div>
+
+              <br />
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="word">a</span>
+                <span class="brackets">);</span>
+              </div>
+              <div><span class="comment">//Promise.resolve(100)</span></div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="word">b</span>
+                <span class="brackets">);</span>
+              </div>
+              <div>
+                <span class="comment">//100//b配合上await得到return的值</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">})();</span></div>
+            <br />
+
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <p>3.1 await 執行順序 , await 後面代碼都是異步的</p>
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn1</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn1 start"</span>
+              <span class="brackets">);</span>
+              <div>
+                <span class="then">await </span> <span class="word">fn2</span>
+                <span class="brackets">();</span>
+              </div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"fn1 end"</span>
+                <span class="brackets">);</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn2</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn2 start"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"start"</span>
+              <span class="brackets">);</span>
+            </div>
+            <div>
+              <span class="word">fn1</span> <span class="brackets">();</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"end"</span>
+              <span class="brackets">);</span>
+            </div>
+            <br />
+            <p>1. 函數定義 先略過</p>
+            <p>2. 打印 start</p>
+            <p>3. 調用 fn1 () 打印 fn1 start</p>
+            <p>4. await 調用 fn2 () 裡面代碼馬上執行</p>
+            <p class="padTwo VSL">打印 fn2 start</p>
+            <p class="padTwo VSL cor36">! await 後面 所有代碼 都是 異步的</p>
+            <p class="padTwo VSL">console.log("fn1 end") 放進 隊列</p>
+            <p class="padTwo VSL">fn1() 執行完畢</p>
+            <p>5 .打印 end</p>
+            <p>6. 事件循環 打印 fn1 end</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <p>3.2</p>
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn1</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn1 start"</span>
+              <span class="brackets">);</span>
+              <div>
+                <span class="then">await </span> <span class="word">fn2</span>
+                <span class="brackets">();</span>
+              </div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"fn1 end"</span>
+                <span class="brackets">);</span>
+              </div>
+              <div>
+                <span class="then">await </span> <span class="word">fn3</span>
+                <span class="brackets">();</span>
+              </div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"fn3 end"</span>
+                <span class="brackets">);</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn2</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn2"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn3</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn3"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"start"</span>
+              <span class="brackets">);</span>
+            </div>
+            <div>
+              <span class="word">fn1</span> <span class="brackets">();</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"end"</span>
+              <span class="brackets">);</span>
+            </div>
+            <br />
+            <p>1. 函數定義 先略過</p>
+            <p>2. 打印 start</p>
+            <p>3. 執行 fn1() 裡面立即執行 打印 fn1 start</p>
+            <p>4. 執行 fn2() 裡面立即執行 打印 fn2</p>
+            <p class="padTwo VSL">await 後面全部 (3行) 異步 , 放進 列隊</p>
+
+            <p>5. 打印 end</p>
+            <p>6. 同步執行完 , 開始執行異步 打印 fn1 end</p>
+            <p>7. 執行 fn3() 裡面立即執行 打印 fn3</p>
+            <p class="padTwo VSL">
+              await 後面全部 異步 , console.log("fn3 end") 放進 列隊
+            </p>
+
+            <p>8. 代碼執行完 , 執行異步 , 打印 fn3 end</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <p>4.1 Promise & setTimeout , 宏任務 微任務 順序</p>
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn1</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"fn1 start"</span>
+              <span class="brackets">);</span>
+              <div>
+                <span class="then">await </span> <span class="word">fn2</span>
+                <span class="brackets">();</span>
+              </div>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span>
+                <span class="src">"fn1 end"</span>
+                <span class="brackets">);</span>
+              </div>
+
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">async</span>
+              <span class="function">function </span>
+              <span class="word">fn1</span> <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"fn2"</span>
+              <span class="brackets">);</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"start"</span>
+              <span class="brackets">);</span>
+            </div>
+            <div>
+              <span class="variable">setTimeout</span>
+              <span class="brackets">(()</span>
+              <span class="function">=> </span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"setTimeout"</span>
+              <span class="brackets">);</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">});</span></div>
+            <div>
+              <span class="word">fn1</span> <span class="brackets">();</span>
+            </div>
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="src">"end"</span>
+              <span class="brackets">);</span>
+            </div>
+            <p>1. 函數定義 先略過</p>
+            <p>2. 打印 start</p>
+            <p>3. setTimeout 異步代碼 放入 宏任務隊列</p>
+            <p>4. 調用 fn1() 裡面立即執行 打印 fn1 start</p>
+            <p>5. 調用 fn2() 裡面立即執行 打印 fn2</p>
+            <p class="padTwo VSL">
+              await 後面 全部異步 且是 微任務 , 放進 微任務 列隊
+            </p>
+            <p>6. 打印 end</p>
+            <p>7. 同步代碼 執行完畢 , 先執行 微任務 , 再宏任務</p>
+            <p>8. 打印 fn1 end</p>
+            <p>9. 打印 setTimeout</p>
+          </div>
+          <br />
+
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
+          <p class="fz28"></p>
+          <br />
+          <br />
         </div>
       </div>
     </div>
