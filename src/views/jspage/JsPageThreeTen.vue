@@ -287,6 +287,246 @@ function locate(idPound) {
             </div>
             <br />
           </div>
+          <br />
+          <br />
+          <div class="articleCardTitle cor36 fz34">javascript 隱式轉換</div>
+
+          <p class="fz28">相等比較 ( == )</p>
+          <br />
+          <br />
+          <p class="fz28">1. 如果 兩個 數據類型相同 , 執行 嚴格比較</p>
+          <br />
+          <br />
+          <p class="fz28">
+            2. 如果 兩個 數據類型 不相同 , 進行 類型轉換後 再比較
+          </p>
+
+          <div class="fz28 padTwo VSL">
+            <br />
+            <div>2-1. 如果 一個是 null 另一個是 undefined 返回 true</div>
+            <br />
+            <div>2-2. 如果 一個是 number 另一個是 string</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 string 轉成 number 再比較</div>
+            </div>
+            <br />
+            <div>2-3. 如果 一個是 布林</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 布林 轉成 number 再比較</div>
+
+              <div class="padTwo VSL">
+                <br />
+                <div>true 轉成 1</div>
+                <br />
+                <div>false 轉成 0</div>
+              </div>
+            </div>
+            <br />
+
+            <div>2-4. 如果 一個是 物件 另一個是 number || 字串</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 物件 轉成 原始值 再比較</div>
+
+              <div class="padTwo VSL">
+                <br />
+                <div>先調用 物件 valueOf()方法 轉成 基本類型</div>
+                <br />
+                <div>
+                  當 valueOf() 返回 非 基本類型 , 再調用 toString() 方法
+                </div>
+              </div>
+            </div>
+            <br />
+            <div>2-5. NaN 和其他任何類型比較永遠返回 false</div>
+            <br />
+            <div>2-6. 兩個都為引用類型，則比較它們是否指向同一個物件</div>
+          </div>
+          <br />
+          <div class="fz30 bgcVS">
+            <div>
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="word">a</span> <span class="then">==</span>
+              <span class="number">1</span> <span class="then">&&</span>
+              <span class="word">a</span> <span class="then">==</span>
+              <span class="number">2</span> <span class="then">&&</span>
+              <span class="word">a</span> <span class="then">==</span>
+              <span class="number">3</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span>
+              <span class="src">"條件返回true"</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">value:</span> <span class="number">1,</span>
+              <div>
+                <span class="word">valueOf:</span>
+                <span class="function">function </span>
+                <span class="brackets">(){</span>
+              </div>
+
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">return </span>
+                <span class="then">this</span> <span class="word">.value</span>
+                <span class="then">++;</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">},</span></div>
+            </div>
+            <div><span class="brackets">};</span></div>
+            <br />
+            <p>也可以 用 toString</p>
+            <br />
+            <div>
+              <span class="function">let </span> <span class="word">a</span>
+              <span class="then">=</span> <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">value:</span> <span class="number">1,</span>
+              <div>
+                <span class="word">toString:</span>
+                <span class="function">function </span>
+                <span class="brackets">(){</span>
+              </div>
+
+              <div></div>
+              <div class="padTwo VSL">
+                <span class="then">return </span>
+                <span class="then">this</span> <span class="word">.value</span>
+                <span class="then">++;</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">},</span></div>
+            </div>
+            <div><span class="brackets">};</span></div>
+            <br />
+            <p>如果 valueOf() 和 toString() 都寫 先調用 valueOf (規則 2-4)</p>
+          </div>
+
+          <br />
+
+          <br /><br />
+          <p class="fz28 cor36"># 那些值轉換成 false?</p>
+          <br /><br />
+          <p class="fz28">1. 空字串 ""</p>
+          <br /><br />
+          <p class="fz28">2. 數字 0</p>
+          <br /><br />
+          <p class="fz28">3. NaN</p>
+          <br /><br />
+          <p class="fz28">4. null 或 undefined</p>
+          <div class="bgcVS">
+            <p>練習 1</p>
+            <div>
+              <span class="function">let </span> <span class="word">arr</span>
+              <span class="then">=</span> <span class="brackets">[</span>
+              <span class="number">0</span> <span class="brackets">]</span>
+            </div>
+            <div>
+              <span class="then">if</span> <span class="brackets">(</span>
+              <span class="word">arr</span> <span class="brackets">){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="comment">//arr不屬於上面4種,為true</span>
+              <div>
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="word">arr</span>
+                <span class="then">==</span> <span class="number">true</span>
+                <span class="brackets">)</span>
+              </div>
+              <div><span class="comment">//觸發隱式轉換2-4</span></div>
+              <div>
+                <span class="comment"
+                  >//valueOf//console.log(arr.valueOf)//返回數組,沒轉原始值</span
+                >
+              </div>
+              <div>
+                <span class="comment"
+                  >//toString//console.log(arr.toString())//返回0</span
+                >
+              </div>
+              <div>
+                <span class="comment">//當調用Array.toString()方法時</span>
+              </div>
+              <div>
+                <span class="comment"
+                  >//會嘗試用join方法將數組裡面的元素拼接起來</span
+                >
+              </div>
+              <div>
+                <span class="comment"
+                  >//發現console.log(arr.join())//也返回0</span
+                >
+              </div>
+              <div><span class="comment">//0==true</span></div>
+              <div><span class="comment">//觸發隱式轉換2-3</span></div>
+              <div><span class="comment">//true 轉成 1</span></div>
+              <div><span class="comment">//0 == 1 //打印 false</span></div>
+
+              <div></div>
+            </div>
+            <div>
+              <span class="brackets">}</span> <span class="then">else </span>
+              <span class="brackets">{</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">a</span>
+              <span class="brackets">);</span>
+              <div></div>
+            </div>
+
+            <div><span class="brackets">}</span></div>
+          </div>
+          <br /><br />
+
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
+          <br /><br />
+          <p class="fz28"></p>
           <br /><br />
           <p class="fz28"></p>
           <br /><br />

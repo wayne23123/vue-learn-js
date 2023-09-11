@@ -206,27 +206,72 @@ function locate(idPound) {
           </p>
           <br />
           <br />
-          <p>1. NaN 和其他任何類型比較永遠返回 false。</p>
+          <p class="fz28">1. 如果 兩個 數據類型相同 , 執行 嚴格比較</p>
           <br />
-          <p>
-            2. Boolean 和其他任何類型比較，Boolean 首先被轉換為 Number 類型。
+          <p class="fz28">
+            2. 如果 兩個 數據類型 不相同 , 進行 類型轉換後 再比較
           </p>
+
+          <div class="fz28 padTwo VSL">
+            <br />
+            <div>2-1. 如果 一個是 null 另一個是 undefined 返回 true</div>
+            <br />
+            <div>2-2. 如果 一個是 number 另一個是 string</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 string 轉成 number 再比較</div>
+            </div>
+            <br />
+            <div>2-3. 如果 一個是 布林</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 布林 轉成 number 再比較</div>
+
+              <div class="padTwo VSL">
+                <br />
+                <div>true 轉成 1</div>
+                <br />
+                <div>false 轉成 0</div>
+              </div>
+            </div>
+            <br />
+
+            <div>2-4. 如果 一個是 物件 另一個是 number || 字串</div>
+
+            <div class="padTwo VSL">
+              <br />
+              <div>將 物件 轉成 原始值 再比較</div>
+
+              <div class="padTwo VSL">
+                <br />
+                <div>先調用 物件 valueOf()方法 轉成 基本類型</div>
+                <br />
+                <div>
+                  當 valueOf() 返回 非 基本類型 , 再調用 toString() 方法
+                </div>
+              </div>
+            </div>
+            <br />
+            <div>2-5. NaN 和其他任何類型比較永遠返回 false</div>
+            <br />
+            <div>2-6. 兩個都為引用類型，則比較它們是否指向同一個物件</div>
+          </div>
           <br />
-          <p>3. String 和 Number 比較，先將 String 轉換為 Number 類型。</p>
+          <p class="fz28 cor36"># 那些值轉換成 false?</p>
           <br />
-          <p>
-            4. null == undefined 比較結果是 true，除此之外，null、undefined
-            和其他任何結果的比較值都為 false。
-          </p>
+          <p class="fz28">1. 空字串 ""</p>
           <br />
-          <p>
-            5. 原始類型和引用類型做比較時，引用類型會依照 ToPrimitive
-            規則轉換為原始類型。
-          </p>
+          <p class="fz28">2. 數字 0</p>
           <br />
-          <p>6. 兩個都為引用類型，則比較它們是否指向同一個物件。</p>
+          <p class="fz28">3. NaN</p>
+          <br />
+          <p class="fz28">4. null 或 undefined</p>
           <br />
           <br />
+          <p class="fz28 cor36"># 練習</p>
+
           <p>1 == "1" . . . // true</p>
           <br />
           <p>1 === "1" . . . // false</p>
