@@ -1677,6 +1677,24 @@ function locate(idPound) {
           <div id="threetips006" class="articleCardTitle cor36 fz34">
             7.6 this 指向
           </div>
+          <br />
+          <p class="fz28">方法 中 this 指向 調用方法 的 對象</p>
+          <br />
+          <p class="fz28">全局環境下 指向 全局對象</p>
+          <br />
+          <p class="fz28">全局 函數中的 this 指向 全局對象</p>
+          <br />
+          <p class="fz28">內部函數 的 this 指向 全局對象</p>
+          <br />
+          <p class="fz28">事件中的 this 指向 觸發事件 的 DOM 對象</p>
+          <br />
+          <p class="fz28">構造函數中 的 this 指向 new 創建的對象</p>
+          <br />
+          <p class="fz28">
+            箭頭函數中 的 this 指向 定義 函數 上下文的 this (在哪裡定義指向誰)
+          </p>
+          <br />
+          <br />
           <table class="fz30">
             <tr>
               <th><div class="pad20">調用方式</div></th>
@@ -1809,6 +1827,31 @@ function locate(idPound) {
             </div>
             <div><span class="brackets">})</span></div>
             <br />
+            <p>onclick dom 事件中的 this 指向 dom 對象</p>
+            <div>
+              <span class="function">const </span>
+              <span class="word">btn</span> <span class="then">=</span>
+              <span class="word">document</span>
+              <span class="variable">.querySelector</span>
+              <span class="brackets">(</span> <span class="src">"button"</span>
+              <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">btn</span> <span class="word">.onclick</span>
+              <span class="then">=</span>
+              <span class="function">function </span>
+              <span class="brackets">(){</span>
+            </div>
+            <div class="padTwo VSL">
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="then">this</span>
+              <span class="brackets">)</span>
+              <div></div>
+            </div>
+            <div><span class="brackets">}</span></div>
+            <br />
+
             <br />
             <div>
               <span class="function">const </span>
@@ -1980,6 +2023,7 @@ function locate(idPound) {
           <div id="threetips007" class="articleCardTitle cor36 fz34">
             7.7 改變 this --- call()
           </div>
+          <p class="fz28">call 是一個方法 , 是函數的方法</p>
 
           <br />
 
