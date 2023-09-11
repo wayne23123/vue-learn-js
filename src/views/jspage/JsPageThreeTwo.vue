@@ -335,10 +335,11 @@ function locate(idPound) {
             </div>
             <div class="pTwo brackets">}</div>
             <div class="pTwo">
-              <span class="word">sum</span> <span class="then">+=</span>
-              <span class="word">arguments</span>
-              <span class="brackets">[</span> <span class="word">i</span>
-              <span class="brackets">]</span>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">sum</span>
+              <span class="brackets">)</span>
+              <div></div>
             </div>
             <div class="brackets">}</div>
             <div>
@@ -361,7 +362,7 @@ function locate(idPound) {
           <p class="fz28">getSum( 1, 2, 3, 4, 5,)</p>
           <p class="fz28">改成形參?</p>
           <div id="twofunction004" class="articleCardTitle cor36 fz34">
-            2.4 剩餘參數 ＜- 建議用這個
+            2.4 剩餘參數
           </div>
           <p class="fz28">剩餘參數允許我們將一個不定數量的參數表示為一個數組</p>
           <div class="bgcVS">
@@ -1004,7 +1005,7 @@ function locate(idPound) {
           </div>
           <div class="articleCardTitle cor36 fz34">this 指向</div>
 
-          <table>
+          <table class="fz28">
             <tr>
               <th><div class="pad20">調用方式</div></th>
               <th><div class="pad20">示例</div></th>
