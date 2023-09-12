@@ -1591,6 +1591,7 @@ function locate(idPound) {
             <br />
             <p>es6 之後建議寫法 class 效果一樣</p>
             <br />
+            <div><span class="comment">//聲明類</span></div>
             <div>
               <span class="function">class </span>
               <span class="word">User</span> <span class="brackets">{</span>
@@ -1661,9 +1662,26 @@ function locate(idPound) {
             </div>
             <div><span class="brackets">}</span></div>
             <br />
+            <div><span class="comment">//實例化</span></div>
+            <div>
+              <span class="function">let </span>
+              <span class="word">wayne</span> <span class="then">= new </span>
+              <span class="word">User</span> <span class="brackets">(</span>
+              <span class="src">"wayne"</span> <span class="src">,</span>
+              <span class="src">"lu"</span> <span class="brackets">)</span>
+            </div>
+            <div>
+              <span class="word">wayne</span>
+              <span class="variable">.sayHi</span>
+              <span class="brackets">();</span>
+            </div>
+            <br />
             <br />
             <p>範例2 繼承</p>
+            <p>子類 一旦繼承 父類 , 他就默認有 父類 的 屬性 和 方法</p>
+            <p>同時也能有 自己的屬性 和 方法</p>
             <br />
+            <p># 以前</p>
             <div>
               <span class="function">function </span>
               <span class="word">Animal</span> <span class="brackets">(</span>
@@ -1725,6 +1743,7 @@ function locate(idPound) {
               <span class="brackets">);</span>
             </div>
             <br />
+            <p># 現在 class</p>
             <div>
               <span class="comment"
                 >//新的方式 //繼承 子構造函數 & 父構造函數</span
@@ -1782,19 +1801,84 @@ function locate(idPound) {
             </div>
             <div class="padTwo VSL">
               <span class="function">constructor</span>
-              <span class="brackets">(</span> <span class="word">name</span>
-              <span class="brackets">){</span>
+              <span class="brackets">(</span>
+              <span class="word">type, name, sex </span>
+              <span class="brackets">) { </span>
+              <span class="comment">//父類有的參數 , 這裡一定要有</span>
               <div></div>
               <div class="padTwo VSL">
                 <span class="function">super </span>
-                <span class="brackets">(</span> <span class="src">"人"</span>
-                <span class="then">,</span> <span class="word">name</span>
+                <span class="brackets">(</span>
+                <span class="word">type,name</span>
                 <span class="brackets">);</span>
+                <div></div>
+                <br />
+                <div>
+                  <span class="then">this</span> <span class="word">.sex</span>
+                  <span class="then">=</span> <span class="word">sex</span>
+                </div>
+              </div>
+              <div><span class="brackets">}</span></div>
+              <br />
+              <div>
+                <span class="word">sayHi</span>
+                <span class="brackets">(){</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console</span>
+                <span class="variable">.log</span>
+                <span class="brackets">(</span> <span class="src">`我是</span>
+                <span class="then">${</span>
+                <span class="word">this.name</span>
+                <span class="then">}</span>
+                <span class="src">,類型:</span> <span class="then">${</span>
+                <span class="word">this.type</span>
+                <span class="then">}</span>
+                <span class="src">,性別:</span> <span class="then">${</span>
+                <span class="word">this.sex</span>
+                <span class="then">}</span> <span class="src">`</span>
+                <span class="brackets">)</span>
                 <div></div>
               </div>
               <div><span class="brackets">}</span></div>
             </div>
             <div><span class="brackets">}</span></div>
+            <br />
+            <div><span class="comment">//實例化</span></div>
+            <div>
+              <span class="function">const </span>
+              <span class="word">wayne</span> <span class="then">= new </span>
+              <span class="word">Human</span> <span class="brackets">(</span>
+              <span class="src">"wayne","人","男"</span>
+              <span class="brackets">);</span>
+            </div>
+            <div><span class="comment">//可以調用父類的intro()方法</span></div>
+            <div>
+              <span class="word">wayne</span>
+              <span class="variable">.intro</span>
+              <span class="brackets">(); </span>
+              <span class="comment">// I am 人,name: wayne</span>
+            </div>
+            <div><span class="comment">//可以調用自己的sayHi()方法</span></div>
+            <div>
+              <span class="word">wayne</span>
+              <span class="variable">.sayHi</span>
+              <span class="brackets">(); </span>
+              <span class="comment">// 我是wayne,類型: 人,性別: 男 </span>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="cor36"># instanceof 可以判斷繼承關係</p>
+            <p>只要在同一條原型鏈上面 , 返回 true</p>
+            <br />
+            <div>
+              <span class="word">console</span>
+              <span class="variable">.log</span>
+              <span class="brackets">(</span> <span class="word">wayne</span>
+              <span class="variable">instanceof</span>
+              <span class="word">Human</span> <span class="brackets">);</span>
+            </div>
           </div>
 
           <div id="threeprototype008" class="articleCardTitle cor36 fz34">
