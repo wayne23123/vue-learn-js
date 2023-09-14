@@ -1678,20 +1678,21 @@ function locate(idPound) {
             7.6 this 指向
           </div>
           <br />
-          <p class="fz28">方法 中 this 指向 調用方法 的 對象</p>
+          <p class="fz28">1. 方法 中 this 指向 調用方法 的 對象</p>
           <br />
-          <p class="fz28">全局環境下 指向 全局對象</p>
+          <p class="fz28">2. 全局環境下 指向 全局對象</p>
           <br />
-          <p class="fz28">全局 函數中的 this 指向 全局對象</p>
+          <p class="fz28">3. 全局 函數中的 this 指向 全局對象</p>
           <br />
-          <p class="fz28">內部函數 的 this 指向 全局對象</p>
+          <p class="fz28">4. 內部函數 的 this 指向 全局對象</p>
           <br />
-          <p class="fz28">事件中的 this 指向 觸發事件 的 DOM 對象</p>
+          <p class="fz28">5. 事件中的 this 指向 觸發事件 的 DOM 對象</p>
           <br />
-          <p class="fz28">構造函數中 的 this 指向 new 創建的對象</p>
+          <p class="fz28">6. 構造函數中 的 this 指向 new 創建的對象</p>
           <br />
           <p class="fz28">
-            箭頭函數中 的 this 指向 定義 函數 上下文的 this (在哪裡定義指向誰)
+            7. 箭頭函數中 的 this 指向 定義 函數 上下文的 this
+            (在哪裡定義指向誰)
           </p>
           <br />
           <br />

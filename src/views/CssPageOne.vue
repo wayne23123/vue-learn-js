@@ -228,7 +228,7 @@ function locate(idPound) {
           <h3>block . 把某元素 轉成 塊元素</h3>
           <br />
           <br />
-          <h3>inline . 把某元素 轉成 內聯元素</h3>
+          <h3>inline . 把某元素 轉成 行內元素</h3>
           <br />
           <br />
           <h3>inline-block . 把某元素 轉成 行內塊元素</h3>
@@ -794,6 +794,24 @@ function locate(idPound) {
           <p>transition</p>
           <p>@keyframe</p>
           <p>animation</p>
+          <br />
+          <br />
+          <p class="cor36"># transition 和 animation 區別?</p>
+          <br />
+          <br />
+          <p>
+            transition 是過度屬性 , 強調過度 , 他需要觸發一個事件 ,
+            比如屬標移動上去才執行動畫
+          </p>
+          <br />
+          <br />
+          <p>設置一個開始關鍵偵 , 一個結束關鍵偵</p>
+          <br />
+          <br />
+          <p>animation 是動畫屬性 , 設好時間後 就能自己執行 , 且可以循環</p>
+          <br />
+          <br />
+          <p>可設 多個關鍵偵 (用 @keyframe)</p>
           <br />
           <br />
 

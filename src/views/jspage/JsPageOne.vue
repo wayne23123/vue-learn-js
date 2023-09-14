@@ -216,11 +216,15 @@ function locate(idPound) {
             <br />
             <div>2-1. 如果 一個是 null 另一個是 undefined 返回 true</div>
             <br />
+            <div class="padTwo VSL">
+              除此之外，null、undefined 和其他任何結果的比較值都為 false。
+            </div>
+            <br />
             <div>2-2. 如果 一個是 number 另一個是 string</div>
 
             <div class="padTwo VSL">
               <br />
-              <div>將 string 轉成 number 再比較</div>
+              <div>將 string 轉成 number 再比較 ("" 和 " " 都變0)</div>
             </div>
             <br />
             <div>2-3. 如果 一個是 布林</div>
@@ -280,17 +284,21 @@ function locate(idPound) {
           <br />
           <p>true == 1 . . . // true</p>
           <br />
-          <p>true == '2' . . . // false, 先把 true 變 1，再參考規則 3</p>
+          <p>
+            true == '2' . . . // false, 先把 true 變 1，再
+            2-2.如果一個是number另一個是string將string轉成number再比較
+          </p>
           <br />
           <p>
-            true == ['1'] . . . // true, 先把 true 變 1， ['1']拆箱成 '1',
-            再參考規則 3
+            true == ['1'] . . . // true, 先把 true 變 1， ['1']拆箱成 '1', 再
+            2-2.如果一個是number另一個是string將string轉成number再比較
           </p>
           <br />
           <p>true == ['2'] . . . // false, 同上</p>
           <br />
           <p>
-            undefined == false . . . // false ，首先 false 變 0，然後參考規則 4
+            undefined == false . . . // false ，首先 false 變 0， undefined 和
+            null 跟別人比為 false
           </p>
           <br />
           <p>null == false . . . // false，同上</p>
@@ -1408,7 +1416,14 @@ function locate(idPound) {
           <br />
           <div id="onejs008" class="articleCardTitle cor36">[ JS ] ≫ 閉包?</div>
           <p class="comment">什麼是閉包 , 概念 , 用途 , 優 缺點</p>
+          <p>
+            一個函數對周圍狀態的引用綑綁在一起,
+            內層函數中訪問到其外層函數的作用域
+          </p>
           <br />
+          <br />
+          <br />
+
           <p>閉包 就是 有權訪問 另一個 函數作用域的變量 的函數</p>
           <br />
           <p>優點是 私有化數據 在 私有化數據的基礎上 保持數據</p>
@@ -1478,41 +1493,24 @@ function locate(idPound) {
           <div id="onejs010" class="articleCardTitle cor36">
             [ JS ] ≫ this 指向
           </div>
-          <p>1. 全局對象 的 this 指向</p>
-          <p>指向 window</p>
+          <p class="fz28">1. 方法 中 this 指向 調用方法 的 對象</p>
+          <br />
+          <p class="fz28">2. 全局環境下 指向 全局對象</p>
+          <br />
+          <p class="fz28">3. 全局 函數中的 this 指向 全局對象</p>
+          <br />
+          <p class="fz28">4. 內部函數 的 this 指向 全局對象</p>
+          <br />
+          <p class="fz28">5. 事件中的 this 指向 觸發事件 的 DOM 對象</p>
+          <br />
+          <p class="fz28">6. 構造函數中 的 this 指向 new 創建的對象</p>
+          <br />
+          <p class="fz28">
+            7. 箭頭函數中 的 this 指向 定義 函數 上下文的 this
+            (在哪裡定義指向誰)
+          </p>
           <br />
           <br />
-          <p>2. 全局作用域 or 普通函數中的 this</p>
-          <p>指向 window</p>
-          <br />
-          <br />
-          <p>3. this 指向最後調用他的那個對象</p>
-          <p>在不是 箭頭函數 情況下</p>
-          <br />
-          <br />
-          <p>4. new 關鍵字改變 this 指向</p>
-          <p></p>
-          <br />
-          <br />
-          <p></p>
-          <p></p>
-          <br />
-          <br />
-          <p></p>
-          <p></p>
-          <br />
-          <br />
-          <p></p>
-          <p></p>
-          <br />
-          <br />
-          <p></p>
-          <p></p>
-          <br />
-          <br />
-          <p></p>
-          <p></p>
-
           <table>
             <tr>
               <th><div class="pad20">調用方式</div></th>

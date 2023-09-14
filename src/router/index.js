@@ -24,6 +24,8 @@ import JsPageThreeSeven from "../views/jspage/JsPageThreeSeven.vue";
 import JsPageThreeEight from "../views/jspage/JsPageThreeEight.vue";
 import JsPageThreeNine from "../views/jspage/JsPageThreeNine.vue";
 import JsPageThreeTen from "../views/jspage/JsPageThreeTen.vue";
+import VuePageOne from "../views/VuePageOne.vue";
+import Link from "../views/Link.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +37,10 @@ const router = createRouter({
         {
           path: "",
           component: HomePage,
+        },
+        {
+          path: "vue",
+          component: VuePageOne,
         },
         {
           path: "about",

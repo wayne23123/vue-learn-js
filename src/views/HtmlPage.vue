@@ -158,6 +158,22 @@ function locate(idPound) {
         <h1 id="html003" class="articleCardTitle cor36">
           [ Html ] ≫ 那些操作可以提升SEO?
         </h1>
+        <p class="cor36">title 標籤</p>
+        <br />
+        <br />
+        <p>會直接顯示在搜尋結果中</p>
+        <br />
+        <br />
+        <p class="cor36">meta 標籤 的 描述 和 關鍵詞</p>
+        <br />
+        <br />
+        <p>descripttion 顯示在搜尋結果中</p>
+        <br />
+        <br />
+        <p>keywords 告訴搜尋引擎 頁面與什麼相關</p>
+        <br />
+        <br />
+
         <p>可以在header裡面的meta這一章節加上description網頁的描述</p>
         <p>再來可以加上keyword網頁關鍵字</p>
         <p>h1標籤要寫好</p>

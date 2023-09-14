@@ -505,7 +505,7 @@ function locate(idPound) {
           <div id="threemethod017" class="articleCardTitle cor36 fz34">
             for in , for of
           </div>
-          <table>
+          <table class="fz30">
             <tr>
               <td><div class="pad20">for...in</div></td>
               <td><div class="pad20">遍歷得到 key</div></td>
