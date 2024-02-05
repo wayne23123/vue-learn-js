@@ -25,9 +25,9 @@ import JsPageThreeEight from '../views/jspage/JsPageThreeEight.vue';
 import JsPageThreeNine from '../views/jspage/JsPageThreeNine.vue';
 import JsPageThreeTen from '../views/jspage/JsPageThreeTen.vue';
 import VuePageOne from '../views/VuePageOne.vue';
-// import NodePageLayout from '../views/NodePageLayout.vue'
-// import NodePageOne from '../views/NodePage/NodePageOne.vue'
-// import NodePageOneOne from '../views/NodePage/NodePageOneOne.vue'
+import NodePageLayout from '../views/NodePageLayout.vue'
+import NodePageOne from '../views/NodePage/NodePageOne.vue'
+import NodePageOneOne from '../views/NodePage/NodePageOneOne.vue'
 
 // import Link from "../views/Link.vue";
 
@@ -148,22 +148,22 @@ const router = createRouter({
             },
           ],
         },
-        // {
-        //   path: 'node',
-        //   component: () => NodePageLayout,
-        //   children: [
-        //     {
-        //       path: '',
-        //       component: NodePageOne,
-        //       children: [
-        //         {
-        //           path: '',
-        //           component: NodePageOneOne,
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
+        {
+          path: 'node',
+          component: NodePageLayout,
+          children: [
+            {
+              path: '',
+              component: NodePageOne,
+              children: [
+                {
+                  path: '',
+                  component: NodePageOneOne,
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
     // 配置404找不到頁面

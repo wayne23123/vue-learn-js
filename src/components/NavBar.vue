@@ -29,6 +29,9 @@
         <li>
           <router-link to="/vue"><div class="liPad">Vue</div></router-link>
         </li>
+        <li>
+          <router-link to="/node"><div class="liPad">Node</div></router-link>
+        </li>
         <!-- <li>
           <router-link to="/about"><div class="liPad">Vue</div></router-link>
         </li> -->

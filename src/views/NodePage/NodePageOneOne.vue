@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const toTopRef = ref(false);
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
   // 當 scrollY大於0 則 showRef 為 true
   toTopRef.value = window.scrollY > 0;
 });
@@ -11,20 +11,20 @@ function toTopFunction() {
   window.scrollTo({
     top: 0,
     left: 0,
-    behavior: 'smooth',
+    behavior: "smooth",
   });
 }
 function toBotFunction() {
   window.scrollTo({
     top: 999999,
     left: 0,
-    behavior: 'smooth',
+    behavior: "smooth",
   });
 }
 function locate(idPound) {
   window.scrollTo({
     top: document.getElementById(`${idPound}`).offsetTop,
-    behavior: 'smooth',
+    behavior: "smooth",
   });
 }
 </script>
@@ -542,6 +542,111 @@ function locate(idPound) {
             <p class="fz20">npm install --save express</p>
             <p class="fz20">用 --save 而不是 --save-dev</p>
             <p class="fz20">因為不僅是開發時用的工具，發布時是必要的一部分</p>
+            <br />
+            <p class="fz20">範例 1 :</p>
+            <div class="bgcVS fz18">
+              <div>
+                <span class="function">const </span>
+                <span class="word">express</span> <span class="then">=</span>
+                <span class="brackets">require (</span>
+                <span class="src">'express'</span>
+                <span class="brackets">)</span>
+              </div>
+              <div>
+                <span class="function">const </span>
+                <span class="word">bodyParer</span> <span class="then">=</span>
+                <span class="brackets">require(</span>
+                <span class="src">'body-parser'</span>
+                <span class="brackets">)</span>
+              </div>
+              <div>
+                <span class="function">const </span>
+                <span class="word">app</span> <span class="then">=</span>
+                <span class="word">express</span>
+                <span class="brackets">()</span>
+              </div>
+              <br />
+              <div>
+                <span class="word">app.</span><span class="variable">use</span>
+                <span class="brackets">(</span>
+                <span class="word">bodyParser.</span>
+                <span class="word">urlencoded</span>
+                <span class="brackets">({</span>
+                <span class="word">extended:</span>
+                <span class="number">false</span>
+                <span class="brackets">}))</span>
+              </div>
+              <br />
+              <div>
+                <span class="word">app.</span><span class="variable">use</span>
+                <span class="brackets">(</span>
+                <span class="src">'/add-product',</span>
+                <span class="brackets">(</span>
+                <span class="word">req,res,mext</span>
+                <span class="brackets">)</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">res.</span>
+                <span class="variable">send</span>
+                <span class="brackets">(</span> <span class="src">''</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <br />
+              <div>
+                <span class="word">app.</span><span class="variable">post</span>
+                <span class="brackets">(</span>
+                <span class="src">'/product',</span>
+                <span class="brackets">(</span>
+                <span class="word">req,res,next</span>
+                <span class="brackets">)</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">console.</span>
+                <span class="variable">log</span>
+                <span class="brackets">(</span>
+                <span class="word">req.body</span>
+                <span class="brackets">)</span>
+                <div></div>
+                <div>
+                  <span class="word">res.redirect</span>
+                  <span class="brackets">(</span> <span class="src">'/'</span>
+                  <span class="brackets">)</span>
+                </div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <br />
+              <div>
+                <span class="word">app.</span><span class="variable">use</span>
+                <span class="brackets">(</span> <span class="src">'/',</span>
+                <span class="brackets">(</span>
+                <span class="word">req,res,next</span>
+                <span class="brackets">)</span>
+                <span class="function">=> </span>
+                <span class="brackets">{</span>
+              </div>
+              <div class="padTwo VSL">
+                <span class="word">res.</span>
+                <span class="variable">send</span>
+                <span class="brackets">(</span>
+                <span class="src">'＜h1>HelloWorld＜/h1>'</span>
+                <span class="brackets">)</span>
+                <div></div>
+              </div>
+              <div><span class="brackets">})</span></div>
+              <br />
+              <div>
+                <span class="word">app.</span
+                ><span class="variable">liten</span>
+                <span class="brackets">(</span>
+                <span class="number">3000</span> <span class="brackets">)</span>
+              </div>
+            </div>
             <p class="fz20"></p>
             <p class="fz20"></p>
             <p class="fz20"></p>

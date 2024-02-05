@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const navFixedRef = ref(true);
-window.addEventListener("scroll", function () {
+window.addEventListener('scroll', function () {
   // 當 scrollY大於290 則 carouselShopShowRef 為 true
   navFixedRef.value = window.scrollY;
 });
@@ -38,6 +38,9 @@ window.addEventListener("scroll", function () {
         </li>
         <li>
           <router-link to="/vue"><div class="liPad">Vue</div></router-link>
+        </li>
+        <li>
+          <router-link to="/node"><div class="liPad">Node</div></router-link>
         </li>
         <!-- <li>
           <router-link to="/about"><div class="liPad">Vue</div></router-link>
